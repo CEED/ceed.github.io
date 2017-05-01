@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="./img/favicon.ico">
+
+<!--	<title>CEED</title>  -->
+    <title>Center for Efficient Exascale Discretizations</title>
+
+        <link href="./css/bootstrap-ceed.min.css" rel="stylesheet">
+        <link href="./css/font-awesome-4.0.3.css" rel="stylesheet">
+        <link rel="stylesheet" href="./css/highlight.css">
+        <link href="./css/base.css" rel="stylesheet">
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+        
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <!-- Main title -->
+            <a class="navbar-brand" href=".">CEED</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+            <!-- Main navigation -->
+            <ul class="nav navbar-nav">
+            
+            
+            
+            
+            
+                <li >
+                    <a href="news/">News</a>
+                </li>
+            
+            
+            
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Co-Design <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        
+                            <li >
+                                 <a href="bps/">Benchmarks</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="miniapps/">Miniapps</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="ap/">Applications</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="hw/">Hardware</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="sw/">Software</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="partners/">Partners</a>
+                            </li>
+                        
+                    
+                    </ul>
+                </li>
+            
+            
+            
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Software <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        
+                            <li >
+                                 <a href="ceed-code/">CEED</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="nek/">Nek</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="mfem/">MFEM</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="magma/">MAGMA</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="occa/">OCCA</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="holmes/">Holmes</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="petsc/">PETSc</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="pumi/">PUMI</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="gslib/">gslib</a>
+                            </li>
+                        
+                    
+                    </ul>
+                </li>
+            
+            
+            
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Research <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        
+                            <li >
+                                 <a href="fe/">Finite Elements</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="formats/">Formats</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="pubs/">Publications</a>
+                            </li>
+                        
+                    
+                    </ul>
+                </li>
+            
+            
+            
+            
+            
+                <li >
+                    <a href="about/">About</a>
+                </li>
+            
+            
+            
+            </ul>
+
+            <!-- Search, Navigation and Repo links -->
+            <ul class="nav navbar-nav navbar-right">
+                
+                
+                <li>
+                    <a href="https://github.com/ceed">
+                        
+                            <i class="fa fa-github-square"></i>
+                        
+                        GitHub
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+    </div>
+</div>
+
+        <div class="container">
+            
+            
+
+<p><img alt="CEED logo" src="./img/logo-300.png" /></p>
+<div class="col-md-6">
+
+<h2 id="ecp-co-design">ECP Co-Design</h2>
+<p>The Center for Efficient Exascale Discretizations (CEED) is an <a href="http://exascaleproject.org">Exascale
+Computing Project (ECP)</a> co-design center focused on
+the following goals:</p>
+<ul>
+<li>
+<p><em>Help applications leverage future architectures by providing them with
+  <a href="ceed-code/">state-of-the-art discretization algorithms</a> that better exploit
+  the hardware and deliver a significant performance gain over conventional
+  methods.</em></p>
+</li>
+<li>
+<p><em>Learn from and educate hardware vendors and software technologies projects
+  about efficient finite element algorithms through CEED-developed <a href="miniapps/">proxies and
+  miniapps</a>.</em></p>
+</li>
+<li>
+<p><em>Provide an efficient and user-friendly unstructured PDE discretization
+  component for the future <a href="ceed-code/">exascale software ecosystem</a>.</em></p>
+</li>
+</ul>
+<p>CEED is a research partnership involving 30+ computational scientists from two
+DOE labs and and five universities, see the <a href="about/">About</a> page for more
+information.</p>
+<h2 id="exascale-discretizations">Exascale Discretizations</h2>
+<p>CEED's research and development efforts are centered around the following
+computational motifs and their performance on exascale hardware:</p>
+<h4 id="pde-based-simulations-on-unstructured-grids"><strong>PDE-based simulations on unstructured grids</strong></h4>
+<ul>
+<li><em>general finite element algorithms on triangular, quadrilateral, tetrahedral and hexahedral meshes in 1D, 2D and 3D</em></li>
+<li><em>support for the whole de Rham complex: H1, H(curl), H(div) and L2/DG discretizations,</em></li>
+<li><em>conforming and non-conforming unstructured adaptive mesh refinement (AMR)</em></li>
+<li><em>optimized assembly support for low-order methods</em></li>
+</ul>
+<h4 id="high-orderspectral-finite-elements"><strong>High-order/spectral finite elements</strong></h4>
+<ul>
+<li><em>any order space on any order mesh</em></li>
+<li><em>high-order conforming and non-conforming curved meshes</em></li>
+<li><em>efficient matrix-free operator evaluation on all mesh geometries for all spaces in the de Rham complex</em></li>
+</ul>
+<h2 id="whats-new">What's New?</h2>
+<p>Some recent activities of the center are listed below. For additional project updates, see the <a href="news/">News</a> page.</p>
+<ul>
+<li><a href="news/#first-ceed-annual-meeting-to-be-held-at-llnl">First CEED annual meeting to be held at LLNL</a>
+(Aug 15-17, 2017)</li>
+<li><a href="news/#workshop-on-batched-reproducible-and-reduced-precision-blas">Workshop on batched BLAS</a> (Feb 23-25, 2017)</li>
+<li><a href="news/#software-release-mfem-v33">Software release: MFEM v3.3</a> (Jan 28, 2017)</li>
+<li><a href="news/#ceed-co-design-center-announced">CEED co-design center announced</a> (Nov 11, 2016)</li>
+</ul>
+</div>
+
+<div class="col-md-6 news-table">
+
+<h2 id="software">Software</h2>
+<p>The CEED team includes members of the <a href="nek/">Nek5000</a>, <a href="mfem/">MFEM</a>, <a href="magma/">MAGMA</a>, <a href="occa/">OCCA</a> and <a href="petsc/">PETSc</a> projects.
+Building on these efforts, the co-design center will produce a range of software products, including:</p>
+<ul>
+<li>
+<p><strong>CEED next-generation finite element discretization libraries</strong> that enable unstructured PDE-based applications to take
+   full advantage of exascale resources. These libraries will cover the full spectrum of discretizations, from assembled
+   low-order to matrix-free high-order methods.</p>
+</li>
+<li>
+<p><strong>CEED miniapps</strong> combining applications-relevant physics with key high-order kernels that use matrix-free forms
+   for efficient performance. The miniapps will be used to inform/influence the hardware development.</p>
+</li>
+<li>
+<p><strong>CEED broadly applicable software technologies</strong>, including extensions of dense linear algebra libraries to support fast
+   tensor contractions, scalable matrix-free linear solvers and performance-portable programming models.</p>
+</li>
+</ul>
+<h2 id="rd-thrusts">R&amp;D Thrusts</h2>
+<p>CEED's scientists work closely with hardware vendors, algorithm and software developers,
+and collaborate with application scientists to meet their needs. These co-design efforts
+are organized in four interconnected R&amp;D thrusts:</p>
+<p><strong><a href="ap/">Applications Thrust (AP)</a></strong>:
+Maintain a close connection with ECP apps. Reach out to low-order and non-ECP apps.
+Derive requirements for CEED’s miniapps and software technologies work.</p>
+<p><strong><a href="hw/">Hardware Thrust (HW)</a></strong>:
+Work with the vendors to take advantage of existing hardware to impact applications.
+Provide them with relevant miniapps and hardware/software requirements for high-order apps.
+Follow and evaluate HW trends towards exascale.</p>
+<p><strong><a href="sw/">Software Thrust (SW)</a></strong>:
+Participate in the development of software libraries and frameworks of general interest to the scientific computing community.
+Enable integration into and/or interoperability with overall ECP ST stack.</p>
+<p><strong><a href="fe/">Finite Elements Thrust (FE)</a></strong>:
+Continue to improve the state-of-the-art FE algorithms and kernels in CEED software for exascale efficiency.
+Lead the development of discretization libraries and miniapps.</p>
+<h2 id="contact">Contact</h2>
+<p>You can reach us by emailing <a href="mailto:ceed-users@llnl.gov">ceed-users@llnl.gov</a> or by leaving a comment in
+the <a href="https://github.com/CEED/forum">CEED user forum</a>.</p>
+<p>For additional information, see the <a href="about/">About</a> page.</p>
+</div>
+
+<div class="col-md-12">
+<br>
+<div class="row">
+    <div class="col-xs-1 col-md-1"></div>
+    <div class="col-xs-1 col-md-1"></div>
+    <div class="col-xs-1 col-md-1"></div>
+    <div class="col-xs-1 col-md-1"><a href="http://www.llnl.gov"><img src="img/llnl.png" alt="LLNL logo" class="img-responsive"></a></div>
+    <div class="col-xs-1 col-md-1"><a href="http://www.anl.gov"><img src="img/anl.png" alt="ANL logo" class="img-responsive"></a></div>
+    <div class="col-xs-1 col-md-1"><a href="http://www.utk.edu"><img src="img/utk.png" alt="UTK logo" class="img-responsive"></a></div>
+    <div class="col-xs-1 col-md-1"><a href="http://www.vt.edu"><img src="img/vtech.png" alt="VTech logo" class="img-responsive"></a></div>
+    <div class="col-xs-1 col-md-1"><a href="http://www.colorado.edu"><img src="img/cu.png" alt="CU logo" class="img-responsive"></a></div>
+    <div class="col-xs-1 col-md-1"><a href="http://www.uiuc.edu"><img src="img/uiuc.png" alt="UIUC logo" class="img-responsive"></a></div>
+    <div class="col-xs-1 col-md-1"><a href="http://www.rpi.edu"><img src="img/rpi.png" alt="RPI logo" class="img-responsive"></a></div>
+    <div class="col-xs-1 col-md-1"></div>
+    <div class="col-xs-1 col-md-1"></div>
+</div>
+</div>
+
+            
+        </div>
+
+        <footer class="footer">
+           <div class="container">
+              <p class="text-muted alignleft">
+                  Developed by the <a href="./about/">CEED team</a>
+                  as part of the
+                  <a href="http://exascaleproject.org">Exascale Computing Project</a>,
+                  LLNL-WEB-XXXXXX </p>
+                  <div style="text-align:right">
+                  <a href="http://exascaleproject.org">
+                  <img src="./img/ecp-black-50.png"
+                  style="display:inline;height:50px;padding:10px;margin:0"
+                  alt="ECP logo"></a></div>
+                  <!-- footer height is 50px -->
+           </div>
+        </footer>
+
+        <script src="./js/jquery-1.10.2.min.js"></script>
+        <script src="./js/bootstrap-3.0.3.min.js"></script>
+        <script src="./js/highlight.pack.js"></script>
+        <script src="./js/base.js"></script>
+        <script src="./js/retina.min.js"></script>
+    </body>
+</html>
