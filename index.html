@@ -242,39 +242,38 @@ Computing Project (ECP)</a> co-design center focused on
 the following goals:</p>
 <ul>
 <li>
-<p><em>Help applications leverage future architectures by providing them with
+<p>Help applications leverage future architectures by providing them with
   <a href="ceed-code/">state-of-the-art discretization algorithms</a> that better exploit
   the hardware and deliver a significant performance gain over conventional
-  methods.</em></p>
+  methods.</p>
 </li>
 <li>
-<p><em>Learn from and educate hardware vendors and software technologies projects
+<p>Learn from and educate hardware vendors and software technologies projects
   about efficient finite element algorithms through CEED-developed <a href="miniapps/">proxies and
-  miniapps</a>.</em></p>
+  miniapps</a>.</p>
 </li>
 <li>
-<p><em>Provide an efficient and user-friendly unstructured PDE discretization
-  component for the future <a href="ceed-code/">exascale software ecosystem</a>.</em></p>
+<p>Provide an efficient and user-friendly unstructured PDE discretization
+  component for the future <a href="ceed-code/">exascale software ecosystem</a>.</p>
 </li>
 </ul>
-<p>CEED is a research partnership involving 30+ computational scientists from two
-DOE labs and and five universities, see the <a href="about/">About</a> page for more
-information.</p>
+<p>CEED is a research partnership involving <a href="about/">30+ computational scientists</a>
+from two DOE labs and and five universities.</p>
 <h2 id="exascale-discretizations">Exascale Discretizations</h2>
 <p>CEED's research and development efforts are centered around the following
 computational motifs and their performance on exascale hardware:</p>
-<h4 id="pde-based-simulations-on-unstructured-grids"><strong>PDE-based simulations on unstructured grids</strong></h4>
+<h5 id="pde-based-simulations-on-unstructured-grids">PDE-based simulations on unstructured grids</h5>
 <ul>
-<li><em>general finite element algorithms on triangular, quadrilateral, tetrahedral and hexahedral meshes in 1D, 2D and 3D</em></li>
-<li><em>support for the whole de Rham complex: H1, H(curl), H(div) and L2/DG discretizations,</em></li>
-<li><em>conforming and non-conforming unstructured adaptive mesh refinement (AMR)</em></li>
-<li><em>optimized assembly support for low-order methods</em></li>
+<li>General finite element algorithms on triangular, quadrilateral, tetrahedral and hexahedral meshes in 1D, 2D and 3D.</li>
+<li>Support for the whole de Rham complex: H1, H(curl), H(div) and L2/DG spaces and discretizations.</li>
+<li>Conforming and non-conforming unstructured AMR.</li>
+<li>Optimized assembly support for low-order methods.</li>
 </ul>
-<h4 id="high-orderspectral-finite-elements"><strong>High-order/spectral finite elements</strong></h4>
+<h5 id="high-orderspectral-finite-elements">High-order/spectral finite elements</h5>
 <ul>
-<li><em>any order space on any order mesh</em></li>
-<li><em>high-order conforming and non-conforming curved meshes</em></li>
-<li><em>efficient matrix-free operator evaluation on all mesh geometries for all spaces in the de Rham complex</em></li>
+<li>Any order space on any order mesh.</li>
+<li>High-order conforming and non-conforming curved meshes.</li>
+<li>Efficient matrix-free operator evaluation on all mesh geometries for all spaces in the de Rham complex.</li>
 </ul>
 <h2 id="whats-new">What's New?</h2>
 <p>Some recent activities of the center are listed below. For additional project updates, see the <a href="news/">News</a> page.</p>
@@ -294,34 +293,34 @@ computational motifs and their performance on exascale hardware:</p>
 Building on these efforts, the co-design center will produce a range of software products, including:</p>
 <ul>
 <li>
-<p><strong>CEED next-generation finite element discretization libraries</strong> that enable unstructured PDE-based applications to take
+<p>Next-generation <a href="ceed-code/">finite element</a> <a href="nek/">discretization</a> <a href="mfem/">libraries</a> that enable unstructured PDE-based applications to take
    full advantage of exascale resources. These libraries will cover the full spectrum of discretizations, from assembled
    low-order to matrix-free high-order methods.</p>
 </li>
 <li>
-<p><strong>CEED miniapps</strong> combining applications-relevant physics with key high-order kernels that use matrix-free forms
-   for efficient performance. The miniapps will be used to inform/influence the hardware development.</p>
+<p><a href="miniapps/">Miniapps</a> combining applications-relevant physics with key high-order kernels that use matrix-free forms
+   for efficient performance. CEED will also develop element-level kernels and <a href="bps/">benchmark problems</a>.</p>
 </li>
 <li>
-<p><strong>CEED broadly applicable software technologies</strong>, including extensions of dense linear algebra libraries to support fast
-   tensor contractions, scalable matrix-free linear solvers and performance-portable programming models.</p>
+<p>Broadly applicable technologies, including extensions of dense linear algebra libraries to support
+ <a href="magma/">fast tensor contractions</a>, scalable matrix-free <a href="petsc/">linear solvers</a> and programming models for <a href="occa/">performance portability</a>.</p>
 </li>
 </ul>
 <h2 id="rd-thrusts">R&amp;D Thrusts</h2>
 <p>CEED's scientists work closely with hardware vendors, algorithm and software developers,
 and collaborate with application scientists to meet their needs. These co-design efforts
 are organized in four interconnected R&amp;D thrusts:</p>
-<p><strong><a href="ap/">Applications Thrust (AP)</a></strong>:
+<p><a href="ap/">Applications Thrust (AP)</a>:
 Maintain a close connection with ECP apps. Reach out to low-order and non-ECP apps.
 Derive requirements for CEED’s miniapps and software technologies work.</p>
-<p><strong><a href="hw/">Hardware Thrust (HW)</a></strong>:
+<p><a href="hw/">Hardware Thrust (HW)</a>:
 Work with the vendors to take advantage of existing hardware to impact applications.
 Provide them with relevant miniapps and hardware/software requirements for high-order apps.
 Follow and evaluate HW trends towards exascale.</p>
-<p><strong><a href="sw/">Software Thrust (SW)</a></strong>:
+<p><a href="sw/">Software Thrust (SW)</a>:
 Participate in the development of software libraries and frameworks of general interest to the scientific computing community.
 Enable integration into and/or interoperability with overall ECP ST stack.</p>
-<p><strong><a href="fe/">Finite Elements Thrust (FE)</a></strong>:
+<p><a href="fe/">Finite Elements Thrust (FE)</a>:
 Continue to improve the state-of-the-art FE algorithms and kernels in CEED software for exascale efficiency.
 Lead the development of discretization libraries and miniapps.</p>
 <h2 id="contact">Contact</h2>
