@@ -238,7 +238,8 @@
         
             <li><a href="#some-terminology-and-notation">Some terminology and notation</a></li>
         
-            <li><a href="#bp1">BP1</a></li>
+    
+        <li class="main "><a href="#bake-off-problem-1">Bake-off problem 1</a></li>
         
     
     </ul>
@@ -256,54 +257,97 @@
 <h3 id="some-terminology-and-notation">Some terminology and notation</h3>
 <p>Vector representation/storage categories:</p>
 <ul>
-<li>True degrees of freedom/unknowns (T-vector): each unknown $i$ has exactly one
-  copy, on exactly one processor, $rank(i)$; this is a non-overlapping vector
-  decomposition; usually includes any essential (fixed) dofs.</li>
-<li>Local true degrees of freedom/unknowns (L-vector): each unknown $i$ has
-  exactly one copy on each processor that owns an element contaning $i$; this is
-  an overlapping vector decomposition with overlaps only across different
-  processors - there is no duplication of unknowns on a single processor; the
-  shared dofs/unknowns are the overlapping dofs, i.e. the ones that have more
-  than one copy, on different processors.</li>
-<li>Per element decomposition (E-vector): each unknown $i$ has as many copies as
-  the number of elements that contain $i$; usually, the copies of the unknowns
-  are grouped by the element they belong to.</li>
-<li>In the case of hanging nodes (giving rise to hanging dofs) there is another
-  represention similar to L-vector which stores the hanging/dependent dofs in
-  addition to the true dofs (H-vector); the additional hanging dofs are
-  duplicated when they are shared by multiple processors.</li>
-<li>In the case of variable order spaces, the dependent dofs (usually on the
-  higher-order side of a face/edge) can be treated just like the
-  hanging/dependent dofs case, and can have both L- and H-vector
-  representations.</li>
-<li>Quadrature point vector (Q-vector): this is similar to E-vector where instead
-  of dofs, the vector represents values at qudrature points, grouped by element.</li>
-<li>In many cases it is useful to distinguish two types of vectors: X-vector, or
-  primal X-vector, and X'-vector, or dual X-vector; here X can be any of the
-  T, L, H, E, or Q categories; for example, the mass matrix operator maps a
-  T-vector to a T'-vector; the solutions vector is a T-vector, and the RHS
-  vector is a T'-vector; using the parallel prolongation operator, one can map
-  the solution T-vector to a solution L-vector, etc.</li>
+<li>True degrees of freedom/unknowns, <strong>T-vector</strong>:<ul>
+<li>each unknown $i$ has exactly one copy, on exactly one processor, $rank(i)$</li>
+<li>this is a non-overlapping vector decomposition</li>
+<li>usually includes any essential (fixed) dofs.
+<img alt="T-vector" src="../img/T-vector.svg" /></li>
+</ul>
+</li>
+<li>Local true degrees of freedom/unknowns, <strong>L-vector</strong>:<ul>
+<li>each unknown $i$ has exactly one copy on each processor that owns an
+  element contaning $i$</li>
+<li>this is an overlapping vector decomposition with overlaps only across
+  different processors - there is no duplication of unknowns on a single
+  processor</li>
+<li>the shared dofs/unknowns are the overlapping dofs, i.e. the ones that have
+  more than one copy, on different processors.
+  <img alt="L-vector" src="../img/L-vector.svg" /></li>
+</ul>
+</li>
+<li>Per element decomposition, <strong>E-vector</strong>:<ul>
+<li>each unknown $i$ has as many copies as the number of elements that contain
+  $i$</li>
+<li>usually, the copies of the unknowns are grouped by the element they belong
+  to.
+  <img alt="E-vector" src="../img/E-vector.svg" /></li>
+</ul>
+</li>
+<li>In the case of hanging nodes (giving rise to hanging dofs):<ul>
+<li>there is another represention similar to L-vector which stores the
+  hanging/dependent dofs in addition to the true dofs, <strong>H-vector</strong></li>
+<li>the additional hanging dofs are duplicated when they are shared by
+  multiple processors.</li>
+</ul>
+</li>
+<li>In the case of variable order spaces:<ul>
+<li>the dependent dofs (usually on the higher-order side of a face/edge) can
+  be treated just like the hanging/dependent dofs case</li>
+<li>have both L- and H-vector representations.</li>
+</ul>
+</li>
+<li>Quadrature point vector, <strong>Q-vector</strong>:<ul>
+<li>this is similar to E-vector where instead of dofs, the vector represents
+  values at qudrature points, grouped by element.</li>
+</ul>
+</li>
+<li>In many cases it is useful to distinguish two types of vectors:<ul>
+<li>X-vector, or <strong>primal</strong> X-vector, and X'-vector, or <strong>dual</strong> X-vector</li>
+<li>here X can be any of the T, L, H, E, or Q categories</li>
+<li>for example, the mass matrix operator maps a T-vector to a T'-vector</li>
+<li>the solutions vector is a T-vector, and the RHS vector is a T'-vector</li>
+<li>using the parallel prolongation operator, one can map the solution
+  T-vector to a solution L-vector, etc.</li>
+</ul>
+</li>
 </ul>
 <p>Operator representation/storage/action categories:</p>
 <ul>
-<li>Full true-dof parallel assembly (TA,A): ParCSR or similar format; the T in
-  TA indicates that the data format represents an operator from a T-vector to
-  a T'-vector.</li>
-<li>Full local assembly (LA): CSR matrix on each rank; the parallel prolongation
-  operator, $P$, (and its transpose) should use optimized matrix-free action;
-  note that $P$ is the operator mapping T-vectors to L-vectors.</li>
-<li>Full element matrix assembly (EA): each element matrix is stored as a dense
-  matrix; optimized element and parallel prolongation operators; note that the
-  element prolongation operator is the mapping from an L-vector to an E-vector.</li>
-<li>Quadrature-point/partial assembly (QA,PA): precompute and store $w\det(J)$, or
-  $\det(J)$ (in the case of mass matrix) at all quadrature points in all mesh
-  elements; the stored data can be viewed as a Q-vector.</li>
-<li>Unassembled (UA,U) option: no assembly step; the action uses directly the mesh
-  node coordinates, and assumes specific form of the coefficient, e.g. constant,
-  piecewise-constant, or given as a Q-vector (Q-coefficient).</li>
+<li>Full true-dof parallel assembly, <strong>TA</strong>, or <strong>A</strong>:<ul>
+<li>ParCSR or similar format</li>
+<li>the T in TA indicates that the data format represents an operator from a
+  T-vector to a T'-vector.</li>
 </ul>
-<h3 id="bp1">BP1</h3>
+</li>
+<li>Full local assembly, <strong>LA</strong>:<ul>
+<li>CSR matrix on each rank</li>
+<li>the parallel prolongation operator, $P$, (and its transpose) should use
+  optimized matrix-free action</li>
+<li>note that $P$ is the operator mapping T-vectors to L-vectors.</li>
+</ul>
+</li>
+<li>Element matrix assembly, <strong>EA</strong>:<ul>
+<li>each element matrix is stored as a dense matrix</li>
+<li>optimized element and parallel prolongation operators</li>
+<li>note that the element prolongation operator is the mapping from an
+  L-vector to an E-vector.</li>
+</ul>
+</li>
+<li>Quadrature-point/partial assembly, <strong>QA</strong> or <strong>PA</strong>:<ul>
+<li>precompute and store $w\det(J)$, or $\det(J)$ (in the case of mass matrix)
+  at all quadrature points in all mesh elements</li>
+<li>the stored data can be viewed as a Q-vector.</li>
+</ul>
+</li>
+<li>Unassembled option,  <strong>UA</strong> or <strong>U</strong>:<ul>
+<li>no assembly step</li>
+<li>the action uses directly the mesh node coordinates, and assumes specific
+  form of the coefficient, e.g. constant, piecewise-constant, or given as a
+  Q-vector (Q-coefficient).</li>
+</ul>
+</li>
+</ul>
+<h2 id="bake-off-problem-1">Bake-off problem 1</h2>
 <p>Setup:</p>
 <ul>
 <li>Mass matrix</li>
@@ -317,7 +361,7 @@
 <li>Nodal basis using $p+1$ Gauss-Legendre-Lobatto (GLL) points in each spatial
   dimension</li>
 <li>Consider mesh orders of $p_{mesh}=1$, and $p_{mesh}=p$</li>
-<li>Focus on the PA/QA operator representation</li>
+<li>Focus on the QA/PA operator representation</li>
 <li>Meshes: ...</li>
 <li>Number of MPI tasks, and number of MPI tasks per node:<ul>
 <li>On ALCF's BG/Q, <code>cetus</code>: $2^{14}$ tasks total, with $2^5$ tasks per node</li>
@@ -347,7 +391,8 @@
         
             <li><a href="#some-terminology-and-notation">Some terminology and notation</a></li>
         
-            <li><a href="#bp1">BP1</a></li>
+    
+        <li class="main "><a href="#bake-off-problem-1">Bake-off problem 1</a></li>
         
     
     </ul>
