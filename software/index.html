@@ -9,7 +9,7 @@
         
         <link rel="shortcut icon" href="../img/favicon.ico">
 
-<!--	<title>Applications - CEED</title>  -->
+<!--	<title>Overview - CEED</title>  -->
     <title>Center for Efficient Exascale Discretizations</title>
 
         <link href="../css/bootstrap-ceed.min.css" rel="stylesheet">
@@ -62,7 +62,7 @@
             
             
             
-                <li class="dropdown active">
+                <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Co-Design <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                     
@@ -79,8 +79,8 @@
                         
                     
                         
-                            <li class="active">
-                                 <a href="./">Applications</a>
+                            <li >
+                                 <a href="../ap/">Applications</a>
                             </li>
                         
                     
@@ -115,13 +115,13 @@
             
             
             
-                <li class="dropdown">
+                <li class="dropdown active">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Software <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                     
                         
-                            <li >
-                                 <a href="../software/">Overview</a>
+                            <li class="active">
+                                 <a href="./">Overview</a>
                             </li>
                         
                     
@@ -252,7 +252,7 @@
             <div class="col-md-3 visible-xs visible-sm"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
     
-        <li class="main active"><a href="#ceed-applications-thrust">CEED Applications Thrust </a></li>
+        <li class="main active"><a href="#software">Software</a></li>
         
     
     <hr style="background-color:white; height:20px; margin-left:-1px;  margin-right:-1px; margin-top:15px; margin-bottom:10px " />
@@ -264,33 +264,28 @@
 <!-- ... fa-comment, fa-comment-o, fa-comments, fa-comments-o, fa-bullhorn --></div> <!-- toc on top on mobile -->
             <div class="col-md-9" role="main">
 
-<h2 id="ceed-applications-thrust">CEED Applications Thrust <img src="../img/app.png" align="right" alt="AP logo" height="250" width="350"></h2>
-<p><em>This page is under construction</em></p>
+<h2 id="software">Software</h2>
+<p>The CEED team includes members of the <a href="../nek/">Nek5000</a>, <a href="../mfem/">MFEM</a>, <a href="../magma/">MAGMA</a>, <a href="../occa/">OCCA</a> and <a href="../petsc/">PETSc</a> projects.
+Building on these efforts, the co-design center will produce a range of software products, including:</p>
 <ul>
-<li>Misun Min leads the AP thrust.</li>
-<li>The goal of this thrust is to impact a wide range of ECP application teams through
-  focused one-on-one interactions, facilitated by CEED application liaisons, as well as
-  through one-to-many interactions, based on the development of easy-to-use discretization
-  libraries for high-order finite element methods.</li>
-<li>Some of the thrust activities (current and planned) are:<ul>
-<li>OpenACC- and CUDA-based GPU version implementation for Nek5000 and Nek miniapps.</li>
-<li>I/O performance improvement for meshes with more than 10 millions of elements.</li>
-<li>Explore potential improvement in performance with lightweight MPI and neighborhood collective MPI.</li>
-</ul>
+<li>
+<p>Next-generation <a href="../ceed-code/">finite element</a> <a href="../nek/">discretization</a> <a href="../mfem/">libraries</a> that enable unstructured PDE-based applications to take
+   full advantage of exascale resources. These libraries will cover the full spectrum of discretizations, from assembled
+   low-order to matrix-free high-order methods.</p>
 </li>
-<li>List ECP apps and external project with which we are collaborating on these topics:<ul>
-<li>Coupled Monte Carlo Neutronics and Fluid Flow Simulation of Small Modular Reactors - SMRs (ORNL).</li>
-<li>Next-gen Multi-physics Simulation Code - MARBL (LLNL).</li>
-<li>Multiscale Coupled Urban System (ANL).</li>
-<li>Transforming Combustion Science and Technology with Exascale Simulations (SNL).</li>
-<li>Cloud-Resolving Climate Modeling of the Earths Water Cycle (SNL).</li>
-</ul>
+<li>
+<p><a href="../miniapps/">Miniapps</a> combining applications-relevant physics with key high-order kernels that use matrix-free forms
+   for efficient performance. CEED will also develop element-level kernels and <a href="../bps/">benchmark problems</a>.</p>
+</li>
+<li>
+<p>Broadly applicable technologies, including extensions of dense linear algebra libraries to support
+ <a href="../magma/">fast tensor contractions</a>, scalable matrix-free <a href="../petsc/">linear solvers</a> and programming models for <a href="../occa/">performance portability</a>.</p>
 </li>
 </ul></div>
             <div class="col-md-3 hidden-xs hidden-sm"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
     
-        <li class="main active"><a href="#ceed-applications-thrust">CEED Applications Thrust </a></li>
+        <li class="main active"><a href="#software">Software</a></li>
         
     
     <hr style="background-color:white; height:20px; margin-left:-1px;  margin-right:-1px; margin-top:15px; margin-bottom:10px " />

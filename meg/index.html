@@ -9,7 +9,7 @@
         
         <link rel="shortcut icon" href="../img/favicon.ico">
 
-<!--	<title>Applications - CEED</title>  -->
+<!--	<title>Meg - CEED</title>  -->
     <title>Center for Efficient Exascale Discretizations</title>
 
         <link href="../css/bootstrap-ceed.min.css" rel="stylesheet">
@@ -79,8 +79,8 @@
                         
                     
                         
-                            <li class="active">
-                                 <a href="./">Applications</a>
+                            <li >
+                                 <a href="../ap/">Applications</a>
                             </li>
                         
                     
@@ -103,8 +103,8 @@
                         
                     
                         
-                            <li >
-                                 <a href="../meg/">Meg</a>
+                            <li class="active">
+                                 <a href="./">Meg</a>
                             </li>
                         
                     
@@ -249,57 +249,85 @@
 
         <div class="container">
             
-            <div class="col-md-3 visible-xs visible-sm"><div class="bs-sidebar hidden-print affix well" role="complementary">
-    <ul class="nav bs-sidenav">
-    
-        <li class="main active"><a href="#ceed-applications-thrust">CEED Applications Thrust </a></li>
-        
-    
-    <hr style="background-color:white; height:20px; margin-left:-1px;  margin-right:-1px; margin-top:15px; margin-bottom:10px " />
-    <li style="padding:0"><a href="https://github.com/CEED/forum"></i><i class="fa fa-comment-o"></i> Contact the CEED team</a> </li>
-    </ul>
-</div>
+            
 
-<!-- Possible contact icons: fa-bolt, fa-cogs, fa-user, fa-star-o -->
-<!-- ... fa-comment, fa-comment-o, fa-comments, fa-comments-o, fa-bullhorn --></div> <!-- toc on top on mobile -->
-            <div class="col-md-9" role="main">
-
-<h2 id="ceed-applications-thrust">CEED Applications Thrust <img src="../img/app.png" align="right" alt="AP logo" height="250" width="350"></h2>
-<p><em>This page is under construction</em></p>
+<p><img alt="CEED logo" src="../img/ceed-leaderboard-sim.png" /></p>
+<div class="col-md-9">
+<h2 id="exascale-discretizations">Exascale Discretizations</h2>
+<p>The Center for Efficient Exascale Discretizations (CEED) is an <a href="http://exascaleproject.org">Exascale
+Computing Project (ECP)</a> co-design center focused on
+the following goals:</p>
 <ul>
-<li>Misun Min leads the AP thrust.</li>
-<li>The goal of this thrust is to impact a wide range of ECP application teams through
-  focused one-on-one interactions, facilitated by CEED application liaisons, as well as
-  through one-to-many interactions, based on the development of easy-to-use discretization
-  libraries for high-order finite element methods.</li>
-<li>Some of the thrust activities (current and planned) are:<ul>
-<li>OpenACC- and CUDA-based GPU version implementation for Nek5000 and Nek miniapps.</li>
-<li>I/O performance improvement for meshes with more than 10 millions of elements.</li>
-<li>Explore potential improvement in performance with lightweight MPI and neighborhood collective MPI.</li>
-</ul>
+<li>
+<p>Help applications leverage future architectures by providing them with
+  <a href="../ceed-code/">state-of-the-art discretization algorithms</a> that better exploit
+  the hardware and deliver a significant performance gain over conventional
+  methods.</p>
 </li>
-<li>List ECP apps and external project with which we are collaborating on these topics:<ul>
-<li>Coupled Monte Carlo Neutronics and Fluid Flow Simulation of Small Modular Reactors - SMRs (ORNL).</li>
-<li>Next-gen Multi-physics Simulation Code - MARBL (LLNL).</li>
-<li>Multiscale Coupled Urban System (ANL).</li>
-<li>Transforming Combustion Science and Technology with Exascale Simulations (SNL).</li>
-<li>Cloud-Resolving Climate Modeling of the Earths Water Cycle (SNL).</li>
-</ul>
+<li>
+<p>Learn from and educate hardware vendors and software technologies projects
+  about efficient finite element algorithms through CEED-developed <a href="../miniapps/">proxies and
+  miniapps</a>.</p>
 </li>
-</ul></div>
-            <div class="col-md-3 hidden-xs hidden-sm"><div class="bs-sidebar hidden-print affix well" role="complementary">
-    <ul class="nav bs-sidenav">
-    
-        <li class="main active"><a href="#ceed-applications-thrust">CEED Applications Thrust </a></li>
-        
-    
-    <hr style="background-color:white; height:20px; margin-left:-1px;  margin-right:-1px; margin-top:15px; margin-bottom:10px " />
-    <li style="padding:0"><a href="https://github.com/CEED/forum"></i><i class="fa fa-comment-o"></i> Contact the CEED team</a> </li>
-    </ul>
+<li>
+<p>Provide an efficient and user-friendly unstructured PDE discretization
+  component for the future <a href="../ceed-code/">exascale software ecosystem</a>.</p>
+</li>
+</ul>
+<p>CEED is a research partnership involving <a href="../about/">30+ computational scientists</a>
+from two DOE labs and and five universities centered around the following
+computational motifs and their performance on exascale hardware:</p>
+<h4 id="pde-based-simulations-on-unstructured-grids">PDE-based simulations on unstructured grids</h4>
+<p>Including general finite element algorithms on triangular, quadrilateral, tetrahedral and hexahedral meshes in 1D, 2D and 3D,
+support for the whole de Rham complex: H1, H(curl), H(div) and L2/DG spaces and discretizations,
+conforming and non-conforming unstructured AMR, and
+pptimized assembly support for low-order methods.</p>
+<h4 id="high-orderspectral-finite-elements">High-order/spectral finite elements</h4>
+<p>Anyorder space on any order mesh, hh-order conforming and non-conforming curved meshesm, and eficient matrix-free operator evaluation on all mesh geometries for all spaces in the de Rham complex.</p>
+<p>The CEED team includes members of the <a href="../nek/">Nek5000</a>, <a href="../mfem/">MFEM</a>, <a href="../magma/">MAGMA</a>, <a href="../occa/">OCCA</a> and <a href="../petsc/">PETSc</a> projects.
+Building on these efforts, CEED will produce a range of <a href="../software/">software products</a>, collaborating in <a href="../thrusts/">four interconnected R&amp;D thrusts</a>.</p>
+</div>
+<div class="col-md-3 news-table">
+<h3 id="whats-new">What's New?</h3>
+<p><i class="fa fa-list-alt"></i>  <a href="../news/#first-ceed-annual-meeting-to-be-held-at-llnl">First CEED annual meeting to be held at LLNL</a><br>
+<i class="fa fa-list-alt"></i>  <a href="../news/#gpu-hackaton-2017">CEED to participate in GPU hackaton at BNL</a><br>
+<i class="fa fa-list-alt"></i>  <a href="../news/#workshop-on-batched-reproducible-and-reduced-precision-blas">Workshop on batched BLAS</a><br>
+<i class="fa fa-list-alt"></i> <a href="../news/#software-release-mfem-v33">Software release: MFEM v3.3</a><br>
+<i class="fa fa-list-alt"></i> <a href="../news/#ceed-co-design-center-announced">CEED co-design center announced</a></p>
+<p>More updates on the <a href="../news/">News page...</a></p>
+<h3 id="contact">Contact</h3>
+<p>You can reach us by emailing <a href="mailto:ceed-users@llnl.gov">ceed-users@llnl.gov</a> or by leaving a comment in
+the <a href="https://github.com/CEED/forum">CEED user forum</a>.</p>
+<p>For additional information, see the <a href="../about/">About</a> page.</p>
+<p>CEED is part of the U.S. Department of Energy's <a href="http://exascaleproject.org">Exascale Computing Project</a>.</p>
+<div class="col-xs-12 col-md-12" style="text-align:center;padding-left:0;padding-right:0;padding-bottom:0">
+<div class="col-xs-6 col-md-6" style="width:20%;padding:0"></div>
+<div class="col-xs-6 col-md-6" style="align:center;width:60%;padding:0"><a href="http://www.exascaleproject.org"><img src="../img/ecp.png" alt="ECP logo" class="desaturate" style="display:inline;padding:0;margin:0"></a></div>
+<div class="col-xs-6 col-md-6" style="width:20%;padding:0"></div>
 </div>
 
-<!-- Possible contact icons: fa-bolt, fa-cogs, fa-user, fa-star-o -->
-<!-- ... fa-comment, fa-comment-o, fa-comments, fa-comments-o, fa-bullhorn --></div>
+</div>
+<div class="col-xs-12 col-md-12" style="text-align:center;padding-left:0;padding-top:0;padding-right:0;padding-bottom:0">
+<div class="col-xs-6 col-md-6" style="width:5%;padding:0"></div>
+<div class="col-xs-6 col-md-6" style="width:12%;padding:0"><a href="http://www.llnl.gov"><img src="../img/llnl.png" alt="LLNL logo" class="desaturate" style="display:inline;padding:0;margin:0"></a></div>
+<div class="col-xs-6 col-md-6" style="width:1%;padding:0"></div>
+<div class="col-xs-6 col-md-6" style="width:12%;padding:0"><a href="http://www.anl.gov"><img src="../img/anl.png" alt="ANL logo" class="desaturate" style="display:inline;padding:0;margin:0"></a></div>
+<div class="col-xs-6 col-md-6" style="width:1%;padding:0"></div>
+<div class="col-xs-6 col-md-6" style="width:12%;padding:0"><a href="http://www.utk.edu"><img src="../img/utk.png" alt="UTK logo" class="desaturate" style="display:inline;padding:0;margin:0"></a></div>
+<div class="col-xs-6 col-md-6" style="width:1%;padding:0"></div>
+<div class="col-xs-6 col-md-6" style="width:12%;padding:0"><a href="http://www.vt.edu"><img src="../img/vtech.png" alt="VTech logo" class="desaturate" style="display:inline;padding:0;margin:0"></a></div>
+<div class="col-xs-6 col-md-6" style="width:1%;padding:0"></div>
+<div class="col-xs-6 col-md-6" style="width:12%;padding:0"><a href="http://www.colorado.edu"><img src="../img/cu.png" alt="CU logo" class="desaturate" style="display:inline;padding:0;margin:0"></a></div>
+<div class="col-xs-6 col-md-6" style="width:1%;padding:0"></div>
+<div class="col-xs-6 col-md-6" style="width:12%;padding:0"><a href="http://www.uiuc.edu"><img src="../img/uiuc.png" alt="UIUC logo" class="desaturate" style="display:inline;padding:0;margin:0"></a></div>
+<div class="col-xs-6 col-md-6" style="width:1%;padding:0"></div>
+<div class="col-xs-6 col-md-6" style="width:12%;padding:0"><a href="http://www.rpi.edu"><img src="../img/rpi.png" alt="RPI logo" class="desaturate" style="display:inline;padding:0;margin:0"></a></div>
+<div class="col-xs-6 col-md-6" style="width:5%;padding:0"></div>
+</div>
+
+<div class="col-xs-12 col-md-12" style="text-align:center;padding-left:0;padding-right:0;padding-bottom:0">
+<br><br>
+</div>
 
             
         </div>
