@@ -9,7 +9,6 @@
         
         <link rel="shortcut icon" href="../img/favicon.ico">
 
-<!--	<title>Meg - CEED</title>  -->
     <title>Center for Efficient Exascale Discretizations</title>
 
         <link href="../css/bootstrap-ceed.min.css" rel="stylesheet">
@@ -26,8 +25,8 @@
         
     </head>
 
-    <body>
-
+    
+    <body style="padding-top:35px">
         <div class="navbar navbar-default navbar-fixed-top" role="navigation">
     <div class="container">
 
@@ -67,6 +66,12 @@
                     <ul class="dropdown-menu">
                     
                         
+                            <li class="active">
+                                 <a href="./">Overview</a>
+                            </li>
+                        
+                    
+                        
                             <li >
                                  <a href="../bps/">Benchmarks</a>
                             </li>
@@ -102,12 +107,6 @@
                             </li>
                         
                     
-                        
-                            <li class="active">
-                                 <a href="./">Meg</a>
-                            </li>
-                        
-                    
                     </ul>
                 </li>
             
@@ -121,7 +120,7 @@
                     
                         
                             <li >
-                                 <a href="../software/">Overview</a>
+                                 <a href="../software/">Packages</a>
                             </li>
                         
                     
@@ -192,7 +191,7 @@
                     
                         
                             <li >
-                                 <a href="../thrusts/">Overview</a>
+                                 <a href="../thrusts/">R&D Thrusts</a>
                             </li>
                         
                     
@@ -246,91 +245,36 @@
         </div>
     </div>
 </div>
-
+        <img src="../img/ceed-leaderboard-Overview.png">
         <div class="container">
-            
-            
+            <div class="col-md-12" role="main">
 
-<p><img alt="CEED logo" src="../img/ceed-leaderboard-sim.png" /></p>
-<div class="col-md-9">
-<h2 id="exascale-discretizations">Exascale Discretizations</h2>
-<p>The Center for Efficient Exascale Discretizations (CEED) is an <a href="http://exascaleproject.org">Exascale
-Computing Project (ECP)</a> co-design center focused on
-the following goals:</p>
+<h2 id="discretization-co-design">Discretization Co-Design</h2>
+<p>In addition to libraries of highly-performant kernels, a key product of the CEED
+project will be a set of <em>miniapps</em> that will serve multiple roles:</p>
 <ul>
-<li>
-<p>Help applications leverage future architectures by providing them with
-  <a href="../ceed-code/">state-of-the-art discretization algorithms</a> that better exploit
-  the hardware and deliver a significant performance gain over conventional
-  methods.</p>
-</li>
-<li>
-<p>Learn from and educate hardware vendors and software technologies projects
-  about efficient finite element algorithms through CEED-developed <a href="../miniapps/">proxies and
-  miniapps</a>.</p>
-</li>
-<li>
-<p>Provide an efficient and user-friendly unstructured PDE discretization
-  component for the future <a href="../ceed-code/">exascale software ecosystem</a>.</p>
-</li>
+<li>Provide a mechanism to test and optimize across the breadth of
+implementations already developed by team members for a variety of platforms.</li>
+<li>Serve as stand-alone unit-test drivers for the library kernels.</li>
+<li>Provide well-documented (implementation, usage, and performance) benchmarks
+to work with vendors, now and in the future (e.g. in system procurement).</li>
+<li>Provide test and demonstration cases for application scientists who are
+considering new formulations.</li>
 </ul>
-<p>CEED is a research partnership involving <a href="../about/">30+ computational scientists</a>
-from two DOE labs and and five universities centered around the following
-computational motifs and their performance on exascale hardware:</p>
-<h4 id="pde-based-simulations-on-unstructured-grids">PDE-based simulations on unstructured grids</h4>
-<p>Including general finite element algorithms on triangular, quadrilateral, tetrahedral and hexahedral meshes in 1D, 2D and 3D,
-support for the whole de Rham complex: H1, H(curl), H(div) and L2/DG spaces and discretizations,
-conforming and non-conforming unstructured AMR, and
-pptimized assembly support for low-order methods.</p>
-<h4 id="high-orderspectral-finite-elements">High-order/spectral finite elements</h4>
-<p>Anyorder space on any order mesh, hh-order conforming and non-conforming curved meshesm, and eficient matrix-free operator evaluation on all mesh geometries for all spaces in the de Rham complex.</p>
-<p>The CEED team includes members of the <a href="../nek/">Nek5000</a>, <a href="../mfem/">MFEM</a>, <a href="../magma/">MAGMA</a>, <a href="../occa/">OCCA</a> and <a href="../petsc/">PETSc</a> projects.
-Building on these efforts, CEED will produce a range of <a href="../software/">software products</a>, collaborating in <a href="../thrusts/">four interconnected R&amp;D thrusts</a>.</p>
-</div>
-<div class="col-md-3 news-table">
-<h3 id="whats-new">What's New?</h3>
-<p><i class="fa fa-list-alt"></i>  <a href="../news/#first-ceed-annual-meeting-to-be-held-at-llnl">First CEED annual meeting to be held at LLNL</a><br>
-<i class="fa fa-list-alt"></i>  <a href="../news/#gpu-hackaton-2017">CEED to participate in GPU hackaton at BNL</a><br>
-<i class="fa fa-list-alt"></i>  <a href="../news/#workshop-on-batched-reproducible-and-reduced-precision-blas">Workshop on batched BLAS</a><br>
-<i class="fa fa-list-alt"></i> <a href="../news/#software-release-mfem-v33">Software release: MFEM v3.3</a><br>
-<i class="fa fa-list-alt"></i> <a href="../news/#ceed-co-design-center-announced">CEED co-design center announced</a></p>
-<p>More updates on the <a href="../news/">News page...</a></p>
-<h3 id="contact">Contact</h3>
-<p>You can reach us by emailing <a href="mailto:ceed-users@llnl.gov">ceed-users@llnl.gov</a> or by leaving a comment in
-the <a href="https://github.com/CEED/forum">CEED user forum</a>.</p>
-<p>For additional information, see the <a href="../about/">About</a> page.</p>
-<p>CEED is part of the U.S. Department of Energy's <a href="http://exascaleproject.org">Exascale Computing Project</a>.</p>
-<div class="col-xs-12 col-md-12" style="text-align:center;padding-left:0;padding-right:0;padding-bottom:0">
-<div class="col-xs-6 col-md-6" style="width:20%;padding:0"></div>
-<div class="col-xs-6 col-md-6" style="align:center;width:60%;padding:0"><a href="http://www.exascaleproject.org"><img src="../img/ecp.png" alt="ECP logo" class="desaturate" style="display:inline;padding:0;margin:0"></a></div>
-<div class="col-xs-6 col-md-6" style="width:20%;padding:0"></div>
-</div>
-
-</div>
-<div class="col-xs-12 col-md-12" style="text-align:center;padding-left:0;padding-top:0;padding-right:0;padding-bottom:0">
-<div class="col-xs-6 col-md-6" style="width:5%;padding:0"></div>
-<div class="col-xs-6 col-md-6" style="width:12%;padding:0"><a href="http://www.llnl.gov"><img src="../img/llnl.png" alt="LLNL logo" class="desaturate" style="display:inline;padding:0;margin:0"></a></div>
-<div class="col-xs-6 col-md-6" style="width:1%;padding:0"></div>
-<div class="col-xs-6 col-md-6" style="width:12%;padding:0"><a href="http://www.anl.gov"><img src="../img/anl.png" alt="ANL logo" class="desaturate" style="display:inline;padding:0;margin:0"></a></div>
-<div class="col-xs-6 col-md-6" style="width:1%;padding:0"></div>
-<div class="col-xs-6 col-md-6" style="width:12%;padding:0"><a href="http://www.utk.edu"><img src="../img/utk.png" alt="UTK logo" class="desaturate" style="display:inline;padding:0;margin:0"></a></div>
-<div class="col-xs-6 col-md-6" style="width:1%;padding:0"></div>
-<div class="col-xs-6 col-md-6" style="width:12%;padding:0"><a href="http://www.vt.edu"><img src="../img/vtech.png" alt="VTech logo" class="desaturate" style="display:inline;padding:0;margin:0"></a></div>
-<div class="col-xs-6 col-md-6" style="width:1%;padding:0"></div>
-<div class="col-xs-6 col-md-6" style="width:12%;padding:0"><a href="http://www.colorado.edu"><img src="../img/cu.png" alt="CU logo" class="desaturate" style="display:inline;padding:0;margin:0"></a></div>
-<div class="col-xs-6 col-md-6" style="width:1%;padding:0"></div>
-<div class="col-xs-6 col-md-6" style="width:12%;padding:0"><a href="http://www.uiuc.edu"><img src="../img/uiuc.png" alt="UIUC logo" class="desaturate" style="display:inline;padding:0;margin:0"></a></div>
-<div class="col-xs-6 col-md-6" style="width:1%;padding:0"></div>
-<div class="col-xs-6 col-md-6" style="width:12%;padding:0"><a href="http://www.rpi.edu"><img src="../img/rpi.png" alt="RPI logo" class="desaturate" style="display:inline;padding:0;margin:0"></a></div>
-<div class="col-xs-6 col-md-6" style="width:5%;padding:0"></div>
-</div>
-
-<div class="col-xs-12 col-md-12" style="text-align:center;padding-left:0;padding-right:0;padding-bottom:0">
-<br><br>
-</div>
-
-            
+<p>The <em>miniapps</em> developed in CEED, which we also refer to as <em>CEEDlings</em>, will
+range from local, element-level <em>kernels</em>, which can be run in a simulator, to
+<em>bake-off problems</em>, that combine local and global kernels into model problem
+benchmarks for high-order computations, to <em>proxy apps</em> which will include also
+application-relevant physics.</p>
+<p>These encapsulated <em>CEEDlings</em> will be will be used in interactions with vendors
+on emergent HPC technologies and ECP software technologies projects to highlight
+performance critical paths (e.g., size of on package memory, internode latency,
+hardware collectives) and provide simple examples of meaningful high-order
+computations.  One of the goals in these interactions will be to impact the
+design of exascale architectures and system and application software, for
+improved portability and performance of the high-order algorithms.</p></div>
         </div>
+    
 
         <footer class="footer hidden-xs">
            <div class="container">
