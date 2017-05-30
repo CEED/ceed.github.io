@@ -120,7 +120,7 @@
                     
                         
                             <li >
-                                 <a href="../software/">Packages</a>
+                                 <a href="../software/">Catalog</a>
                             </li>
                         
                     
@@ -209,7 +209,7 @@
                     
                         
                             <li >
-                                 <a href="../pubs/">Publications</a>
+                                 <a href="../pubs/">Outreach</a>
                             </li>
                         
                     
@@ -285,7 +285,7 @@
 </li>
 <li>Local true degrees of freedom/unknowns, <strong>L-vector</strong>:<ul>
 <li>each unknown $i$ has exactly one copy on each processor that owns an
-  element contaning $i$</li>
+  element containing $i$</li>
 <li>this is an overlapping vector decomposition with overlaps only across
   different processors - there is no duplication of unknowns on a single
   processor</li>
@@ -303,7 +303,7 @@
 </ul>
 </li>
 <li>In the case of hanging nodes (giving rise to hanging dofs):<ul>
-<li>there is another represention similar to L-vector which stores the
+<li>there is another representation similar to L-vector which stores the
   hanging/dependent dofs in addition to the true dofs, <strong>H-vector</strong></li>
 <li>the additional hanging dofs are duplicated when they are shared by
   multiple processors.</li>
@@ -376,7 +376,7 @@
   whole boundary</li>
 <li>Solution space orders: $p=2,3,\ldots,15$; also, consider $p=1$?</li>
 <li>Quadrature: Gauss-Legendre (GL) with $q=p+2$ points in each spatial
-  dimension; the qudrature order is $2q-1$</li>
+  dimension; the quadrature order is $2q-1$</li>
 <li>Also, consider $q=2$, for $p=1$, and $q=3$, for $p=2$</li>
 <li>Use nodal basis with $p+1$ Gauss-Legendre-Lobatto (GLL) points in each spatial
   dimension</li>
@@ -385,7 +385,7 @@
 <li>Meshes: consider meshes with $E=2^s$ elements with $s\in\mathbb{N}$; for a
   given $s$, use a 3D Cartesian mesh with
   $2^{s_1}\times 2^{s_2}\times 2^{s_3}$ elements ($s_i\in\mathbb{N}$), where
-  $\{s_i\}$ are uniquely detrmined by the conditions: $s_1+s_2+s_3 = s$ and
+  $\{s_i\}$ are uniquely determined by the conditions: $s_1+s_2+s_3 = s$ and
   $\lfloor s/3\rfloor+1\ge s_1 \ge s_2 \ge s_3 \ge \lfloor s/3\rfloor$</li>
 <li>For example:<ul>
 <li>if $s=15$, then $s_1=s_2=s_3=5$</li>
@@ -402,7 +402,7 @@
   does not do well on this type of problems. What about METIS 5 and other
   graph partitioners? Maybe we need to develop specialized algorithms?</em></div></li>
 <li>Number of MPI tasks, and number of MPI tasks per node:<ul>
-<li>On ALCF's BG/Q, <code>cetus</code>: $2^{14}$ tasks total, with $2^5$ tasks per node</li>
+<li>On ALCF's BG/Q, <code>Cetus</code>: $2^{14}$ tasks total, with $2^5$ tasks per node</li>
 </ul>
 </li>
 <li>...</li>
