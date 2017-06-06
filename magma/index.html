@@ -245,7 +245,7 @@
             <div class="col-md-3 visible-xs visible-sm"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
     
-        <li class="main active"><a href="#magma-wzxhzdk0">MAGMA </a></li>
+        <li class="main active"><a href="#magma">MAGMA</a></li>
         
             <li><a href="#hybrid-algorithms">Hybrid Algorithms</a></li>
         
@@ -269,40 +269,43 @@
 <!-- ... fa-comment, fa-comment-o, fa-comments, fa-comments-o, fa-bullhorn --></div> <!-- toc on top on mobile -->
             <div class="col-md-9" role="main">
 
-<h2 id="magma-wzxhzdk0"><a href="http://icl.cs.utk.edu/magma/">MAGMA</a> <img src="../img/magma.png" align="right" alt="MAGMA logo"></h2>
-<p><em>This page is under construction</em></p>
-<p><img alt="MAGMA Features and Support" src="../../img/magma_features.png" />
-MAGMA (Matrix Algebra on GPU and Multicore Architectures) is a collection of
+<h2 id="magma"><a href="http://icl.cs.utk.edu/magma/">MAGMA</a></h2>
+<!-- <img src="../img/magma.png" align="right" alt="MAGMA logo"> -->
+
+<p>MAGMA (Matrix Algebra on GPU and Multicore Architectures) is a collection of
 next generation linear algebra libraries for heterogeneous architectures. MAGMA
 is designed and implemented by the team that developed LAPACK and ScaLAPACK,
 incorporating the latest developments in hybrid synchronization- and
 communication-avoiding algorithms, as well as dynamic runtime
 systems. Interfaces for the current LAPACK and BLAS standards are supported to
 allow computational scientists to seamlessly port any linear algebra reliant
-software components to heterogeneous architectures. MAGMA allows applications to
-fully exploit the power of current heterogeneous systems of multi/many-core CPUs
-and multi-GPUs to deliver the fastest possible time to accurate solution within
-given energy constraints.</p>
+software components to heterogeneous architectures.</p>
+<p><img src="../img/magma_features.png" width="300" alt="MAGMA Features and Support"></p>
+<p>MAGMA allows applications to fully exploit the power of current heterogeneous
+systems of multi/many-core CPUs and multi-GPUs to deliver the fastest possible
+time to accurate solution within given energy constraints.</p>
 <h3 id="hybrid-algorithms">Hybrid Algorithms</h3>
-<p><img alt="MAGMA Hybrid Algorithms as DAGs" src="../../img/magma_dag.jpg" />
-MAGMA uses a hybridization methodology where algorithms of interest are split into tasks of
-varying granularity and their execution scheduled over the available hardware components.
-Scheduling can be static or dynamic. In either case, small non-parallelizable tasks, often on the
-critical path, are scheduled on the CPU, and larger more parallelizable ones, often Level 3 BLAS
+<p>MAGMA uses a hybridization methodology where algorithms of interest are split
+into tasks of varying granularity and their execution scheduled over the
+available hardware components.  Scheduling can be static or dynamic.</p>
+<p><img src="../img/magma_dag.jpg" width="300" alt="MAGMA Hybrid Algorithms as DAGs"></p>
+<p>In either case, small non-parallelizable tasks, often on the critical path, are
+scheduled on the CPU, and larger more parallelizable ones, often Level 3 BLAS
 are scheduled on accelerators.</p>
 <h3 id="performance-and-energy-efficiency">Performance and Energy Efficiency</h3>
-<p><img alt="MAGMA Performance" src="../../img/magma_p100.jpg" /></p>
+<p><img src="../img/magma_p100.jpg" width="500" alt="MAGMA Performance"></p>
 <h3 id="magma-batched">MAGMA Batched</h3>
-<p><img alt="MAGMA Batched" src="../../img/magma_batched.png" /></p>
+<p><img src="../img/magma_batched.png" width="500" alt="MAGMA Batched"></p>
 <h3 id="magma-sparse">MAGMA Sparse</h3>
 <h3 id="magma-development">MAGMA Development</h3>
 <p>MAGMA is being developed at the <a href="http://icl.cs.utk.edu">Innovative Computing Laboratory</a>
 of the <a href="https://www.utk.edu/">University of Tennessee</a>.</p>
-<p>For more information, see the MAGMA website: <a href="http://icl.cs.utk.edu/magma/">http://icl.cs.utk.edu/magma/</a>.</p></div>
+<p>In CEED, MAGMA is primarily involved in the efforts of the <a href="../sw/">Software</a>, <a href="../hw/">Hardware</a> and <a href="../fe/">Finite Element</a> thrusts.</p>
+<p>For more information, see the MAGMA website: <a href="http://icl.cs.utk.edu/magma/">http://icl.cs.utk.edu/magma</a>.</p></div>
             <div class="col-md-3 hidden-xs hidden-sm"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
     
-        <li class="main active"><a href="#magma-wzxhzdk0">MAGMA </a></li>
+        <li class="main active"><a href="#magma">MAGMA</a></li>
         
             <li><a href="#hybrid-algorithms">Hybrid Algorithms</a></li>
         
