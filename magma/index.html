@@ -293,10 +293,22 @@ available hardware components.  Scheduling can be static or dynamic.</p>
 scheduled on the CPU, and larger more parallelizable ones, often Level 3 BLAS
 are scheduled on accelerators.</p>
 <h3 id="performance-and-energy-efficiency">Performance and Energy Efficiency</h3>
+<p>MAGMA solvers run close to the machine's peak performance. The LU factorization for 
+example, illustrated below, runs as fast as the GPU can run matrix-matrix multiplications (GEMM),
+as the small tasks on the critical path are offloaded to the CPU and overlapped with the GEMMs
+on the GPU.</p>
 <p><img src="../img/magma_p100.jpg" width="500" alt="MAGMA Performance"></p>
 <h3 id="magma-batched">MAGMA Batched</h3>
+<p>MAGMA Batched targets small linear algebra operations. Small computational tasks are difficult 
+to parallelize, but applications usually require the computation of many small problems, which
+can be grouped together (batched) and executed very efficiently. MAGMA Batched is being extended
+now under the CEED project to support tensor data structures and tensor contractions for high-order
+methods.</p>
 <p><img src="../img/magma_batched.png" width="500" alt="MAGMA Batched"></p>
 <h3 id="magma-sparse">MAGMA Sparse</h3>
+<p>MAGMA Sparse targets the development of high-performance sparse linear algebra operations on 
+accelerators - from low-level kernels like SpMVs and SpMM, to higher-level Krylov subspace 
+iterative solvers, eigensolvers, and preconditioners.</p>
 <p><img src="../img/magma_spmvp100.png" width="500" alt="MAGMA Sparse"></p>
 <h3 id="magma-development">MAGMA Development</h3>
 <p>MAGMA is being developed at the <a href="http://icl.cs.utk.edu">Innovative Computing Laboratory</a>
