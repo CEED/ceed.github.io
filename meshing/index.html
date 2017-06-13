@@ -108,7 +108,7 @@
             
             
             
-                <li class="dropdown active">
+                <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Software <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                     
@@ -143,8 +143,8 @@
                         
                     
                         
-                            <li class="active">
-                                 <a href="./">OCCA</a>
+                            <li >
+                                 <a href="../occa/">OCCA</a>
                             </li>
                         
                     
@@ -179,7 +179,7 @@
             
             
             
-                <li class="dropdown">
+                <li class="dropdown active">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Research <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                     
@@ -202,8 +202,8 @@
                         
                     
                         
-                            <li >
-                                 <a href="../meshing/">High-Order Meshes</a>
+                            <li class="active">
+                                 <a href="./">High-Order Meshes</a>
                             </li>
                         
                     
@@ -279,7 +279,7 @@
             <div class="col-md-3 visible-xs visible-sm"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
     
-        <li class="main active"><a href="#occa">OCCA </a></li>
+        <li class="main active"><a href="#high-order-meshes">High-Order Meshes </a></li>
         
     
     <hr style="background-color:white; height:20px; margin-left:-1px;  margin-right:-1px; margin-top:15px; margin-bottom:10px " />
@@ -293,21 +293,23 @@
 <!-- ... fa-comment, fa-comment-o, fa-comments, fa-comments-o, fa-bullhorn --></div> <!-- toc on top on mobile -->
             <div class="col-md-9" role="main">
 
-<h2 id="occa"><a href="http://libocca.org/">OCCA</a> <img src="../img/occa.png" align="right" alt="OCCA logo" width="350"></h2>
-<p>OCCA is an open-source library that facilitates programming in an environment
-containing different types of devices. It abstracts devices and let the user
-pick at run-time, for example: CPUs, GPUs, Intel’s Xeon Phi, FPGAs.</p>
-<p>OCCA abstracts the device programming languages into one kernel language, the
-OCCA kernel language (OKL). OKL minimally extends C and restricts the user to
-write parallel code that is JIT compiled.</p>
-<p>OCCA is freely available under an MIT license.</p>
-<p>In CEED, Holmes is primarily involved in the efforts of the <a href="../sw/">Software</a> and
-<a href="../fe/">Finite Element</a> thrusts.</p>
-<p>For more information, see the OCCA website: <a href="http://libocca.org/">http://libocca.org</a>.</p></div>
+<h2 id="high-order-meshes">High-Order Meshes <img src="../img/cbl2.png" align="right" alt="Meshing image" width="250"></h2>
+<p>High-order (curved) meshes appear in many applications, e.g. due to curved
+material interfaces or due to mesh motion in simulations with moving meshes
+(for example, ALE methods).</p>
+<p>The use of high-order geometry representation can lead to better feature
+resolution, improved symmetry preservation, better solution adaptivity and
+increased robustness for problems where the mesh is being deformed in time.</p>
+<p>The CEED software supports arbitrary order quadrilateral, hexahedral, triangular
+and tetrahedral meshes and our team members are developing algorithms for
+high-order mesh optimization and solution transfer between deformed high-order
+meshes (remap).</p>
+<p><em>This is an active area of research for our team and we are interested in
+ collaboration.</em></p></div>
             <div class="col-md-3 hidden-xs hidden-sm"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
     
-        <li class="main active"><a href="#occa">OCCA </a></li>
+        <li class="main active"><a href="#high-order-meshes">High-Order Meshes </a></li>
         
     
     <hr style="background-color:white; height:20px; margin-left:-1px;  margin-right:-1px; margin-top:15px; margin-bottom:10px " />

@@ -55,12 +55,6 @@
      <changefreq>daily</changefreq>
     </url>
         
-    <url>
-     <loc>/partners/</loc>
-     <lastmod>2017-06-12</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
     
 
     
@@ -136,7 +130,31 @@
     </url>
         
     <url>
+     <loc>/pubs/</loc>
+     <lastmod>2017-06-12</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
      <loc>/fe/</loc>
+     <lastmod>2017-06-12</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/meshing/</loc>
+     <lastmod>2017-06-12</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/amr/</loc>
+     <lastmod>2017-06-12</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/tensors/</loc>
      <lastmod>2017-06-12</lastmod>
      <changefreq>daily</changefreq>
     </url>
@@ -148,7 +166,19 @@
     </url>
         
     <url>
-     <loc>/pubs/</loc>
+     <loc>/solvers/</loc>
+     <lastmod>2017-06-12</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/interp/</loc>
+     <lastmod>2017-06-12</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/vis/</loc>
      <lastmod>2017-06-12</lastmod>
      <changefreq>daily</changefreq>
     </url>

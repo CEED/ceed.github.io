@@ -101,12 +101,6 @@
                             </li>
                         
                     
-                        
-                            <li >
-                                 <a href="../partners/">Partners</a>
-                            </li>
-                        
-                    
                     </ul>
                 </li>
             
@@ -197,15 +191,55 @@
                     
                         
                             <li >
+                                 <a href="../pubs/">Outreach</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
                                  <a href="../fe/">Finite Elements</a>
                             </li>
                         
                     
                         
+                            <li >
+                                 <a href="../meshing/">High-Order Meshes</a>
+                            </li>
+                        
                     
                         
                             <li >
-                                 <a href="../pubs/">Outreach</a>
+                                 <a href="../amr/">Unstructured AMR</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../tensors/">Tensor Contractions</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../formats/">Operator Format</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../solvers/">Matrix-Free Solvers</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../interp/">Field Interpolation</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../vis/">Visualization</a>
                             </li>
                         
                     
@@ -247,6 +281,14 @@
     
         <li class="main active"><a href="#ceed-miniapps">CEED Miniapps</a></li>
         
+            <li><a href="#nekbone">Nekbone</a></li>
+        
+            <li><a href="#laghos-new">Laghos New</a></li>
+        
+            <li><a href="#nekcem-ceedling-new">NekCEM-CEEDling New</a></li>
+        
+            <li><a href="#mfem-example-codes">MFEM Example Codes</a></li>
+        
     
     <hr style="background-color:white; height:20px; margin-left:-1px;  margin-right:-1px; margin-top:15px; margin-bottom:10px " />
     <li class="main" style="padding:0"><a href="https://github.com/CEED/forum">Contact CEED</a> </li>
@@ -260,33 +302,105 @@
             <div class="col-md-9" role="main">
 
 <h2 id="ceed-miniapps">CEED Miniapps</h2>
-<p><em>This page is under construction</em></p>
+<p>CEED is developing a variety of miniapps encapsulating key physics and numerical
+kernels of high-order applications.  The miniapps are designed to be used in a
+variety of <a href="../codesign/">co-design</a> activities with ECP vendors, software
+technologies projects as well as external partners.</p>
+<p>CEED's current miniapps are documented below and can be found on
+<a href="https://github.com/ceed">GitHub</a>. Please contact the CEED team if you have any
+questions.</p>
+<hr />
+<p><center></p>
+<h3 id="nekbone">Nekbone</h3>
+<p></center></p>
+<p>Nekbone solves a standard Poisson equation using a conjugate gradient iteration
+with a simple or spectral element multigrid preconditioner on a block or linear
+geometry.</p>
+<p>It exposes the principal computational kernel to reveal the essential elements
+of the algorithmic-architectural coupling that is pertinent to <a href="../nek/">Nek5000</a>
+relevant to large eddy simulation (LES) and direct numerical simulation (DNS) of
+turbulence in complex domains.</p>
+<p>Nekbone-3.1 was released in Oct 2013 as part of the <a href="https://cesar.mcs.anl.gov/content/software/thermal_hydraulics">CESAR co-design
+center</a>.</p>
+<p><center>
+<a href="https://github.com/CEED/Nekbone/blob/master/USERGUIDE.pdf"><button type="button" class="btn btn-default">
+<strong>Documentation</strong>
+</button></a>
+&nbsp;
+<a href="https://github.com/ceed/Nekbone"><button type="button" class="btn btn-success">
+<strong>Download Nekbone</strong>
+</button></a>
+</center></p>
+<hr />
+<p><center></p>
+<h3 id="laghos-new">Laghos <span class="badge" style="">New</span></h3>
+<p></center></p>
+<p>Laghos solves the time-dependent Euler equation of compressible gas dynamics in
+a moving Lagrangian frame using high-order finite element spatial discretization
+and explicit high-order time-stepping.</p>
+<p>It exposes the principal computational kernels of shock-capturing compressible
+flow, including the FLOP-intensive definition of artificial viscosity at
+quadrature points..</p>
+<p><em>Laghos will be released soon as part of CEED. Stay tuned for more details...</em></p>
+<hr />
+<p><center></p>
+<h3 id="nekcem-ceedling-new">NekCEM-CEEDling <span class="badge">New</span></h3>
+<p></center></p>
+<p>NekCEM-CEEDling is a <a href="../nek/">NekCEM</a> miniapp, solving the time-domain Maxwell
+equations.</p>
+<p><em>NekCEM-CEEDling will be released soon as part of CEED. Stay tuned for more details...</em></p>
+<hr />
+<p><center></p>
+<h3 id="mfem-example-codes">MFEM Example Codes</h3>
+<p></center></p>
+<p>The <a href="../mfem/">MFEM</a> distribution includes a large number of simple example codes
+that can be viewed as simple miniapps for model high-order physics:</p>
 <ul>
-<li>List of miniapps, with documentation and downloads</li>
-<li>Nekbone:<ul>
-<li>Nek5000 miniapp, solving Poisson equation with conjugate gradient</li>
-<li>Documentation can be found in http://github.com/Nek5000/NekDoc</li>
-<li>Download from GitHub http://github.com/Nek5000/Nekbone</li>
+<li><a href="http://mfem.github.io/doxygen/html/ex1_8cpp_source.html">Example 1</a>: nodal H1 FEM for the Laplace problem,</li>
+<li><a href="http://mfem.github.io/doxygen/html/ex2_8cpp_source.html">Example 2</a>: vector FEM for linear elasticity,</li>
+<li><a href="http://mfem.github.io/doxygen/html/ex3_8cpp_source.html">Example 3</a>: Nedelec H(curl) FEM for the definite Maxwell problem,</li>
+<li><a href="http://mfem.github.io/doxygen/html/ex4_8cpp_source.html">Example 4</a>: Raviart-Thomas H(div) FEM for the grad-div problem,</li>
+<li><a href="http://mfem.github.io/doxygen/html/ex5_8cpp_source.html">Example 5</a>: mixed pressure-velocity FEM for the Darcy problem,</li>
+<li><a href="http://mfem.github.io/doxygen/html/ex6_8cpp_source.html">Example 6</a>: non-conforming adaptive mesh refinement (AMR) for the Laplace problem,</li>
+<li><a href="http://mfem.github.io/doxygen/html/ex7_8cpp_source.html">Example 7</a>: Laplace problem on a surface (the unit sphere),</li>
+<li><a href="http://mfem.github.io/doxygen/html/ex8_8cpp_source.html">Example 8</a>: Discontinuous Petrov-Galerkin (DPG) for the Laplace problem,</li>
+<li><a href="http://mfem.github.io/doxygen/html/ex9_8cpp_source.html">Example 9</a>: Discontinuous Galerkin (DG) time-dependent advection,</li>
+<li><a href="http://mfem.github.io/doxygen/html/ex10_8cpp_source.html">Example 10</a>: time-dependent implicit nonlinear elasticity,</li>
+<li><a href="http://mfem.github.io/doxygen/html/ex11p_8cpp_source.html">Example 11</a>: parallel Laplace eigensolver,</li>
+<li><a href="http://mfem.github.io/doxygen/html/ex12p_8cpp_source.html">Example 12</a>: parallel linear elasticity eigensolver,</li>
+<li><a href="http://mfem.github.io/doxygen/html/ex13p_8cpp_source.html">Example 13</a>: parallel Maxwell eigensolver,</li>
+<li><a href="http://mfem.github.io/doxygen/html/ex14_8cpp_source.html">Example 14</a>: Discontinuous Galerkin (DG) for the Laplace problem,</li>
+<li><a href="http://mfem.github.io/doxygen/html/ex15_8cpp_source.html">Example 15</a>: parallel dynamic AMR for Laplace with prescribed time-dependent source,</li>
+<li><a href="http://mfem.github.io/doxygen/html/ex16_8cpp_source.html">Example 16</a>: parallel time-dependent nonlinear heat equation,</li>
+<li><a href="http://mfem.github.io/doxygen/html/ex17_8cpp_source.html">Example 17</a>: parallel Discontinuous Galerkin (DG) for linear elasticity.</li>
 </ul>
-</li>
-<li>NekCEM-ceedling:<ul>
-<li>NekCEM miniapp, solving time-domain Maxwell equations</li>
-<li>Documentation and Download to be available from github</li>
-</ul>
-</li>
-<li>MFEM examples:<ul>
-<li>miniapps/performance Ex1</li>
-<li>Lagrangian hydrodynamics miniapp (under development)</li>
-<li>Other MFEM example codes and miniapps</li>
-</ul>
-</li>
-<li>Database of results/expectations</li>
-<li>Target audience is: ECP vendors, ST projects</li>
-</ul></div>
+<p>Most of the examples have a serial and a parallel version, illustrating the ease
+of transition and the minimal code changes between the two.</p>
+<p>Of particular relevance to CEED is the HPC versions of the example codes that
+use a <a href="http://mfem.org/performance/">set of templated classes</a> to efficiently
+implement high-order operator evaluation.</p>
+<p><center>
+<a href="http://mfem.org/examples"><button type="button" class="btn btn-default">
+<strong>Documentation</strong>
+</button></a>
+&nbsp;
+<a href="http://mfem.org/download"><button type="button" class="btn btn-success">
+<strong>Download MFEM</strong>
+</button></a>
+</center></p>
+<hr /></div>
             <div class="col-md-3 hidden-xs hidden-sm"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
     
         <li class="main active"><a href="#ceed-miniapps">CEED Miniapps</a></li>
+        
+            <li><a href="#nekbone">Nekbone</a></li>
+        
+            <li><a href="#laghos-new">Laghos New</a></li>
+        
+            <li><a href="#nekcem-ceedling-new">NekCEM-CEEDling New</a></li>
+        
+            <li><a href="#mfem-example-codes">MFEM Example Codes</a></li>
         
     
     <hr style="background-color:white; height:20px; margin-left:-1px;  margin-right:-1px; margin-top:15px; margin-bottom:10px " />

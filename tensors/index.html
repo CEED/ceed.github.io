@@ -108,7 +108,7 @@
             
             
             
-                <li class="dropdown active">
+                <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Software <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                     
@@ -143,8 +143,8 @@
                         
                     
                         
-                            <li class="active">
-                                 <a href="./">OCCA</a>
+                            <li >
+                                 <a href="../occa/">OCCA</a>
                             </li>
                         
                     
@@ -179,7 +179,7 @@
             
             
             
-                <li class="dropdown">
+                <li class="dropdown active">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Research <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                     
@@ -214,8 +214,8 @@
                         
                     
                         
-                            <li >
-                                 <a href="../tensors/">Tensor Contractions</a>
+                            <li class="active">
+                                 <a href="./">Tensor Contractions</a>
                             </li>
                         
                     
@@ -279,7 +279,7 @@
             <div class="col-md-3 visible-xs visible-sm"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
     
-        <li class="main active"><a href="#occa">OCCA </a></li>
+        <li class="main active"><a href="#batched-dense-tensor-contractions">Batched Dense Tensor Contractions </a></li>
         
     
     <hr style="background-color:white; height:20px; margin-left:-1px;  margin-right:-1px; margin-top:15px; margin-bottom:10px " />
@@ -293,21 +293,25 @@
 <!-- ... fa-comment, fa-comment-o, fa-comments, fa-comments-o, fa-bullhorn --></div> <!-- toc on top on mobile -->
             <div class="col-md-9" role="main">
 
-<h2 id="occa"><a href="http://libocca.org/">OCCA</a> <img src="../img/occa.png" align="right" alt="OCCA logo" width="350"></h2>
-<p>OCCA is an open-source library that facilitates programming in an environment
-containing different types of devices. It abstracts devices and let the user
-pick at run-time, for example: CPUs, GPUs, Intel’s Xeon Phi, FPGAs.</p>
-<p>OCCA abstracts the device programming languages into one kernel language, the
-OCCA kernel language (OKL). OKL minimally extends C and restricts the user to
-write parallel code that is JIT compiled.</p>
-<p>OCCA is freely available under an MIT license.</p>
-<p>In CEED, Holmes is primarily involved in the efforts of the <a href="../sw/">Software</a> and
-<a href="../fe/">Finite Element</a> thrusts.</p>
-<p>For more information, see the OCCA website: <a href="http://libocca.org/">http://libocca.org</a>.</p></div>
+<h2 id="batched-dense-tensor-contractions">Batched Dense Tensor Contractions <img src="../img/batched.png" align="right" alt="Tensors image" width="250"></h2>
+<p>The numerical kernels of efficient high-order operator evaluation reduce to many
+small dense tensor contractions, one for each element of the computational mesh.
+These contractions can be performed in parallel over the elements and can be
+implemented as a sequence of small matrix-matrix multiplications (dgemms).</p>
+<p>CEED is developing efficient algorithms for these numerical kernels on a variety
+of advanced hardware, both by directly working on the specifying tensor
+contraction found in high-order finite element kernels, as well as by recasting
+to batched interface of LAPACK-like linear algebra libraries providing efficient
+dgemms for matrices of small-to-medium size.</p>
+<p>CEED scientist are also involved in the standardization efforts for batched
+versions of Basic Linear Algebra Software Library (BLAS) routines, which are the
+foundations for LAPACK-type libraries.</p>
+<p><em>This is an active area of research for our team and we are interested in
+ collaboration.</em></p></div>
             <div class="col-md-3 hidden-xs hidden-sm"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
     
-        <li class="main active"><a href="#occa">OCCA </a></li>
+        <li class="main active"><a href="#batched-dense-tensor-contractions">Batched Dense Tensor Contractions </a></li>
         
     
     <hr style="background-color:white; height:20px; margin-left:-1px;  margin-right:-1px; margin-top:15px; margin-bottom:10px " />

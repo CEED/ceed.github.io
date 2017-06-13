@@ -101,12 +101,6 @@
                             </li>
                         
                     
-                        
-                            <li >
-                                 <a href="../partners/">Partners</a>
-                            </li>
-                        
-                    
                     </ul>
                 </li>
             
@@ -196,16 +190,56 @@
                         
                     
                         
+                            <li >
+                                 <a href="../pubs/">Outreach</a>
+                            </li>
+                        
+                    
+                        
                             <li class="active">
                                  <a href="./">Finite Elements</a>
                             </li>
                         
                     
                         
+                            <li >
+                                 <a href="../meshing/">High-Order Meshes</a>
+                            </li>
+                        
                     
                         
                             <li >
-                                 <a href="../pubs/">Outreach</a>
+                                 <a href="../amr/">Unstructured AMR</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../tensors/">Tensor Contractions</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../formats/">Operator Format</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../solvers/">Matrix-Free Solvers</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../interp/">Field Interpolation</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../vis/">Visualization</a>
                             </li>
                         
                     
@@ -245,7 +279,13 @@
             <div class="col-md-3 visible-xs visible-sm"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
     
-        <li class="main active"><a href="#ceed-finite-element-thrust">CEED Finite Element Thrust</a></li>
+        <li class="main active"><a href="#finite-element-thrust">Finite Element Thrust </a></li>
+        
+            <li><a href="#why-high-order-finite-elements">Why High-Order Finite Elements?</a></li>
+        
+            <li><a href="#high-order-benchmarks-and-miniapps">High-Order Benchmarks and Miniapps</a></li>
+        
+            <li><a href="#ecosystem-for-high-order-applications">Ecosystem for High-Order Applications</a></li>
         
     
     <hr style="background-color:white; height:20px; margin-left:-1px;  margin-right:-1px; margin-top:15px; margin-bottom:10px " />
@@ -259,19 +299,59 @@
 <!-- ... fa-comment, fa-comment-o, fa-comments, fa-comments-o, fa-bullhorn --></div> <!-- toc on top on mobile -->
             <div class="col-md-9" role="main">
 
-<h2 id="ceed-finite-element-thrust">CEED Finite Element Thrust</h2>
-<p><em>This page is under construction</em></p>
+<h2 id="finite-element-thrust">Finite Element Thrust <img src="../img/ho-spaces-padding.png" align="right" alt="FE logo" height="250" width="300"></h2>
+<p>The goal of CEED's Finite Element (FE) thrust led by <a href="https://people.llnl.gov/dobrev1">Veselin Dobrev</a>
+from <a href="http://www.llnl.gov">Lawrence Livermore National Laboratory</a> is to continue to improve
+the state-of-the-art spectral-element/high-order finite element algorithms and kernels in the
+CEED software targeting exascale architectures.</p>
+<h3 id="why-high-order-finite-elements">Why High-Order Finite Elements?</h3>
+<p>Efficient exploitation of
+<a href="https://exascaleproject.org/what-is-exascale/">exascale architectures</a> requires
+a rethink of the numerical algorithms used in large-scale scientific applications.
+These architectures favor algorithms that expose ultra fine-grain parallelism
+and maximize the ratio of floating point operations to energy intensive data
+movement.</p>
+<p>Many large-scale <a href="../ap/">applications</a> employ unstructured finite element
+discretization methods, where practical efficiency is measured by the accuracy
+achieved per unit computational time.  One of the few viable approaches to
+achieve high performance in this case is to use matrix-free high-order finite
+element methods, since these methods can both increase the accuracy and/or lower
+the computational time due to reduced data motion.</p>
+<p>To achieve this efficiency, high-order methods use mesh elements that are mapped
+from canonical reference elements (hexes, wedges, pyramids, tetrahedra) and
+exploit, where possible, the tensor-product structure of the canonical mesh
+elements and finite element spaces. Through matrix-free partial assembly, the
+use of canonical reference elements enables substantial cache efficiency and
+minimizes extraneous data movement in comparison to traditional low-order
+approaches.</p>
+<h3 id="high-order-benchmarks-and-miniapps">High-Order Benchmarks and Miniapps</h3>
+<p>The FE thrust works closely with the <a href="../ap/">Applications</a> and <a href="../hw/">Hardware</a>
+thrusts on the development of CEED <a href="../bps/">benchmarks</a> and
+<a href="../miniapps/">miniapps</a>, and coordinates the project software activities with
+the <a href="../sw/">Software</a> thrust.</p>
+<h3 id="ecosystem-for-high-order-applications">Ecosystem for High-Order Applications</h3>
+<p>In addition to performance improvements, the FE thrust is focusing on
+community-wide challenges that are necessary for the establishment of a
+full-fledged high-order application software ecosystem.</p>
+<p>These efforts include research and development in the following areas:</p>
 <ul>
-<li>Veselin Dobrev leads the FE thrust</li>
-<li>The goal of this thrust is...</li>
-<li>Some of the thrust activities (current and planned) are...</li>
-<li>List ECP AD, ST and external project with which we are collaborating on these topics</li>
-<li>"Why high-order?" manifesto</li>
+<li><a href="../meshing/">High-Order Meshes</a></li>
+<li><a href="../amr/">Unstructured Adaptive Mesh Refinement</a></li>
+<li><a href="../formats/">Efficient High-Order Operator Format / Representation</a></li>
+<li><a href="../solvers/">Scalable Matrix-Free Solvers</a></li>
+<li><a href="../interp/">General Interpolation</a></li>
+<li><a href="../vis/">Visualization of High-Order Meshes and Functions</a></li>
 </ul></div>
             <div class="col-md-3 hidden-xs hidden-sm"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
     
-        <li class="main active"><a href="#ceed-finite-element-thrust">CEED Finite Element Thrust</a></li>
+        <li class="main active"><a href="#finite-element-thrust">Finite Element Thrust </a></li>
+        
+            <li><a href="#why-high-order-finite-elements">Why High-Order Finite Elements?</a></li>
+        
+            <li><a href="#high-order-benchmarks-and-miniapps">High-Order Benchmarks and Miniapps</a></li>
+        
+            <li><a href="#ecosystem-for-high-order-applications">Ecosystem for High-Order Applications</a></li>
         
     
     <hr style="background-color:white; height:20px; margin-left:-1px;  margin-right:-1px; margin-top:15px; margin-bottom:10px " />
