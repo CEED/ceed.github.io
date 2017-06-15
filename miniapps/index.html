@@ -132,12 +132,6 @@
                     
                         
                             <li >
-                                 <a href="../holmes/">Holmes</a>
-                            </li>
-                        
-                    
-                        
-                            <li >
                                  <a href="../nek/">Nek</a>
                             </li>
                         
@@ -283,9 +277,11 @@
         
             <li><a href="#nekbone">Nekbone</a></li>
         
-            <li><a href="#laghos-wzxhzdk10newwzxhzdk11">Laghos New</a></li>
+            <li><a href="#laghos-new">Laghos New</a></li>
         
-            <li><a href="#nekcem-ceedling-wzxhzdk14newwzxhzdk15">NekCEM-CEEDling New</a></li>
+            <li><a href="#nekcem-ceedling-new">NekCEM-CEEDling New</a></li>
+        
+            <li><a href="#holmes-new">Holmes New</a></li>
         
             <li><a href="#mfem-example-codes">MFEM Example Codes</a></li>
         
@@ -333,7 +329,7 @@ center</a>.</p>
 </center></p>
 <hr />
 <p><center></p>
-<h3 id="laghos-wzxhzdk10newwzxhzdk11">Laghos <span class="badge" style="">New</span></h3>
+<h3 id="laghos-new">Laghos <span class="badge" style="">New</span></h3>
 <p></center></p>
 <p>Laghos solves the time-dependent Euler equation of compressible gas dynamics in
 a moving Lagrangian frame using high-order finite element spatial discretization
@@ -344,11 +340,60 @@ quadrature points.</p>
 <p><em>Laghos will be released soon as part of CEED. Stay tuned for more details...</em></p>
 <hr />
 <p><center></p>
-<h3 id="nekcem-ceedling-wzxhzdk14newwzxhzdk15">NekCEM-CEEDling <span class="badge">New</span></h3>
+<h3 id="nekcem-ceedling-new">NekCEM-CEEDling <span class="badge">New</span></h3>
 <p></center></p>
 <p>NekCEM-CEEDling is a <a href="../nek/">NekCEM</a> miniapp, solving the time-domain Maxwell
 equations.</p>
 <p><em>NekCEM-CEEDling will be released soon as part of CEED. Stay tuned for more details...</em></p>
+<hr />
+<p><center></p>
+<h3 id="holmes-new">Holmes <span class="badge">New</span></h3>
+<p></center></p>
+<p>Holmes is an experimental testbed for multi-level parallel implementations of
+high-order finite element computations.</p>
+<p>Its features include:</p>
+<ul>
+<li>Elements<ul>
+<li>Spectral element quadrilateral and hexahedral elements</li>
+<li>Warp &amp; blend high-order nodal triangular and tetrahedral elements</li>
+</ul>
+</li>
+<li>Discretizations<ul>
+<li>Elliptic: continuous and discontinuous Galerkin discretization</li>
+<li>Hyperbolic: discontinuous Galerkin time-domain</li>
+</ul>
+</li>
+<li>Solvers<ul>
+<li>Two level overlapping additive Schwartz elliptic problem preconditioning<ul>
+<li>Fast approximate block preconditioning</li>
+<li>Algebraic multigrid coarse solver with heterogeneous acceleration</li>
+<li>Parallel direct solver XXT for the coarsest level solve.</li>
+</ul>
+</li>
+<li>Full algebraic multigrid preconditioning.</li>
+</ul>
+</li>
+<li>Implementation<ul>
+<li>Portable on-node parallelism via the Open Concurrent Compute Abstraction, <a href="../occa/">OCCA</a></li>
+<li>MPI communications for distributed computations</li>
+</ul>
+</li>
+<li>Dependencies<ul>
+<li>The XXT parallel direct solver for the coarsest AMG solve</li>
+<li>The <a href="../gslib/">gslib</a> for optimized gather-scatter operations</li>
+</ul>
+</li>
+<li>Example CEEDling apps<ul>
+<li>Incompressible flow solvers</li>
+<li>Elliptic solvers</li>
+<li>Boltzmann flow solver</li>
+<li>Acoustics time-domain solver</li>
+</ul>
+</li>
+</ul>
+<p>Holmes is being developed in <a href="http://tcew.github.io/#/Projects">Tim Warburton's group</a>
+at <a href="https://www.vt.edu/">Virginia Tech</a>.</p>
+<p><em>The project GitHub repository will be made public in 2017. Stay tuned for more details...</em></p>
 <hr />
 <p><center></p>
 <h3 id="mfem-example-codes">MFEM Example Codes</h3>
@@ -395,9 +440,11 @@ implement high-order operator evaluation.</p>
         
             <li><a href="#nekbone">Nekbone</a></li>
         
-            <li><a href="#laghos-wzxhzdk10newwzxhzdk11">Laghos New</a></li>
+            <li><a href="#laghos-new">Laghos New</a></li>
         
-            <li><a href="#nekcem-ceedling-wzxhzdk14newwzxhzdk15">NekCEM-CEEDling New</a></li>
+            <li><a href="#nekcem-ceedling-new">NekCEM-CEEDling New</a></li>
+        
+            <li><a href="#holmes-new">Holmes New</a></li>
         
             <li><a href="#mfem-example-codes">MFEM Example Codes</a></li>
         
