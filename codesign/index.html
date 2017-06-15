@@ -126,13 +126,19 @@
                     
                         
                             <li >
-                                 <a href="../nek/">Nek</a>
+                                 <a href="../gslib/">gslib</a>
                             </li>
                         
                     
                         
                             <li >
-                                 <a href="../mfem/">MFEM</a>
+                                 <a href="../holmes/">Holmes</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../nek/">Nek</a>
                             </li>
                         
                     
@@ -144,13 +150,13 @@
                     
                         
                             <li >
-                                 <a href="../occa/">OCCA</a>
+                                 <a href="../mfem/">MFEM</a>
                             </li>
                         
                     
                         
                             <li >
-                                 <a href="../holmes/">Holmes</a>
+                                 <a href="../occa/">OCCA</a>
                             </li>
                         
                     
@@ -163,12 +169,6 @@
                         
                             <li >
                                  <a href="../pumi/">PUMI</a>
-                            </li>
-                        
-                    
-                        
-                            <li >
-                                 <a href="../gslib/">gslib</a>
                             </li>
                         
                     
@@ -287,13 +287,13 @@ hardware and software technologies teams. CEED's <a href="../fe/">Finite Element
 thrust serves as a central hub that ties together, coordinates and contributes
 to the efforts in all thrusts.</p>
 <p>For example, the development of <a href="../software/">discretization libraries</a> in CEED
-is led by the <a href="../fe/">Finite Elements</a> thrust, but involves working closely
+is led by the <a href="../fe/">Finite Elements</a> thrust but involves working closely
 with vendors (<a href="../hw/">Hardware</a> thrust) and software technology efforts
 (<a href="../sw/">Software</a> thrust) to take full advantage of exascale hardware. Making
 sure that these libraries meet the needs of and are successfully incorporated in
 ECP applications is based on collaboration between the <a href="../ap/">Applications</a> and
 <a href="../fe/">Finite Elements</a> thrusts.</p>
-<p>In addition to libraries of highly-performant kernels, a key product of the CEED
+<p>In addition to libraries of highly performant kernels, a key product of the CEED
 project will be a set of <em>miniapps</em> that will serve multiple roles:</p>
 <ul>
 <li>Provide a mechanism to test and optimize across the breadth of
@@ -306,13 +306,13 @@ considering new formulations.</li>
 </ul>
 <p>The <a href="../miniapps/">miniapps</a> developed in CEED, which we also refer to as
 <em>CEEDlings</em>, will range from local, element-level <em>kernels</em>, which can be run in
-a simulator, to <a href="../bps/">bake-off problems</a>, that combine local and global
+a simulator, to <a href="../bps/">bake-off problems</a>, which combine local and global
 kernels into model problem benchmarks for high-order computations, to <em>proxy
-apps</em> which will include also application-relevant physics.</p>
-<p>These encapsulated <em>CEEDlings</em> will be will be used in interactions with vendors
+apps</em>, which will include application-relevant physics.</p>
+<p>These encapsulated <em>CEEDlings</em> will be used in interactions with vendors
 on <a href="https://exascaleproject.org/focus_area/hardware">emergent HPC technologies</a>
 and <a href="https://exascaleproject.org/focus_area/software">ECP software technologies</a>
-projects to highlight performance critical paths (e.g., size of on package memory,
+projects to highlight performance critical paths (e.g. size of on package memory,
 internode latency, hardware collectives) and provide simple examples of meaningful
 high-order computations.  One of the goals in these interactions will be to
 impact the design of <a href="https://exascaleproject.org/what-is-exascale">exascale architectures</a>
