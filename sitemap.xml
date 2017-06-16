@@ -3,7 +3,7 @@
 
     
     <url>
-     <loc>/</loc>
+     <loc>None/</loc>
      <lastmod>2017-06-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
@@ -11,7 +11,7 @@
 
     
     <url>
-     <loc>/news/</loc>
+     <loc>None/news/</loc>
      <lastmod>2017-06-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
@@ -20,95 +20,37 @@
     
         
     <url>
-     <loc>/codesign/</loc>
+     <loc>None/codesign/</loc>
      <lastmod>2017-06-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>/ap/</loc>
+     <loc>None/ap/</loc>
      <lastmod>2017-06-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>/hw/</loc>
+     <loc>None/hw/</loc>
      <lastmod>2017-06-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>/sw/</loc>
+     <loc>None/sw/</loc>
      <lastmod>2017-06-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>/bps/</loc>
+     <loc>None/bps/</loc>
      <lastmod>2017-06-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>/miniapps/</loc>
-     <lastmod>2017-06-15</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    
-
-    
-        
-    <url>
-     <loc>/software/</loc>
-     <lastmod>2017-06-15</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>/ceed-code/</loc>
-     <lastmod>2017-06-15</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>/gslib/</loc>
-     <lastmod>2017-06-15</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>/magma/</loc>
-     <lastmod>2017-06-15</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>/mfem/</loc>
-     <lastmod>2017-06-15</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>/nek/</loc>
-     <lastmod>2017-06-15</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>/occa/</loc>
-     <lastmod>2017-06-15</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>/petsc/</loc>
-     <lastmod>2017-06-15</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>/pumi/</loc>
+     <loc>None/miniapps/</loc>
      <lastmod>2017-06-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
@@ -118,61 +60,119 @@
     
         
     <url>
-     <loc>/thrusts/</loc>
+     <loc>None/software/</loc>
      <lastmod>2017-06-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>/pubs/</loc>
+     <loc>None/ceed-code/</loc>
      <lastmod>2017-06-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>/fe/</loc>
+     <loc>None/gslib/</loc>
      <lastmod>2017-06-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>/meshing/</loc>
+     <loc>None/magma/</loc>
      <lastmod>2017-06-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>/amr/</loc>
+     <loc>None/mfem/</loc>
      <lastmod>2017-06-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>/tensors/</loc>
+     <loc>None/nek/</loc>
      <lastmod>2017-06-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>/formats/</loc>
+     <loc>None/occa/</loc>
      <lastmod>2017-06-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>/solvers/</loc>
+     <loc>None/petsc/</loc>
      <lastmod>2017-06-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>/interp/</loc>
+     <loc>None/pumi/</loc>
+     <lastmod>2017-06-15</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    
+
+    
+        
+    <url>
+     <loc>None/thrusts/</loc>
      <lastmod>2017-06-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>/vis/</loc>
+     <loc>None/pubs/</loc>
+     <lastmod>2017-06-15</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/fe/</loc>
+     <lastmod>2017-06-15</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/meshing/</loc>
+     <lastmod>2017-06-15</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/amr/</loc>
+     <lastmod>2017-06-15</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/tensors/</loc>
+     <lastmod>2017-06-15</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/formats/</loc>
+     <lastmod>2017-06-15</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/solvers/</loc>
+     <lastmod>2017-06-15</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/interp/</loc>
+     <lastmod>2017-06-15</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/vis/</loc>
      <lastmod>2017-06-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
@@ -181,7 +181,7 @@
 
     
     <url>
-     <loc>/about/</loc>
+     <loc>None/about/</loc>
      <lastmod>2017-06-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
