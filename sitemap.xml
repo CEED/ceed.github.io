@@ -142,31 +142,13 @@
     </url>
         
     <url>
-     <loc>None/amr/</loc>
+     <loc>None/linalg/</loc>
      <lastmod>2017-06-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>None/tensors/</loc>
-     <lastmod>2017-06-17</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>None/formats/</loc>
-     <lastmod>2017-06-17</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>None/solvers/</loc>
-     <lastmod>2017-06-17</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>None/interp/</loc>
+     <loc>None/discr/</loc>
      <lastmod>2017-06-17</lastmod>
      <changefreq>daily</changefreq>
     </url>

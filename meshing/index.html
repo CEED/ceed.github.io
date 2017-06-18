@@ -197,37 +197,19 @@
                     
                         
                             <li class="active">
-                                 <a href="./">High-Order Meshes</a>
+                                 <a href="./">Meshing</a>
                             </li>
                         
                     
                         
                             <li >
-                                 <a href="../amr/">Unstructured AMR</a>
+                                 <a href="../linalg/">Linear Algebra</a>
                             </li>
                         
                     
                         
                             <li >
-                                 <a href="../tensors/">Tensor Contractions</a>
-                            </li>
-                        
-                    
-                        
-                            <li >
-                                 <a href="../formats/">Operator Format</a>
-                            </li>
-                        
-                    
-                        
-                            <li >
-                                 <a href="../solvers/">Matrix-Free Solvers</a>
-                            </li>
-                        
-                    
-                        
-                            <li >
-                                 <a href="../interp/">Field Interpolation</a>
+                                 <a href="../discr/">Discretization</a>
                             </li>
                         
                     
@@ -276,6 +258,9 @@
         <li class="main active"><a href="#high-order-meshes-wzxhzdk0">High-Order Meshes </a></li>
         
     
+        <li class="main "><a href="#unstructured-amr-wzxhzdk1">Unstructured AMR </a></li>
+        
+    
     <hr style="background-color:white; height:20px; margin-left:-1px;  margin-right:-1px; margin-top:15px; margin-bottom:10px " />
     <li class="main" style="padding:0"><a href="https://github.com/CEED/forum">Contact CEED</a> </li>
        <li><a href="https://github.com/CEED/forum"><i class="fa fa-comment-o"></i> User forum</a> </li>
@@ -299,11 +284,30 @@ and tetrahedral meshes and our team members are developing algorithms for
 high-order mesh optimization and solution transfer between deformed high-order
 meshes (remap).</p>
 <p><em>This is an active area of research for our team and we are interested in
+ collaboration.</em></p>
+<h2 id="unstructured-amr-wzxhzdk1">Unstructured AMR <img src="../img/ex6.png" align="right" alt="AMR image" width="250"></h2>
+<p>Adaptive Mesh Refinement (AMR) on unstructured grids is an important enabling
+technology for many applications.</p>
+<p>The CEED software supports both conforming AMR on triangular and tetrahedral
+meshes as well as general non-conforming AMR on quadrilateral and hexahedral
+meshes. Both approaches work for low-order meshes with no performance penalty
+and support parallel dynamic load balancing.</p>
+<p>One of the distinguishing characteristics of our AMR approach is that it is
+implemented at the level of the discretization library, decoupled from the
+physics, so it can easily be incorporated in a variety of applications.  We
+support spaces in the whole de Rham complex, as well as AMR on high-order
+meshes.</p>
+<p>CEED scientists are working on practical error indicators and
+physics-conservative AMR interpolations to meet application needs.</p>
+<p><em>This is an active area of research for our team and we are interested in
  collaboration.</em></p></div>
             <div class="col-md-3 hidden-xs hidden-sm"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
     
         <li class="main active"><a href="#high-order-meshes-wzxhzdk0">High-Order Meshes </a></li>
+        
+    
+        <li class="main "><a href="#unstructured-amr-wzxhzdk1">Unstructured AMR </a></li>
         
     
     <hr style="background-color:white; height:20px; margin-left:-1px;  margin-right:-1px; margin-top:15px; margin-bottom:10px " />
