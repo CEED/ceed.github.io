@@ -255,7 +255,7 @@
             <div class="col-md-3 visible-xs visible-sm"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
     
-        <li class="main active"><a href="#gslibwzxhzdk0">gslib</a></li>
+        <li class="main active"><a href="#gslibwzxhzdk2">Gslib</a></li>
         
     
     <hr style="background-color:white; height:20px; margin-left:-1px;  margin-right:-1px; margin-top:15px; margin-bottom:10px " />
@@ -269,15 +269,15 @@
 <!-- ... fa-comment, fa-comment-o, fa-comments, fa-comments-o, fa-bullhorn --></div> <!-- toc on top on mobile -->
             <div class="col-md-9" role="main">
 
-<h2 id="gslibwzxhzdk0"><a href="https://github.com/gslib/gslib">gslib</a><img src="../img/heat-wire.png" align="right" alt="heat" height="250" width="300"></h2>
+<h2 id="gslibwzxhzdk2"><a href="https://github.com/gslib/gslib">Gslib</a><img src="../img/heat_wire.png" align="right" alt="heat" height="250" width="300"></h2>
 <p>Gslib is a library for Gather/Scatter-type nearest neighbor data exchanges for SEM, FEM, and finite-difference applications.  It can also be used for efficient transpose and reduction operations and for smoothing, prolongation, and restriction in AMG and other solvers.</p>
-<p>Any global-to-local map, l(i) = g(j(i))$, can be expressed as the matrix-vector product l=Qg, where Q is a Boolean matrix.  Gslib supports the parallel matrix-vector products Q, Q^T, and QQ^T.  Users simply provide the local-to-global map j(i) on each processor.  Gslib identifies shared global vertices across multiple processors and sets up the required communication exchange to use the fastest of three available algorithms.  The user does not need to know or express data locality to efficiently establish communication on anywhere from one to millions of ranks.</p>
+<p>Any global-to-local map, $l(i) = g(j(i))$, can be expressed as the matrix-vector product $l=Qg$, where $Q$ is a Boolean matrix.  Gslib supports the parallel matrix-vector products Q, Q^T, and QQ^T.  Users simply provide the local-to-global map $j(i)$ on each processor.  Gslib identifies shared global vertices across multiple processors and sets up the required communication exchange to use the fastest of three available algorithms.  The user does not need to know or express data locality to efficiently establish communication on anywhere from one to millions of ranks.</p>
 <p>Gslib supports</p>
 <ul>
 <li>Stencils of arbitrary width</li>
 <li>64-bit indexing for global addressing</li>
 <li>short / long ints, floats, doubles</li>
-<li>arbitrary associative/commutative operators (+,*,min/max) for reduction, Q^T</li>
+<li>arbitrary associative/commutative operators (+,*,min/max) for reduction, $Q^T$</li>
 <li>GPUDirect communication (beta-version)</li>
 <li>gather-scatter on arbitrary m-tuples (vector fields)</li>
 </ul>
@@ -287,14 +287,17 @@
 <li>AMG solver (design for solving coarse-grid problems in parallel)</li>
 <li>Robust and efficient spectral/finite element interpolation in parallel.</li>
 </ul>
-<p>Applications and libraries using Gslib include <a href="../nek/">Nek5000</a>, <a href="https://github.com/NEKCEM">NekCEM</a>, 
+<p>Applications and libraries using Gslib include <a href="../nek/">Nek5000</a>, <a href="https://github.com/NEKCEM">NekCEM</a>,
 <a href="http://www.nektar.info">Nektar++</a>, and <a href="http://sigma.mcs.anl.gov/moab-library">MOAB</a>.</p>
-<p>In CEED, gslib is primarily involved in the efforts of the <a href="../sw/">Software</a> thrust.</p>
-<p>For more information, see the gslib GitHub repository: <a href="https://github.com/gslib/gslib">https://github.com/gslib/gslib</a>.</p></div>
+<p>In CEED, Gslib is primarily involved in the efforts of the <a href="../sw/">Software</a> thrust.</p>
+<p>For more information, see the Gslib GitHub repository: <a href="https://github.com/gslib/gslib">https://github.com/gslib/gslib</a>.</p>
+<script type="text/x-mathjax-config">MathJax.Hub.Config({TeX: {equationNumbers: {autoNumber: "all"}}, tex2jax: {inlineMath: [['$','$']]}});</script>
+
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script></div>
             <div class="col-md-3 hidden-xs hidden-sm"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
     
-        <li class="main active"><a href="#gslibwzxhzdk0">gslib</a></li>
+        <li class="main active"><a href="#gslibwzxhzdk2">Gslib</a></li>
         
     
     <hr style="background-color:white; height:20px; margin-left:-1px;  margin-right:-1px; margin-top:15px; margin-bottom:10px " />
