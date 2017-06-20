@@ -274,7 +274,7 @@
 
 <h2 id="efficient-high-order-operator-format-wzxhzdk0">Efficient High-Order Operator Format <img src="../img/formats.png" align="right" alt="Code image" width="250"></h2>
 <p>While a global (parallel) sparse matrix is a good representation of a PDE
-operator discretized with low-order elements, a global parallel matrix is a bad
+operator discretized with low-order elements, a global parallel matrix is a poor
 choice when discretizing with high-order elements, due to the large cost of both
 the memory transfer and floating point operations.</p>
 <p>CEED is developing an alternative operator format, based on the CEED <a href="../ceed-code/">low-level
@@ -284,7 +284,7 @@ memory and nearly-optimal in FLOPs cost.</p>
  collaboration.</em></p>
 <p><em>Stay tuned for more details...</em></p>
 <h2 id="general-interpolation-of-solution-field-values">General Interpolation of Solution Field Values</h2>
-<p>Particle tracking, grid-to-grid transfer, and data analysis are typical
+<p>Particle tracking, grid-to-grid transfer and data analysis are typical
 operations that require off-grid function evaluation.</p>
 <p>CEED is developing a scalable interpolation routine for arbitrary-order
 hexahedral elements that uses a hash table to rapidly identify candidate
