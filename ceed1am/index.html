@@ -61,7 +61,7 @@
             
             
             
-                <li class="dropdown active">
+                <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Co-Design <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                     
@@ -90,8 +90,8 @@
                         
                     
                         
-                            <li class="active">
-                                 <a href="./">Benchmarks</a>
+                            <li >
+                                 <a href="../bps/">Benchmarks</a>
                             </li>
                         
                     
@@ -173,7 +173,7 @@
             
             
             
-                <li class="dropdown">
+                <li class="dropdown active">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Research <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                     
@@ -257,14 +257,38 @@
             <div class="col-md-3 visible-xs visible-sm"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
     
-        <li class="main active"><a href="#ceed-bake-off-problems-benchmarks">CEED Bake-off Problems (Benchmarks)</a></li>
+        <li class="main active"><a href="#ceed-first-annual-meeting">CEED First Annual Meeting</a></li>
         
 	    
-                <li><a href="#terminology-and-notation">Terminology and Notation</a></li>
+                <li><a href="#august-15-17-2017">August 15-17, 2017</a></li>
 	    
 	
 	    
-                <li><a href="#bake-off-problem-1">Bake-off Problem 1</a></li>
+                <li><a href="#lawrence-livermore-national-laboratory">Lawrence Livermore National Laboratory</a></li>
+	    
+	
+	    
+                <li><a href="#overview">Overview</a></li>
+	    
+	
+	    
+                <li><a href="#meeting-agenda">Meeting Agenda</a></li>
+	    
+	
+	    
+                <li><a href="#catering-and-dinner">Catering and Dinner</a></li>
+	    
+	
+	    
+                <li><a href="#lodging-options">Lodging Options</a></li>
+	    
+	
+	    
+                <li><a href="#about-livermore-and-llnl">About Livermore and LLNL</a></li>
+	    
+	
+	    
+                <li><a href="#questions">Questions</a></li>
 	    
 	
     
@@ -279,176 +303,70 @@
 <!-- ... fa-comment, fa-comment-o, fa-comments, fa-comments-o, fa-bullhorn --></div> <!-- toc on top on mobile -->
             <div class="col-md-9" role="main">
 
-<h2 id="ceed-bake-off-problems-benchmarks">CEED Bake-off Problems (Benchmarks)</h2>
-<p>This page contains the specifications of CEED's <em>bake-off problems</em>: high-order
-kernels/benchmarks designed to test and compare the performance of high-order
-codes.</p>
-<p>Currently available bake-off problems:</p>
-<ul>
-<li><a href="#bake-off-problem-1">BP1: Mass Matrix Evaluation</a></li>
-</ul>
-<p><em>CEED's bake-off problems are currently under development. Stay tuned for more details...</em></p>
-<h3 id="terminology-and-notation">Terminology and Notation</h3>
-<p>Vector representation/storage categories:</p>
-<ul>
-<li>True degrees of freedom/unknowns, <strong>T-vector</strong>:<ul>
-<li>each unknown $i$ has exactly one copy, on exactly one processor, $rank(i)$</li>
-<li>this is a non-overlapping vector decomposition</li>
-<li>usually includes any essential (fixed) dofs.
-<img alt="T-vector" src="../img/T-vector.svg" /></li>
-</ul>
-</li>
-<li>Local true degrees of freedom/unknowns, <strong>L-vector</strong>:<ul>
-<li>each unknown $i$ has exactly one copy on each processor that owns an
-  element containing $i$</li>
-<li>this is an overlapping vector decomposition with overlaps only across
-  different processors - there is no duplication of unknowns on a single
-  processor</li>
-<li>the shared dofs/unknowns are the overlapping dofs, i.e. the ones that have
-  more than one copy, on different processors.
-  <img alt="L-vector" src="../img/L-vector.svg" /></li>
-</ul>
-</li>
-<li>Per element decomposition, <strong>E-vector</strong>:<ul>
-<li>each unknown $i$ has as many copies as the number of elements that contain
-  $i$</li>
-<li>usually, the copies of the unknowns are grouped by the element they belong
-  to.
-  <img alt="E-vector" src="../img/E-vector.svg" /></li>
-</ul>
-</li>
-<li>In the case of hanging nodes (giving rise to hanging dofs):<ul>
-<li>there is another representation similar to L-vector which stores the
-  hanging/dependent dofs in addition to the true dofs, <strong>H-vector</strong></li>
-<li>the additional hanging dofs are duplicated when they are shared by
-  multiple processors.</li>
-</ul>
-</li>
-<li>In the case of variable order spaces:<ul>
-<li>the dependent dofs (usually on the higher-order side of a face/edge) can
-  be treated just like the hanging/dependent dofs case</li>
-<li>have both L- and H-vector representations.</li>
-</ul>
-</li>
-<li>Quadrature point vector, <strong>Q-vector</strong>:<ul>
-<li>this is similar to E-vector where instead of dofs, the vector represents
-  values at qudrature points, grouped by element.</li>
-</ul>
-</li>
-<li>In many cases it is useful to distinguish two types of vectors:<ul>
-<li>X-vector, or <strong>primal</strong> X-vector, and X'-vector, or <strong>dual</strong> X-vector</li>
-<li>here X can be any of the T, L, H, E, or Q categories</li>
-<li>for example, the mass matrix operator maps a T-vector to a T'-vector</li>
-<li>the solutions vector is a T-vector, and the RHS vector is a T'-vector</li>
-<li>using the parallel prolongation operator, one can map the solution
-  T-vector to a solution L-vector, etc.</li>
-</ul>
-</li>
-</ul>
-<p>Operator representation/storage/action categories:</p>
-<ul>
-<li>Full true-dof parallel assembly, <strong>TA</strong>, or <strong>A</strong>:<ul>
-<li>ParCSR or similar format</li>
-<li>the T in TA indicates that the data format represents an operator from a
-  T-vector to a T'-vector.</li>
-</ul>
-</li>
-<li>Full local assembly, <strong>LA</strong>:<ul>
-<li>CSR matrix on each rank</li>
-<li>the parallel prolongation operator, $P$, (and its transpose) should use
-  optimized matrix-free action</li>
-<li>note that $P$ is the operator mapping T-vectors to L-vectors.</li>
-</ul>
-</li>
-<li>Element matrix assembly, <strong>EA</strong>:<ul>
-<li>each element matrix is stored as a dense matrix</li>
-<li>optimized element and parallel prolongation operators</li>
-<li>note that the element prolongation operator is the mapping from an
-  L-vector to an E-vector.</li>
-</ul>
-</li>
-<li>Quadrature-point/partial assembly, <strong>QA</strong> or <strong>PA</strong>:<ul>
-<li>precompute and store $w\det(J)$, or $\det(J)$ (in the case of mass matrix)
-  at all quadrature points in all mesh elements</li>
-<li>the stored data can be viewed as a Q-vector.</li>
-</ul>
-</li>
-<li>Unassembled option,  <strong>UA</strong> or <strong>U</strong>:<ul>
-<li>no assembly step</li>
-<li>the action uses directly the mesh node coordinates, and assumes specific
-  form of the coefficient, e.g. constant, piecewise-constant, or given as a
-  Q-vector (Q-coefficient).</li>
-</ul>
-</li>
-</ul>
-<h3 id="bake-off-problem-1">Bake-off Problem 1</h3>
-<p>Setup:</p>
-<ul>
-<li>Mass matrix</li>
-<li>Coefficient: constant $1$</li>
-<li>3D hex mesh</li>
-<li>No essential boundary conditions, or essential boundary conditions on the
-  whole boundary</li>
-<li>Solution space orders: $p=2,3,\ldots,15$; also, consider $p=1$?</li>
-<li>Quadrature: Gauss-Legendre (GL) with $q=p+2$ points in each spatial
-  dimension; the quadrature order is $2q-1$</li>
-<li>Also, consider $q=2$, for $p=1$, and $q=3$, for $p=2$</li>
-<li>Use nodal basis with $p+1$ Gauss-Legendre-Lobatto (GLL) points in each spatial
-  dimension</li>
-<li>Consider mesh orders of $p_{mesh}=1$, and $p_{mesh}=p$</li>
-<li>Focus on the QA/PA operator representation</li>
-<li>Meshes: consider meshes with $E=2^s$ elements with $s\in\mathbb{N}$; for a
-  given $s$, use a 3D Cartesian mesh with
-  $2^{s_1}\times 2^{s_2}\times 2^{s_3}$ elements ($s_i\in\mathbb{N}$), where
-  $\{s_i\}$ are uniquely determined by the conditions: $s_1+s_2+s_3 = s$ and
-  $\lfloor s/3\rfloor+1\ge s_1 \ge s_2 \ge s_3 \ge \lfloor s/3\rfloor$</li>
-<li>For example:<ul>
-<li>if $s=15$, then $s_1=s_2=s_3=5$</li>
-<li>if $s=16$, then $s_1=6$ and $s_2=s_3=5$</li>
-<li>if $s=17$, then $s_1=s_2=6$ and $s_3=5$</li>
-</ul>
-</li>
-<li>Consider tests with $2^t$ processors, $0\le t\le s$, and partition the mesh
-  into $2^{t_1}\times 2^{t_2}\times 2^{t_3}$ uniform parts, where $\{t_i\}$
-  are derived from $t$ the same way $\{s_i\}$ are derived from $s$</li>
-<li><div style="color:#aa0000"><em>What are good partitioning algorithms for the
-  strong scaling limit? The problem is to generate well balanced partitions when
-  the ratio "number of elements" $/$ "number of processors" is small. METIS 4
-  does not do well on this type of problems. What about METIS 5 and other
-  graph partitioners? Maybe we need to develop specialized algorithms?</em></div></li>
-<li>Number of MPI tasks, and number of MPI tasks per node:<ul>
-<li>On ALCF's BG/Q, <code>Cetus</code>: $2^{14}$ tasks total, with $2^5$ tasks per node</li>
-</ul>
-</li>
-<li>...</li>
-</ul>
-<p>Report:</p>
-<ul>
-<li>Number of mesh elements, $E$</li>
-<li>Polynomial degree, $N$, or $p$</li>
-<li>Total number of degrees of freedom, $n_T$ (size of a T-vector), or
-  approximately $n:=E N^3$</li>
-<li>Time per iteration = total CG time $/$ number of CG iterations</li>
-<li>Number of iterations to reach relative residual reduction of $10^{-6}$</li>
-<li>Time for quadrature-point/partial assembly</li>
-<li>Time is measured as maximum over all MPI ranks; using <code>MPI_Wtime()</code> or other
-  similar function</li>
-<li>...</li>
-</ul>
-<script type="text/x-mathjax-config">MathJax.Hub.Config({TeX: {equationNumbers: {autoNumber: "all"}}, tex2jax: {inlineMath: [['$','$']]}});</script>
-
-<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script></div>
+<h1 id="ceed-first-annual-meeting">CEED First Annual Meeting</h1>
+<h4 id="august-15-17-2017">August 15-17, 2017</h4>
+<h4 id="lawrence-livermore-national-laboratory">Lawrence Livermore National Laboratory</h4>
+<p><img alt="CEED Logo" src="../img/logo-300.png" /></p>
+<h3 id="overview">Overview</h3>
+<p>CEED will hold its first annual meeting in August 15-17, 2017 at the <a href="https://hpcinnovationcenter.llnl.gov/location-and-directions">HPC Innovation
+Center</a> of
+Lawrence Livermore National Laboratory in Livermore, California.
+The goal of the meeting is to report on the progress in the center, deepen
+existing and establish new connections with ECP hardware vendors, ECP software
+technologies projects and other collaborators, plan project activities and
+brainstorm/work as a group to make technical progress.
+In addition to gathering together many of the CEED researchers, the meeting will
+include representatives of the ECP management, hardware vendors, software
+technology and other interested projects.</p>
+<h3 id="meeting-agenda">Meeting Agenda</h3>
+<p>...</p>
+<h3 id="catering-and-dinner">Catering and Dinner</h3>
+<p>...</p>
+<h3 id="lodging-options">Lodging Options</h3>
+<p>...</p>
+<h3 id="about-livermore-and-llnl">About Livermore and LLNL</h3>
+<p>...
+National Ignition Facility, tour</p>
+<h3 id="questions">Questions</h3>
+<p>Please contact the organizers:
+- Ian Karlin
+- Tzanio Kolev
+- ...</p></div>
             <div class="col-md-3 hidden-xs hidden-sm"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
     
-        <li class="main active"><a href="#ceed-bake-off-problems-benchmarks">CEED Bake-off Problems (Benchmarks)</a></li>
+        <li class="main active"><a href="#ceed-first-annual-meeting">CEED First Annual Meeting</a></li>
         
 	    
-                <li><a href="#terminology-and-notation">Terminology and Notation</a></li>
+                <li><a href="#august-15-17-2017">August 15-17, 2017</a></li>
 	    
 	
 	    
-                <li><a href="#bake-off-problem-1">Bake-off Problem 1</a></li>
+                <li><a href="#lawrence-livermore-national-laboratory">Lawrence Livermore National Laboratory</a></li>
+	    
+	
+	    
+                <li><a href="#overview">Overview</a></li>
+	    
+	
+	    
+                <li><a href="#meeting-agenda">Meeting Agenda</a></li>
+	    
+	
+	    
+                <li><a href="#catering-and-dinner">Catering and Dinner</a></li>
+	    
+	
+	    
+                <li><a href="#lodging-options">Lodging Options</a></li>
+	    
+	
+	    
+                <li><a href="#about-livermore-and-llnl">About Livermore and LLNL</a></li>
+	    
+	
+	    
+                <li><a href="#questions">Questions</a></li>
 	    
 	
     
