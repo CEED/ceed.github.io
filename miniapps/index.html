@@ -332,9 +332,27 @@ center</a>.</p>
 <p>Laghos solves the time-dependent Euler equation of compressible gas dynamics in
 a moving Lagrangian frame using high-order finite element spatial discretization
 and explicit high-order time-stepping.</p>
-<p>It exposes the principal computational kernels of shock-capturing compressible
-flow, including the FLOP-intensive definition of artificial viscosity at
-quadrature points.</p>
+<p>It captures the basic structure of many other compressible shock
+hydrocodes, including the <a href="http://llnl.gov/casc/blast">BLAST code</a> at
+<a href="http://llnl.gov">Lawrence Livermore National Laboratory</a>. The miniapp
+is build on top of a general discretization library, <a href="http://mfem.org">MFEM</a>,
+thus separating the pointwise physics from finite element and meshing concerns.</p>
+<p><img alt="Laghos results" src="../img/laghos.png" width="500"/></p>
+<p>Computational motives in Laghos include the following:</p>
+<ul>
+<li>Support for moving (high-order) unstructured 2D and 3D meshes.</li>
+<li>Continuous and discontinuous high-order finite element discretization spaces
+  of runtime-specified order.</li>
+<li>Explicit time-stepping loop with a variety of time integrator options. Laghos
+  supports Runge-Kutta ODE solvers of orders 1, 2, 3, 4 and 6.</li>
+<li>Full and <a href="http://ceed.exascaleproject.org/ceed-code">partial assembly</a> options
+  for deriving and solving the resulting ODE systems.</li>
+<li>Point-wise definition of mesh size, time-step estimate and artificial
+  viscosity coefficient.</li>
+<li>Domain-decomposed MPI parallelism.</li>
+<li>Optional in-situ visualization with <a href="http:/glvis.org">GLVis</a> and data output
+  for visualization / data analysis with <a href="http://visit.llnl.gov">VisIt</a>.</li>
+</ul>
 <p><em>Laghos will be released soon as part of CEED. Stay tuned for more details...</em></p>
 <hr />
 <p><center></p>
