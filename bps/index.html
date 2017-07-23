@@ -386,7 +386,7 @@ to all BPs:</p>
 <img alt="T-vector" src="../img/T-vector.svg" /></li>
 </ul>
 </li>
-<li>Local true degrees of freedom/unknowns, <strong>L-vector</strong>:<ul>
+<li>Local (w.r.t. processors) degrees of freedom/unknowns, <strong>L-vector</strong>:<ul>
 <li>each unknown $i$ has exactly one copy on each processor that owns an
   element containing $i$</li>
 <li>this is an overlapping vector decomposition with overlaps only across
@@ -405,17 +405,22 @@ to all BPs:</p>
   <img alt="E-vector" src="../img/E-vector.svg" /></li>
 </ul>
 </li>
-<li>In the case of hanging nodes (giving rise to hanging dofs):<ul>
-<li>there is another representation similar to L-vector which stores the
-  hanging/dependent dofs in addition to the true dofs, <strong>H-vector</strong></li>
-<li>the additional hanging dofs are duplicated when they are shared by
-  multiple processors.</li>
+<li>In the case of AMR with hanging nodes (giving rise to hanging dofs):<ul>
+<li>the L-vector is enhanced with the hanging/dependent dofs</li>
+<li>the additional hanging/dependent dofs are duplicated when they are shared
+  by multiple processors</li>
+<li>this way, an E-vector can be derived from an L-vector without any
+  communications and without additional computations to derive the dependend
+  dofs</li>
+<li>in other words, an entry in an E-vector is obtained by copying an entry
+  from the corresponding L-vector, optionally switching the sign of the
+  entry (for $H(\mathrm{div})$- and $H(\mathrm{curl})$-conforming spaces).
+<img alt="L-vector with AMR" src="../img/L-vector-AMR.svg" /></li>
 </ul>
 </li>
 <li>In the case of variable order spaces:<ul>
 <li>the dependent dofs (usually on the higher-order side of a face/edge) can
-  be treated just like the hanging/dependent dofs case</li>
-<li>have both L- and H-vector representations.</li>
+  be treated just like the hanging/dependent dofs case.</li>
 </ul>
 </li>
 <li>Quadrature point vector, <strong>Q-vector</strong>:<ul>
@@ -425,7 +430,7 @@ to all BPs:</p>
 </li>
 <li>In many cases it is useful to distinguish two types of vectors:<ul>
 <li>X-vector, or <strong>primal</strong> X-vector, and X'-vector, or <strong>dual</strong> X-vector</li>
-<li>here X can be any of the T, L, H, E, or Q categories</li>
+<li>here X can be any of the T, L, E, or Q categories</li>
 <li>for example, the mass matrix operator maps a T-vector to a T'-vector</li>
 <li>the solutions vector is a T-vector, and the RHS vector is a T'-vector</li>
 <li>using the parallel prolongation operator, one can map the solution
