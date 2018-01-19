@@ -72,13 +72,7 @@
     </url>
         
     <url>
-     <loc>/gslib/</loc>
-     <lastmod>2018-01-18</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>/magma/</loc>
+     <loc>/libceed/</loc>
      <lastmod>2018-01-18</lastmod>
      <changefreq>daily</changefreq>
     </url>
@@ -91,6 +85,18 @@
         
     <url>
      <loc>/nek/</loc>
+     <lastmod>2018-01-18</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/gslib/</loc>
+     <lastmod>2018-01-18</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/magma/</loc>
      <lastmod>2018-01-18</lastmod>
      <changefreq>daily</changefreq>
     </url>

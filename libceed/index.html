@@ -125,8 +125,8 @@
                         
                     
                         
-                            <li >
-                                 <a href="../libceed/">libCEED</a>
+                            <li class="active">
+                                 <a href="./">libCEED</a>
                             </li>
                         
                     
@@ -167,8 +167,8 @@
                         
                     
                         
-                            <li class="active">
-                                 <a href="./">PUMI</a>
+                            <li >
+                                 <a href="../pumi/">PUMI</a>
                             </li>
                         
                     
@@ -263,7 +263,7 @@
             <div class="col-md-3 visible-xs visible-sm"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
     
-        <li class="main active"><a href="#pumi">PUMI </a></li>
+        <li class="main active"><a href="#libceed">libCEED </a></li>
         
     
     <hr style="background-color:white; height:20px; margin-left:-1px;  margin-right:-1px; margin-top:15px; margin-bottom:10px " />
@@ -277,28 +277,28 @@
 <!-- ... fa-comment, fa-comment-o, fa-comments, fa-comments-o, fa-bullhorn --></div> <!-- toc on top on mobile -->
             <div class="col-md-9" role="main">
 
-<h2 id="pumi"><a href="https://scorec.rpi.edu/pumi/">PUMI</a> <img src="../img/pumi.png" align="right" alt="PUMI logo" height="150" width="450"></h2>
-<p><em>PUMI</em> is an unstructured, distributed mesh data management system designed for
- massively parallel computing.</p>
-<p>PUMI supports a full range of operations on unstructured meshes on massively
-parallel computers consisting of five libraries:</p>
-<ul>
-<li><a href="https://scorec.rpi.edu/pcu/">PCU</a> for phased message passing and thread management.</li>
-<li><a href="https://scorec.rpi.edu/pumi/pumi_geom.php">GMI</a> for geometric model interface.</li>
-<li><a href="https://scorec.rpi.edu/~dibanez/core/mds.html">MDS</a> for unstructured mesh representation.</li>
-<li><a href="https://scorec.rpi.edu/~dibanez/core/apfMesh_8h.html">APF Mesh</a> for partition model and distributed mesh management.</li>
-<li><a href="https://scorec.rpi.edu/apf/">APF_Field</a> for field management.</li>
-</ul>
-<p>PUMI is being developed at RPI's <a href="https://www.scorec.rpi.edu/">Scientific Computation Research
-Center</a> and is currently being used on projects
-sponsored by the DOE, NSF, Army, NASA, IBM and several companies.</p>
-<p>In CEED, PUMI is primarily involved in the efforts of the <a href="../fe/">Finite Element</a>
-and <a href="../sw/">Software</a> thrusts.</p>
-<p>For more information, see the <a href="https://scorec.rpi.edu/pumi/pumi_documents.php">PUMI documents</a>.</p></div>
+<h2 id="libceed"><a href="https://github.com/CEED/libCEED">libCEED</a> <img src="https://github.com/CEED/libCEED/blob/master/doc/libCEED.png" align="right" alt="libCEED logo" height="150" width="450"></h2>
+<p>libCEED is a high-order API library, that provides a common algebraic low-level
+operator description, allowing a wide variety of applications to take advantage
+of the efficient operator evaluation algorithms in the different CEED packages
+(from a single source).</p>
+<p>One of the challenges with high-order methods is that a global sparse matrix is
+no longer a good representation of a high-order linear operator, both with
+respect to the FLOPs needed for its evaluation, as well as the memory transfer
+needed for a matvec. Thus, high-order methods require a new "format" that still
+represents a linear (or more generally non-linear) operator, but not through a
+sparse matrix.</p>
+<p>The goal of libCEED is to propose such a format, as well as supporting
+implementations and data structures, that enable efficient operator evaluation
+on a variety of computational device types (CPUs, GPUs, etc.). This new operator
+description is based on algebraically factored form, which is easy to
+incorporate in a wide variety of applications, without significant refactoring
+of their own discretization infrastructure.</p>
+<p>For more information visit <a href="https://github.com/CEED/libCEED">https://github.com/CEED/libCEED</a>.</p></div>
             <div class="col-md-3 hidden-xs hidden-sm"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
     
-        <li class="main active"><a href="#pumi">PUMI </a></li>
+        <li class="main active"><a href="#libceed">libCEED </a></li>
         
     
     <hr style="background-color:white; height:20px; margin-left:-1px;  margin-right:-1px; margin-top:15px; margin-bottom:10px " />

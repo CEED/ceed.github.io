@@ -126,13 +126,7 @@
                     
                         
                             <li >
-                                 <a href="../gslib/">GSLIB</a>
-                            </li>
-                        
-                    
-                        
-                            <li >
-                                 <a href="../magma/">MAGMA</a>
+                                 <a href="../libceed/">libCEED</a>
                             </li>
                         
                     
@@ -145,6 +139,18 @@
                         
                             <li >
                                  <a href="../nek/">Nek</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../gslib/">GSLIB</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../magma/">MAGMA</a>
                             </li>
                         
                     
@@ -260,11 +266,11 @@
         <li class="main active"><a href="#ceed-apis">CEED APIs</a></li>
         
 	    
-                <li><a href="#high-level-api">High level API</a></li>
+                <li><a href="#low-level-api">Low level API</a></li>
 	    
 	
 	    
-                <li><a href="#low-level-api">Low level API</a></li>
+                <li><a href="#high-level-api">High level API</a></li>
 	    
 	
     
@@ -280,13 +286,28 @@
             <div class="col-md-9" role="main">
 
 <h2 id="ceed-apis">CEED APIs</h2>
-<p>CEED will build on the efforts of the <a href="../nek/">Nek5000</a>, <a href="../mfem/">MFEM</a>,
+<p>CEED is building on the efforts of the <a href="../nek/">Nek5000</a>, <a href="../mfem/">MFEM</a>,
 <a href="../magma/">MAGMA</a>, <a href="../occa/">OCCA</a> and <a href="../petsc/">PETSc</a> projects to develop
 application program interfaces (APIs), both at high-level and at low-level.
 Multiple APIs are necessary to enable application to take advantage of
 CEED-developed high-order technologies at the level they are comfortable with.
 In addition, our high-level API will call internally low-level API
 functionality.</p>
+<h3 id="low-level-api">Low level API</h3>
+<p>The CEED low-level API, <a href="../libceed/">libCEED</a> operates with the foundational
+components of finite element operators, described by the following
+decomposition:</p>
+<p><img alt="" src="../img/libCEED.png" /></p>
+<p>To achieve high-performance, it is critical to take advantage of the
+tensor-product structure of both the finite element basis and the quadrature
+rule to efficiently apply the action of $B$ without necessarily computing its
+entries. This is generally know as <em><a href="http://www.sciencedirect.com/science/article/pii/0021999180900054">sum factorization</a></em>.  In the
+case where we precompute and store the $D$ matrix, we call the algorithm
+<em>partial assembly</em>.</p>
+<p>Since libCEED is based on a common operator description at algebraic level, it
+can also be used as the foundation for an efficient high-order <a href="../discr/#efficient-high-order-operator-format-wzxhzdk1">operator
+format</a>.</p>
+<p>For more information of the CEED low level API see the <a href="../libceed/">libCEED</a> page.</p>
 <h3 id="high-level-api">High level API</h3>
 <p>The CEED high-level API operates with global discretization concepts,
 specifying a global mesh, finite element spaces and PDE operators to be
@@ -299,19 +320,6 @@ Internally, the high-level API relies on CEED's low-level API described below.</
 <p>The global perspective also allows CEED to provide general unstructured adaptive
 mesh refinement support, with minimal impact in the application code.</p>
 <p><em>This API is currently under development. Stay tuned for more details...</em></p>
-<h3 id="low-level-api">Low level API</h3>
-<p>The CEED low-level API operates with the foundational components of finite
-element operators, described by the following decomposition:
-<img alt="" src="../img/FEDecomposition.png" /></p>
-<p>We take advantage of the tensor-product structure of both the finite element
-basis and the quadrature rule to efficiently apply the action of $B$ without
-necessarily computing its entries. This is generally know as <em><a href="http://www.sciencedirect.com/science/article/pii/0021999180900054">sum
-factorization</a></em>.
-In the case where we precompute and store the $D$ matrix, we call the algorithm
-<em>partial assembly</em>.</p>
-<p>The low-level API can be used as the foundation for an efficient high-order
-<a href="../discr/#efficient-high-order-operator-format-wzxhzdk1">operator format</a>.</p>
-<p><em>This API is currently under development. Stay tuned for more details...</em></p>
 <script type="text/x-mathjax-config">MathJax.Hub.Config({TeX: {equationNumbers: {autoNumber: "all"}}, tex2jax: {inlineMath: [['$','$']]}});</script>
 
 <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script></div>
@@ -321,11 +329,11 @@ In the case where we precompute and store the $D$ matrix, we call the algorithm
         <li class="main active"><a href="#ceed-apis">CEED APIs</a></li>
         
 	    
-                <li><a href="#high-level-api">High level API</a></li>
+                <li><a href="#low-level-api">Low level API</a></li>
 	    
 	
 	    
-                <li><a href="#low-level-api">Low level API</a></li>
+                <li><a href="#high-level-api">High level API</a></li>
 	    
 	
     
