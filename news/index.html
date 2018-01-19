@@ -260,6 +260,18 @@
     
         <li class="main active"><a href="#news">News</a></li>
         
+            <li><a href="#initial-release-of-libceed-the-ceed-api-library">Initial release of libCEED: The CEED API library</a></li>
+        
+            <li><a href="#software-release-mfem-v332">Software release: MFEM v3.3.2</a></li>
+        
+            <li><a href="#ceed-participates-in-xsdk-and-fastmath">CEED participates in xSDK and FASTMath</a></li>
+        
+            <li><a href="#software-release-nek5000-v170">Software release: Nek5000 v17.0</a></li>
+        
+            <li><a href="#nekbone-and-laghos-join-proxy-app-suites">Nekbone and Laghos join proxy app suites</a></li>
+        
+            <li><a href="#6th-nek5000-user-meeting-to-be-held-at-u-florida">6th Nek5000 User Meeting to be held at U Florida</a></li>
+        
             <li><a href="#nek5000-hackathon-at-uiuc">Nek5000 hackathon at UIUC</a></li>
         
             <li><a href="#ceed-organizing-minisymposium-at-icosahom-2018">CEED organizing minisymposium at ICOSAHOM 2018</a></li>
@@ -309,20 +321,91 @@
             <div class="col-md-9" role="main">
 
 <h1 id="news">News</h1>
+<h3 id="initial-release-of-libceed-the-ceed-api-library">Initial release of libCEED: The CEED API library</h3>
+<p>The initial version (v0.1) of libCEED, the CEED API library, was released in
+December 2017.</p>
+<p>libCEED is a high-order API library, that for the first time provides a common
+operator description on <a href="https://github.com/CEED/libCEED/blob/master/doc/libCEED.md">algebraic level</a>,
+that allows a wide variety of applications to take advantage of the efficient operator
+evaluation algorithms in the different CEED packages (from a single source).</p>
+<p>Our long-term vision for libCEED is to include a variety of back-end
+implementations, ranging from simple reference kernels, to highly optimized
+kernels targeting specific devices (e.g. GPUs) or specific polynomial orders.</p>
+<p>For more information or to get involved, please visit
+<a href="https://github.com/CEED/libCEED">https://github.com/CEED/libCEED</a>.</p>
+<hr />
+<h3 id="software-release-mfem-v332">Software release: MFEM v3.3.2</h3>
+<p>Version 3.3.2 of MFEM was released on November 10, 2017. Some of the new
+additions in this release are:</p>
+<ul>
+<li>Support for high-order mesh optimization based on the target-matrix
+  optimization paradigm from the <a href="https://www.llnl.gov/casc/ethos">ETHOS project</a>.</li>
+<li>Implementation of the community policies in xSDK, the <a href="https://xsdk.info/">Extreme-scale
+  Scientific Software Development Kit</a>.</li>
+<li>Integration with the
+  <a href="http://portal.nersc.gov/project/sparse/strumpack">STRUMPACK</a> parallel sparse
+  direct solver and preconditioner.</li>
+<li>Several new <a href="http://mfem.org/lininterp/">linear interpolators</a>, five new
+  examples and miniapps.</li>
+<li>Various memory, performance, discretization and solver improvements, including
+  physical-to-reference space mapping capabilities.</li>
+<li>Continuous integration testing on Linux, Mac and Windows.</li>
+</ul>
+<p>For more details, see the <a href="http://mfem.org/examples">interactive documentation</a> and the
+full <a href="https://raw.githubusercontent.com/mfem/mfem/master/CHANGELOG">CHANGELOG</a> at
+<a href="http://mfem.org/">http://mfem.org</a>.</p>
+<hr />
+<h3 id="ceed-participates-in-xsdk-and-fastmath">CEED participates in xSDK and FASTMath</h3>
+<p>MFEM joined xSDK, the <a href="https://xsdk.info/">Extreme-scale Scientific Software Development
+Kit</a> in ECP's software technologies focus area as of release
+xSDK-0.3.0, see <a href="https://xsdk.info/packages.">https://xsdk.info/packages</a>.</p>
+<p>MFEM and PUMI are also part of the <a href="https://fastmath-scidac.llnl.gov/index.html">FASTMath</a>
+institute in the SciDAC program, see <a href="https://fastmath-scidac.llnl.gov/software-catalog.html">https://fastmath-scidac.llnl.gov/software-catalog.html</a>.</p>
+<hr />
+<h3 id="software-release-nek5000-v170">Software release: Nek5000 v17.0</h3>
+<p>Nek5000 version 17.0 was released as a major upgrade to Nek5000.  Major features
+improvements include:</p>
+<ul>
+<li>Refactored build system.</li>
+<li>New user-input parameter file format (<code>.par</code> replacing <code>.rea</code>).</li>
+<li>Characteristics (large time-step) support for moving mesh problems.</li>
+<li>Moving mesh support for the $PN-PN$ formulation.</li>
+<li>Improved stability for $PN-PN$ with variable viscosity.</li>
+<li>Support for mixed <code>Helmholtz/CVODE</code> solves.</li>
+<li>New fast <code>AMG setup</code> tool based on HYPRE.</li>
+<li>New <code>EXODUSII</code> mesh converter.</li>
+<li>New interface to <code>libxsmm</code> (fast MATMUL library).</li>
+<li>Extended <code>lowMach</code> solver for time varying thermodynamic pressure.</li>
+<li>Added DG for scalars.</li>
+<li>Reduced solver initialization time (parallel binary reader for all input files).</li>
+<li>Automatic general mesh-to-mesh transfer for restarts.</li>
+<li>Refactored support for overlapping domains (NekNek).</li>
+<li>Added high-pass filter relaxation (alternative to explicit filter).</li>
+<li>Refactored residual projection including support for coupled Helmholtz solves.</li>
+</ul>
+<hr />
+<h3 id="nekbone-and-laghos-join-proxy-app-suites">Nekbone and Laghos join proxy app suites</h3>
+<p>The Nekbone and Laghos miniapps developed in CEED were selected to be part of ECP's
+initial <a href="http://proxyapps.exascaleproject.org/ecp-suite/">Proxy Applications Suite</a>.</p>
+<p>Both miniapps were also picked to be <a href="https://asc.llnl.gov/coral-2-benchmarks">CORAL-2 benchmarks</a>.</p>
+<p>Laghos was also selected as one of LLNL's <a href="https://codesign.llnl.gov/laghos.php">ASC co-design miniapps</a>.</p>
+<hr />
+<h3 id="6th-nek5000-user-meeting-to-be-held-at-u-florida">6th Nek5000 User Meeting to be held at U Florida</h3>
+<p>The 6th Nek5000 User/Developer Meeting will be hosted by the DOE PSAAP-II
+Compressible Multiphase Turbulence (CMT) center in Tampa, FL, March 27-28, 2018.</p>
+<hr />
 <h3 id="nek5000-hackathon-at-uiuc">Nek5000 hackathon at UIUC</h3>
-<p>The inaugural Nek5000 Hackathon will be held at NCSA Building, University of
+<p>The inaugural Nek5000 Hackathon was held at NCSA Building, University of
 Illinois, Urbana-Champaign (UIUC), IL on Nov 12-14, 2017.</p>
-<p>The event will bring together users and developers with the intent to help new
-and current users bring their applications into production mode.  It will also
-give users a chance to provide the development team with feedback on what
-features or enhancements they would like to see in future releases.</p>
-<p>At the event, each of the participants or team will be asked to develop a small
-example demonstrating the phenomena of interest that could be shared with the
-rest of the user community through the NekExamples Suite. There will be several
-rounds of short presentations describing the problems of interest, the features
-that make the problem interesting and challenging, and the anticipated ways in
-which the Nek team can help.</p>
-<p>For more details, see the <a href="https://nek5000.mcs.anl.gov/2017/10/15/hackathon/">Nek5000 hackathon website</a>.</p>
+<p>The event was attended by researchers and Nek5000 developers to promote the
+application of Nek5000 to new problems from industry, national laboratories, and
+academia.  Twenty-five participants spent three days working on setting up new
+examples, developing new features, and helping one another to get maximum
+performance on their applications. Some of the more prominent exchanges of ideas
+included standardization of synthetic turbulent inflow techniques, use of CVODE
+for pure advection-diffusion problems, and the use of the characteristics
+methods for moving geometry applications.</p>
+<p>For more details, see the <a href="https://nek5000.mcs.anl.gov/2017/10/25/hackathon/">Nek5000 hackathon website</a>.</p>
 <hr />
 <h3 id="ceed-organizing-minisymposium-at-icosahom-2018">CEED organizing minisymposium at ICOSAHOM 2018</h3>
 <p>CEED is organizing a minisymposium, <em>Efficient High-Order Finite Element
@@ -562,6 +645,18 @@ for more information.</p></div>
     <ul class="nav bs-sidenav">
     
         <li class="main active"><a href="#news">News</a></li>
+        
+            <li><a href="#initial-release-of-libceed-the-ceed-api-library">Initial release of libCEED: The CEED API library</a></li>
+        
+            <li><a href="#software-release-mfem-v332">Software release: MFEM v3.3.2</a></li>
+        
+            <li><a href="#ceed-participates-in-xsdk-and-fastmath">CEED participates in xSDK and FASTMath</a></li>
+        
+            <li><a href="#software-release-nek5000-v170">Software release: Nek5000 v17.0</a></li>
+        
+            <li><a href="#nekbone-and-laghos-join-proxy-app-suites">Nekbone and Laghos join proxy app suites</a></li>
+        
+            <li><a href="#6th-nek5000-user-meeting-to-be-held-at-u-florida">6th Nek5000 User Meeting to be held at U Florida</a></li>
         
             <li><a href="#nek5000-hackathon-at-uiuc">Nek5000 hackathon at UIUC</a></li>
         
