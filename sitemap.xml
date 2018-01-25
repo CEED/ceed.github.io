@@ -3,16 +3,16 @@
 
     
     <url>
-     <loc>/</loc>
-     <lastmod>2018-01-19</lastmod>
+     <loc>None/</loc>
+     <lastmod>2018-01-25</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
 
     
     <url>
-     <loc>/news/</loc>
-     <lastmod>2018-01-19</lastmod>
+     <loc>None/news/</loc>
+     <lastmod>2018-01-25</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -20,102 +20,38 @@
     
         
     <url>
-     <loc>/codesign/</loc>
-     <lastmod>2018-01-19</lastmod>
+     <loc>None/codesign/</loc>
+     <lastmod>2018-01-25</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>/ap/</loc>
-     <lastmod>2018-01-19</lastmod>
+     <loc>None/ap/</loc>
+     <lastmod>2018-01-25</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>/hw/</loc>
-     <lastmod>2018-01-19</lastmod>
+     <loc>None/hw/</loc>
+     <lastmod>2018-01-25</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>/sw/</loc>
-     <lastmod>2018-01-19</lastmod>
+     <loc>None/sw/</loc>
+     <lastmod>2018-01-25</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>/bps/</loc>
-     <lastmod>2018-01-19</lastmod>
+     <loc>None/bps/</loc>
+     <lastmod>2018-01-25</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>/miniapps/</loc>
-     <lastmod>2018-01-19</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    
-
-    
-        
-    <url>
-     <loc>/software/</loc>
-     <lastmod>2018-01-19</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>/ceed-code/</loc>
-     <lastmod>2018-01-19</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>/libceed/</loc>
-     <lastmod>2018-01-19</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>/mfem/</loc>
-     <lastmod>2018-01-19</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>/nek/</loc>
-     <lastmod>2018-01-19</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>/gslib/</loc>
-     <lastmod>2018-01-19</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>/magma/</loc>
-     <lastmod>2018-01-19</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>/occa/</loc>
-     <lastmod>2018-01-19</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>/petsc/</loc>
-     <lastmod>2018-01-19</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>/pumi/</loc>
-     <lastmod>2018-01-19</lastmod>
+     <loc>None/miniapps/</loc>
+     <lastmod>2018-01-25</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -124,50 +60,114 @@
     
         
     <url>
-     <loc>/thrusts/</loc>
-     <lastmod>2018-01-19</lastmod>
+     <loc>None/software/</loc>
+     <lastmod>2018-01-25</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>/pubs/</loc>
-     <lastmod>2018-01-19</lastmod>
+     <loc>None/ceed-code/</loc>
+     <lastmod>2018-01-25</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>/fe/</loc>
-     <lastmod>2018-01-19</lastmod>
+     <loc>None/libceed/</loc>
+     <lastmod>2018-01-25</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>/meshing/</loc>
-     <lastmod>2018-01-19</lastmod>
+     <loc>None/mfem/</loc>
+     <lastmod>2018-01-25</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>/linalg/</loc>
-     <lastmod>2018-01-19</lastmod>
+     <loc>None/nek/</loc>
+     <lastmod>2018-01-25</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>/discr/</loc>
-     <lastmod>2018-01-19</lastmod>
+     <loc>None/gslib/</loc>
+     <lastmod>2018-01-25</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>/vis/</loc>
-     <lastmod>2018-01-19</lastmod>
+     <loc>None/magma/</loc>
+     <lastmod>2018-01-25</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>/ceed1am/</loc>
-     <lastmod>2018-01-19</lastmod>
+     <loc>None/occa/</loc>
+     <lastmod>2018-01-25</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/petsc/</loc>
+     <lastmod>2018-01-25</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/pumi/</loc>
+     <lastmod>2018-01-25</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    
+
+    
+        
+    <url>
+     <loc>None/thrusts/</loc>
+     <lastmod>2018-01-25</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/pubs/</loc>
+     <lastmod>2018-01-25</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/fe/</loc>
+     <lastmod>2018-01-25</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/meshing/</loc>
+     <lastmod>2018-01-25</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/linalg/</loc>
+     <lastmod>2018-01-25</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/discr/</loc>
+     <lastmod>2018-01-25</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/vis/</loc>
+     <lastmod>2018-01-25</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/ceed1am/</loc>
+     <lastmod>2018-01-25</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -175,8 +175,8 @@
 
     
     <url>
-     <loc>/about/</loc>
-     <lastmod>2018-01-19</lastmod>
+     <loc>None/about/</loc>
+     <lastmod>2018-01-25</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
