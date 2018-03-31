@@ -202,8 +202,8 @@
                         
                     
                         
-                            <li class="active">
-                                 <a href="./">Finite Elements</a>
+                            <li >
+                                 <a href="../fe/">Finite Elements</a>
                             </li>
                         
                     
@@ -271,18 +271,30 @@
             <div class="col-md-3 visible-xs visible-sm"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
     
-        <li class="main active"><a href="#finite-element-thrust">Finite Element Thrust </a></li>
+        <li class="main active"><a href="#ceed-second-annual-meeting">CEED Second Annual Meeting</a></li>
         
 	    
-                <li><a href="#why-high-order-finite-elements">Why High-Order Finite Elements?</a></li>
+                <li><a href="#august-8-10-2018">August 8-10, 2018</a></li>
 	    
 	
 	    
-                <li><a href="#high-order-benchmarks-and-miniapps">High-Order Benchmarks and Miniapps</a></li>
+                <li><a href="#university-of-colorado-boulder">University of Colorado Boulder</a></li>
 	    
 	
 	    
-                <li><a href="#ecosystem-for-high-order-applications">Ecosystem for High-Order Applications</a></li>
+                <li><a href="#overview">Overview</a></li>
+	    
+	
+	    
+                <li><a href="#tentative-meeting-agenda">Tentative Meeting Agenda</a></li>
+	    
+	
+	    
+                <li><a href="#lodging-options">Lodging Options</a></li>
+	    
+	
+	    
+                <li><a href="#questions">Questions?</a></li>
 	    
 	
     
@@ -297,65 +309,68 @@
 <!-- ... fa-comment, fa-comment-o, fa-comments, fa-comments-o, fa-bullhorn --></div> <!-- toc on top on mobile -->
             <div class="col-md-9" role="main">
 
-<h2 id="finite-element-thrust">Finite Element Thrust <img src="../img/ho-spaces-padding.png" align="right" alt="FE logo" height="250" width="300"></h2>
-<p>The goal of CEED's Finite Element (FE) thrust, led by <a href="https://people.llnl.gov/dobrev1">Veselin Dobrev</a>
-from <a href="http://www.llnl.gov">Lawrence Livermore National Laboratory</a>, is to continue to improve
-the state-of-the-art spectral element/high-order finite element algorithms and kernels in the
-CEED software targeting exascale architectures.</p>
-<h3 id="why-high-order-finite-elements">Why High-Order Finite Elements?</h3>
-<p>Efficient exploitation of
-<a href="https://exascaleproject.org/what-is-exascale/">exascale architectures</a> requires
-a rethink of the numerical algorithms used in large-scale scientific applications.
-These architectures favor algorithms that expose ultra-fine-grain parallelism
-and maximize the ratio of floating-point operations to energy-intensive data
-movement.</p>
-<p>Many large-scale <a href="../ap/">applications</a> employ unstructured finite element
-discretization methods, where practical efficiency is measured by the accuracy
-achieved per unit computational time.  One of the few viable approaches to
-achieve high performance in this case is to use matrix-free high-order finite
-element methods, since these methods can both increase the accuracy and/or lower
-the computational time due to reduced data motion.</p>
-<p>To achieve this efficiency, high-order methods use mesh elements that are mapped
-from canonical reference elements (hexes, wedges, pyramids, tetrahedra) and
-exploit, where possible, the tensor-product structure of the canonical mesh
-elements and finite element spaces. Through matrix-free partial assembly, the
-use of canonical reference elements enables substantial cache efficiency and
-minimizes extraneous data movement in comparison to traditional low-order
-approaches.</p>
-<h3 id="high-order-benchmarks-and-miniapps">High-Order Benchmarks and Miniapps</h3>
-<p>The FE thrust works closely with the <a href="../ap/">Applications</a> and <a href="../hw/">Hardware</a>
-thrusts on the development of CEED <a href="../bps/">benchmarks</a> and
-<a href="../miniapps/">miniapps</a>, and coordinates the project software activities with
-the <a href="../sw/">Software</a> thrust.</p>
-<h3 id="ecosystem-for-high-order-applications">Ecosystem for High-Order Applications</h3>
-<p>In addition to performance improvements, the FE thrust is focusing on
-community-wide challenges that are necessary for establishing a
-full-fledged high-order application software ecosystem.</p>
-<p>These efforts include research and development in the following areas:</p>
+<h1 id="ceed-second-annual-meeting">CEED Second Annual Meeting</h1>
+<h4 id="august-8-10-2018">August 8-10, 2018</h4>
+<h4 id="university-of-colorado-boulder">University of Colorado Boulder</h4>
+<p><img alt="CEED Logo" src="../img/logo-150.png" /></p>
+<h3 id="overview">Overview</h3>
+<p>CEED will hold its second annual meeting August 8-10, 2018 in <a href="http://places.colorado.edu/place?id=KOBL%20S127">Koelbel S127</a> (<a href="https://myatlascms.com/map/?id=336#!s/key=kobl?m/193917">adjacent</a> to the Engineering Center) at the University of Colorado Boulder. The goal of the meeting is to report on the progress in the center, deepen existing and establish new connections with ECP hardware vendors, ECP software technologies projects and other collaborators, plan project activities and brainstorm/work as a group to make technical progress. In addition to gathering together many of the CEED researchers, the meeting will include representatives of the ECP management, hardware vendors, software technology and other interested projects.</p>
+<h3 id="tentative-meeting-agenda">Tentative Meeting Agenda</h3>
+<h4 id="august-8-wednesday">August 8 (Wednesday)</h4>
 <ul>
-<li><a href="../meshing/#high-order-meshes-wzxhzdk0">High-Order Meshes</a></li>
-<li><a href="../meshing/#unstructured-amr-wzxhzdk1">Unstructured Adaptive Mesh Refinement</a></li>
-<li><a href="../discr/#efficient-high-order-operator-format-wzxhzdk1">Efficient High-Order Operator Format / Representation</a></li>
-<li><a href="../linalg/#batched-dense-tensor-contractions-wzxhzdk0">Batched Dense Tensor Contractions</a></li>
-<li><a href="../linalg/#scalable-matrix-free-solvers">Scalable Matrix-Free Solvers</a></li>
-<li><a href="../discr/#general-interpolation-of-solution-field-values">General Interpolation</a></li>
-<li><a href="../vis/">Visualization of High-Order Meshes and Functions</a></li>
-</ul></div>
+<li>Project overview</li>
+<li>Collaborative discussion</li>
+<li>Meeting dinner</li>
+</ul>
+<h4 id="august-9-thursday">August 9 (Thursday)</h4>
+<ul>
+<li>Guest speakers</li>
+<li>Collaborative discussion</li>
+<li>Excursion (hiking in the Flatirons)</li>
+</ul>
+<h4 id="august-10-friday">August 10 (Friday)</h4>
+<ul>
+<li>Internal planning</li>
+<li>Hackathon</li>
+</ul>
+<h3 id="lodging-options">Lodging Options</h3>
+<p>There are many hotels close to the university in Boulder.</p>
+<ul>
+<li><a href="https://www.millenniumhotels.com/en/boulder/millennium-harvest-house-boulder/">Millennium Harvest</a> - 5 minute walk</li>
+<li><a href="https://boulderinn.com/">Best Western</a> - 10 minute walk</li>
+<li><a href="http://www.bouldermarriotthotel.com/">Marriott</a> - 10 minute walk</li>
+<li><a href="http://embassysuites3.hilton.com/en/hotels/colorado/embassy-suites-by-hilton-boulder-DENBOES/index.html">Embassy Suites (Hilton)</a> - 10 minute walk</li>
+<li><a href="http://hiltongardeninn3.hilton.com/en/hotels/colorado/hilton-garden-inn-boulder-WBUBOGI/maps-directions/index.html">Garden Inn (Hilton)</a> - 10 minute walk</li>
+</ul>
+<h3 id="questions">Questions?</h3>
+<p>Please contact the meeting organizers at: <a href="mailto:llnl-ceed-meeting@listserv.llnl.gov">llnl-ceed-meeting@listserv.llnl.gov</a>.</p></div>
             <div class="col-md-3 hidden-xs hidden-sm"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
     
-        <li class="main active"><a href="#finite-element-thrust">Finite Element Thrust </a></li>
+        <li class="main active"><a href="#ceed-second-annual-meeting">CEED Second Annual Meeting</a></li>
         
 	    
-                <li><a href="#why-high-order-finite-elements">Why High-Order Finite Elements?</a></li>
+                <li><a href="#august-8-10-2018">August 8-10, 2018</a></li>
 	    
 	
 	    
-                <li><a href="#high-order-benchmarks-and-miniapps">High-Order Benchmarks and Miniapps</a></li>
+                <li><a href="#university-of-colorado-boulder">University of Colorado Boulder</a></li>
 	    
 	
 	    
-                <li><a href="#ecosystem-for-high-order-applications">Ecosystem for High-Order Applications</a></li>
+                <li><a href="#overview">Overview</a></li>
+	    
+	
+	    
+                <li><a href="#tentative-meeting-agenda">Tentative Meeting Agenda</a></li>
+	    
+	
+	    
+                <li><a href="#lodging-options">Lodging Options</a></li>
+	    
+	
+	    
+                <li><a href="#questions">Questions?</a></li>
 	    
 	
     

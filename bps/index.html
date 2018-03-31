@@ -120,6 +120,12 @@
                     
                         
                             <li >
+                                 <a href="../ceed-1.0/">CEED 1.0</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
                                  <a href="../ceed-code/">CEED APIs</a>
                             </li>
                         
@@ -227,6 +233,8 @@
                     
                         
                     
+                        
+                    
                     </ul>
                 </li>
             
@@ -266,6 +274,10 @@
         <li class="main active"><a href="#ceed-bake-off-problems-benchmarks">CEED Bake-off Problems (Benchmarks)</a></li>
         
 	    
+                <li><a href="#short-summary">Short Summary</a></li>
+	    
+	
+	    
                 <li><a href="#ceed-benchmarks-repository">CEED Benchmarks Repository</a></li>
 	    
 	
@@ -297,13 +309,40 @@
 <p>This page contains the specifications of CEED's <em>bake-off problems</em>: high-order
 kernels/benchmarks designed to test and compare the performance of high-order
 codes.</p>
+<h3 id="short-summary">Short Summary</h3>
+<p>This section is a just a quick reference using the notation from the
+<a href="#terminology-and-notation">Terminology and Notation</a> section below (cf.
+libCEED <a href="https://github.com/CEED/libCEED/blob/master/doc/libCEED.md">documentation</a>).</p>
+<p>For more details and software, see the follow-on sections.</p>
+<h5 id="bake-off-problems-bps">Bake-off Problems (BPs)</h5>
+<ul>
+<li><strong>BP1</strong>: scalar PCG with mass matrix, $q = p+2$</li>
+<li><strong>BP2</strong>: vector PCG with mass matrix, $q = p+2$</li>
+<li><strong>BP3</strong>: scalar PCG with stiffness matrix, $q = p+2$</li>
+<li><strong>BP3.5</strong>: scalar PCG with stiffness matrix, $q = p+1$</li>
+<li><strong>BP4</strong>: vector PCG with stiffness matrix, $q = p+2$</li>
+<li><strong>BP4.5</strong>: vector PCG with stiffness matrix, $q = p+1$</li>
+</ul>
+<p>These are all <strong>T-vector</strong>-to-<strong>T-vector</strong> and include parallel scatter +
+element scatter + element evaluation kernel + element gather + parallel gather.</p>
+<h5 id="bake-off-kernels-bks">Bake-off Kernels (BKs)</h5>
+<ul>
+<li><strong>BK1</strong>: scalar <strong>E-vector</strong>-to-<strong>E-vector</strong> evaluation of mass matrix, $q = p+2$</li>
+<li><strong>BK2</strong>: vector <strong>E-vector</strong>-to-<strong>E-vector</strong> evaluation of mass matrix, $q = p+2$</li>
+<li><strong>BK3</strong>: scalar <strong>E-vector</strong>-to-<strong>E-vector</strong> evaluation of stiffness matrix, $q = p+2$</li>
+<li><strong>BK3.5</strong>: scalar <strong>E-vector</strong>-to-<strong>E-vector</strong> evaluation of stiffness matrix, $q = p+1$</li>
+<li><strong>BK4</strong>: vector  <strong>E-vector</strong>-to-<strong>E-vector</strong> evaluation of stiffness matrix, $q = p+2$</li>
+<li><strong>BK4.5</strong>: vector  <strong>E-vector</strong>-to-<strong>E-vector</strong> evaluation of stiffness matrix, $q = p+1$</li>
+</ul>
+<p>The BKs are parallel to the BPs, except they do not include parallel and element
+scatter/gather (the actions of <strong>P</strong> and <strong>G</strong> and their transposes).</p>
 <h3 id="ceed-benchmarks-repository">CEED Benchmarks Repository</h3>
 <p>The CEED benchmarks repository is available at
 <a href="https://github.com/CEED/benchmarks">https://github.com/CEED/benchmarks</a>
 and contains implementations for the CEED bake-off problems with MFEM and
 Nek5000 in the directories <code>tests/mfem_bps</code> and <code>tests/nek5000_bps</code>,
 respectively. See the included <code>README.md</code> files for more details.</p>
-<h4 id="vt-ceed-bp-software-release-new">VT CEED BP Software Release <span class="badge">New</span></h4>
+<h4 id="vt-ceed-bp-software-release">VT CEED BP Software Release</h4>
 <p>Checkout the new
 <a href="https://www.paranumal.com/single-post/2018/02/01/CEED-Code-Competition-bake-off-problems">CEED BP Software Release</a>
 by the Virginia Tech CEED team. Its main focus is on GPU performance with
@@ -501,6 +540,10 @@ to all BPs:</p>
     
         <li class="main active"><a href="#ceed-bake-off-problems-benchmarks">CEED Bake-off Problems (Benchmarks)</a></li>
         
+	    
+                <li><a href="#short-summary">Short Summary</a></li>
+	    
+	
 	    
                 <li><a href="#ceed-benchmarks-repository">CEED Benchmarks Repository</a></li>
 	    

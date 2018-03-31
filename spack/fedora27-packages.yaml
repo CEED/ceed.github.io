@@ -1,0 +1,18 @@
+packages:
+  libx11:
+    paths:
+      libx11@system: /usr
+    version: [system]
+    buildable: False
+
+  libxt:
+    paths:
+      libxt@system: /usr
+    version: [system]
+    buildable: False
+
+  python:
+    paths:
+      python@2.7.14: /usr
+    version: [2.7.14]
+    buildable: False

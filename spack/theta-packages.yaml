@@ -1,0 +1,92 @@
+# Copyright (c) 2017, Lawrence Livermore National Security, LLC. Produced at
+# the Lawrence Livermore National Laboratory. LLNL-CODE-734707. All Rights
+# reserved. See files LICENSE and NOTICE for details.
+#
+# This file is part of CEED, a collection of benchmarks, miniapps, software
+# libraries and APIs for efficient high-order finite element and spectral
+# element discretizations for exascale applications. For more information and
+# source code availability see http://github.com/ceed.
+#
+# The CEED research is supported by the Exascale Computing Project 17-SC-20-SC,
+# a collaborative effort of two U.S. Department of Energy organizations (Office
+# of Science and the National Nuclear Security Administration) responsible for
+# the planning and preparation of a capable exascale ecosystem, including
+# software, applications, hardware, advanced system engineering and early
+# testbed platforms, in support of the nation's exascale computing imperative.
+#
+# By default, the Spack-based CEED installation will build all required packages
+# from scratch, which can take a long time. The file ~/.spack/packages.yaml, or
+# ~/.spack/<platform>/packages.yaml allows you to list packages already
+# installed on your system for Spack to use instead of compiling them itself.
+#
+# This is an example of a packages.yaml file for the Theta machine at ALCF,
+# arch=cray-CNL-mic_knl.
+
+packages:
+    all:
+        compiler: [intel@16.0.3.210, gcc@5.3.0]
+        providers:
+            mpi: [mpich]
+    intel-mkl:
+        paths:
+            intel-mkl@16.0.3.210%intel@16.0.3.210 arch=cray-CNL-mic_knl: /opt/intel
+        buildable: False
+    mpich:
+        modules:
+            # requires 'module load cce' otherwise gives parsing error
+            mpich@7.6.3%gcc@5.3.0 arch=cray-CNL-mic_knl: cray-mpich/7.6.3
+            mpich@7.6.3%intel@16.0.3.210 arch=cray-CNL-mic_knl: cray-mpich/7.6.3
+        buildable: False
+
+    cmake:
+        paths:
+            cmake@3.5.2%gcc@5.3.0 arch=cray-CNL-mic_knl: /usr
+            cmake@3.5.2%intel@16.0.3.210 arch=cray-CNL-mic_knl: /usr
+        buildable: False
+    libx11:
+        paths:
+            libx11@system: /usr
+        version: [system]
+        buildable: False
+    libxt:
+        paths:
+            libxt@system: /usr
+        version: [system]
+        buildable: False
+    python:
+        paths:
+            python@2.7.13%gcc@5.3.0 arch=cray-CNL-mic_knl: /usr
+            python@2.7.13%intel@16.0.3.210 arch=cray-CNL-mic_knl: /usr
+        buildable: False
+
+    # Not needed for CEED
+    autoconf:
+        paths:
+            autoconf@2.69%gcc@5.3.0 arch=cray-CNL-mic_knl: /usr
+            autoconf@2.69%intel@16.0.3.210 arch=cray-CNL-mic_knl: /usr
+        buildable: False
+    automake:
+        paths:
+            automake@1.13.4%gcc@5.3.0 arch=cray-CNL-mic_knl: /usr
+            automake@1.13.4%intel@16.0.3.210 arch=cray-CNL-mic_knl: /usr
+        buildable: False
+    boost:
+        paths:
+            boost@1.64.0%gcc@5.3.0 arch=cray-CNL-mic_knl: /soft/libraries/boost/1.64.0/gnu
+            boost@1.64.0%intel@16.0.3.210 arch=cray-CNL-mic_knl: /soft/libraries/boost/1.64.0/intel
+        buildable: False
+    libtool:
+        paths:
+            libtool@2.4.2%gcc@5.3.0 arch=cray-CNL-mic_knl: /usr
+            libtool@2.4.2%intel@16.0.3.210 arch=cray-CNL-mic_knl: /usr
+        buildable: False
+    m4:
+        paths:
+            m4@1.4.16%gcc@5.3.0 arch=cray-CNL-mic_knl: /usr
+            m4@1.4.16%intel@16.0.3.210 arch=cray-CNL-mic_knl: /usr
+        buildable: False
+    pkg-config:
+        paths:
+            pkg-config@0.28%gcc@5.3.0 arch=cray-CNL-mic_knl: /usr
+            pkg-config@0.28%intel@16.0.3.210 arch=cray-CNL-mic_knl: /usr
+        buildable: False

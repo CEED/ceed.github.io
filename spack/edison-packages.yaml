@@ -1,0 +1,72 @@
+# Copyright (c) 2017, Lawrence Livermore National Security, LLC. Produced at
+# the Lawrence Livermore National Laboratory. LLNL-CODE-734707. All Rights
+# reserved. See files LICENSE and NOTICE for details.
+#
+# This file is part of CEED, a collection of benchmarks, miniapps, software
+# libraries and APIs for efficient high-order finite element and spectral
+# element discretizations for exascale applications. For more information and
+# source code availability see http://github.com/ceed.
+#
+# The CEED research is supported by the Exascale Computing Project 17-SC-20-SC,
+# a collaborative effort of two U.S. Department of Energy organizations (Office
+# of Science and the National Nuclear Security Administration) responsible for
+# the planning and preparation of a capable exascale ecosystem, including
+# software, applications, hardware, advanced system engineering and early
+# testbed platforms, in support of the nation's exascale computing imperative.
+#
+# By default, the Spack-based CEED installation will build all required packages
+# from scratch, which can take a long time. The file ~/.spack/packages.yaml, or
+# ~/.spack/<platform>/packages.yaml allows you to list packages already
+# installed on your system for Spack to use instead of compiling them itself.
+#
+# This is an example of a packages.yaml file for the Edison machine at NERSC,
+# arch=cray-CNL-ivybridge, using system modules.
+
+packages:
+    all:
+        compiler: [gcc@5.2.0, intel/16.0.3.210]
+        providers:
+            mpi: [mpich]
+    mpich:
+        modules:
+            mpich@7.6.0%gcc@5.2.0 arch=cray-CNL-ivybridge: cray-mpich
+            mpich@7.6.0%intel@16.0.3.210 arch=cray-CNL-ivybridge: cray-mpich
+        buildable: False
+
+    cmake:
+        modules:
+            cmake@3.8.2%gcc@5.2.0 arch=cray-CNL-ivybridge: cmake
+            cmake@3.8.2%intel@16.0.3.210 arch=cray-CNL-ivybridge: cmake
+        buildable: False
+    libx11:
+        paths:
+            libx11@system: /usr
+        version: [system]
+        buildable: False
+    libxt:
+        paths:
+            libxt@system: /usr
+        version: [system]
+        buildable: False
+    python:
+        paths:
+            python@2.7.14%gcc@5.2.0 arch=cray-CNL-ivybridge: /usr
+            python@2.7.14%intel@16.0.3.210 arch=cray-CNL-ivybridge: /usr
+        buildable: False
+
+    # Not needed for CEED
+    boost:
+        modules:
+            boost@1.65.1%gcc@5.2.0 arch=cray-CNL-ivybridge: boost
+            boost@1.65.1%intel@16.0.3.210 arch=cray-CNL-ivybridge: boost
+        buildable: False
+    hdf5:
+        modules:
+            hdf5@1.10.0.3%gcc@5.2.0+hl+fortran arch=cray-CNL-ivybridge: cray-hdf5-parallel
+            hdf5@1.10.0.3%intel@16.0.3.210+hl+fortran arch=cray-CNL-ivybridge: cray-hdf5-parallel
+        buildable: False
+    perl:
+        paths:
+            perl@2.7.14%gcc@5.2.0 arch=cray-CNL-ivybridge: /usr
+            perl@2.7.14%intel@16.0.3.210 arch=cray-CNL-ivybridge: /usr
+        buildable: False

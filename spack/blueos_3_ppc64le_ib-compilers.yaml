@@ -1,0 +1,120 @@
+# Copyright (c) 2017, Lawrence Livermore National Security, LLC. Produced at
+# the Lawrence Livermore National Laboratory. LLNL-CODE-734707. All Rights
+# reserved. See files LICENSE and NOTICE for details.
+#
+# This file is part of CEED, a collection of benchmarks, miniapps, software
+# libraries and APIs for efficient high-order finite element and spectral
+# element discretizations for exascale applications. For more information and
+# source code availability see http://github.com/ceed.
+#
+# The CEED research is supported by the Exascale Computing Project 17-SC-20-SC,
+# a collaborative effort of two U.S. Department of Energy organizations (Office
+# of Science and the National Nuclear Security Administration) responsible for
+# the planning and preparation of a capable exascale ecosystem, including
+# software, applications, hardware, advanced system engineering and early
+# testbed platforms, in support of the nation's exascale computing imperative.
+#
+# By default, the Spack-based CEED installation will find compilers in standard
+# system locations, see "spack compiler find". The file ~/.spack/compilers.yaml,
+# or ~/.spack/<platform>/compilers.yaml allows you to list compilers already
+# installed on your system for Spack to use instead of finding them itself.
+#
+# This is an example of a compilers.yaml file for the Ray CORAL EA system at
+# LLNL's Livermore Computing center, arch=linux-rhel7-ppc64le.
+
+compilers:
+- compiler:
+    environment: {}
+    extra_rpaths: []
+    flags: {}
+    modules: []
+    operating_system: rhel7
+    paths:
+        cc: /usr/tcetmp/bin/clang
+        cxx: /usr/tcetmp/bin/clang++
+        f77: null
+        fc: null
+    spec: clang@3.8.0
+    target: ppc64le
+- compiler:
+    environment: {}
+    extra_rpaths: []
+    flags: {}
+    modules: []
+    operating_system: rhel7
+    paths:
+        cc: /usr/bin/gcc
+        cxx: /usr/bin/g++
+        f77: /usr/bin/gfortran
+        fc: /usr/bin/gfortran
+    spec: gcc@4.8.5
+    target: ppc64le
+- compiler:
+    environment: {}
+    extra_rpaths: []
+    flags: {}
+    modules: []
+    operating_system: rhel7
+    paths:
+        cc: /usr/tcetmp/bin/gcc
+        cxx: /usr/tcetmp/bin/g++
+        f77: /usr/tcetmp/bin/gfortran
+        fc: /usr/tcetmp/bin/gfortran
+    spec: gcc@4.9.3
+    target: ppc64le
+- compiler:
+    environment: {}
+    extra_rpaths: []
+    flags:
+        fflags: -qzerosize
+    modules: []
+    operating_system: rhel7
+    paths:
+        cc: /usr/tce/packages/xl/xl-beta-2018.02.22/bin/xlc
+        cxx: /usr/tce/packages/xl/xl-beta-2018.02.22/bin/xlC
+        f77: /usr/tce/packages/xl/xl-beta-2018.02.22/bin/xlf
+        fc: /usr/tce/packages/xl/xl-beta-2018.02.22/bin/xlf2003
+    spec: xl@13.1.7-beta2
+    target: ppc64le
+- compiler:
+    environment: {}
+    extra_rpaths: []
+    flags:
+        fflags: -qzerosize
+    modules: []
+    operating_system: rhel7
+    paths:
+        cc: /usr/tce/packages/xl/xl-beta-2018.02.22/bin/xlc_r
+        cxx: /usr/tce/packages/xl/xl-beta-2018.02.22/bin/xlC_r
+        f77: /usr/tce/packages/xl/xl-beta-2018.02.22/bin/xlf_r
+        fc: /usr/tce/packages/xl/xl-beta-2018.02.22/bin/xlf2003_r
+    spec: xl_r@13.1.7-beta2
+    target: ppc64le
+- compiler:
+    environment: {}
+    extra_rpaths: []
+    flags:
+        fflags: -qzerosize
+    modules: []
+    operating_system: rhel7
+    paths:
+        cc: /usr/tce/packages/xl/xl-beta-2018.03.21/bin/xlc
+        cxx: /usr/tce/packages/xl/xl-beta-2018.03.21/bin/xlC
+        f77: /usr/tce/packages/xl/xl-beta-2018.03.21/bin/xlf
+        fc: /usr/tce/packages/xl/xl-beta-2018.03.21/bin/xlf2003
+    spec: xl@13.1.7-beta3
+    target: ppc64le
+- compiler:
+    environment: {}
+    extra_rpaths: []
+    flags:
+        fflags: -qzerosize
+    modules: []
+    operating_system: rhel7
+    paths:
+        cc: /usr/tce/packages/xl/xl-beta-2018.03.21/bin/xlc_r
+        cxx: /usr/tce/packages/xl/xl-beta-2018.03.21/bin/xlC_r
+        f77: /usr/tce/packages/xl/xl-beta-2018.03.21/bin/xlf_r
+        fc: /usr/tce/packages/xl/xl-beta-2018.03.21/bin/xlf2003_r
+    spec: xl_r@13.1.7-beta3
+    target: ppc64le
