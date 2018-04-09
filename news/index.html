@@ -274,6 +274,16 @@
     
         <li class="main active"><a href="#news">News</a></li>
         
+            <li><a href="#software-release-ceed-10">Software release: CEED 1.0</a></li>
+        
+            <li><a href="#software-release-libceed-02">Software release: libCEED 0.2</a></li>
+        
+            <li><a href="#panayot-vassilevski-named-siam-fellow">Panayot Vassilevski named SIAM fellow</a></li>
+        
+            <li><a href="#benchmark-release-by-paranumal-team">Benchmark release by Paranumal team</a></li>
+        
+            <li><a href="#workshop-on-batched-reproducible-and-reduced-precision-blas">Workshop on Batched, Reproducible, and Reduced Precision BLAS</a></li>
+        
             <li><a href="#new-website-launched-by-the-virginia-tech-ceed-team">New website launched by the Virginia Tech CEED team</a></li>
         
             <li><a href="#initial-release-of-libceed-the-ceed-api-library">Initial release of libCEED: The CEED API library</a></li>
@@ -316,7 +326,7 @@
         
             <li><a href="#gpu-hackathon-at-bnl">GPU Hackathon at BNL</a></li>
         
-            <li><a href="#workshop-on-batched-reproducible-and-reduced-precision-blas">Workshop on Batched, Reproducible, and Reduced Precision BLAS</a></li>
+            <li><a href="#workshop-on-batched-reproducible-and-reduced-precision-blas_1">Workshop on Batched, Reproducible, and Reduced Precision BLAS</a></li>
         
             <li><a href="#software-release-mfem-v33">Software release: MFEM v3.3</a></li>
         
@@ -337,8 +347,124 @@
             <div class="col-md-9" role="main">
 
 <h1 id="news">News</h1>
+<h3 id="software-release-ceed-10">Software release: CEED 1.0</h3>
+<p>The CEED team released its first software distribution, <a href="http://ceed.exascaleproject.org/ceed-1.0">CEED 1.0</a> consisting of 12 integrated Spack packages for <a href="../libceed/">libCEED</a>, <a href="../mfem/">mfem</a>, <a href="../nek/">nek5000</a>, <a href="../nek/">nekcem</a>, <a href="../miniapps/#laghos-new">laghos</a>, <a href="../miniapps/#nekbone">nekbone</a>, <a href="../miniapps/#hpgmg-fe">hpgmg</a>, <a href="../occa/">occa</a>, <a href="../magma/">magma</a>, <a href="../gslib/">gslib</a>, <a href="../petsc/">petsc</a> and <a href="../pumi/">pumi</a> plus a new <a href="https://github.com/spack/spack/blob/develop/var/spack/repos/builtin/packages/ceed/package.py">CEED meta-package</a>.</p>
+<p>With <a href="https://spack.io">Spack</a>, a user can install the whole CEED software stack simply with: <code>spack install ceed</code>.</p>
+<p>As part of CEED 1.0, the team developed <a href="http://ceed.exascaleproject.org/ceed-1.0/">comprehensive documentation</a> including software and compiler configurations for <a href="https://www.alcf.anl.gov">ALCF</a>, <a href="https://www.olcf.ornl.gov">OLCF</a>, <a href="http://www.nersc.gov">NERSC</a> and <a href="https://hpc.llnl.gov">LLNL</a>:</p>
+<table>
+<thead>
+<tr>
+<th>Platform</th>
+<th>Architecture</th>
+<th>Spack Configuration</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Mac</strong></td>
+<td><code>darwin-x86_64</code></td>
+<td><a href="../spack/darwin-x86_64-packages.yaml">packages</a> <i class="fa fa-cloud-download"></i></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Linux</strong> (RHEL7)</td>
+<td><code>linux-rhel7-x86_64</code></td>
+<td><a href="../spack/linux-rhel7-x86_64-packages.yaml">packages</a> <i class="fa fa-cloud-download"></i></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Cori</strong> (NERSC)</td>
+<td><code>cray-CNL-haswell</code></td>
+<td><a href="../spack/cori-packages.yaml">packages</a> <i class="fa fa-cloud-download"></i></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Edison</strong> (NERSC)</td>
+<td><code>cray-CNL-ivybridge</code></td>
+<td><a href="../spack/edison-packages.yaml">packages</a> <i class="fa fa-cloud-download"></i></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Theta</strong> (ALCF)</td>
+<td><code>cray-CNL-mic_knl</code></td>
+<td><a href="../spack/theta-packages.yaml">packages</a> <i class="fa fa-cloud-download"></i></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Titan</strong> (OLCF)</td>
+<td><code>cray-CNL-interlagos</code></td>
+<td><a href="../spack/titan-packages.yaml">packages</a> <i class="fa fa-cloud-download"></i></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>CORAL-EA</strong> (LLNL)</td>
+<td><code>blueos_3_ppc64le_ib</code></td>
+<td><a href="../spack/blueos_3_ppc64le_ib-packages.yaml">packages</a> <i class="fa fa-cloud-download"></i> &nbsp; <a href="../spack/blueos_3_ppc64le_ib-compilers.yaml">compilers</a> <i class="fa fa-cloud-download"></i></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>TOSS3</strong> (LLNL)</td>
+<td><code>toss_3_x86_64_ib</code></td>
+<td><a href="../spack/toss_3_x86_64_ib-packages.yaml">packages</a> <i class="fa fa-cloud-download"></i> &nbsp; <a href="../spack/toss_3_x86_64_ib-compilers.yaml">compilers</a> <i class="fa fa-cloud-download"></i></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>For more information visit <a href="http://ceed.exascaleproject.org/ceed-1.0">http://ceed.exascaleproject.org/ceed-1.0</a>.</p>
+<hr />
+<h3 id="software-release-libceed-02">Software release: libCEED 0.2</h3>
+<p>Version 0.2 of <a href="../libceed/">libCEED</a>, the CEED API library, was released in March 2018 with major improvements in the <a href="../occa/">OCCA</a> backend.</p>
+<p>libCEED is a lightweight portable library that allows, for the first time, a wide variety of applications (written in C, C++, Fortran) to share  a wide variety of discretization kernels (CPU, GPU, OpenMP, OpenCL), including high-performance GPU kernels.</p>
+<p>libCEED comes with several examples of its usage, ranging from standalone C codes in the <code>/examples/ceed</code> directory to examples based on external packages, such as <a href="../mfem/">MFEM</a>, <a href="../petsc/">PETSc</a> and <a href="../nek/">Nek5000</a>. Below is an illustration how libCEED enables these very different codes (C++, C, F77) to take advantage of a common set of GPU kernels (see also the <a href="http://ceed.exascaleproject.org/ceed-1.0/#gpu-demo">CEED 1.0 GPU demo</a>):</p>
+<pre><code class="sh"># libCEED examples on CPU and GPU
+cd examples/ceed
+make
+./ex1 -ceed /cpu/self
+./ex1 -ceed /gpu/occa
+cd ../..
+
+# MFEM+libCEED examples on CPU and GPU
+cd examples/mfem
+make
+./bp1 -ceed /cpu/self -no-vis
+./bp1 -ceed /gpu/occa -no-vis
+cd ../..
+
+# PETSc+libCEED examples on CPU and GPU
+cd examples/petsc
+make
+./bp1 -ceed /cpu/self
+./bp1 -ceed /gpu/occa
+cd ../..
+
+# Nek+libCEED examples on CPU and GPU
+cd examples/nek5000
+./make-nek-examples.sh
+./run-nek-example.sh -ceed /cpu/self -b 3
+./run-nek-example.sh -ceed /gpu/occa -b 3
+cd ../..
+</code></pre>
+
+<p>For more information visit <a href="https://github.com/CEED/libCEED">https://github.com/CEED/libCEED</a>.</p>
+<hr />
+<h3 id="panayot-vassilevski-named-siam-fellow">Panayot Vassilevski named SIAM fellow</h3>
+<p><a href="https://people.llnl.gov/vassilevski1">Panayot Vassilevski</a>, who is part of the CEED team at LLNL, was named a <a href="https://sinews.siam.org/Details-Page/siam-announces-class-of-2018-fellows-1">2018 SIAM fellow</a> for his work on <em>designing algebraic approaches for creating and analyzing multilevel algorithms</em>.</p>
+<p><img src="https://people.llnl.gov/include/getImage.php?person_id=529" align="center" alt="Panayot"></p>
+<p>Panayot is the editor-in-chief for <a href="https://onlinelibrary.wiley.com/journal/10991506">Numerical Linear Algebra with Applications</a> and has published <a href="https://scholar.google.com/citations?user=GhpkHDAAAAAJ">many papers</a> and a monograph on <a href="http://www.springer.com/us/book/9780387715636">Multilevel Block Factorization Preconditioners</a>.</p>
+<p>In CEED, Panayot is working on matrix-free preconditioners for high-order finite element discretizations.</p>
+<p><em>Congratulations Panayot!</em></p>
+<hr />
+<h3 id="benchmark-release-by-paranumal-team">Benchmark release by Paranumal team</h3>
+<p>The CEED group at Virginia Tech released <a href="https://github.com/kswirydo/CEED-A">standalone implementations</a> of CEED's BP1.0, BP3.0, and BP3.5 <a href="../bps/">benchmark problems</a>. For results and discussion, see the ("CEED Code Competition: VT software release")[https://www.paranumal.com/single-post/2018/02/01/CEED-Code-Competition-bake-off-problems] entry in the <a href="../www.paranumal.com">Paranumal blog</a>.</p>
+<hr />
+<h3 id="workshop-on-batched-reproducible-and-reduced-precision-blas">Workshop on Batched, Reproducible, and Reduced Precision BLAS</h3>
+<p>CEED's [UTK team]](magma.md) organized a two-session minisymposium at the <a href="https://www.siam.org/meetings/pp18/">SIAM Conference on Parallel Processing and Scientific Computing</a> in Tokyo, Japan from March 7-10, 2018, devoted on <a href="http://meetings.siam.org/sess/dsp_programsess.cfm?SESSIONCODE=63546">Batched BLAS Standardization</a>.</p>
+<p>The minisymposium is part of our efforts on standardization and co-design of exascale discretization APIs with application developers, hardware vendors and ECP software technologies projects.  The goal is to extend the BLAS standard to include batched BLAS computational patterns/"application motifs" that are essential for representing and implementing tensor contractions.</p>
+<p>Besides participation from the CEED project, stakeholders from ORNL, Sandia, NVidia, Intel, IBM, and Universities were invited.</p>
+<hr />
 <h3 id="new-website-launched-by-the-virginia-tech-ceed-team">New website launched by the Virginia Tech CEED team</h3>
-<p>A new website was recently launched by the Parallel Numerical Algorithms
+<p>A new website was recently launched by the Parallel Numerical Algorithms (Paranumal)
 research group at Virginia Tech <a href="https://www.paranumal.com">here</a>. The
 site includes a blog that gives some practical computing tips related to
 high performance implementations of finite element
@@ -587,7 +713,7 @@ Our team focused on performing and tuning GPU-enabled <a href="../nek/">Nek5000/
 version on large-scale GPU systems for small modular reactor, thermal fluids,
 and meta-materials modeling.</p>
 <hr />
-<h3 id="workshop-on-batched-reproducible-and-reduced-precision-blas">Workshop on Batched, Reproducible, and Reduced Precision BLAS</h3>
+<h3 id="workshop-on-batched-reproducible-and-reduced-precision-blas_1">Workshop on Batched, Reproducible, and Reduced Precision BLAS</h3>
 <p>The second <a href="http://bit.ly/Batch-BLAS-2017">Workshop on Batched, Reproducible, and Reduced Precision BLAS</a>
 was held in Atlanta, GA on February 23-25, 2017 including many members of the CEED <a href="../magma/">MAGMA</a> team.</p>
 <p>The goal of this workshop was to touch on extending the Basic Linear Algebra
@@ -669,6 +795,16 @@ for more information.</p></div>
     
         <li class="main active"><a href="#news">News</a></li>
         
+            <li><a href="#software-release-ceed-10">Software release: CEED 1.0</a></li>
+        
+            <li><a href="#software-release-libceed-02">Software release: libCEED 0.2</a></li>
+        
+            <li><a href="#panayot-vassilevski-named-siam-fellow">Panayot Vassilevski named SIAM fellow</a></li>
+        
+            <li><a href="#benchmark-release-by-paranumal-team">Benchmark release by Paranumal team</a></li>
+        
+            <li><a href="#workshop-on-batched-reproducible-and-reduced-precision-blas">Workshop on Batched, Reproducible, and Reduced Precision BLAS</a></li>
+        
             <li><a href="#new-website-launched-by-the-virginia-tech-ceed-team">New website launched by the Virginia Tech CEED team</a></li>
         
             <li><a href="#initial-release-of-libceed-the-ceed-api-library">Initial release of libCEED: The CEED API library</a></li>
@@ -711,7 +847,7 @@ for more information.</p></div>
         
             <li><a href="#gpu-hackathon-at-bnl">GPU Hackathon at BNL</a></li>
         
-            <li><a href="#workshop-on-batched-reproducible-and-reduced-precision-blas">Workshop on Batched, Reproducible, and Reduced Precision BLAS</a></li>
+            <li><a href="#workshop-on-batched-reproducible-and-reduced-precision-blas_1">Workshop on Batched, Reproducible, and Reduced Precision BLAS</a></li>
         
             <li><a href="#software-release-mfem-v33">Software release: MFEM v3.3</a></li>
         
