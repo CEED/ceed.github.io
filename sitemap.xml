@@ -1,147 +1,147 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-     <loc>/</loc>
+     <loc>http://ceed.exascaleproject.org/</loc>
      <lastmod>2018-06-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>/news/</loc>
+     <loc>http://ceed.exascaleproject.org/news/</loc>
      <lastmod>2018-06-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>/codesign/</loc>
+     <loc>http://ceed.exascaleproject.org/codesign/</loc>
      <lastmod>2018-06-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>/ap/</loc>
+     <loc>http://ceed.exascaleproject.org/ap/</loc>
      <lastmod>2018-06-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>/hw/</loc>
+     <loc>http://ceed.exascaleproject.org/hw/</loc>
      <lastmod>2018-06-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>/sw/</loc>
+     <loc>http://ceed.exascaleproject.org/sw/</loc>
      <lastmod>2018-06-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>/bps/</loc>
+     <loc>http://ceed.exascaleproject.org/bps/</loc>
      <lastmod>2018-06-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>/miniapps/</loc>
+     <loc>http://ceed.exascaleproject.org/miniapps/</loc>
      <lastmod>2018-06-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>/software/</loc>
+     <loc>http://ceed.exascaleproject.org/software/</loc>
      <lastmod>2018-06-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>/ceed-1.0/</loc>
+     <loc>http://ceed.exascaleproject.org/ceed-1.0/</loc>
      <lastmod>2018-06-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>/ceed-code/</loc>
+     <loc>http://ceed.exascaleproject.org/ceed-code/</loc>
      <lastmod>2018-06-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>/libceed/</loc>
+     <loc>http://ceed.exascaleproject.org/libceed/</loc>
      <lastmod>2018-06-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>/mfem/</loc>
+     <loc>http://ceed.exascaleproject.org/mfem/</loc>
      <lastmod>2018-06-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>/nek/</loc>
+     <loc>http://ceed.exascaleproject.org/nek/</loc>
      <lastmod>2018-06-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>/gslib/</loc>
+     <loc>http://ceed.exascaleproject.org/gslib/</loc>
      <lastmod>2018-06-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>/magma/</loc>
+     <loc>http://ceed.exascaleproject.org/magma/</loc>
      <lastmod>2018-06-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>/occa/</loc>
+     <loc>http://ceed.exascaleproject.org/occa/</loc>
      <lastmod>2018-06-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>/petsc/</loc>
+     <loc>http://ceed.exascaleproject.org/petsc/</loc>
      <lastmod>2018-06-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>/pumi/</loc>
+     <loc>http://ceed.exascaleproject.org/pumi/</loc>
      <lastmod>2018-06-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>/thrusts/</loc>
+     <loc>http://ceed.exascaleproject.org/thrusts/</loc>
      <lastmod>2018-06-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>/pubs/</loc>
+     <loc>http://ceed.exascaleproject.org/pubs/</loc>
      <lastmod>2018-06-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>/fe/</loc>
+     <loc>http://ceed.exascaleproject.org/fe/</loc>
      <lastmod>2018-06-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>/meshing/</loc>
+     <loc>http://ceed.exascaleproject.org/meshing/</loc>
      <lastmod>2018-06-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>/linalg/</loc>
+     <loc>http://ceed.exascaleproject.org/linalg/</loc>
      <lastmod>2018-06-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>/discr/</loc>
+     <loc>http://ceed.exascaleproject.org/discr/</loc>
      <lastmod>2018-06-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>/vis/</loc>
+     <loc>http://ceed.exascaleproject.org/vis/</loc>
      <lastmod>2018-06-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>/ceed1am/</loc>
+     <loc>http://ceed.exascaleproject.org/ceed1am/</loc>
      <lastmod>2018-06-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>/ceed2am/</loc>
+     <loc>http://ceed.exascaleproject.org/ceed2am/</loc>
      <lastmod>2018-06-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>/about/</loc>
+     <loc>http://ceed.exascaleproject.org/about/</loc>
      <lastmod>2018-06-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
