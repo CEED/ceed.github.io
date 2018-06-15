@@ -1,196 +1,148 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
-    
     <url>
      <loc>/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
-    
-
-    
     <url>
      <loc>/news/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
-    
-
-    
-        
     <url>
      <loc>/codesign/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
-        
     <url>
      <loc>/ap/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
-        
     <url>
      <loc>/hw/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
-        
     <url>
      <loc>/sw/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
-        
     <url>
      <loc>/bps/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
-        
     <url>
      <loc>/miniapps/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
-        
-    
-
-    
-        
     <url>
      <loc>/software/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
-        
     <url>
      <loc>/ceed-1.0/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
-        
     <url>
      <loc>/ceed-code/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
-        
     <url>
      <loc>/libceed/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
-        
     <url>
      <loc>/mfem/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
-        
     <url>
      <loc>/nek/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
-        
     <url>
      <loc>/gslib/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
-        
     <url>
      <loc>/magma/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
-        
     <url>
      <loc>/occa/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
-        
     <url>
      <loc>/petsc/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
-        
     <url>
      <loc>/pumi/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
-        
-    
-
-    
-        
     <url>
      <loc>/thrusts/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
-        
     <url>
      <loc>/pubs/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
-        
     <url>
      <loc>/fe/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
-        
     <url>
      <loc>/meshing/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
-        
     <url>
      <loc>/linalg/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
-        
     <url>
      <loc>/discr/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
-        
     <url>
      <loc>/vis/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
-        
     <url>
      <loc>/ceed1am/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
-        
     <url>
      <loc>/ceed2am/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
-        
-    
-
-    
     <url>
      <loc>/about/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
-    
-
 </urlset>
