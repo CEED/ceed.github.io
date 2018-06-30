@@ -319,20 +319,25 @@ libCEED <a href="https://github.com/CEED/libCEED/blob/master/doc/libCEED.md">doc
 <li><strong>BP1</strong>: scalar PCG with mass matrix, $q = p+2$</li>
 <li><strong>BP2</strong>: vector PCG with mass matrix, $q = p+2$</li>
 <li><strong>BP3</strong>: scalar PCG with stiffness matrix, $q = p+2$</li>
-<li><strong>BP3.5</strong>: scalar PCG with stiffness matrix, $q = p+1$</li>
 <li><strong>BP4</strong>: vector PCG with stiffness matrix, $q = p+2$</li>
-<li><strong>BP4.5</strong>: vector PCG with stiffness matrix, $q = p+1$</li>
+<li><strong>BP5</strong>: scalar PCG with stiffness matrix, $q = p+1$</li>
+<li><strong>BP6</strong>: vector PCG with stiffness matrix, $q = p+1$</li>
 </ul>
 <p>These are all <strong>T-vector</strong>-to-<strong>T-vector</strong> and include parallel scatter +
 element scatter + element evaluation kernel + element gather + parallel gather.</p>
+<p>The boundary conditions for BP1 and BP2 are homogeneous Neumann. For the rest of
+the BPs the boundary conditions are homogeneous Dirichlet.</p>
+<p>The nodal points, denoted by $p$, are GLL (Gauss-Legendre-Lobatto), while the
+quadrature points, denoted by $q$, are GL (Gauss-Legendre) for BP1-BP4 and GLL
+for BP5-BP6.</p>
 <h5 id="bake-off-kernels-bks">Bake-off Kernels (BKs)</h5>
 <ul>
 <li><strong>BK1</strong>: scalar <strong>E-vector</strong>-to-<strong>E-vector</strong> evaluation of mass matrix, $q = p+2$</li>
 <li><strong>BK2</strong>: vector <strong>E-vector</strong>-to-<strong>E-vector</strong> evaluation of mass matrix, $q = p+2$</li>
 <li><strong>BK3</strong>: scalar <strong>E-vector</strong>-to-<strong>E-vector</strong> evaluation of stiffness matrix, $q = p+2$</li>
-<li><strong>BK3.5</strong>: scalar <strong>E-vector</strong>-to-<strong>E-vector</strong> evaluation of stiffness matrix, $q = p+1$</li>
 <li><strong>BK4</strong>: vector  <strong>E-vector</strong>-to-<strong>E-vector</strong> evaluation of stiffness matrix, $q = p+2$</li>
-<li><strong>BK4.5</strong>: vector  <strong>E-vector</strong>-to-<strong>E-vector</strong> evaluation of stiffness matrix, $q = p+1$</li>
+<li><strong>BK5</strong>: scalar <strong>E-vector</strong>-to-<strong>E-vector</strong> evaluation of stiffness matrix, $q = p+1$</li>
+<li><strong>BK6</strong>: vector  <strong>E-vector</strong>-to-<strong>E-vector</strong> evaluation of stiffness matrix, $q = p+1$</li>
 </ul>
 <p>The BKs are parallel to the BPs, except they do not include parallel and element
 scatter/gather (the actions of <strong>P</strong> and <strong>G</strong> and their transposes).</p>
