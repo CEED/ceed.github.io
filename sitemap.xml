@@ -61,6 +61,11 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
+     <loc>http://ceed.exascaleproject.org/fms/</loc>
+     <lastmod>2018-06-29</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
      <loc>http://ceed.exascaleproject.org/mfem/</loc>
      <lastmod>2018-06-29</lastmod>
      <changefreq>daily</changefreq>
