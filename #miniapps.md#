@@ -1,0 +1,164 @@
+## CEED Miniapps
+
+CEED is developing a variety of miniapps encapsulating key physics and numerical
+kernels of high-order applications.  The miniapps are designed to be used in a
+variety of [co-design](codesign.md) activities with ECP vendors, software
+technologies projects as well as external partners.
+
+CEED's current miniapps are documented below and can be found on
+[GitHub](https://github.com/ceed). Please contact the CEED team if you have any
+questions.
+
+---
+
+<center>
+### Nekbone
+</center>
+
+Nekbone solves a standard Poisson equation using a conjugate gradient iteration
+with a simple or spectral element multigrid preconditioner on a block or linear
+geometry.
+
+It exposes the principal computational kernel to reveal the essential elements
+of the algorithmic-architectural coupling that is pertinent to [Nek5000](nek.md),
+relevant to large eddy simulation (LES) and direct numerical simulation (DNS) of
+turbulence in complex domains.
+
+Nekbone-3.1 was released in Oct 2013 as part of the [CESAR co-design
+center](http://cesar.mcs.anl.gov/content/software/thermal_hydraulics).
+
+<center>
+[<button type="button" class="btn btn-default">
+**Documentation**
+</button>](https://github.com/CEED/Nekbone/blob/master/USERGUIDE.pdf)
+&nbsp;
+[<button type="button" class="btn btn-success">
+**Download Nekbone**
+</button>](https://github.com/ceed/Nekbone)
+</center>
+
+---
+
+<center>
+### Laghos <span class="badge">New</span>
+</center>
+
+Laghos solves the time-dependent Euler equation of compressible gas dynamics in
+a moving Lagrangian frame using high-order finite element spatial discretization
+and explicit high-order time-stepping.
+
+It exposes the principal computational kernels of shock-capturing compressible
+flow, including the FLOP-intensive definition of artificial viscosity at
+quadrature points.
+
+*Laghos will be released soon as part of CEED. Stay tuned for more details...*
+
+---
+
+<center>
+### NekCEM-CEEDling <span class="badge">New</span>
+</center>
+
+NekCEM-CEEDling is a [NekCEM](nek.md) miniapp, solving the time-domain Maxwell
+equations.
+
+*NekCEM-CEEDling will be released soon as part of CEED. Stay tuned for more details...*
+
+---
+
+<center>
+### Holmes <span class="badge">New</span>
+</center>
+
+Holmes is an experimental testbed for multi-level parallel implementations of
+high-order finite element computations.
+
+Its features include:
+
+* Elements
+    * Spectral element quadrilateral and hexahedral elements
+    * Warp & blend high-order nodal triangular and tetrahedral elements
+* Discretizations
+    * Elliptic: continuous and discontinuous Galerkin discretization
+    * Hyperbolic: discontinuous Galerkin time-domain
+* Solvers
+    * Two level overlapping additive Schwartz elliptic problem preconditioning
+        * Fast approximate block preconditioning
+        * Algebraic multigrid coarse solver with heterogeneous acceleration
+        * Parallel direct solver XXT for the coarsest level solve
+    * Full algebraic multigrid preconditioning
+* Implementation
+    * Portable on-node parallelism via the Open Concurrent Compute Abstraction, [OCCA](occa.md)
+    * MPI communications for distributed computations
+* Dependencies
+    * The XXT parallel direct solver for the coarsest AMG solve
+    * The [gslib](gslib.md) for optimized gather-scatter operations
+* Example CEEDling apps
+    * Incompressible flow solvers
+    * Elliptic solvers
+    * Boltzmann flow solver
+    * Acoustics time-domain solver
+
+Holmes is being developed in [Tim Warburton's group](http://tcew.github.io/#/Projects)
+at [Virginia Tech](https://www.vt.edu/).
+
+*The project GitHub repository will be made public in 2017. Stay tuned for more details...*
+
+---
+
+<center>
+### HPGMG-FE
+</center>
+
+The High-Performance Geometric Multigrid Finite Element benchmark is a
+Full Multigrid solver for a third order accurate finite element
+discretization of an elliptic operator on mapped grids.  The benchmark
+is designed to give a picture of the "performance spectrum" across a
+range of problem sizes and thus solution time, thereby giving a clear
+picture of both weak and strong scaling concerns.  For more information,
+source code, and machine comparisons, see the
+[HPGMG website](https://hpgmg.org).
+
+---
+
+<center>
+### MFEM Example Codes
+</center>
+
+The [MFEM](mfem.md) distribution includes a large number of simple example codes
+that can be viewed as simple miniapps for model high-order physics:
+
+ - [Example 1](http://mfem.github.io/doxygen/html/ex1_8cpp_source.html): nodal H1 FEM for the Laplace problem,
+ - [Example 2](http://mfem.github.io/doxygen/html/ex2_8cpp_source.html): vector FEM for linear elasticity,
+ - [Example 3](http://mfem.github.io/doxygen/html/ex3_8cpp_source.html): Nedelec H(curl) FEM for the definite Maxwell problem,
+ - [Example 4](http://mfem.github.io/doxygen/html/ex4_8cpp_source.html): Raviart-Thomas H(div) FEM for the grad-div problem,
+ - [Example 5](http://mfem.github.io/doxygen/html/ex5_8cpp_source.html): mixed pressure-velocity FEM for the Darcy problem,
+ - [Example 6](http://mfem.github.io/doxygen/html/ex6_8cpp_source.html): non-conforming adaptive mesh refinement (AMR) for the Laplace problem,
+ - [Example 7](http://mfem.github.io/doxygen/html/ex7_8cpp_source.html): Laplace problem on a surface (the unit sphere),
+ - [Example 8](http://mfem.github.io/doxygen/html/ex8_8cpp_source.html): Discontinuous Petrov-Galerkin (DPG) for the Laplace problem,
+ - [Example 9](http://mfem.github.io/doxygen/html/ex9_8cpp_source.html): Discontinuous Galerkin (DG) time-dependent advection,
+ - [Example 10](http://mfem.github.io/doxygen/html/ex10_8cpp_source.html): time-dependent implicit nonlinear elasticity,
+ - [Example 11](http://mfem.github.io/doxygen/html/ex11p_8cpp_source.html): parallel Laplace eigensolver,
+ - [Example 12](http://mfem.github.io/doxygen/html/ex12p_8cpp_source.html): parallel linear elasticity eigensolver,
+ - [Example 13](http://mfem.github.io/doxygen/html/ex13p_8cpp_source.html): parallel Maxwell eigensolver,
+ - [Example 14](http://mfem.github.io/doxygen/html/ex14_8cpp_source.html): Discontinuous Galerkin (DG) for the Laplace problem,
+ - [Example 15](http://mfem.github.io/doxygen/html/ex15_8cpp_source.html): parallel dynamic AMR for Laplace with prescribed time-dependent source,
+ - [Example 16](http://mfem.github.io/doxygen/html/ex16_8cpp_source.html): parallel time-dependent nonlinear heat equation,
+ - [Example 17](http://mfem.github.io/doxygen/html/ex17_8cpp_source.html): parallel Discontinuous Galerkin (DG) for linear elasticity.
+
+Most of the examples have a serial and a parallel version, illustrating the ease
+of transition and the minimal code changes between the two.
+
+Of particular relevance to CEED is the HPC versions of the example codes that
+use a [set of templated classes](http://mfem.org/performance/) to efficiently
+implement high-order operator evaluation.
+
+<center>
+[<button type="button" class="btn btn-default">
+**Documentation**
+</button>](http://mfem.org/examples)
+&nbsp;
+[<button type="button" class="btn btn-success">
+**Download MFEM**
+</button>](http://mfem.org/download)
+</center>
