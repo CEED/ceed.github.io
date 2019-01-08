@@ -280,6 +280,8 @@
     
         <li class="main active"><a href="#news">News</a></li>
         
+            <li><a href="#software-release-laghos-20">Software release: Laghos 2.0</a></li>
+        
             <li><a href="#software-release-libceed-03">Software release: libCEED 0.3</a></li>
         
             <li><a href="#second-ceed-annual-meeting-in-cu-boulder">Second CEED annual meeting in CU Boulder</a></li>
@@ -367,6 +369,18 @@
             <div class="col-md-9" role="main">
 
 <h1 id="news">News</h1>
+<h3 id="software-release-laghos-20">Software release: Laghos 2.0</h3>
+<p>Version 2.0 of the <a href="https://github.com/ceed/laghos">Laghos</a> miniapp was released on November 19, 2018. The release includes</p>
+<ul>
+<li>CUDA, RAJA, OCCA and AMR versions of Laghos in the <a href="https://github.com/CEED/Laghos/tree/v2.0/cuda">cuda/</a>, <a href="https://github.com/CEED/Laghos/tree/v2.0/raja">raja/</a>, <a href="https://github.com/CEED/Laghos/tree/v2.0/occa">occa/</a> and <a href="https://github.com/CEED/Laghos/tree/v2.0/amr">amr/</a> directories.</li>
+<li>New example: Gresho vortex.</li>
+<li>Added a conservative time integrator (RK2Avg) and computation of total energy.</li>
+<li>Improved the computations of the matrix diagonal by contracting the squares of the B matrices.</li>
+<li>Added diagonal preconditioners for both partial and full assembly.</li>
+<li>Support the Bernstein positive basis When using partial assembly for the velocity.</li>
+<li>Travis CI regression testing on GitHub.</li>
+</ul>
+<hr />
 <h3 id="software-release-libceed-03">Software release: libCEED 0.3</h3>
 <p>Version 0.3 of <a href="https://github.com/ceed/libceed">libCEED</a> was released on September 30, 2018. The release includes</p>
 <ul>
@@ -883,6 +897,8 @@ for more information.</p></div>
     <ul class="nav bs-sidenav">
     
         <li class="main active"><a href="#news">News</a></li>
+        
+            <li><a href="#software-release-laghos-20">Software release: Laghos 2.0</a></li>
         
             <li><a href="#software-release-libceed-03">Software release: libCEED 0.3</a></li>
         
