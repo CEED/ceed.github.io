@@ -352,12 +352,12 @@
         }, 
         {
             "location": "/software/", 
-            "text": "Latest Releases\n\n\nThe CEED software is open-source and publicly available on\n\nGitHub\n. The latest releases of our main software\ncomponents are available from:\n\n\n\n\n\n\nCEED-1.0\n\n\n\n\n\n\n\n\nlibCEED-0.2\n\n\n\n\n\n\n\n\nFMS-0.1\n\n\n\n\n\n\n\n\nNek5000-17.0\n\n\n\n\n\n\n\n\n\n\nmfem-3.4\n\n\n\n\n\n\n\n\nLaghos-2.0\n\n\n\n\n\n\n\n\nNekbone-17.0\n\n\n\n\n\n\n\n\nOCCA-1.0\n\n\n\n\n\n\nPlease use the \nCEED user forum\n to report\n\nbugs\n or post\n\nquestions\n or\n\ncomments\n.\n\n\nSoftware Catalog\n\n\nThe CEED team includes members of the \nNek5000\n, \nMFEM\n,\n\nMAGMA\n, \nOCCA\n and \nPETSc\n projects.  Building on\nthese efforts, the co-design center is producing a range of software products,\nincluding:\n\n\n\n\n\n\nNext-generation \nfinite element\n \ndiscretization\n\n  \nlibraries\n that enable unstructured PDE-based applications to take\n  full advantage of exascale resources. These libraries cover the full spectrum\n  of discretizations, from assembled low-order to matrix-free high-order\n  methods.\n\n\n\n\n\n\nMiniapps\n combining applications-relevant physics with key\n  high-order kernels that use matrix-free forms for efficient performance. CEED\n  also develops element-level kernels and \nbenchmark problems\n.\n\n\n\n\n\n\nBroadly applicable technologies, including extensions of dense linear algebra\n  libraries to support \nfast tensor contractions\n, scalable\n  matrix-free \nlinear solvers\n and programming models for \nperformance\n  portability\n.", 
+            "text": "Latest Releases\n\n\nThe CEED software is open-source and publicly available on\n\nGitHub\n. The latest releases of our main software\ncomponents are available from:\n\n\n\n\n\n\nCEED-1.0\n\n\n\n\n\n\n\n\nlibCEED-0.2\n\n\n\n\n\n\n\n\nFMS-0.1\n\n\n\n\n\n\n\n\nNek5000-17.0\n\n\n\n\n\n\n\n\nmfem-3.4\n\n\n\n\n\n\n\n\n\n\nLaghos-2.0\n\n\n\n\n\n\n\n\nNekbone-17.0\n\n\n\n\n\n\n\n\nOCCA-1.0\n\n\n\n\n\n\n\n\nlibParanumal-0.1.2\n\n\n\n\n\n\nPlease use the \nCEED user forum\n to report\n\nbugs\n or post\n\nquestions\n or\n\ncomments\n.\n\n\nSoftware Catalog\n\n\nThe CEED team includes members of the \nNek5000\n, \nMFEM\n,\n\nMAGMA\n, \nOCCA\n and \nPETSc\n projects.  Building on\nthese efforts, the co-design center is producing a range of software products,\nincluding:\n\n\n\n\n\n\nNext-generation \nfinite element\n \ndiscretization\n\n  \nlibraries\n that enable unstructured PDE-based applications to take\n  full advantage of exascale resources. These libraries cover the full spectrum\n  of discretizations, from assembled low-order to matrix-free high-order\n  methods.\n\n\n\n\n\n\nMiniapps\n combining applications-relevant physics with key\n  high-order kernels that use matrix-free forms for efficient performance. CEED\n  also develops element-level kernels and \nbenchmark problems\n.\n\n\n\n\n\n\nBroadly applicable technologies, including extensions of dense linear algebra\n  libraries to support \nfast tensor contractions\n, scalable\n  matrix-free \nlinear solvers\n and programming models for \nperformance\n  portability\n.", 
             "title": "Catalog"
         }, 
         {
             "location": "/software/#latest-releases", 
-            "text": "The CEED software is open-source and publicly available on GitHub . The latest releases of our main software\ncomponents are available from:    CEED-1.0     libCEED-0.2     FMS-0.1     Nek5000-17.0      mfem-3.4     Laghos-2.0     Nekbone-17.0     OCCA-1.0    Please use the  CEED user forum  to report bugs  or post questions  or comments .", 
+            "text": "The CEED software is open-source and publicly available on GitHub . The latest releases of our main software\ncomponents are available from:    CEED-1.0     libCEED-0.2     FMS-0.1     Nek5000-17.0     mfem-3.4      Laghos-2.0     Nekbone-17.0     OCCA-1.0     libParanumal-0.1.2    Please use the  CEED user forum  to report bugs  or post questions  or comments .", 
             "title": "Latest Releases"
         }, 
         {
@@ -534,6 +534,36 @@
             "location": "/nek/#nek", 
             "text": "Nek5000/NekCEM is an open-source simulation-software package that delivers highly accurate\nsolutions for a wide range of scientific applications, including fluid flow, thermal convection,\ncombustion, magnetohydrodynamics, and electromagnetics.  It features state-of-the-art, scalable, high-order spectral element-based algorithms that are\nfast and efficient on platforms ranging from laptops to the world\u2019s fastest computers.  Nek5000/NekCEM's users include over 320 scientists and engineers in academia, laboratories and\nindustry. We highlight a few of the many applications using Nek5000/NekCEM today.   Reactor analysis  Aerospace application  Engine application  Ocean modeling  Turbulence modeling  Electromagnetics modeling  Drift-diffusion  modeling   Nek5000 and NekCEM are freely available under a BSD license.  In CEED, Nek is a main component of the efforts in the  Applications  and  Finite Element  thrusts.  For more information, see the Nek5000 website:  https://nek5000.mcs.anl.gov .", 
             "title": "Nek "
+        }, 
+        {
+            "location": "/libparanumal/", 
+            "text": "libParanumal\n \n\n\nlibParanumal is an experimental set of finite element flow solvers for heterogeneous (GPU/CPU)\nsystems developed by the \nParallel Numerical Algorithms Group at Virginia Tech\n.\n\n\nSee below for a brief summary of the major features.  For more information, see\nthe \nlibParanumal website\n.\n\n\nSupported elements\n\n\n\n\nTriangles, quadrilaterals, tetrahedra, hexahedra.\n\n\nLagrange basis functions up to degree 15.\n\n\nPartial support for Bezier-Bernstein basis functions.\n\n\n\n\nMesh wrangling\n\n\n\n\nGmsh format file loaders.\n\n\nLoad balanced geometric partitioning using space filling curves (Hilbert or Morton ordering).\n\n\nClustered partitioning for multirate time stepping.\n\n\n\n\nElliptic solver\n\n\n\n\nLinear Poisson and screened Poisson potential solvers.\n\n\nGPU optimized matrix-vector products.\n\n\nHybrid p-type multigrid and algebraic multigrid  preconditioned conjugate gradient solver.\n\n\nSparse matrix or nearly matrix-free algebraic multigrid for coarse levels of multigrid hierarchy.\n\n\n\n\nHeterogeneous accelerated flow solvers\n\n\n\n\nLinearized Euler equations.\n\n\nIsothermal compressible Navier-Stokes solver with:\n\n\nUpwind discontinuous Galerkin discretization in space.\n\n\nDormand-Prince adaptive Runge-Kutta integration in time.\n\n\n\n\n\n\nIsothermal Galerkin-Boltzmann gas dynamics solver with:\n\n\nPenalty flux DG discretization in space.\n\n\nAdaptive semi-analytic (pointwise exponential) integration in time.\n\n\nMultiaxial quasi-perfectly matched absorbing layer far field boundary condition.\n\n\n\n\n\n\nIncompressible Navier-Stokes solver with:\n\n\nChoice of continuous FEM or interior penalty DG in space.\n\n\nExtrapolation-BDF integration in time.\n\n\nSub-cycling (Operator Integration Factor Splitting) for advection.\n\n\n\n\n\n\n\n\nlibParanumal depends on MPI and \nOCCA\n. It is freely available under an MIT license.\n\n\nIn CEED, libParanumal is primarily involved in the efforts of the \nFinite Element\n,\n\nApplications\n and \nSoftware\n thrusts.", 
+            "title": "libParanumal"
+        }, 
+        {
+            "location": "/libparanumal/#libparanumal", 
+            "text": "libParanumal is an experimental set of finite element flow solvers for heterogeneous (GPU/CPU)\nsystems developed by the  Parallel Numerical Algorithms Group at Virginia Tech .  See below for a brief summary of the major features.  For more information, see\nthe  libParanumal website .", 
+            "title": "libParanumal "
+        }, 
+        {
+            "location": "/libparanumal/#supported-elements", 
+            "text": "Triangles, quadrilaterals, tetrahedra, hexahedra.  Lagrange basis functions up to degree 15.  Partial support for Bezier-Bernstein basis functions.", 
+            "title": "Supported elements"
+        }, 
+        {
+            "location": "/libparanumal/#mesh-wrangling", 
+            "text": "Gmsh format file loaders.  Load balanced geometric partitioning using space filling curves (Hilbert or Morton ordering).  Clustered partitioning for multirate time stepping.", 
+            "title": "Mesh wrangling"
+        }, 
+        {
+            "location": "/libparanumal/#elliptic-solver", 
+            "text": "Linear Poisson and screened Poisson potential solvers.  GPU optimized matrix-vector products.  Hybrid p-type multigrid and algebraic multigrid  preconditioned conjugate gradient solver.  Sparse matrix or nearly matrix-free algebraic multigrid for coarse levels of multigrid hierarchy.", 
+            "title": "Elliptic solver"
+        }, 
+        {
+            "location": "/libparanumal/#heterogeneous-accelerated-flow-solvers", 
+            "text": "Linearized Euler equations.  Isothermal compressible Navier-Stokes solver with:  Upwind discontinuous Galerkin discretization in space.  Dormand-Prince adaptive Runge-Kutta integration in time.    Isothermal Galerkin-Boltzmann gas dynamics solver with:  Penalty flux DG discretization in space.  Adaptive semi-analytic (pointwise exponential) integration in time.  Multiaxial quasi-perfectly matched absorbing layer far field boundary condition.    Incompressible Navier-Stokes solver with:  Choice of continuous FEM or interior penalty DG in space.  Extrapolation-BDF integration in time.  Sub-cycling (Operator Integration Factor Splitting) for advection.     libParanumal depends on MPI and  OCCA . It is freely available under an MIT license.  In CEED, libParanumal is primarily involved in the efforts of the  Finite Element , Applications  and  Software  thrusts.", 
+            "title": "Heterogeneous accelerated flow solvers"
         }, 
         {
             "location": "/gslib/", 

@@ -155,14 +155,14 @@
                         
                     
                         
-                            <li >
-                                 <a href="../libparanumal/">libParanumal</a>
+                            <li class="active">
+                                 <a href="./">libParanumal</a>
                             </li>
                         
                     
                         
-                            <li class="active">
-                                 <a href="./">GSLIB</a>
+                            <li >
+                                 <a href="../gslib/">GSLIB</a>
                             </li>
                         
                     
@@ -283,8 +283,24 @@
             <div class="col-md-3 visible-xs visible-sm"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
     
-        <li class="main active"><a href="#gslib">GSLIB</a></li>
+        <li class="main active"><a href="#libparanumal">libParanumal </a></li>
         
+	    
+                <li><a href="#supported-elements">Supported elements</a></li>
+	    
+	
+	    
+                <li><a href="#mesh-wrangling">Mesh wrangling</a></li>
+	    
+	
+	    
+                <li><a href="#elliptic-solver">Elliptic solver</a></li>
+	    
+	
+	    
+                <li><a href="#heterogeneous-accelerated-flow-solvers">Heterogeneous accelerated flow solvers</a></li>
+	    
+	
     
     <hr style="background-color:white; height:20px; margin-left:-1px;  margin-right:-1px; margin-top:15px; margin-bottom:10px " />
     <li class="main" style="padding:0"><a href="https://github.com/CEED/forum">Contact CEED</a> </li>
@@ -297,36 +313,75 @@
 <!-- ... fa-comment, fa-comment-o, fa-comments, fa-comments-o, fa-bullhorn --></div> <!-- toc on top on mobile -->
             <div class="col-md-9" role="main">
 
-<h2 id="gslib"><a href="https://github.com/gslib/gslib">GSLIB</a><img src="../img/heat_wire.png" align="right" alt="heat" width="200"></h2>
-<p>GSLIB is a library for Gather/Scatter-type nearest neighbor data exchanges for SEM, FEM, and finite-difference applications.  It can also be used for efficient transpose and reduction operations and for smoothing, prolongation, and restriction in AMG and other solvers.</p>
-<p>Any global-to-local map, $l(i) = g(j(i))$, can be expressed as the matrix-vector product $l=Qg$, where $Q$ is a Boolean matrix.  GSLIB supports the parallel matrix-vector products $Q$, $Q^T$, and $QQ^T$.  Users simply provide the local-to-global map $j(i)$ on each processor.  GSLIB identifies shared global vertices across multiple processors and sets up the required communication exchange to use the fastest of three available algorithms.  The user does not need to know or express data locality to efficiently establish communication on anywhere from one to millions of ranks.</p>
-<p>GSLIB supports</p>
+<h2 id="libparanumal"><a href="https://github.com/paranumal/libparanumal">libParanumal</a> <img src="../img/libparanumal.jpg" align="right" alt="libParanumal logo" width="200"></h2>
+<p>libParanumal is an experimental set of finite element flow solvers for heterogeneous (GPU/CPU)
+systems developed by the <a href="http://paranumal.com">Parallel Numerical Algorithms Group at Virginia Tech</a>.</p>
+<p>See below for a brief summary of the major features.  For more information, see
+the <a href="https://github.com/paranumal/libparanumal">libParanumal website</a>.</p>
+<h4 id="supported-elements">Supported elements</h4>
 <ul>
-<li>Stencils of arbitrary width</li>
-<li>64-bit indexing for global addressing</li>
-<li>short / long ints, floats, doubles</li>
-<li>arbitrary associative/commutative operators (+,*,min/max) for reduction, $Q^T$</li>
-<li>GPUDirect communication (beta-version)</li>
-<li>gather-scatter on arbitrary m-tuples (vector fields)</li>
+<li>Triangles, quadrilaterals, tetrahedra, hexahedra.</li>
+<li>Lagrange basis functions up to degree 15.</li>
+<li>Partial support for Bezier-Bernstein basis functions.</li>
 </ul>
-<p>Additional features include:</p>
+<h4 id="mesh-wrangling">Mesh wrangling</h4>
 <ul>
-<li>XXT solver (parallel direct solver for coarse-grid problems)</li>
-<li>AMG solver (design for solving coarse-grid problems in parallel)</li>
-<li>Robust and efficient spectral/finite element interpolation in parallel.</li>
+<li>Gmsh format file loaders.</li>
+<li>Load balanced geometric partitioning using space filling curves (Hilbert or Morton ordering).</li>
+<li>Clustered partitioning for multirate time stepping.</li>
 </ul>
-<p>Applications and libraries using GSLIB include <a href="../nek/">Nek5000</a>, <a href="https://github.com/NEKCEM">NekCEM</a>,
-<a href="http://www.nektar.info">Nektar++</a>, and <a href="http://sigma.mcs.anl.gov/moab-library">MOAB</a>.</p>
-<p>In CEED, GSLIB is primarily involved in the efforts of the <a href="../sw/">Software</a> thrust.</p>
-<p>For more information, see the GSLIB GitHub repository: <a href="https://github.com/gslib/gslib">https://github.com/gslib/gslib</a>.</p>
-<script type="text/x-mathjax-config">MathJax.Hub.Config({TeX: {equationNumbers: {autoNumber: "all"}}, tex2jax: {inlineMath: [['$','$']]}});</script>
-
-<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script></div>
+<h4 id="elliptic-solver">Elliptic solver</h4>
+<ul>
+<li>Linear Poisson and screened Poisson potential solvers.</li>
+<li>GPU optimized matrix-vector products.</li>
+<li>Hybrid p-type multigrid and algebraic multigrid  preconditioned conjugate gradient solver.</li>
+<li>Sparse matrix or nearly matrix-free algebraic multigrid for coarse levels of multigrid hierarchy.</li>
+</ul>
+<h4 id="heterogeneous-accelerated-flow-solvers">Heterogeneous accelerated flow solvers</h4>
+<ul>
+<li>Linearized Euler equations.</li>
+<li>Isothermal compressible Navier-Stokes solver with:<ul>
+<li>Upwind discontinuous Galerkin discretization in space.</li>
+<li>Dormand-Prince adaptive Runge-Kutta integration in time.</li>
+</ul>
+</li>
+<li>Isothermal Galerkin-Boltzmann gas dynamics solver with:<ul>
+<li>Penalty flux DG discretization in space.</li>
+<li>Adaptive semi-analytic (pointwise exponential) integration in time.</li>
+<li>Multiaxial quasi-perfectly matched absorbing layer far field boundary condition.</li>
+</ul>
+</li>
+<li>Incompressible Navier-Stokes solver with:<ul>
+<li>Choice of continuous FEM or interior penalty DG in space.</li>
+<li>Extrapolation-BDF integration in time.</li>
+<li>Sub-cycling (Operator Integration Factor Splitting) for advection.</li>
+</ul>
+</li>
+</ul>
+<p>libParanumal depends on MPI and <a href="../occa/">OCCA</a>. It is freely available under an MIT license.</p>
+<p>In CEED, libParanumal is primarily involved in the efforts of the <a href="../fe/">Finite Element</a>,
+<a href="../ap/">Applications</a> and <a href="../sw/">Software</a> thrusts.</p></div>
             <div class="col-md-3 hidden-xs hidden-sm"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
     
-        <li class="main active"><a href="#gslib">GSLIB</a></li>
+        <li class="main active"><a href="#libparanumal">libParanumal </a></li>
         
+	    
+                <li><a href="#supported-elements">Supported elements</a></li>
+	    
+	
+	    
+                <li><a href="#mesh-wrangling">Mesh wrangling</a></li>
+	    
+	
+	    
+                <li><a href="#elliptic-solver">Elliptic solver</a></li>
+	    
+	
+	    
+                <li><a href="#heterogeneous-accelerated-flow-solvers">Heterogeneous accelerated flow solvers</a></li>
+	    
+	
     
     <hr style="background-color:white; height:20px; margin-left:-1px;  margin-right:-1px; margin-top:15px; margin-bottom:10px " />
     <li class="main" style="padding:0"><a href="https://github.com/CEED/forum">Contact CEED</a> </li>
