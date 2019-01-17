@@ -83,6 +83,15 @@ img.floatright {
     margin-bottom: 25px;
 }
 
+
+img.doi {
+    display: inline;
+    float: right;
+    margin-top: 0;
+    margin-left: 0px;
+    margin-bottom: 0px;
+}
+
 img.teamphoto {
     box-shadow: 4px 4px 4px #999;
 }
