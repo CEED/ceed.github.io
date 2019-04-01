@@ -1,0 +1,107 @@
+# Copyright (c) 2017-2019, Lawrence Livermore National Security, LLC. Produced at
+# the Lawrence Livermore National Laboratory. LLNL-CODE-734707. All Rights
+# reserved. See files LICENSE and NOTICE for details.
+#
+# This file is part of CEED, a collection of benchmarks, miniapps, software
+# libraries and APIs for efficient high-order finite element and spectral
+# element discretizations for exascale applications. For more information and
+# source code availability see http://github.com/ceed.
+#
+# The CEED research is supported by the Exascale Computing Project 17-SC-20-SC,
+# a collaborative effort of two U.S. Department of Energy organizations (Office
+# of Science and the National Nuclear Security Administration) responsible for
+# the planning and preparation of a capable exascale ecosystem, including
+# software, applications, hardware, advanced system engineering and early
+# testbed platforms, in support of the nation's exascale computing imperative.
+#
+# By default, the Spack-based CEED installation will build all required packages
+# from scratch, which can take a long time. The file ~/.spack/packages.yaml, or
+# ~/.spack/<platform>/packages.yaml allows you to list packages already
+# installed on your system for Spack to use instead of compiling them itself.
+#
+# This is an example of a packages.yaml file for the Cori machine at NERSC,
+# arch=cray-cnl9-haswell, using system modules.
+
+packages:
+    all:
+        compiler: [gcc@7.3.0, intel@18.0.5.274]
+        providers:
+            mpi: [mpich]
+            mkl: [intel-mkl]
+            blas: [intel-mkl, cray-libsci]
+            scalapack: [intel-mkl, cray-libsci]
+            pkgconfig: [pkg-config]
+    mpich:
+        modules:
+            mpich@3.2%gcc@7.3.0 arch=cray-cnl9-haswell: cray-mpich
+            mpich@3.2%intel@18.0.5.274 arch=cray-cnl9-haswell: cray-mpich
+        buildable: False
+    intel-mkl:
+        buildable: false
+        paths:
+            intel-mkl@2018.3.222%intel: /opt/intel
+            intel-mkl@2018.3.222%gcc: /opt/intel
+    pkg-config:
+        buildable: false
+        paths:
+            pkg-config@0.28: /usr
+    cmake:
+        modules:
+            cmake@3.14.0%gcc@7.3.0 arch=cray-cnl9-haswell: cmake
+            cmake@3.14.0%intel@18.0.5.274 arch=cray-cnl9-haswell: cmake
+        buildable: False
+    libx11:
+        paths:
+            libx11@system: /usr
+        version: [system]
+        buildable: False
+    libxt:
+        paths:
+            libxt@system: /usr
+        version: [system]
+        buildable: False
+    xproto:
+        paths: # See /usr/lib64/pkgconfig/xproto.pc for version
+            xproto@7.0.28: /usr
+        buildable: False
+    python:
+        paths:
+            python@2.7.13: /usr
+        buildable: False
+    boost:
+        modules:
+            boost@1.69.0%gcc@7.3.0 arch=cray-cnl9-haswell: boost
+            boost@1.69.0%intel@18.0.5.274 arch=cray-cnl9-haswell: boost
+        buildable: False
+    m4:
+        modules:
+            m4@1.4.17%gcc@7.3.0 arch=cray-cnl9-haswell: m4
+            m4@1.4.17%intel@18.0.5.274 arch=cray-cnl9-haswell: m4
+        buildable: False
+    openssl:
+        modules:
+            openssl@1.1.0a%gcc@7.3.0 arch=cray-cnl9-haswell: openssl
+            openssl@1.1.0a%intel@18.0.5.274 arch=cray-cnl9-haswell: openssl
+        buildable: False
+    perl:
+        paths:
+            perl@5.18.2%gcc@7.3.0 arch=cray-cnl9-haswell: /usr
+            perl@5.18.2%intel@18.0.5.274 arch=cray-cnl9-haswell: /usr
+        buildable: False
+    ## Skip zlib because MFEM link fails when using the module version
+    ## (I don't know why).
+    # zlib:
+    #     modules:
+    #         zlib@1.2.11%gcc@7.3.0 arch=cray-cnl9-haswell: zlib
+    #         zlib@1.2.11%intel@18.0.5.274 arch=cray-cnl9-haswell: zlib
+    #     buildable: False
+    autoconf:
+        modules:
+            autoconf@2.69%gcc@7.3.0 arch=cray-cnl9-haswell: autoconf
+            autoconf@2.69%intel@18.0.5.274 arch=cray-cnl9-haswell: autoconf
+        buildable: False
+    automake:
+        modules:
+            automake@1.15%gcc@7.3.0 arch=cray-cnl9-haswell: automake
+            automake@1.15%intel@18.0.5.274 arch=cray-cnl9-haswell: automake
+        buildable: False
