@@ -1,0 +1,861 @@
+# CEED 2.0 Software Distribution
+
+The CEED distribution is a collection of software packages that can be
+integrated together to enable efficient discretizations in a variety of
+high-order applications on unstructured grids.
+
+CEED is using the [Spack](https://spack.io) package manager for compatible
+building and installation of its software components.
+
+In this version, CEED 2.0, the CEED software suite consists of the
+following 12 packages, plus the CEED *meta-package*:
+
+- GSLIB
+- HPGMG
+- Laghos
+- libCEED
+- MAGMA
+- MFEM
+- Nek5000
+- Nekbone
+- NekCEM
+- PETSc
+- PUMI
+- OCCA
+
+If you are interested in the previous release, see the
+[CEED-1.0](https://ceed.exascaleproject.org/ceed-1.0/) page.
+
+First-time users should read [Simple Installation](#simple-installation) and
+[Using the Installation](#using-the-installation) below. (Quick summary: you can
+build and install all of the above packages with: `spack install ceed`)
+
+If you are familiar with Spack, consider using the following machine-specific
+configurations for CEED (see also [xSDK's config files][xsdk-configs]).
+
+Platform | Architecture | Spack Configuration |
+-------- | ------------ | -------------------- |
+**Mac**      | `darwin-x86_64` | [packages](spack/ceed2-darwin-x86_64-packages.yaml) <i class="fa fa-cloud-download"></i> |
+**Linux** (RHEL7)   | `linux-rhel7-x86_64` | [packages](spack/ceed2-linux-rhel7-x86_64-packages.yaml) <i class="fa fa-cloud-download"></i> |
+**Linux** (Ubuntu)   | `linux-ubuntu-x86_64` | [packages](spack/ceed2-linux-ubuntu-x86_64-packages.yaml) <i class="fa fa-cloud-download"></i> |
+**Cori** (NERSC) | `cray-CNL-haswell` | [packages](spack/ceed2-cori-packages.yaml) <i class="fa fa-cloud-download"></i> |
+**Theta** (ALCF) | `cray-CNL-mic_knl` | [packages](spack/ceed2-theta-packages.yaml) <i class="fa fa-cloud-download"></i> |
+**Summit** (OLCF) | `???` | [packages](spack/ceed2-summit-packages.yaml) <i class="fa fa-cloud-download"></i> |
+**Lassen** (LLNL) | `???` | [packages](spack/ceed2-lassen-packages.yaml) <i class="fa fa-cloud-download"></i> |
+
+For additional details, please consult the following sections:
+
+- [Simple Installation](#simple-installation)
+- [Using the Installation](#using-the-installation)
+    - [Building MFEM-based Applications](#building-mfem-based-applications)
+    - [Building libCEED-based Applications](#building-libceed-based-applications)
+    - [GPU demo](#gpu-demo)
+- [Spack for Beginners](#spack-for-beginners)
+- [Tips and Troubleshooting](#tips-and-troubleshooting)
+    - [Building on Mac](#building-on-a-mac)
+    - [Building on Linux](#building-on-a-linux-desktop)
+    - [Building at LLNL](#building-at-llnls-computing-center)
+          - [TOSS3 Platforms](#toss3-platforms)
+          - [Lassen](#lassen)
+    - [Building at NERSC](#building-at-nersc)
+          - [Cori](#cori)
+    - [Building at ALCF](#building-at-alcf)
+          - [Theta](#theta)
+    - [Building at OLCF](#building-at-olcf)
+          - [Summit](#summit)
+    - [Installing CUDA](#installing-cuda)
+
+The CEED team can be contacted by posting to our [User Forum][ceed-users] or
+via email at [ceed-users@llnl.gov](mailto:ceed-users@llnl.gov).
+For issues related to the CEED Spack packages,
+please start a discussion on the GitHub [@spack/ceed][ceed-spack] page.
+
+## Simple Installation
+
+If Spack is already available on your system and is visible in your `PATH`, you
+can install the CEED software simply with:
+
+```sh
+spack install -v ceed
+```
+
+To enable package testing during the build process, use instead:
+
+```sh
+spack install -v --test=all ceed
+```
+
+If you don't have Spack, you can download it and install CEED with the following
+commands:
+
+```sh
+git clone https://github.com/spack/spack.git
+cd spack
+./bin/spack install -v ceed
+```
+
+To avoid long compile times, we strongly recommend that you add a `packages.yaml` file
+for your platform, see above and the [Tips and Troubleshooting](#tips-and-troubleshooting)
+section.
+
+## Using the Installation
+
+Spack will install the CEED packages (and the libraries they depend on) in a
+subtree of `./opt/spack/<architecture>/<compiler>/` that is specific to the
+architecture and compiler used (multiple compiler and/or architecture builds can
+coexist in a single Spack directory).
+
+Below are several examples of how the Spack installation can be linked with and
+used in user applications.
+
+### Building MFEM-based Applications
+
+The simplest way to use the Spack installation is through the
+[`spack location`][spack-loc] command. For example, MFEM-based codes, such as
+the MFEM examples, can be simply built as follows:
+
+```sh
+git clone git@github.com:mfem/mfem.git
+cd mfem; git checkout v3.4
+cd examples
+make CONFIG_MK=`spack location -i mfem`/share/mfem/config.mk
+cd ../miniapps/electromagnetics
+make CONFIG_MK=`spack location -i mfem`/share/mfem/config.mk
+```
+
+Alternatively, the Spack installation can be exported to a local directory:
+
+```sh
+mkdir ceed
+spack view --verbose symlink ceed/mfem mfem
+```
+
+The `ceed/mfem` directory now contains the Spack-built MFEM with all of its
+dependencies (technically, it contains links to all the build files inside the
+`./opt/spack/` subdirectory for MFEM). In particular, the MFEM library in
+`ceed/mfem/lib` and the MFEM build configuration file in
+`ceed/mfem/share/mfem/config.mk`.
+
+This directory can be used to build the MFEM examples as follows:
+
+```sh
+git clone git@github.com:mfem/mfem.git
+cd mfem; git checkout v3.4
+cd examples/petsc
+make CONFIG_MK=../../../ceed/mfem/share/mfem/config.mk
+cd ..
+make CONFIG_MK=../../ceed/mfem/share/mfem/config.mk
+```
+
+The MFEM miniapps can further be built with:
+
+```sh
+cd ../miniapps/electromagnetics
+make CONFIG_MK=../../../ceed/mfem/share/mfem/config.mk
+```
+
+### Building libCEED-based Applications
+
+Below we illustrate how to use the Spack installation to build libCEED-based
+applications, by building the examples in the current libCEED distribution.
+
+Using [`spack location`][spack-loc], the libCEED examples can be built as
+follows:
+
+```sh
+git clone git@github.com:CEED/libCEED.git
+cd libCEED/examples/ceed
+make CEED_DIR=`spack location -i libceed`
+./ex1 -ceed /cpu/self
+```
+
+If you have multiple builds of `libceed` or `occa` you need to be more specific
+in the above [`spack location`][spack-loc] command. To list all `libceed` and
+`occa` versions use [`spack find`][spack-find]:
+
+```sh
+spack find -lv libceed occa
+```
+
+Then either use [variants][spack-specs] to choose a unique version, e.g.
+`libceed~cuda`, or specify the hashes printed in front of the `libceed`
+[spec][spack-specs], e.g. `libceed/yb3fvek` or just `/yb3fvek` (and similarly
+for `occa`).
+
+The serial, OpenMP, OpenCL and GPU OCCA backends can be used with:
+
+```sh
+./ex1 -ceed /cpu/occa
+./ex1 -ceed /omp/occa
+./ex1 -ceed /ocl/occa
+./ex1 -ceed /gpu/occa
+```
+
+In order to use the OCCA GPU backend, one needs to install CEED with the `cuda`
+[variant][spack-specs] enabled, i.e. using the [spec][spack-specs] `ceed+cuda`:
+
+```sh
+spack install -v ceed+cuda
+```
+
+For more details, see the section [GPU demo](#gpu-demo) below.
+
+With the MAGMA backend, the `/cpu/magma` and `/gpu/magma` resource descriptors
+can also be used.
+
+The MFEM/libCEED and PETSc/libCEED examples can be further built with:
+```sh
+cd examples/mfem
+make CEED_DIR=`spack location -i libceed` MFEM_DIR=`spack location -i mfem`
+./bp1 -no-vis -o 2 -ceed /cpu/self
+./bp3 -no-vis -o 2 -ceed /cpu/self
+cd ../petsc
+make CEED_DIR=`spack location -i libceed` PETSC_DIR=`spack location -i petsc`
+./bp1 -degree 2 -ceed /cpu/self
+```
+Note that if `PETSC_ARCH` is set in your environment, you must either unset it
+or also pass `PETSC_ARCH=` in the above command.
+
+Depending on the available backends, additional CEED resource descriptors,
+e.g. `petsc/bp1 -degree 2 -ceed /ocl/occa` or `mfem/bp1 -no-vis --order 2 -ceed
+/gpu/occa` can be provided.
+
+Finally, the Nek5000/libCEED examples can be built as follows:
+```sh
+cd ../nek5000
+export CEED_DIR=`spack location -i libceed` NEK5K_DIR=`spack location -i nek5000`
+./make-nek-examples.sh
+```
+Then you can run the Nek5000 examples as follows:
+```
+export MPIEXEC=`spack location -i openmpi`/bin/mpiexec
+./run-nek-example.sh -e bp1 -c /cpu/self -n 2 -b 3
+```
+In the above example, replace `openmpi` with wahtever the MPI implementation
+you have installed with spack. Also, you can do `./run-nek-example.sh -h`
+to find out the options supported by the run script.
+```
+options:
+   -h|-help     Print this usage information and exit
+   -c|-ceed     Ceed backend to be used for the run (optional, default: /cpu/self)
+   -e|-example  Example name (optional, default: bp1)
+   -n|-np       Specify number of MPI ranks for the run (optional, default: 4)
+   -b|-box      Specify the box geometry to be found in ./boxes/ directory (Mandatory)
+```
+More information on running the Nek5000 examples can be found in the libCEED
+[documentation][nek-readme].
+
+Alternatively, one can export the Spack install to a local directory:
+
+```sh
+spack view --verbose symlink ceed/libceed libceed
+spack view --verbose symlink ceed/petsc petsc
+spack view --verbose symlink ceed/mfem mfem
+spack view --verbose symlink ceed/nek5000 nek5000
+```
+and use that to specify the `CEED_DIR`, `MFEM_DIR` and `PETSC_DIR` variables:
+```sh
+cd libCEED/examples/ceed
+make CEED_DIR=../../ceed/libceed
+./ex1 -ceed /cpu/self
+cd mfem
+make CEED_DIR=../../../ceed/libceed MFEM_DIR=../../../ceed/mfem
+./bp1 -no-vis -o 2 -ceed /cpu/self
+./bp3 -no-vis -o 2 -ceed /cpu/self
+cd ../petsc
+make CEED_DIR=../../../ceed/mfem PETSC_DIR=../../../ceed/petsc
+./bp1 -degree 2 -ceed /cpu/self
+```
+
+### GPU demo
+
+Below is the full set of commands to install the CEED distribution on a
+GPU-capable machine and then use its libCEED GPU kernels to accelerate MFEM,
+PETSc and Nek examples. Note that these are very different codes (C++, C, F77)
+which can nevertheless take advanatage through libCEED of a common set of GPU
+kernels.
+
+The `setenv` commands below assume `csh`/`tcsh`. We strongly recommend to add a
+`packages.yaml` file in order to avoid long compile times, see [Tips and
+Troubleshooting](#tips-and-troubleshooting).
+
+```sh
+# Install CEED 2.0 distribution via Spack
+git clone git@github.com:spack/spack.git
+cd spack
+spack install ceed+cuda
+
+# Setup CEED component directories
+setenv CEED_DIR  `spack location -i libceed`
+setenv MFEM_DIR  `spack location -i mfem`
+setenv PETSC_DIR `spack location -i petsc`
+setenv NEK5K_DIR `spack location -i nek5000`
+
+# Clean OCCA cache
+# rm -rf ~/.occa
+
+# Clone libCEED examples directory as proxy for libCEED-based codes
+git clone git@github.com:CEED/libCEED.git
+mv libCEED/examples ceed-examples
+rm -rf libCEED
+
+# libCEED examples on CPU and GPU
+cd ceed-examples/ceed
+make
+./ex1 -ceed /cpu/self
+./ex1 -ceed /gpu/occa
+cd ../..
+
+# MFEM+libCEED examples on CPU and GPU
+cd ceed-examples/mfem
+make
+./bp1 -ceed /cpu/self -no-vis
+./bp1 -ceed /gpu/occa -no-vis
+cd ../..
+
+# PETSc+libCEED examples on CPU and GPU
+cd ceed-examples/petsc
+make
+./bp1 -ceed /cpu/self
+./bp1 -ceed /gpu/occa
+cd ../..
+
+# Nek+libCEED examples on CPU and GPU
+cd ceed-examples/nek5000
+./make-nek-examples.sh
+./run-nek-example.sh -ceed /cpu/self -b 3
+./run-nek-example.sh -ceed /gpu/occa -b 3
+cd ../..
+```
+
+## Spack for Beginners
+
+Spack is a package manager for scientific software that supports multiple
+versions, configurations, platforms, and compilers.
+
+While Spack does not change the build system that already exists in each CEED
+component, it coordinates the dependencies between these components and enables
+them to be built with the same compilers and options.
+
+If you are new to Spack, here are some Spack commands and options that you may
+find useful:
+
+- Spack is a set of Python scripts so there is nothing to install!
+  Just download with `git clone https://github.com/spack/spack.git` and add
+  `spack/bin` to your path with the following commands:<br>
+  `. share/spack/setup-env.sh` for `bash`/`zsh` or <br>
+  `setenv SPACK_ROOT `pwd`; source $SPACK_ROOT/share/spack/setup-env.csh`
+  for `csh`/`tcsh`.
+
+- Spack should automatically locate the standard compilers on your system.  Use
+  `spack compilers` to list the ones that have been found. If you need to
+  configure additional compilers, you can do that through the config file,
+  `~/.spack/compilers.yaml`, or the platform-specific config file,
+  `~/.spack/<platform>/compilers.yaml`. Some examples of such files are
+  provided below. Check the [Spack documentation][spack-docs] for additional
+  details.
+
+- Spack likes to build all of its packages. The file `~/.spack/packages.yaml`,
+  and similarly the platform-specific, `~/.spack/<platform>/packages.yaml`,
+  allow you to list the packages already installed on your system for Spack to
+  use instead of compiling them itself. Some examples are provided below.
+
+- Skip the `-v` option of `spack install` to see only a summary for the building
+  of each package (as opposed to the compilation of individual files): `spack
+  install ceed`.  You can still turn the detailed build output on and off by
+  pressing the `v` key in the Spack terminal.
+
+- To troubleshoot the spack install process: `spack --debug --verbose install ceed`.
+
+- To do a dry run of the spack install process: `spack install --fake ceed`.
+  Note that you will have to run `spack uninstall --all` to clean up after this.
+
+- To see the specific packages that will be installed for a particular package,
+  e.g. `ceed`, use: `spack spec -I ceed`.
+
+- To see the list of all installed packages: `spack find`.
+
+- To list the location where all different versions of the `ceed` package were
+  installed: `spack find --long --paths ceed`. Alternatively, for a specific
+  version you can use `spack location --install-dir ceed`.
+
+- To uninstall a package, e.g. mfem, including all packages that depend on it:
+  `spack uninstall --all --dependents mfem`, or `spack uninstall /qzn2u7t` for a
+  particular hash.
+
+- To uninstall *all* packages that were ever installed by Spack: `spack
+  uninstall --all`.  In this case you may also want to clear the caches that
+  Spack maintains with: `spack clean -a`.
+
+
+## Tips and Troubleshooting
+
+### Building on a Mac
+
+The file [ceed2-darwin-x86_64-packages.yaml](spack/ceed2-darwin-x86_64-packages.yaml) provides a
+sample `packages.yaml` file based on [Homebrew][homebrew], that should work on
+most Macs. (You can use MacPorts instead of Homebrew if you prefer.)
+
+```yaml
+packages:
+    all:
+        compiler: [clang]
+        providers:
+            blas: [veclibfort]
+            lapack: [veclibfort]
+            mpi: [openmpi]
+    openmpi:
+        paths:
+            openmpi@3.0.0: ~/brew
+        buildable: False
+
+    cmake:
+        paths:
+            cmake@3.10.2: ~/brew
+        buildable: False
+    cuda:
+        paths:
+            cuda@9.1.85: /usr/local/cuda
+        buildable: False
+    libx11:
+        paths:
+            libx11@system: /opt/X11
+        version: [system]
+        buildable: False
+    libxt:
+        paths:
+            libxt@system: /opt/X11
+        version: [system]
+        buildable: False
+    python:
+        paths:
+            python@2.7.10: /usr
+        buildable: False
+    zlib:
+        paths:
+            zlib@1.2.11: /usr
+        buildable: False
+```
+
+The packages in `~/brew` were installed with `brew install package`.  If you
+don't have Homebrew, you can install it and the needed tools with:
+
+```sh
+git clone https://github.com/Homebrew/brew.git
+cd brew
+bin/brew install openmpi cmake python zlib
+```
+
+The packages in `/usr` are provided by Apple and come pre-built with Mac OS
+X. The `cuda` package is provided by NVIDIA and should be installed separately
+by downloading it from [NVIDIA][nvidia-dev]. We are using the Clang compiler,
+OpenMPI, and Apple's BLAS/LAPACK accelerator library.
+
+### Building on a Linux Desktop
+
+The file [ceed2-linux-rhel7-x86_64-packages.yaml](spack/ceed2-linux-rhel7-x86_64-packages.yaml)
+provides a sample `packages.yaml` file that can be adapted to work on most Linux
+desktops (this particular file was tested on RHEL7).
+
+**UPDATE**
+```yaml
+packages:
+    all:
+        compiler: [gcc]
+        providers:
+            mpi: [openmpi]
+            blas: [netlib-lapack]
+            lapack: [netlib-lapack]
+    netlib-lapack:
+        paths:
+            netlib-lapack@system: /usr/lib64
+        buildable: False
+    openmpi:
+        paths:
+            openmpi@3.0.0: ~/local
+        buildable: False
+
+    cmake:
+        paths:
+            cmake@3.10.2: ~/local
+        buildable: False
+    cuda:
+        paths:
+            cuda@9.1.85: ~/local/cuda
+        buildable: False
+    libx11:
+        paths:
+            libx11@system: /usr
+        version: [system]
+        buildable: False
+    libxt:
+        paths:
+            libxt@system: /usr
+        version: [system]
+        buildable: False
+    python:
+        paths:
+             python@2.7.14: /usr
+        buildable: False
+    zlib:
+        paths:
+            zlib@1.2.11: /usr/lib64
+        buildable: False
+```
+
+The above file uses user-installed OpenMPI, CMake and CUDA packages, with the
+rest of the CEED prerequisites installed via the [yum package manager][yum].
+
+### Building at LLNL's Computing Center
+
+#### TOSS3 Platforms
+
+The file [ceed2-toss_3_x86_64_ib-packages.yaml](spack/ceed2-toss_3_x86_64_ib-packages.yaml) is an
+example of a `packages.yaml` file for the TOSS3 system type at LLNL's [Livermore
+Computing][llnl-lc] center.
+
+**UPDATE**
+
+```yaml
+packages:
+    all:
+        compiler: [intel, gcc, clang, pgi]
+        providers:
+            mpi: [mvapich2, mpich, openmpi]
+            blas: [intel-mkl, openblas]
+            lapack: [intel-mkl, openblas]
+    intel-mkl:
+        paths:
+            intel-mkl@2018.0.128: /usr/tce/packages/mkl/mkl-2018.0
+        buildable: False
+    mvapich2:
+        paths:
+            mvapich2@2.2%intel@18.0.1: /usr/tce/packages/mvapich2/mvapich2-2.2-intel-18.0.1
+            mvapich2@2.2%gcc@4.9.3: /usr/tce/packages/mvapich2/mvapich2-2.2-gcc-4.9.3
+            mvapich2@2.2%gcc@7.1.0: /usr/tce/packages/mvapich2/mvapich2-2.2-gcc-7.1.0
+        buildable: False
+
+    cmake:
+        paths:
+            cmake@3.8.2: /usr/tce/packages/cmake/cmake-3.8.2
+        buildable: False
+    libx11:
+        paths:
+            libx11@system: /usr
+        version: [system]
+        buildable: False
+    libxt:
+        paths:
+            libxt@system: /usr
+        version: [system]
+        buildable: False
+    python:
+        paths:
+            python@2.7.14: /usr/tce/packages/python/python-2.7.14
+        buildable: False
+    zlib:
+        paths:
+            zlib@1.2.7: /usr
+        buildable: False
+```
+The above file can be used to build CEED with different compilers (Intel being
+the default), for example:
+
+```sh
+spack install ceed%gcc~petsc
+```
+
+A corresponding `compilers.yaml` file for the TOSS3 platform can be found here:
+[toss_3_x86_64_ib-compilers.yaml](spack/toss_3_x86_64_ib-compilers.yaml).
+
+#### Lassen
+
+The file [ceed2-lassen-packages.yam](spack/ceed2-lassen-packages.yam)
+is an example of a `packages.yaml` file for the Lassen machine early at
+LLNL's [Livermore Computing][llnl-lc] center.
+
+**UPDATE**
+```yaml
+packages:
+    all:
+        compiler: [xl_r, xl, gcc, clang, pgi]
+        providers:
+            mpi: [spectrum-mpi]
+            blas: [essl]
+            lapack: [netlib-lapack]
+    essl:
+        paths:
+            essl@6.1.0: /usr/tcetmp/packages/essl/essl-6.1.0
+        variants: threads=none
+        version: [6.1.0]
+        buildable: False
+    veclibfort:
+        buildable: False
+    intel-parallel-studio:
+        buildable: False
+    intel-mkl:
+        buildable: False
+    atlas:
+        buildable: False
+    openblas:  # OpenBLAS can be built only with gcc
+        buildable: False
+    netlib-lapack: # prefer netlib-lapack with '+external-blas' and '~lapacke' variant
+        variants: +external-blas~lapacke
+    spectrum-mpi:
+        paths:
+            spectrum-mpi@2017-04-03%xl_r@13.1.7-beta3: /usr/tce/packages/spectrum-mpi/spectrum-mpi-2017.04.03-xl-beta-2018.03.21
+            spectrum-mpi@2017-04-03%xl_r@13.1.7-beta2: /usr/tce/packages/spectrum-mpi/spectrum-mpi-2017.04.03-xl-beta-2018.02.22
+            spectrum-mpi@2017-04-03%gcc@4.9.3: /usr/tce/packages/spectrum-mpi/spectrum-mpi-2017.04.03-gcc-4.9.3
+            spectrum-mpi@2017-04-03%clang@3.8.0: /usr/tce/packages/spectrum-mpi/spectrum-mpi-2017.04.03-clang-coral-2018.02.09
+        buildable: False
+
+    cmake:
+        paths:
+            cmake@3.9.2: /usr/tce/packages/cmake/cmake-3.9.2
+        version: [3.9.2]
+        buildable: False
+    cuda:
+        paths:
+            cuda@9.0.176: /usr/tce/packages/cuda/cuda-9.0.176
+            cuda@9.1.85: /usr/tce/packages/cuda/cuda-9.1.85
+        version: [9.0.176, 9.1.85]
+        buildable: False
+    libx11:
+        paths:
+            libx11@system: /usr
+        version: [system]
+        buildable: False
+    libxt:
+        paths:
+            libxt@system: /usr
+        version: [system]
+        buildable: False
+    python:
+        paths:
+            python@2.7.14: /usr/tcetmp/packages/python/python-2.7.14
+        version: [2.7.14]
+        buildable: False
+```
+
+A corresponding `compilers.yaml` file can be found here:
+[blueos_3_ppc64le_ib-compilers.yaml](spack/blueos_3_ppc64le_ib-compilers.yaml).
+
+### Building at NERSC
+
+#### Cori
+
+The file [ceed2-cori-packages.yaml](spack/ceed2-cori-packages.yaml) is an example of a
+`packages.yaml` file for the Cori system at [NERSC](http://www.nersc.gov).
+
+
+```yaml
+packages:
+    all:
+        compiler: [gcc@7.3.0,intel/19.0.0.117]
+        providers:
+            mpi: [mpich]
+    mpich:
+        modules:
+            mpich@7.7.4%gcc@7.3.0 arch=cray-CNL-haswell: cray-mpich
+            mpich@7.7.4%intel@19.0.0.117 arch=cray-CNL-haswell: cray-mpich
+        buildable: False
+    cmake:
+        modules:
+            cmake@3.11.4%gcc@7.3.0 arch=cray-CNL-haswell: cmake
+            cmake@3.11.4%intel@19.0.0.117 arch=cray-CNL-haswell: cmake
+        buildable: False
+    libx11:
+        paths:
+            libx11@system: /usr
+        version: [system]
+        buildable: False
+    libxt:
+        paths:
+            libxt@system: /usr
+        version: [system]
+        buildable: False
+    python:
+        paths:
+            python@2.7.14%gcc@7.3.0 arch=cray-CNL-haswell: /usr
+            python@2.7.14%intel@19.0.0.117 arch=cray-CNL-haswell: /usr
+        buildable: False
+    boost:
+        modules:
+            boost@1.69.0%gcc@7.3.0 arch=cray-CNL-haswell: boost
+            boost@1.69.0%intel@19.0.0.117 arch=cray-CNL-haswell: boost
+        buildable: False
+    m4:
+        modules:
+            m4@1.4.17%gcc@7.3.0 arch=cray-CNL-haswell: m4
+            m4@1.4.17%intel@19.0.0.117 arch=cray-CNL-haswell: m4
+        buildable: False
+    openssl:
+        modules:
+            openssl@1.1.0a%gcc@7.3.0 arch=cray-CNL-haswell: openssl
+            openssl@1.1.0a%intel@19.0.0.117 arch=cray-CNL-haswell: openssl
+        buildable: False
+    perl:
+        paths:
+            perl@5.18.2%gcc@7.3.0 arch=cray-CNL-haswell: /usr
+            perl@5.18.2%intel@19.0.0.117 arch=cray-CNL-haswell: /usr
+        buildable: False
+    zlib:
+        modules:
+            zlib@1.2.11%gcc@7.3.0 arch=cray-CNL-haswell: zlib
+            zlib@1.2.11%intel@19.0.0.117 arch=cray-CNL-haswell: zlib
+    autoconf:
+        modules:
+            autoconf@2.69%gcc@7.3.0 arch=cray-CNL-haswell: autoconf
+            autoconf@2.69%intel@19.0.0.117 arch=cray-CNL-haswell: autoconf
+        buildable: False
+    automake:
+        modules:
+            automake@1.15%gcc@7.3.0 arch=cray-CNL-haswell: automake
+            automake@1.15%intel@19.0.0.117 arch=cray-CNL-haswell: automake
+        buildable: False
+    openmpi:
+        modules:
+            openmpi@3.1.3%gcc@7.3.0 arch=cray-CNL-haswell: openmpi
+            openmpi@3.1.3%intel@19.0.0.117 arch=cray-CNL-haswell: openmpi
+```
+
+### Building at ALCF
+
+#### Theta
+
+The file [ceed2-theta-packages.yaml](spack/ceed2-theta-packages.yaml) is an example of a
+`packages.yaml` file for the Theta system at [ALCF](https://www.alcf.anl.gov).
+
+**UPDATE**
+```yaml
+packages:
+    all:
+        compiler: [intel@16.0.3.210, gcc@5.3.0]
+        providers:
+            mpi: [mpich]
+    intel-mkl:
+        paths:
+            intel-mkl@16.0.3.210%intel@16.0.3.210 arch=cray-CNL-mic_knl: /opt/intel
+        buildable: False
+    mpich:
+        modules:
+            # requires 'module load cce' otherwise gives parsing error
+            mpich@7.6.3%gcc@5.3.0 arch=cray-CNL-mic_knl: cray-mpich/7.6.3
+            mpich@7.6.3%intel@16.0.3.210 arch=cray-CNL-mic_knl: cray-mpich/7.6.3
+        buildable: False
+
+    cmake:
+        paths:
+            cmake@3.5.2%gcc@5.3.0 arch=cray-CNL-mic_knl: /usr
+            cmake@3.5.2%intel@16.0.3.210 arch=cray-CNL-mic_knl: /usr
+        buildable: False
+    libx11:
+        paths:
+            libx11@system: /usr
+        version: [system]
+        buildable: False
+    libxt:
+        paths:
+            libxt@system: /usr
+        version: [system]
+        buildable: False
+    python:
+        paths:
+            python@2.7.13%gcc@5.3.0 arch=cray-CNL-mic_knl: /usr
+            python@2.7.13%intel@16.0.3.210 arch=cray-CNL-mic_knl: /usr
+        buildable: False
+
+```
+
+### Building at OLCF
+
+#### Summit
+
+The file [ceed2-summit-packages.yaml](spack/ceed2-summit-packages.yaml) is an example of a
+`packages.yaml` file for the Summit system at [OLCF](https://www.olcf.ornl.gov).
+
+**UPDATE**
+```yaml
+packages:
+    all:
+        compiler: [cce/8.6.4]
+        providers:
+            mpi: [mpich]
+    mpich:
+        modules:
+            mpich@7.6.3%cce@8.6.4 arch=cray-CNL-interlagos: cray-mpich
+        buildable: False
+
+    cmake:
+        paths:
+            cmake@3.9.0%cce@8.6.4: /autofs/nccs-svm1_sw/titan/.swci/0-login/opt/spack/20170612/linux-suse_linux11-x86_64/gcc-4.3.4/cmake-3.9.0-owxiriblogovogl5zbrg45ulm3ln34cx/bin
+        buildable: False
+    libx11:
+        paths:
+            libx11@system: /usr
+        version: [system]
+        buildable: False
+    libxt:
+        paths:
+            libxt@system: /usr
+        version: [system]
+        buildable: False
+    python:
+        modules:
+            python@2.7.9%cce@8.6.4 arch=cray-CNL-interlagos: python
+        buildable: False
+    zlib:
+        paths:
+            zlib@1.2.17: /usr/lib64
+        buildable: False
+```
+
+The default install of curl on Summit does not support ssl, so you need to add
+the path of a newer install to your `PATH`:
+
+```sh
+module show curl  # get the /path/to/curl/bin/dir
+export PATH=/path/to/curl/bin/dir:$PATH
+```
+
+Additional issues on Summit: Spack does not support `cray-libsci` for BLAS/LAPACK
+(there is no 'dummy package' for [cray-libsci yet][cray-libsci]); the Cray
+compiler, `cce`, fails to build `openblas` (it does not e.g.  recognize the
+`-m64` flag, there may be other issues).
+
+With these caveats, the CEED metapackage can be installed with:
+
+```sh
+./bin/spack --debug --verbose install -v ceed%pgi@17.9.0 target=interlagos
+```
+
+Note that `spack` will hang if you redirect `std[err|out]` to a file (` &> log`)
+and background the command (by appending an `&`).
+
+### Installing CUDA
+- Several CEED packages depend on CUDA: OCCA, MAGMA and libCEED.
+
+- To build these, add the `cuda` variant to the Spack build:
+  ```sh
+  spack install ceed+cuda
+  ```
+
+- You will need to have the NVIDIA CUDA SDK and driver installed on your system,
+  see [developer.nvidia.com][nvidia-dev], and specify it in the `packages.yaml`
+  file. See, for example, the `cuda` section in [Building on a Mac](#building-on-a-mac),
+  or the [linux-rhel7-x86_64-packages.yaml](spack/linux-rhel7-x86_64-packages.yaml) file.
+
+
+[ceed-users]:    https://github.com/CEED/forum
+[ceed-spack]:    https://github.com/orgs/spack/teams/ceed
+[spack-docs]:    https://spack.readthedocs.io/en/latest/getting_started.html#compiler-configuration
+[homebrew]:      https://brew.sh/
+[yum]:           https://en.wikipedia.org/wiki/Yellow_Dog_Updater,_Modified
+[nvidia-dev]:    https://developer.nvidia.com
+[llnl-lc]:       https://hpc.llnl.gov/hardware/platforms
+[nek-readme]:    https://github.com/CEED/libCEED/blob/master/examples/nek5000/README.md
+[cray-libsci]:   https://github.com/spack/spack/pull/3122
+[xsdk-configs]:  https://github.com/xsdk-project/installxSDK/tree/master/platformFiles
+[spack-loc]:     https://spack.readthedocs.io/en/latest/command_index.html#spack-location
+[spack-find]:    https://spack.readthedocs.io/en/latest/command_index.html#spack-find
+[spack-specs]:   https://spack.readthedocs.io/en/latest/basic_usage.html#specs-dependencies

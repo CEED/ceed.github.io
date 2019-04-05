@@ -38,6 +38,11 @@ packages:
       pkg-config@0.28%gcc@8.2.0 arch=cray-CNL-mic_knl: /usr
       pkg-config@0.28%intel@16.0.3.210 arch=cray-CNL-mic_knl: /usr
     buildable: False
+  perl:
+    paths:
+      perl%gcc@8.2.0 arch=cray-CNL-mic_knl: /usr
+      perl%intel@16.0.3.210 arch=cray-CNL-mic_knl: /usr
+    buildable: False
   autoconf:
     paths:
       autoconf@2.69%gcc@8.2.0 arch=cray-CNL-mic_knl: /usr
