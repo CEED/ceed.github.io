@@ -378,6 +378,16 @@ configurations for CEED (see also <a href="https://github.com/xsdk-project/insta
 <td><code>cray-CNL-mic_knl</code></td>
 <td><a href="../spack/ceed2-theta-packages.yaml">packages</a> <i class="fa fa-cloud-download"></i></td>
 </tr>
+<tr>
+<td><strong>Pascal</strong> (LLNL)</td>
+<td><code>toss_3_x86_64_ib</code></td>
+<td><a href="../spack/ceed2-pascal-packages.yaml">packages</a> <i class="fa fa-cloud-download"></i>  <a href="../spack/ceed2-pascal-compilers.yaml">compilers</a> <i class="fa fa-cloud-download"></i></td>
+</tr>
+<tr>
+<td><strong>Lassen</strong> (LLNL)</td>
+<td><code>linux-rhel7-ppc64le</code></td>
+<td><a href="../spack/ceed2-lassen-packages.yaml">packages</a> <i class="fa fa-cloud-download"></i>  <a href="../spack/ceed2-lassen-compilers.yaml">compilers</a> <i class="fa fa-cloud-download"></i></td>
+</tr>
 </tbody>
 </table>
 <p>Note: You have to unload xalt module on Theta with <code>module unload xalt</code>.
@@ -395,6 +405,11 @@ Otherwise suite-sparse fails to build.</p>
 <li><a href="#tips-and-troubleshooting">Tips and Troubleshooting</a><ul>
 <li><a href="#building-on-a-mac">Building on Mac</a></li>
 <li><a href="#building-on-a-linux-desktop">Building on Linux</a></li>
+<li><a href="#building-at-llnls-computing-center">Building at LLNL</a><ul>
+<li><a href="#pascal-toss3-platforms">Pascal (TOSS3)</a></li>
+<li><a href="#lassen">Lassen</a></li>
+</ul>
+</li>
 <li><a href="#building-at-nersc">Building at NERSC</a><ul>
 <li><a href="#cori">Cori</a></li>
 </ul>
@@ -864,6 +879,151 @@ like Shifter and Singularity). You can use</p>
 </code></pre>
 
 <p>to get a build environment that is ready for <code>spack install ceed</code>.</p>
+<h3 id="building-at-llnls-computing-center">Building at LLNL's Computing Center</h3>
+<h4 id="pascal-toss3-platforms">Pascal (TOSS3 Platforms)</h4>
+<p>The file <a href="../spack/ceed2-pascal-packages.yaml">ceed2-pascal-packages.yaml</a> is an
+example of a <code>packages.yaml</code> file for the TOSS3 system type at LLNL's <a href="https://hpc.llnl.gov/hardware/platforms">Livermore
+Computing</a> center.</p>
+<pre><code class="yaml">packages:
+  cmake:
+    paths:
+      cmake@3.13.4: /usr/tce/packages/cmake/cmake-3.13.4
+    version: [3.13.4]
+    buildable: False
+
+  python:
+    paths:
+      python@2.7.14: /usr/tce/packages/python/python-2.7.14
+    version: [2.7.14]
+    buildable: False
+
+  libx11:
+    paths:
+      libx11@system: /usr
+    version: [system]
+    buildable: False
+
+  libxt:
+    paths:
+      libxt@system: /usr
+    version: [system]
+    buildable: False
+
+  xproto:
+    paths:
+      # see /usr/share/pkgconfig/xproto.pc
+      xproto@7.0.32: /usr
+    version: [7.0.32]
+    buildable: False
+
+  mvapich2:
+    paths:
+      mvapich2@2.2%intel@18.0.1: /usr/tce/packages/mvapich2/mvapich2-2.2-intel-18.0.1
+      mvapich2@2.2%gcc@4.9.3: /usr/tce/packages/mvapich2/mvapich2-2.2-gcc-4.9.3
+
+  intel-mkl:
+    paths:
+      intel-mkl@2018.0.128: /usr/tce/packages/mkl/mkl-2018.0
+    version: [2018.0.128]
+    buildable: False
+
+  cuda:
+    paths:
+      cuda@10.0.130: /usr/tce/packages/cuda/cuda-10.0.130
+    version: [10.0.130]
+    buildable: False
+
+  all:
+    compiler: [intel, gcc]
+    providers:
+      mpi: [mvapich2]
+      blas: [intel-mkl, openblas]
+      lapack: [intel-mkl, openblas]
+</code></pre>
+
+<p>The above file can be used to build CEED with different compilers (Intel being
+the default), for example:</p>
+<pre><code class="sh">spack install ceed%gcc~petsc
+</code></pre>
+
+<p>A corresponding <code>compilers.yaml</code> file for the TOSS3 platform can be found here:
+<a href="../spack/ceed2-pascal-compilers.yaml">ceed2-pascal-compilers.yaml</a>.</p>
+<h4 id="lassen">Lassen</h4>
+<p>The file <a href="../spack/ceed2-lassen-packages.yaml">ceed2-lassen-packages.yaml</a> is an
+example of a <code>packages.yaml</code> file for Lassen at LLNL's <a href="https://hpc.llnl.gov/hardware/platforms">Livermore
+Computing</a> center.</p>
+<pre><code class="yaml">packages:
+    all:
+        compiler: [xl_r, xl, gcc]
+        providers:
+            mpi: [spectrum-mpi]
+            blas: [essl]
+            lapack: [netlib-lapack]
+    essl:
+        paths:
+            essl@6.1.0: /usr/tcetmp/packages/essl/essl-6.1.0
+        variants: threads=none
+        version: [6.1.0]
+        buildable: False
+    veclibfort:
+        buildable: False
+    intel-parallel-studio:
+        buildable: False
+    intel-mkl:
+        buildable: False
+    atlas:
+        buildable: False
+    openblas:  # OpenBLAS can be built only with gcc
+        buildable: False
+    netlib-lapack: # prefer netlib-lapack with '+external-blas' and '~lapacke' variant
+        variants: +external-blas~lapacke
+    spectrum-mpi:
+        paths:
+            spectrum-mpi@2019-01-30%xl_r@16.1.1: /usr/tce/packages/spectrum-mpi/spectrum-mpi-2019.01.30-xl-2019.02.07
+            spectrum-mpi@2019-01-30%gcc@4.9.3: /usr/tce/packages/spectrum-mpi/spectrum-mpi-2019.01.30-gcc-4.9.3
+            spectrum-mpi@2019-01-30%gcc@7.3.1: /usr/tce/packages/spectrum-mpi/spectrum-mpi-2019.01.30-gcc-7.3.1
+        buildable: False
+
+    cmake:
+        paths:
+            cmake@3.9.2: /usr/tce/packages/cmake/cmake-3.9.2
+        version: [3.9.2]
+        buildable: False
+    cuda:
+        paths:
+            cuda@9.2.148: /usr/tce/packages/cuda/cuda-9.2.148
+        version: [9.2.148]
+        buildable: False
+    libx11:
+        paths:
+            libx11@system: /usr
+        version: [system]
+        buildable: False
+    libxt:
+        paths:
+            libxt@system: /usr
+        version: [system]
+        buildable: False
+    xproto:
+        paths:
+            # see /usr/share/pkgconfig/xproto.pc
+            xproto@7.0.31: /usr
+        version: [7.0.31]
+        buildable: False
+    python:
+        paths:
+            python@2.7.14: /usr/tce/packages/python/python-2.7.14
+        version: [2.7.14]
+        buildable: False
+</code></pre>
+
+<p>The above file can be used to build CEED with different compilers (xl being
+the default), for example:</p>
+<pre><code class="sh">spack install ceed%gcc~petsc
+</code></pre>
+
+<p>A corresponding <code>compilers.yaml</code> file for Lassen can be found here:
+<a href="../spack/ceed2-lassen-compilers.yaml">ceed2-lassen-compilers.yaml</a>.</p>
 <h3 id="building-at-nersc">Building at NERSC</h3>
 <h4 id="cori">Cori</h4>
 <p>The file <a href="../spack/ceed2-cori-packages.yaml">ceed2-cori-packages.yaml</a> is an example of a

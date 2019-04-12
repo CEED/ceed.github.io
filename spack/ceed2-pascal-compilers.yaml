@@ -1,0 +1,51 @@
+# Copyright (c) 2017-2019, Lawrence Livermore National Security, LLC. Produced at
+# the Lawrence Livermore National Laboratory. LLNL-CODE-734707. All Rights
+# reserved. See files LICENSE and NOTICE for details.
+#
+# This file is part of CEED, a collection of benchmarks, miniapps, software
+# libraries and APIs for efficient high-order finite element and spectral
+# element discretizations for exascale applications. For more information and
+# source code availability see http://github.com/ceed.
+#
+# The CEED research is supported by the Exascale Computing Project 17-SC-20-SC,
+# a collaborative effort of two U.S. Department of Energy organizations (Office
+# of Science and the National Nuclear Security Administration) responsible for
+# the planning and preparation of a capable exascale ecosystem, including
+# software, applications, hardware, advanced system engineering and early
+# testbed platforms, in support of the nation's exascale computing imperative.
+#
+# By default, the Spack-based CEED installation will build all required packages
+# from scratch, which can take a long time. The file ~/.spack/packages.yaml, or
+# ~/.spack/<platform>/packages.yaml allows you to list packages already
+# installed on your system for Spack to use instead of compiling them itself.
+#
+# This is an example of a packages.yaml file for the Pascal machine at LLNL,
+# To use this file, save it as $SPACK_DIR/etc/spack/compilers.yaml.
+
+compilers:
+- compiler:
+    environment: {}
+    extra_rpaths: []
+    flags: {}
+    modules: []
+    operating_system: rhel7
+    paths:
+      cc: /usr/tce/bin/gcc
+      cxx: /usr/tce/bin/g++
+      f77: /usr/tce/bin/gfortran
+      fc: /usr/tce/bin/gfortran
+    spec: gcc@4.9.3
+    target: x86_64
+- compiler:
+    environment: {}
+    extra_rpaths: []
+    flags: {}
+    modules: []
+    operating_system: rhel7
+    paths:
+      cc: /usr/tce/packages/intel/intel-18.0.1/bin/icc
+      cxx: /usr/tce/packages/intel/intel-18.0.1/bin/icpc
+      f77: /usr/tce/packages/intel/intel-18.0.1/bin/ifort
+      fc: /usr/tce/packages/intel/intel-18.0.1/bin/ifort
+    spec: intel@18.0.1
+    target: x86_64

@@ -1,0 +1,79 @@
+# Copyright (c) 2017-2019, Lawrence Livermore National Security, LLC. Produced at
+# the Lawrence Livermore National Laboratory. LLNL-CODE-734707. All Rights
+# reserved. See files LICENSE and NOTICE for details.
+#
+# This file is part of CEED, a collection of benchmarks, miniapps, software
+# libraries and APIs for efficient high-order finite element and spectral
+# element discretizations for exascale applications. For more information and
+# source code availability see http://github.com/ceed.
+#
+# The CEED research is supported by the Exascale Computing Project 17-SC-20-SC,
+# a collaborative effort of two U.S. Department of Energy organizations (Office
+# of Science and the National Nuclear Security Administration) responsible for
+# the planning and preparation of a capable exascale ecosystem, including
+# software, applications, hardware, advanced system engineering and early
+# testbed platforms, in support of the nation's exascale computing imperative.
+#
+# By default, the Spack-based CEED installation will build all required packages
+# from scratch, which can take a long time. The file ~/.spack/packages.yaml, or
+# ~/.spack/<platform>/packages.yaml allows you to list packages already
+# installed on your system for Spack to use instead of compiling them itself.
+#
+# This is an example of a packages.yaml file for the Pascal machine at LLNL,
+# To use this file, save it as $SPACK_DIR/etc/spack/packages.yaml.
+
+packages:
+  cmake:
+    paths:
+      cmake@3.13.4: /usr/tce/packages/cmake/cmake-3.13.4
+    version: [3.13.4]
+    buildable: False
+
+  python:
+    paths:
+      python@2.7.14: /usr/tce/packages/python/python-2.7.14
+    version: [2.7.14]
+    buildable: False
+
+  libx11:
+    paths:
+      libx11@system: /usr
+    version: [system]
+    buildable: False
+
+  libxt:
+    paths:
+      libxt@system: /usr
+    version: [system]
+    buildable: False
+
+  xproto:
+    paths:
+      # see /usr/share/pkgconfig/xproto.pc
+      xproto@7.0.32: /usr
+    version: [7.0.32]
+    buildable: False
+
+  mvapich2:
+    paths:
+      mvapich2@2.2%intel@18.0.1: /usr/tce/packages/mvapich2/mvapich2-2.2-intel-18.0.1
+      mvapich2@2.2%gcc@4.9.3: /usr/tce/packages/mvapich2/mvapich2-2.2-gcc-4.9.3
+
+  intel-mkl:
+    paths:
+      intel-mkl@2018.0.128: /usr/tce/packages/mkl/mkl-2018.0
+    version: [2018.0.128]
+    buildable: False
+
+  cuda:
+    paths:
+      cuda@10.0.130: /usr/tce/packages/cuda/cuda-10.0.130
+    version: [10.0.130]
+    buildable: False
+
+  all:
+    compiler: [intel, gcc]
+    providers:
+      mpi: [mvapich2]
+      blas: [intel-mkl, openblas]
+      lapack: [intel-mkl, openblas]
