@@ -354,42 +354,42 @@ configurations for CEED (see also <a href="https://github.com/xsdk-project/insta
 <tr>
 <td><strong>Mac</strong></td>
 <td><code>darwin-x86_64</code></td>
-<td><a href="../spack/darwin-x86_64-packages.yaml">packages</a> <i class="fa fa-cloud-download"></i></td>
+<td><a href="../spack/ceed1-darwin-x86_64-packages.yaml">packages</a> <i class="fa fa-cloud-download"></i></td>
 </tr>
 <tr>
 <td><strong>Linux</strong> (RHEL7)</td>
 <td><code>linux-rhel7-x86_64</code></td>
-<td><a href="../spack/linux-rhel7-x86_64-packages.yaml">packages</a> <i class="fa fa-cloud-download"></i></td>
+<td><a href="../spack/ceed1-linux-rhel7-x86_64-packages.yaml">packages</a> <i class="fa fa-cloud-download"></i></td>
 </tr>
 <tr>
 <td><strong>Cori</strong> (NERSC)</td>
 <td><code>cray-CNL-haswell</code></td>
-<td><a href="../spack/cori-packages.yaml">packages</a> <i class="fa fa-cloud-download"></i></td>
+<td><a href="../spack/ceed1-cori-packages.yaml">packages</a> <i class="fa fa-cloud-download"></i></td>
 </tr>
 <tr>
 <td><strong>Edison</strong> (NERSC)</td>
 <td><code>cray-CNL-ivybridge</code></td>
-<td><a href="../spack/edison-packages.yaml">packages</a> <i class="fa fa-cloud-download"></i></td>
+<td><a href="../spack/ceed1-edison-packages.yaml">packages</a> <i class="fa fa-cloud-download"></i></td>
 </tr>
 <tr>
 <td><strong>Theta</strong> (ALCF)</td>
 <td><code>cray-CNL-mic_knl</code></td>
-<td><a href="../spack/theta-packages.yaml">packages</a> <i class="fa fa-cloud-download"></i></td>
+<td><a href="../spack/ceed1-theta-packages.yaml">packages</a> <i class="fa fa-cloud-download"></i></td>
 </tr>
 <tr>
 <td><strong>Titan</strong> (OLCF)</td>
 <td><code>cray-CNL-interlagos</code></td>
-<td><a href="../spack/titan-packages.yaml">packages</a> <i class="fa fa-cloud-download"></i></td>
+<td><a href="../spack/ceed1-titan-packages.yaml">packages</a> <i class="fa fa-cloud-download"></i></td>
 </tr>
 <tr>
 <td><strong>CORAL-EA</strong> (LLNL)</td>
 <td><code>blueos_3_ppc64le_ib</code></td>
-<td><a href="../spack/blueos_3_ppc64le_ib-packages.yaml">packages</a> <i class="fa fa-cloud-download"></i> &nbsp; <a href="../spack/blueos_3_ppc64le_ib-compilers.yaml">compilers</a> <i class="fa fa-cloud-download"></i></td>
+<td><a href="../spack/ceed1-blueos_3_ppc64le_ib-packages.yaml">packages</a> <i class="fa fa-cloud-download"></i> &nbsp; <a href="../spack/ceed1-blueos_3_ppc64le_ib-compilers.yaml">compilers</a> <i class="fa fa-cloud-download"></i></td>
 </tr>
 <tr>
 <td><strong>TOSS3</strong> (LLNL)</td>
 <td><code>toss_3_x86_64_ib</code></td>
-<td><a href="../spack/toss_3_x86_64_ib-packages.yaml">packages</a> <i class="fa fa-cloud-download"></i> &nbsp; <a href="../spack/toss_3_x86_64_ib-compilers.yaml">compilers</a> <i class="fa fa-cloud-download"></i></td>
+<td><a href="../spack/ceed1-toss_3_x86_64_ib-packages.yaml">packages</a> <i class="fa fa-cloud-download"></i> &nbsp; <a href="../spack/ceed1-toss_3_x86_64_ib-compilers.yaml">compilers</a> <i class="fa fa-cloud-download"></i></td>
 </tr>
 </tbody>
 </table>
@@ -717,7 +717,7 @@ find useful:</p>
 </ul>
 <h2 id="tips-and-troubleshooting">Tips and Troubleshooting</h2>
 <h3 id="building-on-a-mac">Building on a Mac</h3>
-<p>The file <a href="../spack/darwin-x86_64-packages.yaml">darwin-x86_64-packages.yaml</a> provides a
+<p>The file <a href="../spack/ceed1-darwin-x86_64-packages.yaml">ceed1-darwin-x86_64-packages.yaml</a> provides a
 sample <code>packages.yaml</code> file based on <a href="https://brew.sh/">Homebrew</a>, that should work on
 most Macs. (You can use MacPorts instead of Homebrew if you prefer.)</p>
 <pre><code class="yaml">packages:
@@ -772,7 +772,7 @@ X. The <code>cuda</code> package is provided by NVIDIA and should be installed s
 by downloading it from <a href="https://developer.nvidia.com">NVIDIA</a>. We are using the Clang compiler,
 OpenMPI, and Apple's BLAS/LAPACK accelerator library.</p>
 <h3 id="building-on-a-linux-desktop">Building on a Linux Desktop</h3>
-<p>The file <a href="../spack/linux-rhel7-x86_64-packages.yaml">linux-rhel7-x86_64-packages.yaml</a>
+<p>The file <a href="../spack/ceed1-linux-rhel7-x86_64-packages.yaml">ceed1-linux-rhel7-x86_64-packages.yaml</a>
 provides a sample <code>packages.yaml</code> file that can be adapted to work on most Linux
 desktops (this particular file was tested on RHEL7).</p>
 <pre><code class="yaml">packages:
@@ -823,7 +823,7 @@ desktops (this particular file was tested on RHEL7).</p>
 rest of the CEED prerequisites installed via the <a href="https://en.wikipedia.org/wiki/Yellow_Dog_Updater,_Modified">yum package manager</a>.</p>
 <h3 id="building-at-llnls-computing-center">Building at LLNL's Computing Center</h3>
 <h4 id="toss3-platforms">TOSS3 Platforms</h4>
-<p>The file <a href="../spack/toss_3_x86_64_ib-packages.yaml">toss_3_x86_64_ib-packages.yaml</a> is an
+<p>The file <a href="../spack/ceed1-toss_3_x86_64_ib-packages.yaml">ceed1-toss_3_x86_64_ib-packages.yaml</a> is an
 example of a <code>packages.yaml</code> file for the TOSS3 system type at LLNL's <a href="https://hpc.llnl.gov/hardware/platforms">Livermore
 Computing</a> center.</p>
 <pre><code class="yaml">packages:
@@ -874,9 +874,9 @@ the default), for example:</p>
 </code></pre>
 
 <p>A corresponding <code>compilers.yaml</code> file for the TOSS3 platform can be found here:
-<a href="../spack/toss_3_x86_64_ib-compilers.yaml">toss_3_x86_64_ib-compilers.yaml</a>.</p>
+<a href="../spack/ceed1-toss_3_x86_64_ib-compilers.yaml">ceed1-toss_3_x86_64_ib-compilers.yaml</a>.</p>
 <h4 id="coral-early-access-platforms">CORAL Early Access Platforms</h4>
-<p>The file <a href="../spack/blueos_3_ppc64le_ib-packages.yaml">blueos_3_ppc64le_ib-packages.yaml</a>
+<p>The file <a href="../spack/ceed1-blueos_3_ppc64le_ib-packages.yaml">ceed1-blueos_3_ppc64le_ib-packages.yaml</a>
 is an example of a <code>packages.yaml</code> file for the CORAL early access systems at
 LLNL's <a href="https://hpc.llnl.gov/hardware/platforms">Livermore Computing</a> center (this particular file is for the
 Ray machine).</p>
@@ -942,10 +942,10 @@ Ray machine).</p>
 </code></pre>
 
 <p>A corresponding <code>compilers.yaml</code> file can be found here:
-<a href="../spack/blueos_3_ppc64le_ib-compilers.yaml">blueos_3_ppc64le_ib-compilers.yaml</a>.</p>
+<a href="../spack/ceed1-blueos_3_ppc64le_ib-compilers.yaml">ceed1-blueos_3_ppc64le_ib-compilers.yaml</a>.</p>
 <h3 id="building-at-nersc">Building at NERSC</h3>
 <h4 id="cori">Cori</h4>
-<p>The file <a href="../spack/cori-packages.yaml">cori-packages.yaml</a> is an example of a
+<p>The file <a href="../spack/ceed1-cori-packages.yaml">ceed1-cori-packages.yaml</a> is an example of a
 <code>packages.yaml</code> file for the Cori system at <a href="http://www.nersc.gov">NERSC</a>.</p>
 <pre><code class="yaml">packages:
     all:
@@ -981,7 +981,7 @@ Ray machine).</p>
 </code></pre>
 
 <h4 id="edison">Edison</h4>
-<p>The file <a href="../spack/edison-packages.yaml">edison-packages.yaml</a> is an example of a
+<p>The file <a href="../spack/ceed1-edison-packages.yaml">ceed1-edison-packages.yaml</a> is an example of a
 <code>packages.yaml</code> file for the Edison system at <a href="http://www.nersc.gov">NERSC</a>.</p>
 <pre><code class="yaml">packages:
     all:
@@ -1018,7 +1018,7 @@ Ray machine).</p>
 
 <h3 id="building-at-alcf">Building at ALCF</h3>
 <h4 id="theta">Theta</h4>
-<p>The file <a href="../spack/theta-packages.yaml">theta-packages.yaml</a> is an example of a
+<p>The file <a href="../spack/ceed1-theta-packages.yaml">ceed1-theta-packages.yaml</a> is an example of a
 <code>packages.yaml</code> file for the Theta system at <a href="https://www.alcf.anl.gov">ALCF</a>.</p>
 <pre><code class="yaml">packages:
     all:
@@ -1061,7 +1061,7 @@ Ray machine).</p>
 
 <h3 id="building-at-olcf">Building at OLCF</h3>
 <h4 id="titan">Titan</h4>
-<p>The file <a href="../spack/titan-packages.yaml">titan-packages.yaml</a> is an example of a
+<p>The file <a href="../spack/ceed1-titan-packages.yaml">ceed1-titan-packages.yaml</a> is an example of a
 <code>packages.yaml</code> file for the Titan system at <a href="https://www.olcf.ornl.gov">OLCF</a>.</p>
 <pre><code class="yaml">packages:
     all:
@@ -1127,7 +1127,7 @@ and background the command (by appending an <code>&amp;</code>).</p>
 <p>You will need to have the NVIDIA CUDA SDK and driver installed on your system,
   see <a href="https://developer.nvidia.com">developer.nvidia.com</a>, and specify it in the <code>packages.yaml</code>
   file. See, for example, the <code>cuda</code> section in <a href="#building-on-a-mac">Building on a Mac</a>,
-  or the <a href="../spack/linux-rhel7-x86_64-packages.yaml">linux-rhel7-x86_64-packages.yaml</a> file.</p>
+  or the <a href="../spack/ceed1-linux-rhel7-x86_64-packages.yaml">ceed1-linux-rhel7-x86_64-packages.yaml</a> file.</p>
 </li>
 </ul></div>
             <div class="col-md-3 hidden-xs hidden-sm"><div class="bs-sidebar hidden-print affix well" role="complementary">

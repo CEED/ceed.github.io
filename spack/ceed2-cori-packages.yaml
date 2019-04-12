@@ -88,8 +88,7 @@ packages:
             perl@5.18.2%gcc@7.3.0 arch=cray-cnl9-haswell: /usr
             perl@5.18.2%intel@18.0.5.274 arch=cray-cnl9-haswell: /usr
         buildable: False
-    ## Skip zlib because MFEM link fails when using the module version
-    ## (I don't know why).
+    ## Skip zlib because MFEM link fails when using the module version?
     # zlib:
     #     modules:
     #         zlib@1.2.11%gcc@7.3.0 arch=cray-cnl9-haswell: zlib

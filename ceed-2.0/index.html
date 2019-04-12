@@ -333,7 +333,7 @@ following 12 packages, plus the CEED <em>meta-package</em>:</p>
 <li><strong>Nek5000</strong>-17.0</li>
 <li><strong>Nekbone</strong>-17.0</li>
 <li><strong>NekCEM</strong>-7332619</li>
-<li><strong>PETSc</strong>-3.11.0</li>
+<li><strong>PETSc</strong>-3.11.1</li>
 <li><strong>PUMI</strong>-2.2.0</li>
 <li><strong>OCCA</strong>-1.0.8</li>
 </ul>
@@ -381,17 +381,15 @@ configurations for CEED (see also <a href="https://github.com/xsdk-project/insta
 <tr>
 <td><strong>Pascal</strong> (LLNL)</td>
 <td><code>toss_3_x86_64_ib</code></td>
-<td><a href="../spack/ceed2-pascal-packages.yaml">packages</a> <i class="fa fa-cloud-download"></i>  <a href="../spack/ceed2-pascal-compilers.yaml">compilers</a> <i class="fa fa-cloud-download"></i></td>
+<td><a href="../spack/ceed2-pascal-packages.yaml">packages</a> <i class="fa fa-cloud-download"></i>  &nbsp; <a href="../spack/ceed2-pascal-compilers.yaml">compilers</a> <i class="fa fa-cloud-download"></i></td>
 </tr>
 <tr>
 <td><strong>Lassen</strong> (LLNL)</td>
 <td><code>linux-rhel7-ppc64le</code></td>
-<td><a href="../spack/ceed2-lassen-packages.yaml">packages</a> <i class="fa fa-cloud-download"></i>  <a href="../spack/ceed2-lassen-compilers.yaml">compilers</a> <i class="fa fa-cloud-download"></i></td>
+<td><a href="../spack/ceed2-lassen-packages.yaml">packages</a> <i class="fa fa-cloud-download"></i>  &nbsp; <a href="../spack/ceed2-lassen-compilers.yaml">compilers</a> <i class="fa fa-cloud-download"></i></td>
 </tr>
 </tbody>
 </table>
-<p>Note: You have to unload xalt module on Theta with <code>module unload xalt</code>.
-Otherwise suite-sparse fails to build.</p>
 <p>For additional details, please consult the following sections:</p>
 <ul>
 <li><a href="#simple-installation">Simple Installation</a></li>
@@ -711,8 +709,8 @@ find useful:</p>
 </ul>
 <h2 id="tips-and-troubleshooting">Tips and Troubleshooting</h2>
 <h3 id="building-on-a-mac">Building on a Mac</h3>
-<p>The file <a href="../spack/ceed2-darwin-highsierra-x86_64-packages.yaml">ceed2-darwin-highsierra-x86_64-packages.yaml</a> provides a
-sample <code>packages.yaml</code> file based on <a href="https://brew.sh/">Homebrew</a>, that should work on
+<p>The file <a href="../spack/ceed2-darwin-highsierra-x86_64-packages.yaml">ceed2-darwin-highsierra-x86_64-packages.yaml</a>
+provides a sample <code>packages.yaml</code> file based on <a href="https://brew.sh/">Homebrew</a>, that should work on
 most Macs. (You can use MacPorts instead of Homebrew if you prefer.)</p>
 <pre><code class="yaml">packages:
     all:
@@ -950,8 +948,8 @@ the default), for example:</p>
 <a href="../spack/ceed2-pascal-compilers.yaml">ceed2-pascal-compilers.yaml</a>.</p>
 <h4 id="lassen">Lassen</h4>
 <p>The file <a href="../spack/ceed2-lassen-packages.yaml">ceed2-lassen-packages.yaml</a> is an
-example of a <code>packages.yaml</code> file for Lassen at LLNL's <a href="https://hpc.llnl.gov/hardware/platforms">Livermore
-Computing</a> center.</p>
+example of a <code>packages.yaml</code> file for the Lassen system at LLNL's <a href="https://hpc.llnl.gov/hardware/platforms">Livermore
+Computing</a> center, which is similar to the <a href="https://hpc.llnl.gov/hardware/platforms/sierra">Sierra</a> supercomputer.</p>
 <pre><code class="yaml">packages:
     all:
         compiler: [xl_r, xl, gcc]
@@ -1110,6 +1108,8 @@ the default), for example:</p>
 <h4 id="theta">Theta</h4>
 <p>The file <a href="../spack/ceed2-theta-packages.yaml">ceed2-theta-packages.yaml</a> is an example of a
 <code>packages.yaml</code> file for the Theta system at <a href="https://www.alcf.anl.gov">ALCF</a>.</p>
+<p><i class="fa fa-warning"></i> Note: You have to unload the xalt module on Theta
+with <code>module unload xalt</code>. Otherwise suite-sparse fails to build.</p>
 <pre><code class="yaml">packages:
   cmake:
     paths:
