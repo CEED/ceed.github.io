@@ -2,26 +2,38 @@
 
 ---
 
-### Software release: libCEED 0.4
-
-Version 0.4 of [libCEED](https://github.com/ceed/libceed) was released in March, 2019. The release includes
-
-New backends, performance improvements, operator composition, and new examples.
-
-
-- New interface enabling active and passive fields
-- Performance improvements and element vectorization
-- Streamlined Fortran interface
-- Improved testing and coverage
-
----
-
 ### Software release: CEED v2.0
 
 The CEED team released [CEED 2.0](http://ceed.exascaleproject.org/ceed-2.0) consisting of 12 integrated Spack packages for [libCEED](libceed.md), [mfem](mfem.md), [nek5000](nek.md), [nekcem](nek.md), [laghos](miniapps.md#laghos-new), [nekbone](miniapps.md#nekbone), [hpgmg](miniapps.md#hpgmg-fe), [occa](occa.md), [magma](magma.md), [gslib](gslib.md), [petsc](petsc.md) and [pumi](pumi.md) plus a new [CEED meta-package](https://github.com/spack/spack/blob/develop/var/spack/repos/builtin/packages/ceed/package.py).
 
 With [Spack](https://spack.io), a user can install the whole CEED software stack simply with: `spack install ceed`.
 Visit the [CEED 2.0 release page](http://ceed.exascaleproject.org/ceed-2.0) for further information about the release and installation help for various systems.
+
+---
+
+### Software release: libCEED v0.4
+
+Version 0.4 of [libCEED](https://github.com/ceed/libceed) was released in March, 2019. The release includes
+
+- new CPU and GPU backends
+- CPU backend optimizations
+- initial support for operator composition
+- performance benchmarking
+- a Navier-Stokes demo
+
+---
+
+### Laghos CTS-2 benchmark
+
+The CEED team at LLNL developed a version of the [Laghos](https://github.com/ceed/laghos) miniapp to be
+used in the second edition of the [Commodity Technology Systems](https://asc.llnl.gov/computers/commodity)
+procurement process. These systems leverage industry advances and open source
+software standards to build, field, and integrate Linux clusters of various
+sizes into production service.
+
+The CTS-2 version of Laghos features [RAJA](https://github.com/LLNL/RAJA)
+backend, improved robustness and figure of merit computation, and is available
+at https://github.com/CEED/Laghos/releases/tag/cts2.
 
 ---
 
