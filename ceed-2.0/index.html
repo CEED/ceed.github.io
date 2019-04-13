@@ -343,7 +343,8 @@ following 12 packages, plus the CEED <em>meta-package</em>:</p>
 <a href="#using-the-installation">Using the Installation</a> below. (Quick summary: you can
 build and install all of the above packages with: <code>spack install ceed</code>)</p>
 <p>If you are familiar with Spack, consider using the following machine-specific
-configurations for CEED (see also <a href="https://github.com/xsdk-project/installxSDK/tree/master/platformFiles">xSDK's config files</a>).</p>
+configurations for CEED (see also the <a href="https://github.com/spack/spack-configs">spack-configs</a>
+repository and the <a href="https://github.com/xsdk-project/installxSDK/tree/master/platformFiles">xSDK's config files</a>).</p>
 <table>
 <thead>
 <tr>
@@ -455,7 +456,7 @@ used in user applications.</p>
 <p>The simplest way to use the Spack installation is through the
 <a href="https://spack.readthedocs.io/en/latest/command_index.html#spack-location"><code>spack location</code></a> command. For example, MFEM-based codes, such as
 the MFEM examples, can be simply built as follows:</p>
-<pre><code class="sh">git clone git@github.com:mfem/mfem.git
+<pre><code class="sh">git clone https://github.com/mfem/mfem.git
 cd mfem; git checkout v3.4
 cd examples
 make CONFIG_MK=`spack location -i mfem`/share/mfem/config.mk
@@ -474,7 +475,7 @@ dependencies (technically, it contains links to all the build files inside the
 <code>ceed/mfem/lib</code> and the MFEM build configuration file in
 <code>ceed/mfem/share/mfem/config.mk</code>.</p>
 <p>This directory can be used to build the MFEM examples as follows:</p>
-<pre><code class="sh">git clone git@github.com:mfem/mfem.git
+<pre><code class="sh">git clone https://github.com/mfem/mfem.git
 cd mfem; git checkout v3.4
 cd examples/petsc
 make CONFIG_MK=../../../ceed/mfem/share/mfem/config.mk
@@ -492,7 +493,7 @@ make CONFIG_MK=../../../ceed/mfem/share/mfem/config.mk
 applications, by building the examples in the current libCEED distribution.</p>
 <p>Using <a href="https://spack.readthedocs.io/en/latest/command_index.html#spack-location"><code>spack location</code></a>, the libCEED examples can be built as
 follows:</p>
-<pre><code class="sh">git clone git@github.com:CEED/libCEED.git
+<pre><code class="sh">git clone https://github.com/CEED/libCEED.git
 cd libCEED/examples/ceed
 make CEED_DIR=`spack location -i libceed`
 ./ex1 -ceed /cpu/self
@@ -526,8 +527,8 @@ can also be used.</p>
 <p>The MFEM/libCEED and PETSc/libCEED examples can be further built with:</p>
 <pre><code class="sh">cd examples/mfem
 make CEED_DIR=`spack location -i libceed` MFEM_DIR=`spack location -i mfem`
-./bp1 -no-vis -o 2 -ceed /cpu/self
-./bp3 -no-vis -o 2 -ceed /cpu/self
+./bp1 -no-vis -o 2 -ceed /cpu/self -m `spack location -i mfem`/share/mfem/data/star.mesh
+./bp3 -no-vis -o 2 -ceed /cpu/self -m `spack location -i mfem`/share/mfem/data/star.mesh
 cd ../petsc
 make CEED_DIR=`spack location -i libceed` PETSC_DIR=`spack location -i petsc`
 ./bp1 -degree 2 -ceed /cpu/self
@@ -575,8 +576,8 @@ make CEED_DIR=../../ceed/libceed
 ./ex1 -ceed /cpu/self
 cd mfem
 make CEED_DIR=../../../ceed/libceed MFEM_DIR=../../../ceed/mfem
-./bp1 -no-vis -o 2 -ceed /cpu/self
-./bp3 -no-vis -o 2 -ceed /cpu/self
+./bp1 -no-vis -o 2 -ceed /cpu/self -m `spack location -i mfem`/share/mfem/data/star.mesh
+./bp3 -no-vis -o 2 -ceed /cpu/self -m `spack location -i mfem`/share/mfem/data/star.mesh
 cd ../petsc
 make CEED_DIR=../../../ceed/mfem PETSC_DIR=../../../ceed/petsc
 ./bp1 -degree 2 -ceed /cpu/self
@@ -592,7 +593,7 @@ kernels.</p>
 <code>packages.yaml</code> file in order to avoid long compile times, see <a href="#tips-and-troubleshooting">Tips and
 Troubleshooting</a>.</p>
 <pre><code class="sh"># Install CEED 2.0 distribution via Spack
-git clone git@github.com:spack/spack.git
+git clone https://github.com/spack/spack.git
 cd spack
 spack install ceed+cuda
 
@@ -606,36 +607,36 @@ setenv NEK5K_DIR `spack location -i nek5000`
 # rm -rf ~/.occa
 
 # Clone libCEED examples directory as proxy for libCEED-based codes
-git clone git@github.com:CEED/libCEED.git
+git clone https://github.com/CEED/libCEED.git
 mv libCEED/examples ceed-examples
 rm -rf libCEED
 
 # libCEED examples on CPU and GPU
 cd ceed-examples/ceed
 make
-./ex1 -ceed /cpu/self
-./ex1 -ceed /gpu/occa
+./ex1 -ceed /cpu/self/ref/blocked
+./ex1 -ceed /gpu/cuda/ref
 cd ../..
 
 # MFEM+libCEED examples on CPU and GPU
 cd ceed-examples/mfem
 make
-./bp1 -ceed /cpu/self -no-vis
-./bp1 -ceed /gpu/occa -no-vis
+./bp1 -ceed /cpu/self/ref/blocked -no-vis -m `spack location -i mfem`/share/mfem/data/star.mesh
+./bp1 -ceed /gpu/cuda/ref -no-vis -m `spack location -i mfem`/share/mfem/data/star.mesh
 cd ../..
 
 # PETSc+libCEED examples on CPU and GPU
 cd ceed-examples/petsc
 make
-./bp1 -ceed /cpu/self
-./bp1 -ceed /gpu/occa
+./bp1 -ceed /cpu/self/ref/blocked
+./bp1 -ceed /gpu/cuda/ref
 cd ../..
 
 # Nek+libCEED examples on CPU and GPU
 cd ceed-examples/nek5000
 ./make-nek-examples.sh
-./run-nek-example.sh -ceed /cpu/self -b 3
-./run-nek-example.sh -ceed /gpu/occa -b 3
+./run-nek-example.sh -ceed /cpu/self/ref/blocked -b 3
+./run-nek-example.sh -ceed /gpu/cuda/ref -b 3
 cd ../..
 </code></pre>
 
