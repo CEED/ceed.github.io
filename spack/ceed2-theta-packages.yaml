@@ -21,6 +21,12 @@
 #
 # This is an example of a packages.yaml file for the Theta machine at ALCF,
 # arch=cray-CNL-mic_knl, using system modules.
+#
+# Note: You have to unload the xalt module on Theta with 
+#
+# module unload xalt
+#
+# otherwise suite-sparse fails to build.
 
 packages:
   cmake:
