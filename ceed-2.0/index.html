@@ -399,6 +399,11 @@ repository and the <a href="https://github.com/xsdk-project/installxSDK/tree/mas
 <li><a href="#using-the-installation">Using the Installation</a><ul>
 <li><a href="#building-mfem-based-applications">Building MFEM-based Applications</a></li>
 <li><a href="#building-libceed-based-applications">Building libCEED-based Applications</a></li>
+<li><a href="#using-containers">Using Containers</a><ul>
+<li><a href="#nerscs-shifter">NERSC's Shifter</a></li>
+<li><a href="#singularity">Singularity</a></li>
+</ul>
+</li>
 <li><a href="#gpu-demo">GPU demo</a></li>
 </ul>
 </li>
@@ -585,6 +590,50 @@ make CEED_DIR=../../../ceed/mfem PETSC_DIR=../../../ceed/petsc
 ./bp1 -degree 2 -ceed /cpu/self
 </code></pre>
 
+<h3 id="using-containers">Using Containers</h3>
+<p><a href="https://docker.com">Docker</a> is a popular container system available on Linux, Mac, and Windows.
+After installing Docker, running one command</p>
+<pre><code class="sh">docker run -it --rm -v `pwd`:/ceed jedbrown/ceed bash
+</code></pre>
+
+<p>gives you a development environment with CEED installed via Spack and the host's current working directory mounted at <code>/ceed</code> (the current working directory in the container).
+For example,</p>
+<pre><code class="sh">host$ git clone https://github.com/ceed/libceed
+host$ cd libceed/examples/petsc
+host$ docker run -it --rm -v `pwd`:/ceed jedbrown/ceed bash
+container$ make PETSC_DIR=`spack location -i petsc` CEED_DIR=`spack location -i libceed`
+container$ mpiexec -n 2 ./bp1
+Global dofs: 2541
+Process decomposition: 2 1 1
+Local elements: 1000 = 10 10 10
+Owned dofs: 1210 = 10 11 11
+KSP cg CONVERGED_RTOL iterations 34 rnorm 3.992091e-09
+Pointwise error (max) 1.267540e-02
+</code></pre>
+
+<p>See the <a href="https://github.com/jedbrown/jedbrown-dockerfiles/blob/master/ceed/Dockerfile">Dockerfile</a> to understand how this image was prepared and/or create your own images.</p>
+<h4 id="nerscs-shifter">NERSC's Shifter</h4>
+<p>Containers also work at NERSC using <a href="https://docs.nersc.gov/programming/shifter/how-to-use/">Shifter</a>, a container system designed for HPC.
+To pull the latest CEED image, use</p>
+<pre><code class="sh">shifterimg pull docker:jedbrown/ceed:2.0
+</code></pre>
+
+<p>then build code using <code>shifter</code> commands in place of the <code>docker</code> commands above, e.g.,</p>
+<pre><code class="sh">host$ shifter --image=docker:jedbrown/ceed:2.0 bash
+container$ make PETSC_DIR=`spack location -i petsc` CEED_DIR=`spack location -i libceed`
+</code></pre>
+
+<p>whire we see that <code>shifter</code> defaults behave similarly to the options we had to give manually for <code>docker</code>.
+Batch jobs can be submitted via</p>
+<pre><code class="sh">sbatch --image docker:jedbrown/ceed:latest ...
+</code></pre>
+
+<p>with the following in your submission script:</p>
+<pre><code class="sh">srun -n 64 shifter ./your-petsc-app
+</code></pre>
+
+<h4 id="singularity">Singularity</h4>
+<p><a href="https://www.sylabs.io/singularity/">Singularity</a> as another HPC container system with usage similar to Shifter above; consult the documentation for details.</p>
 <h3 id="gpu-demo">GPU demo</h3>
 <p>Below is the full set of commands to install the CEED distribution on a
 GPU-capable machine and then use its libCEED GPU kernels to accelerate MFEM,
