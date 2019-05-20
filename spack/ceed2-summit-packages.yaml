@@ -1,0 +1,22 @@
+packages:
+   all: 
+      compiler: [gcc]
+      providers:
+         mpi: [spectrum-mpi]
+   spectrum-mpi:
+      paths:
+         spectrum-mpi@10.2.0.11: /autofs/nccs-svm1_sw/summit/.swci/1-compute/opt/spack/20180914/linux-rhel7-ppc64le/xl-16.1.1-1/spectrum-mpi-10.2.0.11-20190201-6qypd6rixwrkcyd5gnijoacjqxrtblzk/
+#   hypre:
+   perl:
+      buildable: False
+      paths:
+         perl@5.16.3: /
+   essl:
+      paths:
+         essl@6.1: /sw/summit/essl/6.1.0-2/essl/6.1
+   cuda:
+      buildable: False
+      paths:
+         cuda@9.2.148: /sw/summit/cuda/9.2.148
+
+
