@@ -1,0 +1,158 @@
+# CEED Third Annual Meeting
+#### August 6-8, 2019
+#### Virginia Tech
+
+![CEED Logo](img/logo-150.png)
+
+### Overview
+
+CEED will hold its third annual meeting August 6-8, 2019 at Virginia Tech in
+[Goodwin Hall 155][MAPGoodwin].  The goal of the meeting is to report on the
+progress in the center, deepen existing and establish new connections with ECP
+hardware vendors, ECP software technologies projects and other collaborators,
+plan project activities and brainstorm/work as a group to make technical
+progress. In addition to gathering together many of the CEED researchers, the
+meeting will include representatives of the ECP management, hardware vendors,
+software technology and other interested projects.
+
+### Registration
+
+If you plan to attend, [please **register** no later than **June
+30**](https://forms.gle/1oH9W2aWp74H4BLAA).  The registration fee for the
+meeting is $60, payable at the door in cash or check upon arrival at the
+meeting.  Checks should be made payable to the Treasurer of Virginia Tech.  The
+fee covers snacks and refreshments each day as well as a CEED T-shirt.
+
+### Meeting Agenda
+
+**UPDATE 08/07/2019**:  Due to potentially inclement weather, the hike to the
+Cascades has been postponed to Thursday afternoon.  The AMD HIP tutorial and
+hackathon have been moved to Wednesday afternoon in its place.
+
+#### Tuesday, August 6
+
+| Time        | Activity                                                                            |
+|-------------|-------------------------------------------------------------------------------------|
+| 8:00-8:30   | **Coffee & Welcome** <br> Tim Warburton (VT) and Tim Germann (LANL)                 |
+| 8:30-9:00   | **CEED Overview** <br> Tzanio Kolev (LLNL)                                          |
+| 9:00-9:30   | **Finite Element Thrust Overview** <br> Veselin Dobrev (LLNL)                       |
+| 9:30-10:00  | **High-Order Solver Developments at UIUC** <br> Paul Fischer (UIUC)                 |
+| 10:00-10:30 | **Coffee Break**                                                                    |
+| 10:30-11:00 | **libParanumal Progress Update** <br> Tim Warburton (VT) <br> *libParanumal has proved capable of running SEM incompressible calculations in weak scaling mode on at least half of the GPUs on Summit at 90% efficiency. In this talk we will discuss ongoing efforts to reduce the number of degrees of freedom required to stay in the weak scaling regime.* |
+| 11:00-11:30 | **OCCA Updates** <br> David Medina (Occalytics)                                     |
+| 11:30-12:00 | **Supporting Complex Geometry RF Adaptive Simulations** <br> Mark Shephard (RPI)    |
+| 12:00-12:30 | **Applications Thrust Overview** <br> Misun Min (ANL)                               |
+| 12:30-1:30  | **Lunch**                                                                           |
+| 1:30-2:00   | **Accelerating Numerical Methods for a Next Generation Multi-Physics Code** <br> Arturo Vargas (LLNL) <br> *MARBL is LLNL’s next generation multi-physics code for simulating high energy density physics. A distinguishing feature of this code is the modular CS infrastructure (Axom), and choice of high order numerical methods. The choice of high order schemes leads to higher arithmetic intensity per data access, a trait favored by modern computing processors. In this talk, we provide an overview of recent developments within the Arbitrary Lagrangian-Eulerian package, Blast, and focus on our adoption of programming models and algorithmic tailoring to leverage next gen super computers. This work was performed under the auspices of the U.S. Department of Energy by Lawrence Livermore National Laboratory under Contract DE-AC52-07NA27344. LLNL-ABS-774160.* |
+| 2:00-2:30   | **Urban** <br> Aleks Obabko (ANL)                                                   |
+| 2:30-3:00   | **ExaConstit:  Towards an Exascale Crystal Plasticity FEM Code** <br> Robert Carson (LLNL) <br> *An overview of ExaConstit, a new crystal plasticity code built upon the MFEM framework, will be given. It’s being designed as a component of the Exascale Additive Manufacturing Project (ExaAM) to couple microstructure development and local property analysis with process simulation. Initial results of ExaConstit being applied to a generated microstructure from AM processing condition will be discussed. A strong scaling study of ExaConstit on Sierra/Summit like machines will also be presented.* |
+| 3:00-3:30   | **ExaWind** <br> Robert Knaus (SNL)                                                 |
+| 3:30-4:00   | **Coffee Break & Group Photo**                                                      |
+| 4:00-4:30   | **Software Thrust & libCEED Overview** <br> Jed Brown (CU Boulder)                  |
+| 4:30-5:00   | **libCEED under PETSc: Current and Future Efforts** <br> Oana Marin (ANL) <br> *We describe benefits of libCEED to PETSc and aspects to be pursued, from integration under complex unstructured meshes, to machine learning coupling and efficient support for research and implementation of matrix free preconditioners.* |
+| 5:00-5:30   | **Hardware Thrust & MAGMA** <br> Stanmire Tomov (UTK)                               |
+| 5:30-6:00   | **Aurora:  Argonne's Exascale System** <br> Scott Parker (ANL) <br> *Presentation and discussion of the publicly available information on the Aurora system and approaches to preparing applications.* |
+| 7:00-9:00   | **Conference Dinner** <br> <a href="https://zeppolis.com/">Zeppoli's</a>            |
+
+#### Wednesday, August 7
+
+| Time        | Activity                                                                            |
+|-------------|-------------------------------------------------------------------------------------|
+| 8:00-8:30   | **Coffee**                                                                          |
+| 8:30-9:00   | **VTK-m Plans for Higher-Order Elements** <br> Hank Childs (Oregon)                 |
+| 9:00-9:30   | **Devil Ray:  Ray Tracing High Order Meshes for Visualization** <br> Matt Larsen (LLNL) <br> *This talk will outline our efforts to develop a portable ray tracing library for high-order meshes. Our technology stack includes RAJA and Umpire, which allows Devil Ray to run on Nvidia and AMD GPUs as well as many-core CPUs. Initially, Devil Ray is focused on image-based visualization tasks such as iso-surface, volume rendering, and slicing, but our long term goals include extracting high-order iso-surfaces. When released, our library will be deployed inside of Ascent, a in situ visualization library.* |
+| 9:30-10:00  | **Parallel I/O in MFEM Using ADIOS2** <br> William Godoy (ORNL) <br> *This talk provides a brief overview of the integration efforts and available features of ADIOS2 as the parallel I/O solution to MFEM for code coupling, in-situ visualization, and scalable file I/O.* |
+| 10:00-10:30 | **Coffee Break**                                                                    |
+| 10:30-11:00 | **Low-Synch Gram-Schmidt Projection Schemes for GMRES-AMG and for Moving Mesh Solvers** <br> Stephen Thomas (NREL) <br> *In collaboration with Tim Warburton and Anthony Austin, we apply the low-synch classical Gram-Schmidt algorithms recently proposed by Swirydowicz et al (2018) to the least-squares polynomial projection schemes introduced by Fischer (1998). We modify the original projection scheme to instead compute an improved initial guess for a preconditioned GMRES-AMG pressure solver for the incompressible Navier-Stokes equations. For the Nalu Wind model, the GMRES iteration count drops to zero with a relatively small window of previous solutions.* |
+| 11:00-11:30 | **Fast Direct Solvers in MFEM** <br> Pieter Ghysels (LBNL) <br> *We present recent improvements in the SuperLU and STRUMPACK sparse direct solvers and preconditioners, which are available from MFEM. Support for GPUs has been improved or added. The preconditioners in STRUMPACK have been improved and tested on an indefinite Maxwell problem using MFEM.* |
+| 11:30-12:00 | **Algebraic Multigrid Preconditioners for Matrix-Free Discretizations** <br> Bruno Turcksin (ORNL) <br> *Multigrid preconditioners are very popular preconditioners because of their convergence properties and scalability. Multigrid methods can be divided into geometric multigrid (GMG) and algebraic multigrid (AMG). GMG are based on building different coarser grids and therefore, are excellent as matrix-free preconditioners. The challenge is that GMG cannot be easily applied when the mesh is unstructured. AMG, however, use the entries in the matrix of the system to build coarser grids. This makes AMG more flexible when the matrix is available but it limits their use as matrix-free preconditioners. We surpass the limitation of knowing the matrix entries by basing our AMG on the spectral AMGe method. Unlike other AMG, the spectral AMGe method does not use the matrix of the system. Instead it requires the eigenvectors of the operator evaluated on parts of the domain (agglomerates). This means that, similar to GMG, a mesh is required. However the constraints on how the agglomerates are built are minimal since we do not need to rediscretize the operator on the agglomerates. While at the fine level no matrix associated to the operator is assembled, we still assemble a matrix at the coarsest level in order to use a direct solver.* |
+| 12:00-12:30 | **Recent Progress on Accelerating Algebraic Multigrid Solvers with GPUs** <br> Ruipeng Li (LLNL) <br> *Modern many-core processors such as graphics processing units (GPUs) are becoming an integral part of many high performance computing systems nowadays. These processors yield enormous raw processing power in the form of massive SIMD parallelism. Accelerating multigrid methods on GPUs has drawn a lot of research attention in recent years. For instance, in recent releases of the HYPRE package, the structured multigrid solvers (SMG, PFMG) have full GPU-support for both the setup and the solve phases, whereas the algebraic multigrid (AMG) solver, namely BoomerAMG, has only its solve phase been ported and the setup can still be computed on CPUs only. In this talk, we will provide an overview of the available GPU acceleration in HYPRE and present our current work on performing AMG setup on GPUs. In particular, we focus on the computation of distributed triple-matrix multiplications (i.e., the Galerkin product), which often represents a significant cost of the entire setup phase of AMG. We will discuss in detail the composing parts of this computation that include several fast GPU sparse matrix kernels and communications between GPUs. The recent results as well as future work will also be included.* |
+| 12:30-2:00  | **Lunch**                                                                           |
+| 2:00-3:00   | **AMD HIP Tutorial** <br> Noel Chalmers and Damon McDougall (AMD)                   |
+| 3:00-6:00   | Hackathon                                                                           |
+|             | *Dinner on your own.*                                                               |
+
+#### Thursday, August 8
+
+| Time        | Activity                                                                            |
+|-------------|-------------------------------------------------------------------------------------|
+| 8:00-8:30   | **Coffee**                                                                          |
+| 8:30-10:00  | Internal planning                                                                   |
+| 10:00-10:30 | **Coffee Break**                                                                    |
+| 10:30-12:00 | Meetings and discussions                                                            |
+| 12:00-2:00  | **Lunch**                                                                           |
+| 2:00-6:00   | *Hike to <a href="https://www.google.com/maps/place/37.353642+-80.599434/@37.353642,-80.599434,16z">the Cascades</a>* |
+|             | *Dinner on your own.*                                                               |
+
+### Lodging Options
+
+The [Inn at Virginia Tech](https://www.innatvirginiatech.com/) is a 10-minute
+walk from the meeting.  CEED attendees are eligible for a group rate of
+$139.00/night for the nights of August 5-8 while rooms are available.  To
+reserve a room at that rate, click
+[here](https://reservations.travelclick.com/75607?groupID=2536216).
+
+Other lodging options adjacent to campus:
+
+ - [Residence Inn Blacksburg-University by Marriott](https://www.marriott.com/hotels/travel/roarb-residence-inn-blacksburg-university/) - 10-minute walk
+ - [Hyatt Place Blacksburg/University](https://www.hyatt.com/en-US/hotel/virginia/hyatt-place-blacksburg-university/cltzb) - 10-minute walk
+ - [Main Street Inn](https://hotelblacksburg.com/) - 15-20-minute walk
+
+The following hotels are further away (30-35-minute walk) but are still
+relatively close to campus.  Attendees can drive (5 minutes; see below for
+information about parking) or take [Blacksburg Transit](https://ridebt.org/)
+(BT) to get to the meeting.  The [HWA](https://ridebt.org/routes-schedules?route=HWA) and [HWB](https://ridebt.org/routes-schedules?route=HWB) bus routes ([schedule PDF](http://www.bt4uclassic.org/schedules/hwd.pdf))
+connect the stop nearest these hotels ([Plantation/Prices Fork][MAPPlantationPricesForkStop]
+with the one nearest the meeting ([Old Security Building/Stanger/Old Turner][MAPOSBStangerOldTurnerStop]).
+Note that BT will be operating on reduced service schedules during the summer break.
+
+ - [Holiday Inn Express & Suites Blacksburg](https://www.ihg.com/holidayinnexpress/hotels/us/en/blacksburg/bcbbg/hoteldetail)
+ - [Hilton Garden Inn Blacksburg](https://hiltongardeninn3.hilton.com/en/hotels/virginia/hilton-garden-inn-blacksburg-BCBGIGI/index.html)
+
+### Getting to Blacksburg
+
+The nearest airport to Blacksburg served by major commercial airlines is the
+regional airport in Roanoke (IATA symbol ROA), which is about 45 minutes away
+by car.  Other nearby airports include Lynchburg (LYH, 1 hour and 30 minutes),
+Greensboro (GSO, 2 hours and 30 minutes), and Charlotte (CLT, 3 hours).
+
+**Driving Directions from Roanoke Airport:** From the airport's main entrance,
+turn right onto Aviation Dr. and exit immediately to westbound VA-101 /
+Hershberger Rd.  Then, exit to I-581 N and follow signs to I-81 S toward
+Bristol.  Proceed on I-81 S for about 25 mi. and then take exit 118-B to US-460
+W toward Christiansburg and Blacksburg.  After about 9 mi., exit to Prices Fork
+Rd., following signs to downtown.  Campus is to the right following the
+intersection at University City Blvd.
+
+**Buses and Shuttles from Roanoke Airport:**  [The Smart Way
+Bus](https://smartwaybus.com/smartway.html) runs between Roanoke Airport and
+the [Squires Student Center][MAPSquires] on campus.  The fare is $4.00 one way,
+payable to the driver in exact cash.  The [Roanoke Airport Transportation
+Service](http://www.roanokeats.com/) operates shuttles between Roanoke Airport
+and Blacksburg that can drop passengers off at the Inn at Virginia Tech, the
+Holiday Inn, or the Squires Student Center.  Reservations (required) can be
+made by calling 1-800-288-1958.
+
+### Parking
+
+Parking is available on campus at the [North End Center Garage][MAPNorthEndGarage],
+from which it is about a 5-minute walk to the meeting venue.  There is a daily fee.
+Alternatively, one can acquire (also for a fee) a visitor's campus parking permit
+at the [Visitor Center][MAPVisitorCenter].  Goodwin Hall is immediately adjacent to
+[Perry Street Lot 3][MAPPerryLot].  Further information about parking on campus may be
+found [here](https://parking.vt.edu/content/dam/parking_vt_edu/visitor-parking-info.pdf).
+
+### Questions?
+For questions, please contact the meeting organizers at [ceed-meeting@llnl.gov](mailto:ceed-meeting@llnl.gov).
+
+### Acknowledgements
+We gratefully acknowledge support for this meeting from the Virginia Tech
+College of Science and Department of Mathematics.
+
+[MAPGoodwin]:                  https://www.google.com/maps/place/37.232497+-80.425579/@37.232497,-80.425579,16.75z
+[MAPPlantationPricesForkStop]: https://www.google.com/maps/place/37.225419+-80.444962/@37.225419,-80.444962,17.75z
+[MAPOSBStangerOldTurnerStop]:  https://www.google.com/maps/place/37.231440+-80.422008/@37.231440,-80.422008,17.75z
+[MAPSquires]:                  https://www.google.com/maps/place/37.229697+-80.418135/@37.229697,-80.418135,17.75z
+[MAPNorthEndGarage]:           https://www.google.com/maps/place/37.233753+-80.420446/@37.233753,-80.420446,17.75z
+[MAPVisitorCenter]:            https://www.google.com/maps/place/37.230686+-80.434072/@37.230686,-80.434072,17.75z
+[MAPPerryLot]:                 https://www.google.com/maps/place/37.231803+-80.424694/@37.231803,-80.424694,17.75z
