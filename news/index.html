@@ -121,8 +121,10 @@
                         
                     
                         
+                    
+                        
                             <li >
-                                 <a href="../ceed-2.0/">CEED 2.0</a>
+                                 <a href="../ceed-3.0/">CEED 3.0</a>
                             </li>
                         
                     
@@ -292,6 +294,14 @@
     
         <li class="main active"><a href="#news">News</a></li>
         
+            <li><a href="#software-release-ceed-v30">Software release: CEED v3.0</a></li>
+        
+            <li><a href="#software-release-remhos-v10">Software release: Remhos v1.0</a></li>
+        
+            <li><a href="#software-release-libceed-v06">Software release: libCEED v0.6</a></li>
+        
+            <li><a href="#software-release-laghos-v30">Software release: Laghos v3.0</a></li>
+        
             <li><a href="#software-release-mfem-v41">Software release: MFEM v4.1</a></li>
         
             <li><a href="#software-release-libceed-v05">Software release: libCEED v0.5</a></li>
@@ -403,6 +413,36 @@
             <div class="col-md-9" role="main">
 
 <h1 id="news">News</h1>
+<hr />
+<h3 id="software-release-ceed-v30">Software release: CEED v3.0</h3>
+<p>The CEED team released <a href="http://ceed.exascaleproject.org/ceed-3.0">CEED 3.0</a> consisting of 12 integrated Spack packages for <a href="../libceed/">libCEED</a>, <a href="../mfem/">mfem</a>, <a href="../nek/">nek5000</a>, <a href="../nek/">nekcem</a>, <a href="../miniapps/#laghos-new">laghos</a>, <a href="../miniapps/#nekbone">nekbone</a>, <a href="../miniapps/#hpgmg-fe">hpgmg</a>, <a href="../occa/">occa</a>, <a href="../magma/">magma</a>, <a href="../gslib/">gslib</a>, <a href="../petsc/">petsc</a> and <a href="../pumi/">pumi</a> plus a new <a href="https://github.com/spack/spack/blob/develop/var/spack/repos/builtin/packages/ceed/package.py">CEED meta-package</a>.</p>
+<p>With <a href="https://spack.io">Spack</a>, a user can install the whole CEED software stack simply with: <code>spack install ceed</code>.
+Visit the <a href="http://ceed.exascaleproject.org/ceed-3.0">CEED 3.0 release page</a> for further information about the release and installation help for various systems.</p>
+<hr />
+<h3 id="software-release-remhos-v10">Software release: Remhos v1.0</h3>
+<p>Initial release of <a href="https://github.com/ceed/remhos">Remhos</a> a new miniapp for monotonic+conservative DG advection-based high-order field interpolation (remap).</p>
+<p>Remhos captures the basic structure of the Eulerian phase in many Arbitrary-Lagrangian Eulerian (ALE) simulations, including the BLAST code at Lawrence Livermore National Laboratory.</p>
+<p>For more information visit <a href="https://github.com/CEED/Remhos">https://github.com/CEED/Remhos</a>.</p>
+<hr />
+<h3 id="software-release-libceed-v06">Software release: libCEED v0.6</h3>
+<p>Version 0.6 of <a href="https://github.com/ceed/libceed">libCEED</a> was released on March 29, 2020. The release includes</p>
+<ul>
+<li>New <a href="https://libceed.readthedocs.io/">documentation</a> and additional examples</li>
+<li>Improved interface, including new Python interface</li>
+<li>Preconditioning ingredients</li>
+<li>Performance improvements in the MAGMA backend</li>
+</ul>
+<hr />
+<h3 id="software-release-laghos-v30">Software release: Laghos v3.0</h3>
+<p>Version 3.0 of the <a href="https://github.com/ceed/laghos">Laghos</a> miniapp was released on March 27, 2020. The release includes</p>
+<ul>
+<li>Replacement for the Laghos-2.0 custom implementations in the <code>cuda/</code>, <code>raja/</code>, <code>occa/</code> and <code>hip/</code> directories with direct general device support in the main Laghos sources based on MFEM-4.1</li>
+<li>With the above change different device backends can be selected at runtime, including cuda, raja, occa, hip, omp and more. See the <code>-d</code> command-line option.</li>
+<li>Added <code>setup</code> makefile target to download and build the Laghos dependencies: HYPRE (2.11.2), METIS (4.0.3) and MFEM (master branch).</li>
+<li>Added <code>tests</code> and <code>checks</code> makefile targets to launch non-regression tests.</li>
+<li>Added default dimension options that generate internally the mesh in 1D, 2D and 3D.</li>
+<li>The <code>timing/</code> directory was deprecated. Use the scripts in the <a href="https://github.com/CEED/benchmarks">CEED benchmarks</a> instead.</li>
+</ul>
 <hr />
 <h3 id="software-release-mfem-v41">Software release: MFEM v4.1</h3>
 <p>Version 4.1 of <a href="../mfem/">MFEM</a> was released on March 10, 2020. Some of the new
@@ -639,42 +679,42 @@ full <a href="https://raw.githubusercontent.com/mfem/mfem/master/CHANGELOG">CHAN
 <tr>
 <td><strong>Mac</strong></td>
 <td><code>darwin-x86_64</code></td>
-<td><a href="spack/darwin-x86_64-packages.yaml">packages</a> <i class="fa fa-cloud-download"></i></td>
+<td><a href="../spack/ceed1-darwin-x86_64-packages.yaml">packages</a> <i class="fa fa-cloud-download"></i></td>
 </tr>
 <tr>
 <td><strong>Linux</strong> (RHEL7)</td>
 <td><code>linux-rhel7-x86_64</code></td>
-<td><a href="spack/linux-rhel7-x86_64-packages.yaml">packages</a> <i class="fa fa-cloud-download"></i></td>
+<td><a href="../spack/ceed1-linux-rhel7-x86_64-packages.yaml">packages</a> <i class="fa fa-cloud-download"></i></td>
 </tr>
 <tr>
 <td><strong>Cori</strong> (NERSC)</td>
 <td><code>cray-CNL-haswell</code></td>
-<td><a href="spack/cori-packages.yaml">packages</a> <i class="fa fa-cloud-download"></i></td>
+<td><a href="../spack/ceed1-cori-packages.yaml">packages</a> <i class="fa fa-cloud-download"></i></td>
 </tr>
 <tr>
 <td><strong>Edison</strong> (NERSC)</td>
 <td><code>cray-CNL-ivybridge</code></td>
-<td><a href="spack/edison-packages.yaml">packages</a> <i class="fa fa-cloud-download"></i></td>
+<td><a href="../spack/ceed1-edison-packages.yaml">packages</a> <i class="fa fa-cloud-download"></i></td>
 </tr>
 <tr>
 <td><strong>Theta</strong> (ALCF)</td>
 <td><code>cray-CNL-mic_knl</code></td>
-<td><a href="spack/theta-packages.yaml">packages</a> <i class="fa fa-cloud-download"></i></td>
+<td><a href="../spack/ceed1-theta-packages.yaml">packages</a> <i class="fa fa-cloud-download"></i></td>
 </tr>
 <tr>
 <td><strong>Titan</strong> (OLCF)</td>
 <td><code>cray-CNL-interlagos</code></td>
-<td><a href="spack/titan-packages.yaml">packages</a> <i class="fa fa-cloud-download"></i></td>
+<td><a href="../spack/ceed1-titan-packages.yaml">packages</a> <i class="fa fa-cloud-download"></i></td>
 </tr>
 <tr>
 <td><strong>CORAL-EA</strong> (LLNL)</td>
 <td><code>blueos_3_ppc64le_ib</code></td>
-<td><a href="spack/blueos_3_ppc64le_ib-packages.yaml">packages</a> <i class="fa fa-cloud-download"></i> &nbsp; <a href="spack/blueos_3_ppc64le_ib-compilers.yaml">compilers</a> <i class="fa fa-cloud-download"></i></td>
+<td><a href="../spack/ceed1-blueos_3_ppc64le_ib-packages.yaml">packages</a> <i class="fa fa-cloud-download"></i> &nbsp; <a href="../spack/ceed1-blueos_3_ppc64le_ib-compilers.yaml">compilers</a> <i class="fa fa-cloud-download"></i></td>
 </tr>
 <tr>
 <td><strong>TOSS3</strong> (LLNL)</td>
 <td><code>toss_3_x86_64_ib</code></td>
-<td><a href="spack/toss_3_x86_64_ib-packages.yaml">packages</a> <i class="fa fa-cloud-download"></i> &nbsp; <a href="spack/toss_3_x86_64_ib-compilers.yaml">compilers</a> <i class="fa fa-cloud-download"></i></td>
+<td><a href="../spack/ceed1-toss_3_x86_64_ib-packages.yaml">packages</a> <i class="fa fa-cloud-download"></i> &nbsp; <a href="../spack/ceed1-toss_3_x86_64_ib-compilers.yaml">compilers</a> <i class="fa fa-cloud-download"></i></td>
 </tr>
 </tbody>
 </table>
@@ -1061,6 +1101,14 @@ for more information.</p></div>
     <ul class="nav bs-sidenav">
     
         <li class="main active"><a href="#news">News</a></li>
+        
+            <li><a href="#software-release-ceed-v30">Software release: CEED v3.0</a></li>
+        
+            <li><a href="#software-release-remhos-v10">Software release: Remhos v1.0</a></li>
+        
+            <li><a href="#software-release-libceed-v06">Software release: libCEED v0.6</a></li>
+        
+            <li><a href="#software-release-laghos-v30">Software release: Laghos v3.0</a></li>
         
             <li><a href="#software-release-mfem-v41">Software release: MFEM v4.1</a></li>
         

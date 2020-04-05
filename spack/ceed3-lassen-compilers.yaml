@@ -1,0 +1,70 @@
+# Copyright (c) 2017-2019, Lawrence Livermore National Security, LLC. Produced at
+# the Lawrence Livermore National Laboratory. LLNL-CODE-734707. All Rights
+# reserved. See files LICENSE and NOTICE for details.
+#
+# This file is part of CEED, a collection of benchmarks, miniapps, software
+# libraries and APIs for efficient high-order finite element and spectral
+# element discretizations for exascale applications. For more information and
+# source code availability see http://github.com/ceed.
+#
+# The CEED research is supported by the Exascale Computing Project 17-SC-20-SC,
+# a collaborative effort of two U.S. Department of Energy organizations (Office
+# of Science and the National Nuclear Security Administration) responsible for
+# the planning and preparation of a capable exascale ecosystem, including
+# software, applications, hardware, advanced system engineering and early
+# testbed platforms, in support of the nation's exascale computing imperative.
+#
+# This is an example of a compilers.yaml file for the Lassen machine at LLNL.
+# To use this file, save it as $SPACK_DIR/etc/spack/compilers.yaml.
+
+compilers:
+- compiler:
+    environment: {}
+    extra_rpaths: []
+    flags: {}
+    modules: []
+    operating_system: rhel7
+    paths:
+        cc: /usr/tce/packages/gcc/gcc-4.9.3/bin/gcc
+        cxx: /usr/tce/packages/gcc/gcc-4.9.3/bin/g++
+        f77: /usr/tce/packages/gcc/gcc-4.9.3/bin/gfortran
+        fc: /usr/tce/packages/gcc/gcc-4.9.3/bin/gfortran
+    spec: gcc@4.9.3
+    target: ppc64le
+- compiler:
+    environment: {}
+    extra_rpaths: []
+    flags: {}
+    modules: []
+    operating_system: rhel7
+    paths:
+        cc: /usr/tce/packages/gcc/gcc-7.3.1/bin/gcc
+        cxx: /usr/tce/packages/gcc/gcc-7.3.1/bin/g++
+        f77: /usr/tce/packages/gcc/gcc-7.3.1/bin/gfortran
+        fc: /usr/tce/packages/gcc/gcc-7.3.1/bin/gfortran
+    spec: gcc@7.3.1
+    target: ppc64le
+- compiler:
+    environment: {}
+    extra_rpaths: []
+    modules: []
+    operating_system: rhel7
+    paths:
+        cc: /usr/tce/packages/xl/xl-2019.02.07/bin/xlc
+        cxx: /usr/tce/packages/xl/xl-2019.02.07/bin/xlC
+        f77: /usr/tce/packages/xl/xl-2019.02.07/bin/xlf
+        fc: /usr/tce/packages/xl/xl-2019.02.07/bin/xlf
+    spec: xl@16.1.1
+    target: ppc64le
+- compiler:
+    environment: {}
+    extra_rpaths: []
+    modules: []
+    operating_system: rhel7
+    paths:
+        cc: /usr/tce/packages/xl/xl-2019.02.07/bin/xlc_r
+        cxx: /usr/tce/packages/xl/xl-2019.02.07/bin/xlC_r
+        f77: /usr/tce/packages/xl/xl-2019.02.07/bin/xlf_r
+        fc: /usr/tce/packages/xl/xl-2019.02.07/bin/xlf_r
+    spec: xl_r@16.1.1
+    target: ppc64le

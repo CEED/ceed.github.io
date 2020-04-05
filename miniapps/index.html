@@ -121,8 +121,10 @@
                         
                     
                         
+                    
+                        
                             <li >
-                                 <a href="../ceed-2.0/">CEED 2.0</a>
+                                 <a href="../ceed-3.0/">CEED 3.0</a>
                             </li>
                         
                     
@@ -300,6 +302,10 @@
 	    
 	
 	    
+	        <li><a href="#remhos-new">Remhos  <span class="label label-primary">New</span></a></li>
+	    
+	
+	    
                 <li><a href="#nekcem-ceedling">NekCEM CEEDling</a></li>
 	    
 	
@@ -390,6 +396,46 @@ thus separating the pointwise physics from finite element and meshing concerns.<
 &nbsp;
 <a href="https://github.com/ceed/Laghos"><button type="button" class="btn btn-success">
 <strong>Download Laghos</strong>
+</button></a>
+</center></p>
+<hr />
+<p><center></p>
+<h3 id="remhos-new">Remhos <span class="badge">New</span></h3>
+<p></center></p>
+<p>Remhos solves the pure advection equations that are used to perform conservative
+and monotonic DG advection-based discontinuous field interpolation (remap).</p>
+<p>It captures the basic structure of the Eulerian phase in many
+Arbitrary-Lagrangian Eulerian (ALE) simulations, including the <a href="http://llnl.gov/casc/blast">BLAST
+code</a> at <a href="http://llnl.gov">Lawrence Livermore National
+Laboratory</a>. The miniapp is build on top of a general
+discretization library, <a href="http://mfem.org">MFEM</a>, thus separating the pointwise
+physics from finite element and meshing concerns.</p>
+<p><img alt="Remhos results" src="../img/remhos.png" width="450"/></p>
+<p>Computational motives in Remhos include the following:</p>
+<ul>
+<li>Support for unstructured high-order meshes, in 2D and 3D, with quadrilateral
+  and hexahedral elements.</li>
+<li>Discontinuous high-order finite element discretization spaces of
+  runtime-specified order.</li>
+<li>State-of-the-art algorithms for high-order monotonicity (including positivity
+  preservation and oscillation control).</li>
+<li>Explicit time-stepping loop with a variety of time integrator options. Remhos
+  supports Runge-Kutta ODE solvers of orders 1, 2, 3, 4 and 6.</li>
+<li>Full and <a href="http://ceed.exascaleproject.org/ceed-code">partial assembly</a> options
+  for deriving and solving the resulting ODE systems.</li>
+<li>Supports for both <em>transport</em> and <em>remap</em> execution modes, which result in
+  slightly different algebraic operators.</li>
+<li>Domain-decomposed MPI parallelism.</li>
+<li>Optional in-situ visualization with <a href="http:/glvis.org">GLVis</a> and data output
+  for visualization / data analysis with <a href="http://visit.llnl.gov">VisIt</a>.</li>
+</ul>
+<p><center>
+<a href="https://github.com/CEED/Remhos/blob/master/README.md"><button type="button" class="btn btn-default">
+<strong>Documentation</strong>
+</button></a>
+&nbsp;
+<a href="https://github.com/ceed/Remhos"><button type="button" class="btn btn-success">
+<strong>Download Remhos</strong>
 </button></a>
 </center></p>
 <hr />
@@ -541,6 +587,10 @@ implement high-order operator evaluation.</p>
 	
 	    
                 <li><a href="#laghos">Laghos</a></li>
+	    
+	
+	    
+	        <li><a href="#remhos-new">Remhos  <span class="label label-primary">New</span></a></li>
 	    
 	
 	    
