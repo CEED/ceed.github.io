@@ -508,8 +508,9 @@ for <code>occa</code>).</p>
 </code></pre>
 
 <p>In order to use the OCCA GPU backend, one needs to install CEED with the <code>cuda</code>
-<a href="https://spack.readthedocs.io/en/latest/basic_usage.html#specs-dependencies">variant</a> enabled, i.e. using the <a href="https://spack.readthedocs.io/en/latest/basic_usage.html#specs-dependencies">spec</a> <code>ceed+cuda</code>:</p>
-<pre><code class="sh">spack install -v ceed+cuda
+<a href="https://spack.readthedocs.io/en/latest/basic_usage.html#specs-dependencies">variant</a> enabled, i.e. using the <a href="https://spack.readthedocs.io/en/latest/basic_usage.html#specs-dependencies">spec</a>
+<code>ceed+cuda ^magma cuda_arch=70 ^mfem cuda_arch=sm_70</code>:</p>
+<pre><code class="sh">spack install -v ceed+cuda ^magma cuda_arch=70 ^mfem cuda_arch=sm_70
 </code></pre>
 
 <p>For more details, see the section <a href="#gpu-demo">GPU demo</a> below.</p>
@@ -647,7 +648,7 @@ Troubleshooting</a>.</p>
 <pre><code class="sh"># Install CEED 3.0 distribution via Spack
 git clone https://github.com/spack/spack.git
 cd spack
-spack install ceed+cuda
+spack install ceed+cuda ^magma cuda_arch=70 ^mfem cuda_arch=sm_70
 
 # Setup CEED component directories
 setenv CEED_DIR  `spack location -i libceed`
@@ -1030,32 +1031,34 @@ the default), for example:</p>
 <h4 id="summit">Summit</h4>
 <p>The file <a href="../spack/ceed3-summit-packages.yaml">ceed3-summit-packages.yaml</a> is an example of a
 <code>packages.yaml</code> file for the Summit system at <a href="https://www.olcf.ornl.gov">OLCF</a>.</p>
-<p>The packages.yaml file gives updated locations for spectrum-mpi and cuda. Then one has to make sure other modules like xalt are not loaded because xalt provides a conflicting version of "ld" which breaks the build. One may have to first install gcc version 6.5.0 and configure it in spack as a compiler.  Then one can compile ceed and dependencies using netlib-lapack as the blas and lapack provider. Here are the commands to do the full compile:</p>
+<p>The packages.yaml file gives updated locations for spectrum-mpi and other packeges. Then one has to make sure other modules like xalt are not loaded because xalt provides a conflicting version of "ld" which breaks the build. One may have to load a gcc compiler, e.g., version 6.4.0, and configure it in spack as a compiler.  Then one can compile ceed and dependencies using netlib-lapack as the blas and lapack provider. Here are the commands to do the full compile:</p>
 <pre><code class="sh">git clone https://github.com/spack/spack
 source spack/share/spack/setup-env.sh
 cp packages.yaml spack/etc/spack/
 module purge
-spack install gcc@6.5.0 %gcc
+module load gcc/6.4.0 spectrum-mpi/10.3.1.2-20200121 cmake netlib-lapack netlib-scalapack
 spack compiler find
-spack install ceed %gcc ^netlib-lapack
+./bin/spack install ceed%gcc@6.4.0
 </code></pre>
 
 <h3 id="installing-cuda">Installing CUDA</h3>
 <ul>
 <li>
-<p>Several CEED packages depend on CUDA: OCCA, MAGMA and libCEED.</p>
+<p>Several CEED packages can use CUDA: OCCA, MAGMA, libCEED, PETSc, and MFEM.</p>
 </li>
 <li>
-<p>To build these, add the <code>cuda</code> variant to the Spack build:
-  <code>sh
-  spack install ceed+cuda</code></p>
+<p>To build these, add the <code>cuda</code> variant to the Spack build while specifying the
+  desired CUDA architecture for MAGMA and MFEM:</p>
 </li>
-<li>
-<p>You will need to have the NVIDIA CUDA SDK and driver installed on your system,
+</ul>
+<pre><code class="sh">spack install ceed+cuda ^magma cuda_arch=70 ^mfem cuda_arch=sm_70
+</code></pre>
+
+<ul>
+<li>You will need to have the NVIDIA CUDA SDK and driver installed on your system,
   see <a href="https://developer.nvidia.com">developer.nvidia.com</a>, and specify it in the <code>packages.yaml</code>
   file. See, for example, the <code>cuda</code> section in <a href="#building-on-a-mac">Building on a Mac</a>,
-  or the <a href="../spack/ceed3-linux-rhel7-x86_64-packages.yaml">ceed3-linux-rhel7-x86_64-packages.yaml</a> file.</p>
-</li>
+  or the <a href="../spack/ceed3-linux-rhel7-x86_64-packages.yaml">ceed3-linux-rhel7-x86_64-packages.yaml</a> file.</li>
 </ul></div>
             <div class="col-md-3 hidden-xs hidden-sm"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">

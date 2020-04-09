@@ -1,22 +1,55 @@
 packages:
-   all: 
+   all:
       compiler: [gcc]
       providers:
          mpi: [spectrum-mpi]
+         blas: [openblas]
+         lapack: [netlib-lapack]
    spectrum-mpi:
+      buildable: False
       paths:
-         spectrum-mpi@10.2.0.11: /autofs/nccs-svm1_sw/summit/.swci/1-compute/opt/spack/20180914/linux-rhel7-ppc64le/xl-16.1.1-1/spectrum-mpi-10.2.0.11-20190201-6qypd6rixwrkcyd5gnijoacjqxrtblzk/
-#   hypre:
+         spectrum-mpi@10.3.1.2: ${MPI_ROOT}
    perl:
       buildable: False
       paths:
          perl@5.16.3: /
    essl:
-      paths:
-         essl@6.1: /sw/summit/essl/6.1.0-2/essl/6.1
-   cuda:
       buildable: False
-      paths:
-         cuda@9.2.148: /sw/summit/cuda/9.2.148
-
-
+   libflame:
+      buildable: False
+   netlib-lapack: # prefer netlib-lapack with '+external-blas' and '~lapacke' variant
+      variants: +external-blas~lapacke
+   atlas:
+      buildable: False
+   veclibfort:
+      buildable: False
+   intel-parallel-studio:
+      buildable: False
+   intel-mkl:
+      buildable: False
+   cray-libsci:
+      buildable: False
+   atlas:
+      buildable: False
+   cmake:
+        paths:
+            cmake@3.13.4: /usr
+        buildable: False
+   libx11:
+        paths:
+            libx11@system: /usr
+        version: [system]
+        buildable: False
+   libxt:
+        paths:
+            libxt@system: /usr
+        version: [system]
+        buildable: False
+   xproto:
+        paths: # See /usr/share/pkgconfig/xproto.pc for version
+            xproto@7.0.32: /usr
+        buildable: False
+   python:
+        paths:
+             python@3.7.5: /usr
+        buildable: False
