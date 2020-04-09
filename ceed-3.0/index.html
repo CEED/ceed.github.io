@@ -455,28 +455,34 @@ cd ../miniapps/electromagnetics
 make CONFIG_MK=`spack location -i mfem`/share/mfem/config.mk
 </code></pre>
 
+<p>Note that if you already have multiple Spack installations of MFEM, the above
+<code>spack location</code> commands will fail and you will need to use a more concrete
+spec such as <code>mfem~cuda</code> instead of simply <code>mfem</code>.</p>
 <p>Alternatively, the Spack installation can be exported to a local directory:</p>
 <pre><code class="sh">mkdir ceed
 spack view --verbose symlink ceed/mfem mfem
 </code></pre>
 
+<p>Once again, if you already have multiple Spack installations of MFEM, then you
+will need to use a more concrete spec such as <code>mfem~cuda</code> instead of simply
+<code>mfem</code>.</p>
 <p>The <code>ceed/mfem</code> directory now contains the Spack-built MFEM with all of its
 dependencies (technically, it contains links to all the build files inside the
 <code>./opt/spack/</code> subdirectory for MFEM). In particular, the MFEM library in
 <code>ceed/mfem/lib</code> and the MFEM build configuration file in
 <code>ceed/mfem/share/mfem/config.mk</code>.</p>
 <p>This directory can be used to build the MFEM examples as follows:</p>
-<pre><code class="sh">git clone https://github.com/mfem/mfem.git
+<pre><code class="sh"># Clone MFEM next to the &quot;ceed&quot; directory created above
+git clone https://github.com/mfem/mfem.git
 cd mfem; git checkout v4.1
-cd examples/petsc
-make CONFIG_MK=../../../ceed/mfem/config/config.mk
-cd ..
-make CONFIG_MK=../../ceed/mfem/config/config.mk
+cd examples
+make CONFIG_MK=$PWD/../../ceed/mfem/share/mfem/config.mk
 </code></pre>
 
-<p>The MFEM miniapps can further be built with:</p>
-<pre><code class="sh">cd ../miniapps/electromagnetics
-make CONFIG_MK=../../../ceed/mfem/config/config.mk
+<p>The MFEM electromagnetics miniapps can further be built with:</p>
+<pre><code class="sh"># Continuing from the last directory above: .../mfem/examples
+cd ../miniapps/electromagnetics
+make CONFIG_MK=../../../ceed/mfem/share/mfem/config.mk
 </code></pre>
 
 <h3 id="building-libceed-based-applications">Building libCEED-based Applications</h3>
@@ -514,13 +520,13 @@ for <code>occa</code>).</p>
 </code></pre>
 
 <p>For more details, see the section <a href="#gpu-demo">GPU demo</a> below.</p>
-<p>With the MAGMA backend, the <code>/cpu/magma</code> and <code>/gpu/magma</code> resource descriptors
-can also be used.</p>
+<p>With the MAGMA backend, the <code>/gpu/magma</code> resource descriptor can also be used.</p>
 <p>The MFEM/libCEED and PETSc/libCEED examples can be further built with:</p>
-<pre><code class="sh">cd examples/mfem
+<pre><code class="sh"># Continue from the last dir above: .../libCEED/examples/ceed
+cd ../mfem
 make CEED_DIR=`spack location -i libceed` MFEM_DIR=`spack location -i mfem`
-./bp1 -no-vis -o 2 -ceed /cpu/self -m `spack location -i mfem`/data/star.mesh
-./bp3 -no-vis -o 2 -ceed /cpu/self -m `spack location -i mfem`/data/star.mesh
+./bp1 -no-vis -o 2 -ceed /cpu/self -m `spack location -i mfem`/share/mfem/data/star.mesh
+./bp3 -no-vis -o 2 -ceed /cpu/self -m `spack location -i mfem`/share/mfem/data/star.mesh
 cd ../petsc
 make CEED_DIR=`spack location -i libceed` PETSC_DIR=`spack location -i petsc`
 ./bps -degree 2 -ceed /cpu/self
@@ -558,7 +564,8 @@ to find out the options supported by the run script.</p>
 <p>More information on running the Nek5000 examples can be found in the libCEED
 <a href="https://github.com/CEED/libCEED/blob/master/examples/nek5000/README.md">documentation</a>.</p>
 <p>Alternatively, one can export the Spack install to a local directory:</p>
-<pre><code class="sh">spack view --verbose symlink ceed/libceed libceed
+<pre><code class="sh"># In the directory that contains the cloned &quot;libCEED&quot; directory
+spack view --verbose symlink ceed/libceed libceed
 spack view --verbose symlink ceed/petsc petsc
 spack view --verbose symlink ceed/mfem mfem
 spack view --verbose symlink ceed/nek5000 nek5000
@@ -566,12 +573,12 @@ spack view --verbose symlink ceed/nek5000 nek5000
 
 <p>and use that to specify the <code>CEED_DIR</code>, <code>MFEM_DIR</code> and <code>PETSC_DIR</code> variables:</p>
 <pre><code class="sh">cd libCEED/examples/ceed
-make CEED_DIR=../../ceed/libceed
+make CEED_DIR=../../../ceed/libceed
 ./ex1-volume -ceed /cpu/self
-cd mfem
+cd ../mfem
 make CEED_DIR=../../../ceed/libceed MFEM_DIR=../../../ceed/mfem
-./bp1 -no-vis -o 2 -ceed /cpu/self -m `spack location -i mfem`/data/star.mesh
-./bp3 -no-vis -o 2 -ceed /cpu/self -m `spack location -i mfem`/data/star.mesh
+./bp1 -no-vis -o 2 -ceed /cpu/self -m ../../../ceed/mfem/share/mfem/data/star.mesh
+./bp3 -no-vis -o 2 -ceed /cpu/self -m ../../../ceed/mfem/share/mfem/data/star.mesh
 cd ../petsc
 make CEED_DIR=../../../ceed/mfem PETSC_DIR=../../../ceed/petsc
 ./bps -problem bp1 -degree 2 -ceed /cpu/self
@@ -673,9 +680,9 @@ cd ../..
 
 # MFEM+libCEED examples on CPU and GPU
 cd ceed-examples/mfem
-make
-./bp1 -ceed /cpu/self/ref/blocked -no-vis -m `spack location -i mfem`/share/mfem/data/star.mesh
-./bp1 -ceed /gpu/cuda/gen -no-vis -m `spack location -i mfem`/share/mfem/data/star.mesh
+make OPT= CEED_LIBS=
+./bp1 -ceed /cpu/self/ref/blocked -no-vis -m $MFEM_DIR/share/mfem/data/star.mesh
+./bp1 -ceed /gpu/cuda/gen -no-vis -m $MFEM_DIR/share/mfem/data/star.mesh
 cd ../..
 
 # PETSc+libCEED examples on CPU and GPU
