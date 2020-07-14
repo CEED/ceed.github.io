@@ -294,6 +294,8 @@
     
         <li class="main active"><a href="#news">News</a></li>
         
+            <li><a href="#ceed-annual-meeting-2020">CEED annual meeting 2020</a></li>
+        
             <li><a href="#mfem-video-posted-to-youtube">MFEM video posted to YouTube</a></li>
         
             <li><a href="#software-release-ceed-v30">Software release: CEED v3.0</a></li>
@@ -415,6 +417,19 @@
             <div class="col-md-9" role="main">
 
 <h1 id="news">News</h1>
+<hr />
+<h3 id="ceed-annual-meeting-2020">CEED annual meeting 2020</h3>
+<p>CEED will hold its fourth annual meeting August 11-12, 2020 virtually using ECP
+Zoom for videoconferencing and Slack for side discussions.</p>
+<p>If you plan to attend, <a href="https://forms.gle/SzMBwssAkPAqdnbp6">please register no later than <strong>August 7th</strong></a>. There is no registration fee.</p>
+<p>The goal of the meeting is to report on the progress in the center, deepen
+existing and establish new connections with ECP hardware vendors, ECP software
+technologies projects and other collaborators, plan project activities and
+brainstorm/work as a group to make technical progress.</p>
+<p>In addition to gathering together many of the CEED researchers, the meeting will
+include representatives of the ECP management, hardware vendors, software
+technology and other interested projects.</p>
+<p>See the <a href="http://ceed.exascaleproject.org/ceed4am/">meeting page</a> for additional information.</p>
 <hr />
 <h3 id="mfem-video-posted-to-youtube">MFEM video posted to YouTube</h3>
 <p>A new video titled "MFEM: Advanced Simulation Algorithms for HPC Applications" is available on YouTube. Team members Tzanio Kolev, Veselin Dobrev, Will Pazner, and Jean-Sylvain Camier describe how <a href="../mfem/">MFEM</a> benefits scientific applications, the advantages of MFEM's advanced mathematical algorithms, and how it supports multiple hardware configurations (such as GPU-based architectures). Computational physicist Rob Rieben also discusses how he uses MFEM in inertial confinement fusion simulations.</p>
@@ -680,6 +695,7 @@ full <a href="https://raw.githubusercontent.com/mfem/mfem/master/CHANGELOG">CHAN
 <th>Platform</th>
 <th>Architecture</th>
 <th>Spack Configuration</th>
+<th></th>
 </tr>
 </thead>
 <tbody>
@@ -687,41 +703,49 @@ full <a href="https://raw.githubusercontent.com/mfem/mfem/master/CHANGELOG">CHAN
 <td><strong>Mac</strong></td>
 <td><code>darwin-x86_64</code></td>
 <td><a href="../spack/ceed1-darwin-x86_64-packages.yaml">packages</a> <i class="fa fa-cloud-download"></i></td>
+<td></td>
 </tr>
 <tr>
 <td><strong>Linux</strong> (RHEL7)</td>
 <td><code>linux-rhel7-x86_64</code></td>
 <td><a href="../spack/ceed1-linux-rhel7-x86_64-packages.yaml">packages</a> <i class="fa fa-cloud-download"></i></td>
+<td></td>
 </tr>
 <tr>
 <td><strong>Cori</strong> (NERSC)</td>
 <td><code>cray-CNL-haswell</code></td>
 <td><a href="../spack/ceed1-cori-packages.yaml">packages</a> <i class="fa fa-cloud-download"></i></td>
+<td></td>
 </tr>
 <tr>
 <td><strong>Edison</strong> (NERSC)</td>
 <td><code>cray-CNL-ivybridge</code></td>
 <td><a href="../spack/ceed1-edison-packages.yaml">packages</a> <i class="fa fa-cloud-download"></i></td>
+<td></td>
 </tr>
 <tr>
 <td><strong>Theta</strong> (ALCF)</td>
 <td><code>cray-CNL-mic_knl</code></td>
 <td><a href="../spack/ceed1-theta-packages.yaml">packages</a> <i class="fa fa-cloud-download"></i></td>
+<td></td>
 </tr>
 <tr>
 <td><strong>Titan</strong> (OLCF)</td>
 <td><code>cray-CNL-interlagos</code></td>
 <td><a href="../spack/ceed1-titan-packages.yaml">packages</a> <i class="fa fa-cloud-download"></i></td>
+<td></td>
 </tr>
 <tr>
 <td><strong>CORAL-EA</strong> (LLNL)</td>
 <td><code>blueos_3_ppc64le_ib</code></td>
 <td><a href="../spack/ceed1-blueos_3_ppc64le_ib-packages.yaml">packages</a> <i class="fa fa-cloud-download"></i> &nbsp; <a href="../spack/ceed1-blueos_3_ppc64le_ib-compilers.yaml">compilers</a> <i class="fa fa-cloud-download"></i></td>
+<td></td>
 </tr>
 <tr>
 <td><strong>TOSS3</strong> (LLNL)</td>
 <td><code>toss_3_x86_64_ib</code></td>
 <td><a href="../spack/ceed1-toss_3_x86_64_ib-packages.yaml">packages</a> <i class="fa fa-cloud-download"></i> &nbsp; <a href="../spack/ceed1-toss_3_x86_64_ib-compilers.yaml">compilers</a> <i class="fa fa-cloud-download"></i></td>
+<td></td>
 </tr>
 </tbody>
 </table>
@@ -764,7 +788,7 @@ cd ../..
 <hr />
 <h3 id="panayot-vassilevski-named-siam-fellow">Panayot Vassilevski named SIAM fellow</h3>
 <p><a href="https://people.llnl.gov/vassilevski1">Panayot Vassilevski</a>, who is part of the CEED team at LLNL, was named a <a href="https://sinews.siam.org/Details-Page/siam-announces-class-of-2018-fellows-1">2018 SIAM fellow</a> for his work on <em>designing algebraic approaches for creating and analyzing multilevel algorithms</em>.</p>
-<p><img src="https://people.llnl.gov/include/getImage.php?person_id=529" align="center" alt="Panayot"></p>
+<p><img src="https://people.llnl.gov/getImage?per_intr_no=1164596" align="center" alt="Panayot"></p>
 <p>Panayot is the editor-in-chief for <a href="https://onlinelibrary.wiley.com/journal/10991506">Numerical Linear Algebra with Applications</a> and has published <a href="https://scholar.google.com/citations?user=GhpkHDAAAAAJ">many papers</a> and a monograph on <a href="http://www.springer.com/us/book/9780387715636">Multilevel Block Factorization Preconditioners</a>.</p>
 <p>In CEED, Panayot is working on matrix-free preconditioners for high-order finite element discretizations.</p>
 <p><em>Congratulations Panayot!</em></p>
@@ -1108,6 +1132,8 @@ for more information.</p></div>
     <ul class="nav bs-sidenav">
     
         <li class="main active"><a href="#news">News</a></li>
+        
+            <li><a href="#ceed-annual-meeting-2020">CEED annual meeting 2020</a></li>
         
             <li><a href="#mfem-video-posted-to-youtube">MFEM video posted to YouTube</a></li>
         
