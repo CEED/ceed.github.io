@@ -310,11 +310,11 @@
 	    
 	
 	    
-                <li><a href="#meeting-format">Meeting format</a></li>
+                <li><a href="#meeting-agenda">Meeting Agenda</a></li>
 	    
 	
 	    
-                <li><a href="#meeting-agenda">Meeting Agenda</a></li>
+                <li><a href="#participants">Participants</a></li>
 	    
 	
 	    
@@ -348,68 +348,230 @@ the CEED researchers, the meeting will include representatives of the ECP
 management, hardware vendors, software technology and other interested projects.</p>
 <h3 id="registration">Registration</h3>
 <p>If you plan to attend, <a href="https://forms.gle/SzMBwssAkPAqdnbp6">please register no later than <strong>August 7th</strong></a>. There is no registration fee.</p>
-<h3 id="meeting-format">Meeting format</h3>
-<p>Based on your feedback during registration we can incorporate the following elements in the meeting:</p>
-<ul>
-<li>Project review and updates from the CEED team</li>
-<li>Contributed talks from AD, ST, vendors and external partners</li>
-<li>Short pre-recorded talks/poster presentations</li>
-<li>Technical discussions in small breakout groups</li>
-<li>Software tutorials</li>
-<li>Hackathon</li>
-</ul>
-<h3 id="meeting-agenda">Meeting Agenda</h3>
-<p>The meeting activities will tentatively take place 10:30am-6:30pm eastern time.</p>
-<ul>
-<li>Live presentations will be on ECP Zoom, links to be posted the week of the meeting</li>
-<li>We also have a <a href="https://ceed4am.slack.com/">Slack workspace</a> for additional discussions</li>
-</ul>
 <!--
-**All times EST. Zoom links to be posted the week of the meeting**
+### Meeting format
 
-#### Tuesday, August 11
+Based on your feedback during registration we can incorporate the following elements in the meeting:
 
-| Time        | Activity                                                                            |
-|-------------|-------------------------------------------------------------------------------------|
-| 10:00-10:45   | **Welcome and CEED Overview** <br> Tzanio Kolev (LLNL)                                          |
-| 10:45-11:15   | **Finite Element Thrust Overview** <br> Veselin Dobrev (LLNL)                       |
-| 11:15-11:45  | **High-Order Solver Developments at UIUC** <br> Paul Fischer (UIUC)                 |
-| 11:45-12:30 | **Break**                                                                    |
-| 12:30-1:00 | **libParanumal Progress Update** <br> Tim Warburton (VT) <br> *libParanumal has proved capable of running SEM incompressible calculations in weak scaling mode on at least half of the GPUs on Summit at 90% efficiency. In this talk we will discuss ongoing efforts to reduce the number of degrees of freedom required to stay in the weak scaling regime.* |
-| 1:00-1:30 | **OCCA Updates** <br> David Medina (Occalytics)                                     |
-| 1:30-2:00 | **Supporting Complex Geometry RF Adaptive Simulations** <br> Mark Shephard (RPI)    |
-| 2:00-2:30 | **Applications Thrust Overview** <br> Misun Min (ANL)                               |
-| 2:30-3:00   | **Accelerating Numerical Methods for a Next Generation Multi-Physics Code** <br> Arturo Vargas (LLNL) <br> *MARBL is LLNL’s next generation multi-physics code for simulating high energy density physics. A distinguishing feature of this code is the modular CS infrastructure (Axom), and choice of high order numerical methods. The choice of high order schemes leads to higher arithmetic intensity per data access, a trait favored by modern computing processors. In this talk, we provide an overview of recent developments within the Arbitrary Lagrangian-Eulerian package, Blast, and focus on our adoption of programming models and algorithmic tailoring to leverage next gen super computers. This work was performed under the auspices of the U.S. Department of Energy by Lawrence Livermore National Laboratory under Contract DE-AC52-07NA27344. LLNL-ABS-774160.* |
-| 3:00-3:30   | **Urban** <br> Aleks Obabko (ANL)                                                   |
-| 3:30-4:00   | **ExaConstit:  Towards an Exascale Crystal Plasticity FEM Code** <br> Robert Carson (LLNL) <br> *An overview of ExaConstit, a new crystal plasticity code built upon the MFEM framework, will be given. It’s being designed as a component of the Exascale Additive Manufacturing Project (ExaAM) to couple microstructure development and local property analysis with process simulation. Initial results of ExaConstit being applied to a generated microstructure from AM processing condition will be discussed. A strong scaling study of ExaConstit on Sierra/Summit like machines will also be presented.* |
-
-
-#### Wednesday, August 12
-
-| Time        | Activity                                                                            |
-|-------------|-------------------------------------------------------------------------------------|
-| 8:00-8:30   | **Coffee**                                                                          |
-| 8:30-9:00   | **VTK-m Plans for Higher-Order Elements** <br> Hank Childs (Oregon)                 |
-| 9:00-9:30   | **Devil Ray:  Ray Tracing High Order Meshes for Visualization** <br> Matt Larsen (LLNL) <br> *This talk will outline our efforts to develop a portable ray tracing library for high-order meshes. Our technology stack includes RAJA and Umpire, which allows Devil Ray to run on Nvidia and AMD GPUs as well as many-core CPUs. Initially, Devil Ray is focused on image-based visualization tasks such as iso-surface, volume rendering, and slicing, but our long term goals include extracting high-order iso-surfaces. When released, our library will be deployed inside of Ascent, a in situ visualization library.* |
-| 9:30-10:00  | **Parallel I/O in MFEM Using ADIOS2** <br> William Godoy (ORNL) <br> *This talk provides a brief overview of the integration efforts and available features of ADIOS2 as the parallel I/O solution to MFEM for code coupling, in-situ visualization, and scalable file I/O.* |
-| 10:00-10:30 | **Coffee Break**                                                                    |
-| 10:30-11:00 | **Low-Synch Gram-Schmidt Projection Schemes for GMRES-AMG and for Moving Mesh Solvers** <br> Stephen Thomas (NREL) <br> *In collaboration with Tim Warburton and Anthony Austin, we apply the low-synch classical Gram-Schmidt algorithms recently proposed by Swirydowicz et al (2018) to the least-squares polynomial projection schemes introduced by Fischer (1998). We modify the original projection scheme to instead compute an improved initial guess for a preconditioned GMRES-AMG pressure solver for the incompressible Navier-Stokes equations. For the Nalu Wind model, the GMRES iteration count drops to zero with a relatively small window of previous solutions.* |
-| 11:00-11:30 | **Fast Direct Solvers in MFEM** <br> Pieter Ghysels (LBNL) <br> *We present recent improvements in the SuperLU and STRUMPACK sparse direct solvers and preconditioners, which are available from MFEM. Support for GPUs has been improved or added. The preconditioners in STRUMPACK have been improved and tested on an indefinite Maxwell problem using MFEM.* |
-| 11:30-12:00 | **Algebraic Multigrid Preconditioners for Matrix-Free Discretizations** <br> Bruno Turcksin (ORNL) <br> *Multigrid preconditioners are very popular preconditioners because of their convergence properties and scalability. Multigrid methods can be divided into geometric multigrid (GMG) and algebraic multigrid (AMG). GMG are based on building different coarser grids and therefore, are excellent as matrix-free preconditioners. The challenge is that GMG cannot be easily applied when the mesh is unstructured. AMG, however, use the entries in the matrix of the system to build coarser grids. This makes AMG more flexible when the matrix is available but it limits their use as matrix-free preconditioners. We surpass the limitation of knowing the matrix entries by basing our AMG on the spectral AMGe method. Unlike other AMG, the spectral AMGe method does not use the matrix of the system. Instead it requires the eigenvectors of the operator evaluated on parts of the domain (agglomerates). This means that, similar to GMG, a mesh is required. However the constraints on how the agglomerates are built are minimal since we do not need to rediscretize the operator on the agglomerates. While at the fine level no matrix associated to the operator is assembled, we still assemble a matrix at the coarsest level in order to use a direct solver.* |
-| 12:00-12:30 | **Recent Progress on Accelerating Algebraic Multigrid Solvers with GPUs** <br> Ruipeng Li (LLNL) <br> *Modern many-core processors such as graphics processing units (GPUs) are becoming an integral part of many high performance computing systems nowadays. These processors yield enormous raw processing power in the form of massive SIMD parallelism. Accelerating multigrid methods on GPUs has drawn a lot of research attention in recent years. For instance, in recent releases of the HYPRE package, the structured multigrid solvers (SMG, PFMG) have full GPU-support for both the setup and the solve phases, whereas the algebraic multigrid (AMG) solver, namely BoomerAMG, has only its solve phase been ported and the setup can still be computed on CPUs only. In this talk, we will provide an overview of the available GPU acceleration in HYPRE and present our current work on performing AMG setup on GPUs. In particular, we focus on the computation of distributed triple-matrix multiplications (i.e., the Galerkin product), which often represents a significant cost of the entire setup phase of AMG. We will discuss in detail the composing parts of this computation that include several fast GPU sparse matrix kernels and communications between GPUs. The recent results as well as future work will also be included.* |
-| 12:30-2:00  | **Lunch**                                                                           |
-| 2:00-3:00   | **AMD HIP Tutorial** <br> Noel Chalmers and Damon McDougall (AMD)                   |
-| 3:00-3:30   | **ExaWind** <br> Robert Knaus (SNL)                                                 |
-| 3:30-4:00   | **Coffee Break & Group Photo**                                                      |
-| 4:00-4:30   | **Software Thrust & libCEED Overview** <br> Jed Brown (CU Boulder)                  |
-| 4:30-5:00   | **libCEED under PETSc: Current and Future Efforts** <br> Oana Marin (ANL) <br> *We describe benefits of libCEED to PETSc and aspects to be pursued, from integration under complex unstructured meshes, to machine learning coupling and efficient support for research and implementation of matrix free preconditioners.* |
-| 5:00-5:30   | **Hardware Thrust & MAGMA** <br> Stanmire Tomov (UTK)                               |
-| 5:30-6:00   | **Aurora:  Argonne's Exascale System** <br> Scott Parker (ANL) <br> *Presentation and discussion of the publicly available information on the Aurora system and approaches to preparing applications.* |
-| 3:00-6:00   | Hackathon                                                                           |
-|             | *Dinner on your own.*                                                               |
-
+- Project review and updates from the CEED team
+- Contributed talks from AD, ST, vendors and external partners
+- Short pre-recorded talks/poster presentations
+- Technical discussions in small breakout groups
+- Software tutorials
+- Hackathon
 -->
 
+<h3 id="meeting-agenda">Meeting Agenda</h3>
+<p><strong>Draft agenda as of July 27th</strong></p>
+<p>The meeting activities will take place 10:30am-6:00pm eastern time (7:30am-3:00pm pacific).</p>
+<p>Live presentations, tutorials, breaks and wrap-up will be on <a href="https://exascaleproject.zoomgov.com/">ECP Zoom</a> (links to be posted the week of the meeting).
+Side discussions and breakout sessions will be on the meeting <a href="https://ceed4am.slack.com/">Slack</a> space.</p>
+<p>Moderators will be unmuted to provide some auditory feedback and relay questions</p>
+<h4 id="monday-august-10">Monday, August 10</h4>
+<table>
+<thead>
+<tr>
+<th>Time (PDT)</th>
+<th>Time (EDT)</th>
+<th>Activity</th>
+<th>Moderator</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>9:30-12:30</td>
+<td>12:30-3:30</td>
+<td><strong>Test / Setup Zoom + Slack</strong></td>
+<td><em>Tzanio Kolev</em></td>
+</tr>
+</tbody>
+</table>
+<h4 id="tuesday-august-11">Tuesday, August 11</h4>
+<table>
+<thead>
+<tr>
+<th>Time (PDT)</th>
+<th>Time (EDT)</th>
+<th>Activity</th>
+<th>Moderator</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>7:30-8:00</td>
+<td>10:30-11:00</td>
+<td><strong>Welcome and CEED Overview</strong> <br> Tzanio Kolev (LLNL)</td>
+<td><em>Paul Fischer</em></td>
+</tr>
+<tr>
+<td>8:00-8:30</td>
+<td>11:00-11:30</td>
+<td><strong>Finite Element Thrust &amp; MFEM Update</strong> <br> Veselin Dobrev (LLNL)</td>
+<td><em>Tzanio Kolev</em></td>
+</tr>
+<tr>
+<td>8:30-9:00</td>
+<td>11:30-12:00</td>
+<td><strong>NekRS Update</strong> <br> Paul Fischer (UIUC)</td>
+<td><em>Tzanio Kolev</em></td>
+</tr>
+<tr>
+<td>9:00-9:30</td>
+<td>12:00-12:30</td>
+<td><strong>libParanumal Update</strong> <br> Tim Warburton (VT)</td>
+<td><em>Tzanio Kolev</em></td>
+</tr>
+<tr>
+<td>9:30-10:00</td>
+<td>12:30-1:00</td>
+<td><strong>Break</strong> <br> • side discussions on Slack <br> • propose breakout topics <br> • discuss pre-recorded posters + talks</td>
+<td><em>TBD</em></td>
+</tr>
+<tr>
+<td>10:00-10:30</td>
+<td>1:00-1:30</td>
+<td><strong>Applications Thrust</strong> <br> Misun Min (ANL)</td>
+<td><em>Paul Fischer</em></td>
+</tr>
+<tr>
+<td>10:30-11:00</td>
+<td>1:30-2:00</td>
+<td><strong>ExaSMR</strong> <br> Elia Merzari (PSU)</td>
+<td><em>Misun Min</em></td>
+</tr>
+<tr>
+<td>11:00-11:30</td>
+<td>2:00-2:30</td>
+<td><strong>GPU Acceleration of Blast: A High-Order Hydrodynamics Code</strong> <br> Arturo Vargas (LLNL)</td>
+<td><em>Misun Min</em></td>
+</tr>
+<tr>
+<td>11:30-12:00</td>
+<td>2:30-3:00</td>
+<td><strong>E3SM: Performance of spectral element dycore on Summit at scale</strong> <br> Mark Taylor (SNL)</td>
+<td><em>Misun Min</em></td>
+</tr>
+<tr>
+<td>12:00-12:30</td>
+<td>3:00-3:30</td>
+<td><strong>Break</strong> <br> • side discussions on Slack</td>
+<td><em>TBD</em></td>
+</tr>
+<tr>
+<td>12:30-2:30</td>
+<td>3:30-5:30</td>
+<td><strong>Technical Discussions</strong> <br> • new BPs <br> • solvers, meshing, visualization, ...</td>
+<td><em>TBD</em></td>
+</tr>
+<tr>
+<td>12:30-2:30</td>
+<td>3:30-5:30</td>
+<td><strong>Recorder Talks + Posters</strong> <br> <!-- • *ExaConstit* - Robert Carson (LLNL) <br> --> • <em>Recent Developments in the Omega_h Unstructured Mesh Adaptation Library</em> - Cameron Smith (RPI) <br> • <em>Inline Vector Compression for Computational Physics</em> - Freddie Witherden (TAMU) <br> • <em>Spectral mesh-free quadrature for regions with rational parametric boundaries</em> - David Gunderman (LLNL)</td>
+<td><em>TBD</em></td>
+</tr>
+<tr>
+<td>2:30-3:00</td>
+<td>5:30-6:00</td>
+<td><strong>Wrap-up</strong></td>
+<td><em>Tzanio Kolev</em></td>
+</tr>
+</tbody>
+</table>
+<h4 id="wednesday-august-12">Wednesday, August 12</h4>
+<table>
+<thead>
+<tr>
+<th>Time (PDT)</th>
+<th>Time (EDT)</th>
+<th>Activity</th>
+<th>Moderator</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>7:30-8:00</td>
+<td>10:30-11:00</td>
+<td><strong>Software Thrust &amp; libCEED Update</strong> <br> Jed Brown (CU Boulder)</td>
+<td><em>Tzanio Kolev</em></td>
+</tr>
+<tr>
+<td>8:00-8:30</td>
+<td>11:00-11:30</td>
+<td><strong>Curved conforming mesh adaptation</strong> <br> Mark Shephard (RPI)</td>
+<td><em>TBD</em></td>
+</tr>
+<tr>
+<td>8:30-9:00</td>
+<td>11:30-12:00</td>
+<td><strong>Increasing GPU enhancements in hypre’s BoomerAMG</strong> <br> Ruipeng Li (LLNL)</td>
+<td><em>TBD</em></td>
+</tr>
+<tr>
+<td>9:00-9:30</td>
+<td>12:00-12:30</td>
+<td><strong>One reduce GMRES with two Stage Gauss Seidel AMG smoother: Scaling to new heights on Summit</strong> <br> Kasia Swirydowicz and Stephen Thomas (NREL)</td>
+<td><em>TBD</em></td>
+</tr>
+<tr>
+<td>9:30-10:00</td>
+<td>12:30-1:00</td>
+<td><strong>Break</strong> <br> • side discussions on Slack <br> • propose breakout topics <br> • discuss pre-recorded posters + talks</td>
+<td><em>TBD</em></td>
+</tr>
+<tr>
+<td>10:00-10:30</td>
+<td>1:00-1:30</td>
+<td><strong>Hardware Thrust &amp; MAGMA Update</strong> <br> Stanmire Tomov (UTK)</td>
+<td><em>Tzanio Kolev</em></td>
+</tr>
+<tr>
+<td>10:30-11:00</td>
+<td>1:30-2:00</td>
+<td><strong>Achieving Performance Portability in Blast with LLNL Tools: Profiling, Kernel Abstractions, Memory Pools, and More</strong> <br> Tom Stitt (LLNL)</td>
+<td><em>Stan Tomov</em></td>
+</tr>
+<tr>
+<td>11:00-11:30</td>
+<td>2:00-2:30</td>
+<td><strong>Devil Ray: Native High-Order Ray Tracing</strong> <br> Matt Larsen (LLNL)</td>
+<td><em>Stan Tomov</em></td>
+</tr>
+<tr>
+<td>11:30-12:00</td>
+<td>2:30-3:00</td>
+<td><strong>SUNDIALS: New features and capabilities</strong> <br> David Gardner (LLNL)</td>
+<td><em>Stan Tomov</em></td>
+</tr>
+<tr>
+<td>12:00-12:30</td>
+<td>3:00-3:30</td>
+<td><strong>Break</strong> <br> • side discussions on Slack <br> • discuss pre-recorded posters + talks</td>
+<td><em>TBD</em></td>
+</tr>
+<tr>
+<td>12:30-2:30</td>
+<td>3:30-5:30</td>
+<td><strong>Technical Discussions</strong> <br> • new BPs <br> • solvers, meshing, visualization, ...</td>
+<td><em>TBD</em></td>
+</tr>
+<tr>
+<td>12:30-2:30</td>
+<td>3:30-5:30</td>
+<td><strong>Tutorials/ Q&amp;A Sessions</strong> <br> • <em>libCEED</em> - Valeria Barra (CU Boulder)</td>
+<td><em>TBD</em></td>
+</tr>
+<tr>
+<td>2:30-3:00</td>
+<td>5:30-6:00</td>
+<td><strong>Wrap-up</strong></td>
+<td><em>Tzanio Kolev</em></td>
+</tr>
+</tbody>
+</table>
+<h3 id="participants">Participants</h3>
+<ul>
+<li>See the meeting <a href="https://ceed4am.slack.com/">Slack</a> space</li>
+</ul>
 <h3 id="questions">Questions?</h3>
 <p>For questions, please contact the meeting organizers at
 <a href="mailto:ceed-meeting@llnl.gov">ceed-meeting@llnl.gov</a>.</p></div>
@@ -435,11 +597,11 @@ management, hardware vendors, software technology and other interested projects.
 	    
 	
 	    
-                <li><a href="#meeting-format">Meeting format</a></li>
+                <li><a href="#meeting-agenda">Meeting Agenda</a></li>
 	    
 	
 	    
-                <li><a href="#meeting-agenda">Meeting Agenda</a></li>
+                <li><a href="#participants">Participants</a></li>
 	    
 	
 	    
