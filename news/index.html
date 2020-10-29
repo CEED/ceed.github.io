@@ -715,6 +715,7 @@ full <a href="https://raw.githubusercontent.com/mfem/mfem/master/CHANGELOG">CHAN
 <th>Platform</th>
 <th>Architecture</th>
 <th>Spack Configuration</th>
+<th></th>
 </tr>
 </thead>
 <tbody>
@@ -722,41 +723,49 @@ full <a href="https://raw.githubusercontent.com/mfem/mfem/master/CHANGELOG">CHAN
 <td><strong>Mac</strong></td>
 <td><code>darwin-x86_64</code></td>
 <td><a href="../spack/ceed1-darwin-x86_64-packages.yaml">packages</a> <i class="fa fa-cloud-download"></i></td>
+<td></td>
 </tr>
 <tr>
 <td><strong>Linux</strong> (RHEL7)</td>
 <td><code>linux-rhel7-x86_64</code></td>
 <td><a href="../spack/ceed1-linux-rhel7-x86_64-packages.yaml">packages</a> <i class="fa fa-cloud-download"></i></td>
+<td></td>
 </tr>
 <tr>
 <td><strong>Cori</strong> (NERSC)</td>
 <td><code>cray-CNL-haswell</code></td>
 <td><a href="../spack/ceed1-cori-packages.yaml">packages</a> <i class="fa fa-cloud-download"></i></td>
+<td></td>
 </tr>
 <tr>
 <td><strong>Edison</strong> (NERSC)</td>
 <td><code>cray-CNL-ivybridge</code></td>
 <td><a href="../spack/ceed1-edison-packages.yaml">packages</a> <i class="fa fa-cloud-download"></i></td>
+<td></td>
 </tr>
 <tr>
 <td><strong>Theta</strong> (ALCF)</td>
 <td><code>cray-CNL-mic_knl</code></td>
 <td><a href="../spack/ceed1-theta-packages.yaml">packages</a> <i class="fa fa-cloud-download"></i></td>
+<td></td>
 </tr>
 <tr>
 <td><strong>Titan</strong> (OLCF)</td>
 <td><code>cray-CNL-interlagos</code></td>
 <td><a href="../spack/ceed1-titan-packages.yaml">packages</a> <i class="fa fa-cloud-download"></i></td>
+<td></td>
 </tr>
 <tr>
 <td><strong>CORAL-EA</strong> (LLNL)</td>
 <td><code>blueos_3_ppc64le_ib</code></td>
 <td><a href="../spack/ceed1-blueos_3_ppc64le_ib-packages.yaml">packages</a> <i class="fa fa-cloud-download"></i> &nbsp; <a href="../spack/ceed1-blueos_3_ppc64le_ib-compilers.yaml">compilers</a> <i class="fa fa-cloud-download"></i></td>
+<td></td>
 </tr>
 <tr>
 <td><strong>TOSS3</strong> (LLNL)</td>
 <td><code>toss_3_x86_64_ib</code></td>
 <td><a href="../spack/ceed1-toss_3_x86_64_ib-packages.yaml">packages</a> <i class="fa fa-cloud-download"></i> &nbsp; <a href="../spack/ceed1-toss_3_x86_64_ib-compilers.yaml">compilers</a> <i class="fa fa-cloud-download"></i></td>
+<td></td>
 </tr>
 </tbody>
 </table>
@@ -766,7 +775,7 @@ full <a href="https://raw.githubusercontent.com/mfem/mfem/master/CHANGELOG">CHAN
 <p>Version 0.2 of <a href="../libceed/">libCEED</a>, the CEED API library, was released in March 2018 with major improvements in the <a href="../occa/">OCCA</a> backend.</p>
 <p>libCEED is a lightweight portable library that allows, for the first time, a wide variety of applications (written in C, C++, Fortran) to share  a wide variety of discretization kernels (CPU, GPU, OpenMP, OpenCL), including high-performance GPU kernels.</p>
 <p>libCEED comes with several examples of its usage, ranging from standalone C codes in the <code>/examples/ceed</code> directory to examples based on external packages, such as <a href="../mfem/">MFEM</a>, <a href="../petsc/">PETSc</a> and <a href="../nek/">Nek5000</a>. Below is an illustration how libCEED enables these very different codes (C++, C, F77) to take advantage of a common set of GPU kernels (see also the <a href="http://ceed.exascaleproject.org/ceed-1.0/#gpu-demo">CEED 1.0 GPU demo</a>):</p>
-<pre><code class="language-sh"># libCEED examples on CPU and GPU
+<pre><code class="sh"># libCEED examples on CPU and GPU
 cd examples/ceed
 make
 ./ex1 -ceed /cpu/self
@@ -794,6 +803,7 @@ cd examples/nek5000
 ./run-nek-example.sh -ceed /gpu/occa -b 3
 cd ../..
 </code></pre>
+
 <p>For more information visit <a href="https://github.com/CEED/libCEED">https://github.com/CEED/libCEED</a>.</p>
 <hr />
 <h3 id="panayot-vassilevski-named-siam-fellow">Panayot Vassilevski named SIAM fellow</h3>
