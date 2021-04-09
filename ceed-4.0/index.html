@@ -125,8 +125,8 @@
                         
                     
                         
-                            <li >
-                                 <a href="../ceed-4.0/">CEED 4.0</a>
+                            <li class="active">
+                                 <a href="./">CEED 4.0</a>
                             </li>
                         
                     
@@ -293,7 +293,7 @@
             <div class="col-md-3 visible-xs visible-sm"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
     
-        <li class="main active"><a href="#ceed-10-software-distribution">CEED 1.0 Software Distribution</a></li>
+        <li class="main active"><a href="#ceed-40-software-distribution">CEED 4.0 Software Distribution</a></li>
         
 	    
                 <li><a href="#simple-installation">Simple Installation</a></li>
@@ -323,33 +323,39 @@
 <!-- ... fa-comment, fa-comment-o, fa-comments, fa-comments-o, fa-bullhorn --></div> <!-- toc on top on mobile -->
             <div class="col-md-9" role="main">
 
-<h1 id="ceed-10-software-distribution">CEED 1.0 Software Distribution</h1>
+<h1 id="ceed-40-software-distribution">CEED 4.0 Software Distribution</h1>
 <p>The CEED distribution is a collection of software packages that can be
 integrated together to enable efficient discretizations in a variety of
 high-order applications on unstructured grids.</p>
 <p>CEED is using the <a href="https://spack.io">Spack</a> package manager for compatible
 building and installation of its software components.</p>
-<p>In this initial version, CEED 1.0, the CEED software suite consists of the
-following 12 packages, plus the CEED <em>meta-package</em>:</p>
+<p>In this version, CEED 4.0, the CEED software suite consists of the
+following 13 packages, plus the CEED <em>meta-package</em>:</p>
 <ul>
-<li>GSLIB</li>
-<li>HPGMG</li>
-<li>Laghos</li>
-<li>libCEED</li>
-<li>MAGMA</li>
-<li>MFEM</li>
-<li>Nek5000</li>
-<li>Nekbone</li>
-<li>NekCEM</li>
-<li>PETSc</li>
-<li>PUMI</li>
-<li>OCCA</li>
+<li><strong>GSLIB</strong>-1.0.6</li>
+<li><strong>Laghos</strong>-3.1</li>
+<li><strong>libCEED</strong>-0.8</li>
+<li><strong>MAGMA</strong>-2.5.4</li>
+<li><strong>MFEM</strong>-4.2</li>
+<li><strong>Nek5000</strong>-19.0</li>
+<li><strong>NekRS</strong>-21.0</li>
+<li><strong>Nekbone</strong>-17.0</li>
+<li><strong>NekCEM</strong>-c8db04b</li>
+<li><strong>OCCA</strong>-1.1.0</li>
+<li><strong>PETSc</strong>-3.15</li>
+<li><strong>PUMI</strong>-2.2.5</li>
+<li><strong>Remhos</strong>-1.0</li>
 </ul>
+<p>If you are interested in the previous releases, see the
+<a href="https://ceed.exascaleproject.org/ceed-3.0/">CEED-3.0</a>,
+<a href="https://ceed.exascaleproject.org/ceed-2.0/">CEED-2.0</a> and
+<a href="https://ceed.exascaleproject.org/ceed-1.0/">CEED-1.0</a> pages.</p>
 <p>First-time users should read <a href="#simple-installation">Simple Installation</a> and
 <a href="#using-the-installation">Using the Installation</a> below. (Quick summary: you can
 build and install all of the above packages with: <code>spack install ceed</code>)</p>
 <p>If you are familiar with Spack, consider using the following machine-specific
-configurations for CEED (see also <a href="https://github.com/xsdk-project/installxSDK/tree/master/platformFiles">xSDK's config files</a>).</p>
+configurations for CEED (see also the <a href="https://github.com/spack/spack-configs">spack-configs</a>
+repository and the <a href="https://github.com/xsdk-project/installxSDK/tree/master/platformFiles">xSDK's config files</a>).</p>
 <table>
 <thead>
 <tr>
@@ -362,50 +368,32 @@ configurations for CEED (see also <a href="https://github.com/xsdk-project/insta
 <tbody>
 <tr>
 <td><strong>Mac</strong></td>
-<td><code>darwin-x86_64</code></td>
-<td><a href="../spack/ceed1-darwin-x86_64-packages.yaml">packages</a> <i class="fa fa-cloud-download"></i></td>
+<td><code>darwin-highsierra-x86_64</code></td>
+<td><a href="../spack/ceed3-darwin-highsierra-x86_64-packages.yaml">packages</a> <i class="fa fa-cloud-download"></i></td>
 <td></td>
 </tr>
 <tr>
 <td><strong>Linux</strong> (RHEL7)</td>
 <td><code>linux-rhel7-x86_64</code></td>
-<td><a href="../spack/ceed1-linux-rhel7-x86_64-packages.yaml">packages</a> <i class="fa fa-cloud-download"></i></td>
+<td><a href="../spack/ceed3-linux-rhel7-x86_64-packages.yaml">packages</a> <i class="fa fa-cloud-download"></i></td>
 <td></td>
 </tr>
 <tr>
-<td><strong>Cori</strong> (NERSC)</td>
-<td><code>cray-CNL-haswell</code></td>
-<td><a href="../spack/ceed1-cori-packages.yaml">packages</a> <i class="fa fa-cloud-download"></i></td>
+<td><strong>Linux</strong> (Ubuntu)</td>
+<td><code>ubuntu19.10-x86_64</code></td>
+<td><a href="../spack/ceed3-ubuntu19.10-packages.yaml">packages</a> <i class="fa fa-cloud-download"></i></td>
 <td></td>
 </tr>
 <tr>
-<td><strong>Edison</strong> (NERSC)</td>
-<td><code>cray-CNL-ivybridge</code></td>
-<td><a href="../spack/ceed1-edison-packages.yaml">packages</a> <i class="fa fa-cloud-download"></i></td>
+<td><strong>Lassen</strong> (LLNL)</td>
+<td><code>linux-rhel7-ppc64le</code></td>
+<td><a href="../spack/ceed3-lassen-packages.yaml">packages</a> <i class="fa fa-cloud-download"></i>  &nbsp; <a href="../spack/ceed3-lassen-compilers.yaml">compilers</a> <i class="fa fa-cloud-download"></i></td>
 <td></td>
 </tr>
 <tr>
-<td><strong>Theta</strong> (ALCF)</td>
-<td><code>cray-CNL-mic_knl</code></td>
-<td><a href="../spack/ceed1-theta-packages.yaml">packages</a> <i class="fa fa-cloud-download"></i></td>
-<td></td>
-</tr>
-<tr>
-<td><strong>Titan</strong> (OLCF)</td>
-<td><code>cray-CNL-interlagos</code></td>
-<td><a href="../spack/ceed1-titan-packages.yaml">packages</a> <i class="fa fa-cloud-download"></i></td>
-<td></td>
-</tr>
-<tr>
-<td><strong>CORAL-EA</strong> (LLNL)</td>
-<td><code>blueos_3_ppc64le_ib</code></td>
-<td><a href="../spack/ceed1-blueos_3_ppc64le_ib-packages.yaml">packages</a> <i class="fa fa-cloud-download"></i> &nbsp; <a href="../spack/ceed1-blueos_3_ppc64le_ib-compilers.yaml">compilers</a> <i class="fa fa-cloud-download"></i></td>
-<td></td>
-</tr>
-<tr>
-<td><strong>TOSS3</strong> (LLNL)</td>
-<td><code>toss_3_x86_64_ib</code></td>
-<td><a href="../spack/ceed1-toss_3_x86_64_ib-packages.yaml">packages</a> <i class="fa fa-cloud-download"></i> &nbsp; <a href="../spack/ceed1-toss_3_x86_64_ib-compilers.yaml">compilers</a> <i class="fa fa-cloud-download"></i></td>
+<td><strong>Summit</strong> (ORNL)</td>
+<td><code>linux-rhel7-ppc64le</code></td>
+<td><a href="../spack/ceed3-summit-packages.yaml">packages</a> <i class="fa fa-cloud-download"></i></td>
 <td></td>
 </tr>
 </tbody>
@@ -416,6 +404,11 @@ configurations for CEED (see also <a href="https://github.com/xsdk-project/insta
 <li><a href="#using-the-installation">Using the Installation</a><ul>
 <li><a href="#building-mfem-based-applications">Building MFEM-based Applications</a></li>
 <li><a href="#building-libceed-based-applications">Building libCEED-based Applications</a></li>
+<li><a href="#using-containers">Using Containers</a><ul>
+<li><a href="#nerscs-shifter">NERSC's Shifter</a></li>
+<li><a href="#singularity">Singularity</a></li>
+</ul>
+</li>
 <li><a href="#gpu-demo">GPU demo</a></li>
 </ul>
 </li>
@@ -423,24 +416,8 @@ configurations for CEED (see also <a href="https://github.com/xsdk-project/insta
 <li><a href="#tips-and-troubleshooting">Tips and Troubleshooting</a><ul>
 <li><a href="#building-on-a-mac">Building on Mac</a></li>
 <li><a href="#building-on-a-linux-desktop">Building on Linux</a></li>
-<li><a href="#building-at-llnls-computing-center">Building at LLNL</a><ul>
-<li><a href="#toss3-platforms">TOSS3 Platforms</a></li>
-<li><a href="#coral-early-access-platforms">CORAL Early Access Platforms</a></li>
-</ul>
-</li>
-<li><a href="#building-at-nersc">Building at NERSC</a><ul>
-<li><a href="#cori">Cori</a></li>
-<li><a href="#edison">Edison</a></li>
-</ul>
-</li>
-<li><a href="#building-at-alcf">Building at ALCF</a><ul>
-<li><a href="#theta">Theta</a></li>
-</ul>
-</li>
-<li><a href="#building-at-olcf">Building at OLCF</a><ul>
-<li><a href="#titan">Titan</a></li>
-</ul>
-</li>
+<li><a href="#building-at-llnls-computing-center">Building at LLNL</a> on <a href="#lassen">Lassen</a></li>
+<li><a href="#building-at-olcf">Building at OLCF</a> on <a href="#summit">Summit</a></li>
 <li><a href="#installing-cuda">Installing CUDA</a></li>
 </ul>
 </li>
@@ -480,35 +457,41 @@ used in user applications.</p>
 <p>The simplest way to use the Spack installation is through the
 <a href="https://spack.readthedocs.io/en/latest/command_index.html#spack-location"><code>spack location</code></a> command. For example, MFEM-based codes, such as
 the MFEM examples, can be simply built as follows:</p>
-<pre><code class="sh">git clone git@github.com:mfem/mfem.git
-cd mfem; git checkout v3.3.2
+<pre><code class="sh">git clone https://github.com/mfem/mfem.git
+cd mfem; git checkout v4.1
 cd examples
 make CONFIG_MK=`spack location -i mfem`/share/mfem/config.mk
 cd ../miniapps/electromagnetics
 make CONFIG_MK=`spack location -i mfem`/share/mfem/config.mk
 </code></pre>
 
+<p>Note that if you already have multiple Spack installations of MFEM, the above
+<code>spack location</code> commands will fail and you will need to use a more concrete
+spec such as <code>mfem~cuda</code> instead of simply <code>mfem</code>.</p>
 <p>Alternatively, the Spack installation can be exported to a local directory:</p>
 <pre><code class="sh">mkdir ceed
 spack view --verbose symlink ceed/mfem mfem
 </code></pre>
 
+<p>Once again, if you already have multiple Spack installations of MFEM, then you
+will need to use a more concrete spec such as <code>mfem~cuda</code> instead of simply
+<code>mfem</code>.</p>
 <p>The <code>ceed/mfem</code> directory now contains the Spack-built MFEM with all of its
 dependencies (technically, it contains links to all the build files inside the
 <code>./opt/spack/</code> subdirectory for MFEM). In particular, the MFEM library in
 <code>ceed/mfem/lib</code> and the MFEM build configuration file in
 <code>ceed/mfem/share/mfem/config.mk</code>.</p>
 <p>This directory can be used to build the MFEM examples as follows:</p>
-<pre><code class="sh">git clone git@github.com:mfem/mfem.git
-cd mfem; git checkout v3.3.2
-cd examples/petsc
-make CONFIG_MK=../../../ceed/mfem/share/mfem/config.mk
-cd ..
-make CONFIG_MK=../../ceed/mfem/share/mfem/config.mk
+<pre><code class="sh"># Clone MFEM next to the &quot;ceed&quot; directory created above
+git clone https://github.com/mfem/mfem.git
+cd mfem; git checkout v4.1
+cd examples
+make CONFIG_MK=$PWD/../../ceed/mfem/share/mfem/config.mk
 </code></pre>
 
-<p>The MFEM miniapps can further be built with:</p>
-<pre><code class="sh">cd ../miniapps/electromagnetics
+<p>The MFEM electromagnetics miniapps can further be built with:</p>
+<pre><code class="sh"># Continuing from the last directory above: .../mfem/examples
+cd ../miniapps/electromagnetics
 make CONFIG_MK=../../../ceed/mfem/share/mfem/config.mk
 </code></pre>
 
@@ -517,10 +500,10 @@ make CONFIG_MK=../../../ceed/mfem/share/mfem/config.mk
 applications, by building the examples in the current libCEED distribution.</p>
 <p>Using <a href="https://spack.readthedocs.io/en/latest/command_index.html#spack-location"><code>spack location</code></a>, the libCEED examples can be built as
 follows:</p>
-<pre><code class="sh">git clone git@github.com:CEED/libCEED.git
+<pre><code class="sh">git clone https://github.com/CEED/libCEED.git
 cd libCEED/examples/ceed
 make CEED_DIR=`spack location -i libceed`
-./ex1 -ceed /cpu/self
+./ex1-volume -ceed /cpu/self
 </code></pre>
 
 <p>If you have multiple builds of <code>libceed</code> or <code>occa</code> you need to be more specific
@@ -534,35 +517,38 @@ in the above <a href="https://spack.readthedocs.io/en/latest/command_index.html#
 <a href="https://spack.readthedocs.io/en/latest/basic_usage.html#specs-dependencies">spec</a>, e.g. <code>libceed/yb3fvek</code> or just <code>/yb3fvek</code> (and similarly
 for <code>occa</code>).</p>
 <p>The serial, OpenMP, OpenCL and GPU OCCA backends can be used with:</p>
-<pre><code class="sh">./ex1 -ceed /cpu/occa
-./ex1 -ceed /omp/occa
-./ex1 -ceed /ocl/occa
-./ex1 -ceed /gpu/occa
+<pre><code class="sh">./ex1-volume -ceed /cpu/occa
+./ex1-volume -ceed /omp/occa
+./ex1-volume -ceed /ocl/occa
+./ex1-volume -ceed /gpu/occa
 </code></pre>
 
 <p>In order to use the OCCA GPU backend, one needs to install CEED with the <code>cuda</code>
-<a href="https://spack.readthedocs.io/en/latest/basic_usage.html#specs-dependencies">variant</a> enabled, i.e. using the <a href="https://spack.readthedocs.io/en/latest/basic_usage.html#specs-dependencies">spec</a> <code>ceed+cuda</code>:</p>
-<pre><code class="sh">spack install -v ceed+cuda
+<a href="https://spack.readthedocs.io/en/latest/basic_usage.html#specs-dependencies">variant</a> enabled, i.e. using the <a href="https://spack.readthedocs.io/en/latest/basic_usage.html#specs-dependencies">spec</a>
+<code>ceed+cuda ^magma cuda_arch=70 ^mfem cuda_arch=sm_70</code>:</p>
+<pre><code class="sh">spack install -v ceed+cuda ^magma cuda_arch=70 ^mfem cuda_arch=sm_70
 </code></pre>
 
 <p>For more details, see the section <a href="#gpu-demo">GPU demo</a> below.</p>
-<p>With the MAGMA backend, the <code>/cpu/magma</code> and <code>/gpu/magma</code> resource descriptors
-can also be used.</p>
+<p>With the MAGMA backend, the <code>/gpu/magma</code> resource descriptor can also be used.</p>
 <p>The MFEM/libCEED and PETSc/libCEED examples can be further built with:</p>
-<pre><code class="sh">cd examples/mfem
+<pre><code class="sh"># Continue from the last dir above: .../libCEED/examples/ceed
+cd ../mfem
 make CEED_DIR=`spack location -i libceed` MFEM_DIR=`spack location -i mfem`
-./bp1 -no-vis -o 2 -ceed /cpu/self
-./bp3 -no-vis -o 2 -ceed /cpu/self
+./bp1 -no-vis -o 2 -ceed /cpu/self -m `spack location -i mfem`/share/mfem/data/star.mesh
+./bp3 -no-vis -o 2 -ceed /cpu/self -m `spack location -i mfem`/share/mfem/data/star.mesh
 cd ../petsc
 make CEED_DIR=`spack location -i libceed` PETSC_DIR=`spack location -i petsc`
-./bp1 -degree 2 -ceed /cpu/self
+./bps -degree 2 -ceed /cpu/self
 </code></pre>
 
 <p>Note that if <code>PETSC_ARCH</code> is set in your environment, you must either unset it
 or also pass <code>PETSC_ARCH=</code> in the above command.</p>
 <p>Depending on the available backends, additional CEED resource descriptors,
-e.g. <code>petsc/bp1 -degree 2 -ceed /ocl/occa</code> or <code>mfem/bp1 -no-vis --order 2 -ceed
-/gpu/occa</code> can be provided.</p>
+e.g. <code>petsc/bps -problem bp1 -degree 2 -ceed /ocl/occa</code> or <code>mfem/bp1 -no-vis --order 2 -ceed
+/gpu/occa</code> can be provided.
+See <a href="https://libceed.readthedocs.io/en/latest/examples/index.html">libCEED Examples</a> for
+more on available examples/miniapps and how to run them.</p>
 <p>Finally, the Nek5000/libCEED examples can be built as follows:</p>
 <pre><code class="sh">cd ../nek5000
 export CEED_DIR=`spack location -i libceed` NEK5K_DIR=`spack location -i nek5000`
@@ -574,7 +560,7 @@ export CEED_DIR=`spack location -i libceed` NEK5K_DIR=`spack location -i nek5000
 ./run-nek-example.sh -e bp1 -c /cpu/self -n 2 -b 3
 </code></pre>
 
-<p>In the above example, replace <code>openmpi</code> with wahtever the MPI implementation
+<p>In the above example, replace <code>openmpi</code> with whatever the MPI implementation
 you have installed with spack. Also, you can do <code>./run-nek-example.sh -h</code>
 to find out the options supported by the run script.</p>
 <pre><code>options:
@@ -588,7 +574,8 @@ to find out the options supported by the run script.</p>
 <p>More information on running the Nek5000 examples can be found in the libCEED
 <a href="https://github.com/CEED/libCEED/blob/master/examples/nek5000/README.md">documentation</a>.</p>
 <p>Alternatively, one can export the Spack install to a local directory:</p>
-<pre><code class="sh">spack view --verbose symlink ceed/libceed libceed
+<pre><code class="sh"># In the directory that contains the cloned &quot;libCEED&quot; directory
+spack view --verbose symlink ceed/libceed libceed
 spack view --verbose symlink ceed/petsc petsc
 spack view --verbose symlink ceed/mfem mfem
 spack view --verbose symlink ceed/nek5000 nek5000
@@ -596,30 +583,89 @@ spack view --verbose symlink ceed/nek5000 nek5000
 
 <p>and use that to specify the <code>CEED_DIR</code>, <code>MFEM_DIR</code> and <code>PETSC_DIR</code> variables:</p>
 <pre><code class="sh">cd libCEED/examples/ceed
-make CEED_DIR=../../ceed/libceed
-./ex1 -ceed /cpu/self
-cd mfem
+make CEED_DIR=../../../ceed/libceed
+./ex1-volume -ceed /cpu/self
+cd ../mfem
 make CEED_DIR=../../../ceed/libceed MFEM_DIR=../../../ceed/mfem
-./bp1 -no-vis -o 2 -ceed /cpu/self
-./bp3 -no-vis -o 2 -ceed /cpu/self
+./bp1 -no-vis -o 2 -ceed /cpu/self -m ../../../ceed/mfem/share/mfem/data/star.mesh
+./bp3 -no-vis -o 2 -ceed /cpu/self -m ../../../ceed/mfem/share/mfem/data/star.mesh
 cd ../petsc
 make CEED_DIR=../../../ceed/mfem PETSC_DIR=../../../ceed/petsc
-./bp1 -degree 2 -ceed /cpu/self
+./bps -problem bp1 -degree 2 -ceed /cpu/self
 </code></pre>
 
+<h3 id="using-containers">Using Containers</h3>
+<p><a href="https://docker.com">Docker</a> is a popular container system available on Linux, Mac, and Windows.
+After installing Docker, running one command</p>
+<pre><code class="sh">docker run -it --rm -v `pwd`:/ceed jedbrown/ceed bash
+</code></pre>
+
+<p>gives you a development environment with CEED installed via Spack and the host's current working directory mounted at <code>/ceed</code> (the current working directory in the container).
+For example,</p>
+<pre><code class="sh">host$ git clone https://github.com/ceed/libceed
+host$ cd libceed/examples/petsc
+host$ docker run -it --rm -v `pwd`:/ceed jedbrown/ceed bash
+container$ make PETSC_DIR=`spack location -i petsc` CEED_DIR=`spack location -i libceed`
+container$ mpiexec -n 2 ./bp1
+Global dofs: 2541
+Process decomposition: 2 1 1
+Local elements: 1000 = 10 10 10
+Owned dofs: 1210 = 10 11 11
+KSP cg CONVERGED_RTOL iterations 34 rnorm 3.992091e-09
+Pointwise error (max) 1.267540e-02
+</code></pre>
+
+<p>See the <a href="https://github.com/jedbrown/jedbrown-dockerfiles/blob/master/ceed/Dockerfile">Dockerfile</a> to understand how this image was prepared and/or create your own images.</p>
+<h4 id="nerscs-shifter">NERSC's Shifter</h4>
+<p>Containers also work at NERSC using <a href="https://docs.nersc.gov/programming/shifter/how-to-use/">Shifter</a>, a container system designed for HPC.
+To pull the latest CEED image, use</p>
+<pre><code class="sh">shifterimg pull docker:jedbrown/ceed:4.0
+</code></pre>
+
+<p>then build code using <code>shifter</code> commands in place of the <code>docker</code> commands above, e.g.,</p>
+<pre><code class="sh">host$ shifter --image=docker:jedbrown/ceed:4.0 bash
+container$ make PETSC_DIR=`spack location -i petsc` CEED_DIR=`spack location -i libceed`
+</code></pre>
+
+<p>where we see that <code>shifter</code> defaults behave similarly to the options we had to give manually for <code>docker</code>.
+Batch jobs can be submitted via</p>
+<pre><code class="sh">sbatch --image docker:jedbrown/ceed:latest ...
+</code></pre>
+
+<p>with the following in your submission script:</p>
+<pre><code class="sh">srun -n 64 shifter ./your-petsc-app
+</code></pre>
+
+<h4 id="singularity">Singularity</h4>
+<p><a href="https://www.sylabs.io/singularity/">Singularity</a> is another HPC container system with usage similar to Shifter above.</p>
+<pre><code class="sh">host$ git clone https://github.com/ceed/libceed
+host$ cd libceed
+host$ singularity shell docker://jedbrown/ceed:latest
+Singularity&gt; make PETSC_DIR=`spack location -i petsc` CEED_DIR=`spack location -i libceed` build/petsc-bps
+</code></pre>
+
+<p>One can run local jobs in the container:</p>
+<pre><code class="sh">Singularity&gt; mpiexec -n 4 build/petsc-bps -problem bp3 -benchmark
+</code></pre>
+
+<p>or submit batch jobs from the host with the likes of:</p>
+<pre><code class="sh">srun -n 64 singularity exec docker://jedbrown/ceed:latest build/petsc-bps -problem bp3 -benchmark
+</code></pre>
+
+<p>(see instructions for your batch system).</p>
 <h3 id="gpu-demo">GPU demo</h3>
 <p>Below is the full set of commands to install the CEED distribution on a
 GPU-capable machine and then use its libCEED GPU kernels to accelerate MFEM,
 PETSc and Nek examples. Note that these are very different codes (C++, C, F77)
-which can nevertheless take advanatage through libCEED of a common set of GPU
+which can nevertheless take advantage through libCEED of a common set of GPU
 kernels.</p>
 <p>The <code>setenv</code> commands below assume <code>csh</code>/<code>tcsh</code>. We strongly recommend to add a
 <code>packages.yaml</code> file in order to avoid long compile times, see <a href="#tips-and-troubleshooting">Tips and
 Troubleshooting</a>.</p>
-<pre><code class="sh"># Install CEED 1.0 distribution via Spack
-git clone git@github.com:spack/spack.git
+<pre><code class="sh"># Install CEED 4.0 distribution via Spack
+git clone https://github.com/spack/spack.git
 cd spack
-spack install ceed+cuda
+spack install ceed+cuda ^magma cuda_arch=70 ^mfem cuda_arch=sm_70
 
 # Setup CEED component directories
 setenv CEED_DIR  `spack location -i libceed`
@@ -631,36 +677,36 @@ setenv NEK5K_DIR `spack location -i nek5000`
 # rm -rf ~/.occa
 
 # Clone libCEED examples directory as proxy for libCEED-based codes
-git clone git@github.com:CEED/libCEED.git
+git clone https://github.com/CEED/libCEED.git
 mv libCEED/examples ceed-examples
 rm -rf libCEED
 
 # libCEED examples on CPU and GPU
 cd ceed-examples/ceed
 make
-./ex1 -ceed /cpu/self
-./ex1 -ceed /gpu/occa
+./ex1-volume -ceed /cpu/self/ref/blocked
+./ex1-volume -ceed /gpu/cuda/gen
 cd ../..
 
 # MFEM+libCEED examples on CPU and GPU
 cd ceed-examples/mfem
-make
-./bp1 -ceed /cpu/self -no-vis
-./bp1 -ceed /gpu/occa -no-vis
+make OPT= CEED_LIBS=
+./bp1 -ceed /cpu/self/ref/blocked -no-vis -m $MFEM_DIR/share/mfem/data/star.mesh
+./bp1 -ceed /gpu/cuda/gen -no-vis -m $MFEM_DIR/share/mfem/data/star.mesh
 cd ../..
 
 # PETSc+libCEED examples on CPU and GPU
 cd ceed-examples/petsc
 make
-./bp1 -ceed /cpu/self
-./bp1 -ceed /gpu/occa
+./bps -problem bp1 -ceed /cpu/self/ref/blocked
+./bps -problem bp1 -ceed /gpu/cuda/gen
 cd ../..
 
 # Nek+libCEED examples on CPU and GPU
 cd ceed-examples/nek5000
 ./make-nek-examples.sh
-./run-nek-example.sh -ceed /cpu/self -b 3
-./run-nek-example.sh -ceed /gpu/occa -b 3
+./run-nek-example.sh -ceed /cpu/self/ref/blocked -b 3
+./run-nek-example.sh -ceed /gpu/cuda/gen -b 3
 cd ../..
 </code></pre>
 
@@ -676,9 +722,9 @@ find useful:</p>
 <li>
 <p>Spack is a set of Python scripts so there is nothing to install!
   Just download with <code>git clone https://github.com/spack/spack.git</code> and add
-  <code>spack/bin</code> to your path with the following commands:<br>
-  <code>. share/spack/setup-env.sh</code> for <code>bash</code>/<code>zsh</code> or <br>
-  <code>setenv SPACK_ROOT</code>pwd<code>; source $SPACK_ROOT/share/spack/setup-env.csh</code>
+  <code>spack/bin</code> to your path with the following commands:
+  <code>. share/spack/setup-env.sh</code> for <code>bash</code>/<code>zsh</code> or
+  <code>setenv SPACK_ROOT `pwd`; source $SPACK_ROOT/share/spack/setup-env.csh</code>
   for <code>csh</code>/<code>tcsh</code>.</p>
 </li>
 <li>
@@ -734,8 +780,8 @@ find useful:</p>
 </ul>
 <h2 id="tips-and-troubleshooting">Tips and Troubleshooting</h2>
 <h3 id="building-on-a-mac">Building on a Mac</h3>
-<p>The file <a href="../spack/ceed1-darwin-x86_64-packages.yaml">ceed1-darwin-x86_64-packages.yaml</a> provides a
-sample <code>packages.yaml</code> file based on <a href="https://brew.sh/">Homebrew</a>, that should work on
+<p>The file <a href="../spack/ceed3-darwin-highsierra-x86_64-packages.yaml">ceed3-darwin-highsierra-x86_64-packages.yaml</a>
+provides a sample <code>packages.yaml</code> file based on <a href="https://brew.sh/">Homebrew</a>, that should work on
 most Macs. (You can use MacPorts instead of Homebrew if you prefer.)</p>
 <pre><code class="yaml">packages:
     all:
@@ -767,6 +813,12 @@ most Macs. (You can use MacPorts instead of Homebrew if you prefer.)</p>
             libxt@system: /opt/X11
         version: [system]
         buildable: False
+    xproto:
+        paths:
+            # see /opt/X11/lib/pkgconfig/xproto.pc
+            xproto@7.0.31: /opt/X11
+        version: [7.0.31]
+        buildable: False
     python:
         paths:
             python@2.7.10: /usr
@@ -789,9 +841,9 @@ X. The <code>cuda</code> package is provided by NVIDIA and should be installed s
 by downloading it from <a href="https://developer.nvidia.com">NVIDIA</a>. We are using the Clang compiler,
 OpenMPI, and Apple's BLAS/LAPACK accelerator library.</p>
 <h3 id="building-on-a-linux-desktop">Building on a Linux Desktop</h3>
-<p>The file <a href="../spack/ceed1-linux-rhel7-x86_64-packages.yaml">ceed1-linux-rhel7-x86_64-packages.yaml</a>
-provides a sample <code>packages.yaml</code> file that can be adapted to work on most Linux
-desktops (this particular file was tested on RHEL7).</p>
+<p>The file <a href="../spack/ceed3-linux-rhel7-x86_64-packages.yaml">ceed3-linux-rhel7-x86_64-packages.yaml</a>
+provides a sample <code>packages.yaml</code> file that can be adapted to work on a RHEL7 Linux
+desktop</p>
 <pre><code class="yaml">packages:
     all:
         compiler: [gcc]
@@ -826,6 +878,11 @@ desktops (this particular file was tested on RHEL7).</p>
             libxt@system: /usr
         version: [system]
         buildable: False
+    xproto:
+        paths:
+            xproto@7.0.32: /usr
+        version: [7.0.32]
+        buildable: False
     python:
         paths:
              python@2.7.14: /usr
@@ -838,32 +895,46 @@ desktops (this particular file was tested on RHEL7).</p>
 
 <p>The above file uses user-installed OpenMPI, CMake and CUDA packages, with the
 rest of the CEED prerequisites installed via the <a href="https://en.wikipedia.org/wiki/Yellow_Dog_Updater,_Modified">yum package manager</a>.</p>
-<h3 id="building-at-llnls-computing-center">Building at LLNL's Computing Center</h3>
-<h4 id="toss3-platforms">TOSS3 Platforms</h4>
-<p>The file <a href="../spack/ceed1-toss_3_x86_64_ib-packages.yaml">ceed1-toss_3_x86_64_ib-packages.yaml</a> is an
-example of a <code>packages.yaml</code> file for the TOSS3 system type at LLNL's <a href="https://hpc.llnl.gov/hardware/platforms">Livermore
-Computing</a> center.</p>
+<p>A very similar file, <a href="../spack/ceed3-ubuntu19.10-packages.yaml">ceed3-ubuntu19.10-packages.yaml</a>
+provides Spack configuration for the Ubuntu distribution:</p>
 <pre><code class="yaml">packages:
     all:
-        compiler: [intel, gcc, clang, pgi]
+        compiler: [gcc]
         providers:
-            mpi: [mvapich2, mpich, openmpi]
-            blas: [intel-mkl, openblas]
-            lapack: [intel-mkl, openblas]
-    intel-mkl:
+            mpi: [mpich]
+            blas: [blis]
+            lapack: [netlib-lapack]
+    blis:
         paths:
-            intel-mkl@2018.0.128: /usr/tce/packages/mkl/mkl-2018.0
+            blis@0.6.0: /usr/lib
         buildable: False
-    mvapich2:
+    netlib-lapack:
         paths:
-            mvapich2@2.2%intel@18.0.1: /usr/tce/packages/mvapich2/mvapich2-2.2-intel-18.0.1
-            mvapich2@2.2%gcc@4.9.3: /usr/tce/packages/mvapich2/mvapich2-2.2-gcc-4.9.3
-            mvapich2@2.2%gcc@7.1.0: /usr/tce/packages/mvapich2/mvapich2-2.2-gcc-7.1.0
+            netlib-lapack@3.8.0: /usr/lib
+       variants: +external-blas~lapacke
+        buildable: False
+    openblas:
+        buildable: False
+    libflame:
+        buildable: False
+    veclibfort:
+        buildable: False
+    intel-parallel-studio:
+        buildable: False
+    intel-mkl:
+        buildable: False
+    cray-libsci:
+        buildable: False
+    atlas:
+        buildable: False
+    mpich:
+        paths:
+            mpich@3.3.2: /usr/local
         buildable: False
 
     cmake:
         paths:
-            cmake@3.8.2: /usr/tce/packages/cmake/cmake-3.8.2
+            cmake@3.13.4: /usr
         buildable: False
     libx11:
         paths:
@@ -875,31 +946,35 @@ Computing</a> center.</p>
             libxt@system: /usr
         version: [system]
         buildable: False
+    xproto:
+        paths: # See /usr/share/pkgconfig/xproto.pc for version
+            xproto@7.0.32: /usr
+        buildable: False
     python:
         paths:
-            python@2.7.14: /usr/tce/packages/python/python-2.7.14
+             python@3.7.5: /usr
         buildable: False
     zlib:
         paths:
-            zlib@1.2.7: /usr
+            zlib@1.2.11: /usr/lib
         buildable: False
 </code></pre>
 
-<p>The above file can be used to build CEED with different compilers (Intel being
-the default), for example:</p>
-<pre><code class="sh">spack install ceed%gcc~petsc
+<p>In this case we use GCC and other development packages via <code>apt install</code> and
+with MPICH installed separately (as needed to use containerized HPC environments
+like Shifter and Singularity). You can use</p>
+<pre><code class="sh">docker pull jedbrown/ceed-base
 </code></pre>
 
-<p>A corresponding <code>compilers.yaml</code> file for the TOSS3 platform can be found here:
-<a href="../spack/ceed1-toss_3_x86_64_ib-compilers.yaml">ceed1-toss_3_x86_64_ib-compilers.yaml</a>.</p>
-<h4 id="coral-early-access-platforms">CORAL Early Access Platforms</h4>
-<p>The file <a href="../spack/ceed1-blueos_3_ppc64le_ib-packages.yaml">ceed1-blueos_3_ppc64le_ib-packages.yaml</a>
-is an example of a <code>packages.yaml</code> file for the CORAL early access systems at
-LLNL's <a href="https://hpc.llnl.gov/hardware/platforms">Livermore Computing</a> center (this particular file is for the
-Ray machine).</p>
+<p>to get a build environment with this <code>packages.yaml</code> and prerequisites for <code>spack install ceed</code>.</p>
+<h3 id="building-at-llnls-computing-center">Building at LLNL's Computing Center</h3>
+<h4 id="lassen">Lassen</h4>
+<p>The file <a href="../spack/ceed3-lassen-packages.yaml">ceed3-lassen-packages.yaml</a> is an
+example of a <code>packages.yaml</code> file for the Lassen system at LLNL's <a href="https://hpc.llnl.gov/hardware/platforms">Livermore
+Computing</a> center, which is similar to the <a href="https://hpc.llnl.gov/hardware/platforms/sierra">Sierra</a> supercomputer.</p>
 <pre><code class="yaml">packages:
     all:
-        compiler: [xl_r, xl, gcc, clang, pgi]
+        compiler: [xl_r, xl, gcc]
         providers:
             mpi: [spectrum-mpi]
             blas: [essl]
@@ -924,22 +999,20 @@ Ray machine).</p>
         variants: +external-blas~lapacke
     spectrum-mpi:
         paths:
-            spectrum-mpi@2017-04-03%xl_r@13.1.7-beta3: /usr/tce/packages/spectrum-mpi/spectrum-mpi-2017.04.03-xl-beta-2018.03.21
-            spectrum-mpi@2017-04-03%xl_r@13.1.7-beta2: /usr/tce/packages/spectrum-mpi/spectrum-mpi-2017.04.03-xl-beta-2018.02.22
-            spectrum-mpi@2017-04-03%gcc@4.9.3: /usr/tce/packages/spectrum-mpi/spectrum-mpi-2017.04.03-gcc-4.9.3
-            spectrum-mpi@2017-04-03%clang@3.8.0: /usr/tce/packages/spectrum-mpi/spectrum-mpi-2017.04.03-clang-coral-2018.02.09
+            spectrum-mpi@2019-01-30%xl_r@16.1.1: /usr/tce/packages/spectrum-mpi/spectrum-mpi-2019.01.30-xl-2019.02.07
+            spectrum-mpi@2019-01-30%gcc@4.9.3: /usr/tce/packages/spectrum-mpi/spectrum-mpi-2019.01.30-gcc-4.9.3
+            spectrum-mpi@2019-01-30%gcc@7.3.1: /usr/tce/packages/spectrum-mpi/spectrum-mpi-2019.01.30-gcc-7.3.1
         buildable: False
 
     cmake:
         paths:
-            cmake@3.9.2: /usr/tce/packages/cmake/cmake-3.9.2
-        version: [3.9.2]
+            cmake@3.14.5: /usr/tce/packages/cmake/cmake-3.14.5
+        version: [3.14.5]
         buildable: False
     cuda:
         paths:
-            cuda@9.0.176: /usr/tce/packages/cuda/cuda-9.0.176
-            cuda@9.1.85: /usr/tce/packages/cuda/cuda-9.1.85
-        version: [9.0.176, 9.1.85]
+            cuda@10.1.243: /usr/tce/packages/cuda/cuda-10.1.243
+        version: [10.1.243]
         buildable: False
     libx11:
         paths:
@@ -951,206 +1024,63 @@ Ray machine).</p>
             libxt@system: /usr
         version: [system]
         buildable: False
+    xproto:
+        paths:
+            # see /usr/share/pkgconfig/xproto.pc
+            xproto@7.0.31: /usr
+        version: [7.0.31]
+        buildable: False
     python:
         paths:
-            python@2.7.14: /usr/tcetmp/packages/python/python-2.7.14
+            python@2.7.14: /usr/tce/packages/python/python-2.7.14
         version: [2.7.14]
         buildable: False
 </code></pre>
 
-<p>A corresponding <code>compilers.yaml</code> file can be found here:
-<a href="../spack/ceed1-blueos_3_ppc64le_ib-compilers.yaml">ceed1-blueos_3_ppc64le_ib-compilers.yaml</a>.</p>
-<h3 id="building-at-nersc">Building at NERSC</h3>
-<h4 id="cori">Cori</h4>
-<p>The file <a href="../spack/ceed1-cori-packages.yaml">ceed1-cori-packages.yaml</a> is an example of a
-<code>packages.yaml</code> file for the Cori system at <a href="http://www.nersc.gov">NERSC</a>.</p>
-<pre><code class="yaml">packages:
-    all:
-        compiler: [gcc@5.2.0, intel/16.0.3.210]
-        providers:
-            mpi: [mpich]
-    mpich:
-        modules:
-            mpich@7.6.0%gcc@5.2.0 arch=cray-CNL-haswell: cray-mpich
-            mpich@7.6.0%intel@16.0.3.210 arch=cray-CNL-haswell: cray-mpich
-        buildable: False
-
-    cmake:
-        modules:
-            cmake@3.8.2%gcc@5.2.0 arch=cray-CNL-haswell: cmake
-            cmake@3.8.2%intel@16.0.3.210 arch=cray-CNL-haswell: cmake
-        buildable: False
-    libx11:
-        paths:
-            libx11@system: /usr
-        version: [system]
-        buildable: False
-    libxt:
-        paths:
-            libxt@system: /usr
-        version: [system]
-        buildable: False
-    python:
-        paths:
-            python@2.7.14%gcc@5.2.0 arch=cray-CNL-haswell: /usr
-            python@2.7.14%intel@16.0.3.210 arch=cray-CNL-haswell: /usr
-        buildable: False
+<p>The above file can be used to build CEED with different compilers (xl being
+the default), for example:</p>
+<pre><code class="sh">spack install ceed%gcc~petsc
 </code></pre>
 
-<h4 id="edison">Edison</h4>
-<p>The file <a href="../spack/ceed1-edison-packages.yaml">ceed1-edison-packages.yaml</a> is an example of a
-<code>packages.yaml</code> file for the Edison system at <a href="http://www.nersc.gov">NERSC</a>.</p>
-<pre><code class="yaml">packages:
-    all:
-        compiler: [gcc@5.2.0, intel/16.0.3.210]
-        providers:
-            mpi: [mpich]
-    mpich:
-        modules:
-            mpich@7.6.0%gcc@5.2.0 arch=cray-CNL-ivybridge: cray-mpich
-            mpich@7.6.0%intel@16.0.3.210 arch=cray-CNL-ivybridge: cray-mpich
-        buildable: False
-
-    cmake:
-        modules:
-            cmake@3.8.2%gcc@5.2.0 arch=cray-CNL-ivybridge: cmake
-            cmake@3.8.2%intel@16.0.3.210 arch=cray-CNL-ivybridge: cmake
-        buildable: False
-    libx11:
-        paths:
-            libx11@system: /usr
-        version: [system]
-        buildable: False
-    libxt:
-        paths:
-            libxt@system: /usr
-        version: [system]
-        buildable: False
-    python:
-        paths:
-            python@2.7.14%gcc@5.2.0 arch=cray-CNL-ivybridge: /usr
-            python@2.7.14%intel@16.0.3.210 arch=cray-CNL-ivybridge: /usr
-        buildable: False
-</code></pre>
-
-<h3 id="building-at-alcf">Building at ALCF</h3>
-<h4 id="theta">Theta</h4>
-<p>The file <a href="../spack/ceed1-theta-packages.yaml">ceed1-theta-packages.yaml</a> is an example of a
-<code>packages.yaml</code> file for the Theta system at <a href="https://www.alcf.anl.gov">ALCF</a>.</p>
-<pre><code class="yaml">packages:
-    all:
-        compiler: [intel@16.0.3.210, gcc@5.3.0]
-        providers:
-            mpi: [mpich]
-    intel-mkl:
-        paths:
-            intel-mkl@16.0.3.210%intel@16.0.3.210 arch=cray-CNL-mic_knl: /opt/intel
-        buildable: False
-    mpich:
-        modules:
-            # requires 'module load cce' otherwise gives parsing error
-            mpich@7.6.3%gcc@5.3.0 arch=cray-CNL-mic_knl: cray-mpich/7.6.3
-            mpich@7.6.3%intel@16.0.3.210 arch=cray-CNL-mic_knl: cray-mpich/7.6.3
-        buildable: False
-
-    cmake:
-        paths:
-            cmake@3.5.2%gcc@5.3.0 arch=cray-CNL-mic_knl: /usr
-            cmake@3.5.2%intel@16.0.3.210 arch=cray-CNL-mic_knl: /usr
-        buildable: False
-    libx11:
-        paths:
-            libx11@system: /usr
-        version: [system]
-        buildable: False
-    libxt:
-        paths:
-            libxt@system: /usr
-        version: [system]
-        buildable: False
-    python:
-        paths:
-            python@2.7.13%gcc@5.3.0 arch=cray-CNL-mic_knl: /usr
-            python@2.7.13%intel@16.0.3.210 arch=cray-CNL-mic_knl: /usr
-        buildable: False
-
-</code></pre>
-
+<p>A corresponding <code>compilers.yaml</code> file for Lassen can be found here:
+<a href="../spack/ceed3-lassen-compilers.yaml">ceed3-lassen-compilers.yaml</a>.</p>
 <h3 id="building-at-olcf">Building at OLCF</h3>
-<h4 id="titan">Titan</h4>
-<p>The file <a href="../spack/ceed1-titan-packages.yaml">ceed1-titan-packages.yaml</a> is an example of a
-<code>packages.yaml</code> file for the Titan system at <a href="https://www.olcf.ornl.gov">OLCF</a>.</p>
-<pre><code class="yaml">packages:
-    all:
-        compiler: [cce/8.6.4]
-        providers:
-            mpi: [mpich]
-    mpich:
-        modules:
-            mpich@7.6.3%cce@8.6.4 arch=cray-CNL-interlagos: cray-mpich
-        buildable: False
-
-    cmake:
-        paths:
-            cmake@3.9.0%cce@8.6.4: /autofs/nccs-svm1_sw/titan/.swci/0-login/opt/spack/20170612/linux-suse_linux11-x86_64/gcc-4.3.4/cmake-3.9.0-owxiriblogovogl5zbrg45ulm3ln34cx/bin
-        buildable: False
-    libx11:
-        paths:
-            libx11@system: /usr
-        version: [system]
-        buildable: False
-    libxt:
-        paths:
-            libxt@system: /usr
-        version: [system]
-        buildable: False
-    python:
-        modules:
-            python@2.7.9%cce@8.6.4 arch=cray-CNL-interlagos: python
-        buildable: False
-    zlib:
-        paths:
-            zlib@1.2.17: /usr/lib64
-        buildable: False
+<h4 id="summit">Summit</h4>
+<p>The file <a href="../spack/ceed3-summit-packages.yaml">ceed3-summit-packages.yaml</a> is an example of a
+<code>packages.yaml</code> file for the Summit system at <a href="https://www.olcf.ornl.gov">OLCF</a>.</p>
+<p>The packages.yaml file gives updated locations for spectrum-mpi and other packeges. Then one has to make sure other modules like xalt are not loaded because xalt provides a conflicting version of "ld" which breaks the build. One may have to load a gcc compiler, e.g., version 6.4.0, and configure it in spack as a compiler.  Then one can compile ceed and dependencies using netlib-lapack as the blas and lapack provider. Here are the commands to do the full compile:</p>
+<pre><code class="sh">git clone https://github.com/spack/spack
+source spack/share/spack/setup-env.sh
+cp packages.yaml spack/etc/spack/
+module purge
+module load gcc/6.4.0 spectrum-mpi/10.3.1.2-20200121 cmake netlib-lapack netlib-scalapack
+spack compiler find
+./bin/spack install ceed%gcc@6.4.0
 </code></pre>
 
-<p>The default install of curl on Titan does not support ssl, so you need to add
-the path of a newer install to your <code>PATH</code>:</p>
-<pre><code class="sh">module show curl  # get the /path/to/curl/bin/dir
-export PATH=/path/to/curl/bin/dir:$PATH
-</code></pre>
-
-<p>Additional issues on Titan: Spack does not support <code>cray-libsci</code> for BLAS/LAPACK
-(there is no 'dummy package' for <a href="https://github.com/spack/spack/pull/3122">cray-libsci yet</a>); the Cray
-compiler, <code>cce</code>, fails to build <code>openblas</code> (it does not e.g.  recognize the
-<code>-m64</code> flag, there may be other issues).</p>
-<p>With these caveats, the CEED metapackage can be installed with:</p>
-<pre><code class="sh">./bin/spack --debug --verbose install -v ceed%pgi@17.9.0 target=interlagos
-</code></pre>
-
-<p>Note that <code>spack</code> will hang if you redirect <code>std[err|out]</code> to a file (<code>&amp;&gt; log</code>)
-and background the command (by appending an <code>&amp;</code>).</p>
 <h3 id="installing-cuda">Installing CUDA</h3>
 <ul>
 <li>
-<p>Several CEED packages depend on CUDA: OCCA, MAGMA and libCEED.</p>
+<p>Several CEED packages can use CUDA: OCCA, MAGMA, libCEED, PETSc, and MFEM.</p>
 </li>
 <li>
-<p>To build these, add the <code>cuda</code> variant to the Spack build:
-  <code>sh
-  spack install ceed+cuda</code></p>
+<p>To build these, add the <code>cuda</code> variant to the Spack build while specifying the
+  desired CUDA architecture for MAGMA and MFEM:</p>
 </li>
-<li>
-<p>You will need to have the NVIDIA CUDA SDK and driver installed on your system,
+</ul>
+<pre><code class="sh">spack install ceed+cuda ^magma cuda_arch=70 ^mfem cuda_arch=sm_70
+</code></pre>
+
+<ul>
+<li>You will need to have the NVIDIA CUDA SDK and driver installed on your system,
   see <a href="https://developer.nvidia.com">developer.nvidia.com</a>, and specify it in the <code>packages.yaml</code>
   file. See, for example, the <code>cuda</code> section in <a href="#building-on-a-mac">Building on a Mac</a>,
-  or the <a href="../spack/ceed1-linux-rhel7-x86_64-packages.yaml">ceed1-linux-rhel7-x86_64-packages.yaml</a> file.</p>
-</li>
+  or the <a href="../spack/ceed3-linux-rhel7-x86_64-packages.yaml">ceed3-linux-rhel7-x86_64-packages.yaml</a> file.</li>
 </ul></div>
             <div class="col-md-3 hidden-xs hidden-sm"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
     
-        <li class="main active"><a href="#ceed-10-software-distribution">CEED 1.0 Software Distribution</a></li>
+        <li class="main active"><a href="#ceed-40-software-distribution">CEED 4.0 Software Distribution</a></li>
         
 	    
                 <li><a href="#simple-installation">Simple Installation</a></li>

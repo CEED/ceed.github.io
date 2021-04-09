@@ -61,6 +61,11 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
+     <loc>http://ceed.exascaleproject.org/ceed-4.0/</loc>
+     <lastmod>2021-04-08</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
      <loc>http://ceed.exascaleproject.org/ceed-code/</loc>
      <lastmod>2021-04-08</lastmod>
      <changefreq>daily</changefreq>
