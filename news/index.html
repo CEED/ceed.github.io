@@ -296,6 +296,10 @@
     
         <li class="main active"><a href="#news">News</a></li>
         
+            <li><a href="#ceed-and-ecp-featured-in-str-cover-story">CEED and ECP featured in S&amp;TR cover story</a></li>
+        
+            <li><a href="#ecp-annual-meeting-video-highlights">ECP annual meeting video highlights</a></li>
+        
             <li><a href="#software-release-mfem-v42">Software release: MFEM v4.2</a></li>
         
             <li><a href="#software-release-libceed-v07">Software release: libCEED v0.7</a></li>
@@ -425,6 +429,42 @@
             <div class="col-md-9" role="main">
 
 <h1 id="news">News</h1>
+<h3 id="ceed-and-ecp-featured-in-str-cover-story">CEED and ECP featured in <em>S&amp;TR</em> cover story</h3>
+<p>The latest issue of LLNL's <em>Science &amp; Technology Review</em> magazine showcases CEED work in the
+cover story. The cover art shows an advection simulation powered by
+<a href="../mfem/">MFEM</a> and <a href="https://glvis.org/">GLVis</a>.</p>
+<ul>
+<li><a href="https://str.llnl.gov/2021-02">Full issue</a> (and <a href="https://str.llnl.gov/content/pages/2021-02/pdf/02.21.pdf">PDF version</a>)</li>
+<li>Commentary: <a href="https://str.llnl.gov/2021-02/comfeb21">To Exascale and Beyond</a> by LLNL Computing associate director Bruce Hendrickson</li>
+<li>Cover story: <a href="https://str.llnl.gov/2021-02/diachin">The Exascale Software Portfolio</a> featuring ECP deputy director Lori Diachin and CEED director Tzanio Kolev, among others</li>
+</ul>
+<p><img src="../img/str-exascale.png" align="right" style="padding-left:15px;margin:5px" alt="S&TR cover image with advection simulation"></p>
+<p><strong>Abstract:</strong> As a leader in high-performance computing, LLNL wields a large portion of the DOE's
+HPC resources to advance national security and foundational science. The Sierra supercomputer supports
+the National Nuclear Security Administration's Stockpile Stewardship Program by enabling more accurate,
+more predictive simulations. This generation of computers is known as heterogeneous, or hybrid, because
+their architectures combine graphics processing units and central processing units to achieve peak
+performance well above 100 petaflops. (A petaflop is 10^15 floating-point operations per second.) The
+next generation's processing capability&mdash;at least an exaflop (10^18 flops)&mdash;will be many times
+greater. HPC software must adjust to these new hardware standards. As the exascale era begins, two major
+initiatives leverage and expand Livermore's HPC capabilities, with a spotlight here on software. The
+<a href="https://www.exascaleproject.org/">Exascale Computing Project</a>, a joint effort between the DOE Office
+of Science and NNSA, brings together several national laboratories to address many hardware, software,
+and application challenges inherent in the organizations' scientific and national security missions.
+Within the Laboratory, the <a href="https://software.llnl.gov/radiuss/">RADIUSS project</a> aims to benefit scientific
+applications through a robust software infrastructure.</p>
+<hr />
+<h3 id="ecp-annual-meeting-video-highlights">ECP annual meeting video highlights</h3>
+<p>The ECP's <a href="https://ecpannualmeeting.com/overview.php">annual meeting</a> was held virtually
+this year on April 12-16. Several sessions are available in a
+<a href="https://www.youtube.com/playlist?list=PLF590mYJUDzLEalO05fJHX99cbbUOd-1e">YouTube playlist</a>.
+The <strong>Characterizing Performance Improvements in the Center for Efficient Exascale Discretizations</strong>
+session featured speakers from ECP Application Development areas&mdash;including Tzanio Kolev for
+CEED&mdash;to discuss how they set figures of merit, determined key performance parameters, and
+calculated efficiency of codes. The video concludes with a panel discussion of the speakers.
+Runtime is 1:00:04; the CEED section begins at 25:05.</p>
+<p><img alt="YouTube" src="w6bo48SaINU" /></p>
+<hr />
 <h3 id="software-release-mfem-v42">Software release: MFEM v4.2</h3>
 <p>Version 4.2 of <a href="../mfem/">MFEM</a> was released on October 30, 2020. Some of the new
 additions in this release are:</p>
@@ -456,7 +496,7 @@ at <a href="http://mfem.org/">http://mfem.org</a> and the full
 </ul>
 <hr />
 <h3 id="mfem-rd100-finalist">MFEM R&amp;D100 finalist</h3>
-<p>The MFEM finite element library was selected as a finalist for this year’s
+<p>The MFEM finite element library was selected as a finalist for this year's
 <a href="https://www.rdworldonline.com/finalists-for-2020-rd-100-awards-are-unveiled/">R&amp;D100 awards</a> in the
 Software/Services category for its development of advanced discretization algorithms for HPC applications.</p>
 <hr />
@@ -737,7 +777,6 @@ full <a href="https://raw.githubusercontent.com/mfem/mfem/master/CHANGELOG">CHAN
 <th>Platform</th>
 <th>Architecture</th>
 <th>Spack Configuration</th>
-<th></th>
 </tr>
 </thead>
 <tbody>
@@ -745,49 +784,41 @@ full <a href="https://raw.githubusercontent.com/mfem/mfem/master/CHANGELOG">CHAN
 <td><strong>Mac</strong></td>
 <td><code>darwin-x86_64</code></td>
 <td><a href="../spack/ceed1-darwin-x86_64-packages.yaml">packages</a> <i class="fa fa-cloud-download"></i></td>
-<td></td>
 </tr>
 <tr>
 <td><strong>Linux</strong> (RHEL7)</td>
 <td><code>linux-rhel7-x86_64</code></td>
 <td><a href="../spack/ceed1-linux-rhel7-x86_64-packages.yaml">packages</a> <i class="fa fa-cloud-download"></i></td>
-<td></td>
 </tr>
 <tr>
 <td><strong>Cori</strong> (NERSC)</td>
 <td><code>cray-CNL-haswell</code></td>
 <td><a href="../spack/ceed1-cori-packages.yaml">packages</a> <i class="fa fa-cloud-download"></i></td>
-<td></td>
 </tr>
 <tr>
 <td><strong>Edison</strong> (NERSC)</td>
 <td><code>cray-CNL-ivybridge</code></td>
 <td><a href="../spack/ceed1-edison-packages.yaml">packages</a> <i class="fa fa-cloud-download"></i></td>
-<td></td>
 </tr>
 <tr>
 <td><strong>Theta</strong> (ALCF)</td>
 <td><code>cray-CNL-mic_knl</code></td>
 <td><a href="../spack/ceed1-theta-packages.yaml">packages</a> <i class="fa fa-cloud-download"></i></td>
-<td></td>
 </tr>
 <tr>
 <td><strong>Titan</strong> (OLCF)</td>
 <td><code>cray-CNL-interlagos</code></td>
 <td><a href="../spack/ceed1-titan-packages.yaml">packages</a> <i class="fa fa-cloud-download"></i></td>
-<td></td>
 </tr>
 <tr>
 <td><strong>CORAL-EA</strong> (LLNL)</td>
 <td><code>blueos_3_ppc64le_ib</code></td>
 <td><a href="../spack/ceed1-blueos_3_ppc64le_ib-packages.yaml">packages</a> <i class="fa fa-cloud-download"></i> &nbsp; <a href="../spack/ceed1-blueos_3_ppc64le_ib-compilers.yaml">compilers</a> <i class="fa fa-cloud-download"></i></td>
-<td></td>
 </tr>
 <tr>
 <td><strong>TOSS3</strong> (LLNL)</td>
 <td><code>toss_3_x86_64_ib</code></td>
 <td><a href="../spack/ceed1-toss_3_x86_64_ib-packages.yaml">packages</a> <i class="fa fa-cloud-download"></i> &nbsp; <a href="../spack/ceed1-toss_3_x86_64_ib-compilers.yaml">compilers</a> <i class="fa fa-cloud-download"></i></td>
-<td></td>
 </tr>
 </tbody>
 </table>
@@ -1160,7 +1191,7 @@ open-source simulation-software package that delivers highly accurate solutions
 for a wide range of scientific applications including electromagnetics, quantum
 optics, fluid flow, thermal convection, combustion and magnetohydrodynamics. It
 features state-of-the-art, scalable, high-order algorithms that are fast and
-efficient on platforms ranging from laptops to the world’s fastest
+efficient on platforms ranging from laptops to the world's fastest
 computers. The size of the physical phenomena that can be simulated with this
 package ranges from quantum dots for nanoscale devices to accretion disks
 surrounding black holes. NekCEM provides simulation capabilities for the
@@ -1174,6 +1205,10 @@ for more information.</p></div>
     <ul class="nav bs-sidenav">
     
         <li class="main active"><a href="#news">News</a></li>
+        
+            <li><a href="#ceed-and-ecp-featured-in-str-cover-story">CEED and ECP featured in S&amp;TR cover story</a></li>
+        
+            <li><a href="#ecp-annual-meeting-video-highlights">ECP annual meeting video highlights</a></li>
         
             <li><a href="#software-release-mfem-v42">Software release: MFEM v4.2</a></li>
         
