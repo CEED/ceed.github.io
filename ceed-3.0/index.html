@@ -423,17 +423,20 @@ please start a discussion on the GitHub <a href="https://github.com/orgs/spack/t
 <h2 id="simple-installation">Simple Installation</h2>
 <p>If Spack is already available on your system and is visible in your <code>PATH</code>, you
 can install the CEED software simply with:</p>
-<pre><code class="language-sh">spack install -v ceed
+<pre><code class="sh">spack install -v ceed
 </code></pre>
+
 <p>To enable package testing during the build process, use instead:</p>
-<pre><code class="language-sh">spack install -v --test=all ceed
+<pre><code class="sh">spack install -v --test=all ceed
 </code></pre>
+
 <p>If you don't have Spack, you can download it and install CEED with the following
 commands:</p>
-<pre><code class="language-sh">git clone https://github.com/spack/spack.git
+<pre><code class="sh">git clone https://github.com/spack/spack.git
 cd spack
 ./bin/spack install -v ceed
 </code></pre>
+
 <p>To avoid long compile times, we strongly recommend that you add a <code>packages.yaml</code> file
 for your platform, see above and the <a href="#tips-and-troubleshooting">Tips and Troubleshooting</a>
 section.</p>
@@ -448,20 +451,22 @@ used in user applications.</p>
 <p>The simplest way to use the Spack installation is through the
 <a href="https://spack.readthedocs.io/en/latest/command_index.html#spack-location"><code>spack location</code></a> command. For example, MFEM-based codes, such as
 the MFEM examples, can be simply built as follows:</p>
-<pre><code class="language-sh">git clone https://github.com/mfem/mfem.git
+<pre><code class="sh">git clone https://github.com/mfem/mfem.git
 cd mfem; git checkout v4.1
 cd examples
 make CONFIG_MK=`spack location -i mfem`/share/mfem/config.mk
 cd ../miniapps/electromagnetics
 make CONFIG_MK=`spack location -i mfem`/share/mfem/config.mk
 </code></pre>
+
 <p>Note that if you already have multiple Spack installations of MFEM, the above
 <code>spack location</code> commands will fail and you will need to use a more concrete
 spec such as <code>mfem~cuda</code> instead of simply <code>mfem</code>.</p>
 <p>Alternatively, the Spack installation can be exported to a local directory:</p>
-<pre><code class="language-sh">mkdir ceed
+<pre><code class="sh">mkdir ceed
 spack view --verbose symlink ceed/mfem mfem
 </code></pre>
+
 <p>Once again, if you already have multiple Spack installations of MFEM, then you
 will need to use a more concrete spec such as <code>mfem~cuda</code> instead of simply
 <code>mfem</code>.</p>
@@ -471,51 +476,57 @@ dependencies (technically, it contains links to all the build files inside the
 <code>ceed/mfem/lib</code> and the MFEM build configuration file in
 <code>ceed/mfem/share/mfem/config.mk</code>.</p>
 <p>This directory can be used to build the MFEM examples as follows:</p>
-<pre><code class="language-sh"># Clone MFEM next to the &quot;ceed&quot; directory created above
+<pre><code class="sh"># Clone MFEM next to the &quot;ceed&quot; directory created above
 git clone https://github.com/mfem/mfem.git
 cd mfem; git checkout v4.1
 cd examples
 make CONFIG_MK=$PWD/../../ceed/mfem/share/mfem/config.mk
 </code></pre>
+
 <p>The MFEM electromagnetics miniapps can further be built with:</p>
-<pre><code class="language-sh"># Continuing from the last directory above: .../mfem/examples
+<pre><code class="sh"># Continuing from the last directory above: .../mfem/examples
 cd ../miniapps/electromagnetics
 make CONFIG_MK=../../../ceed/mfem/share/mfem/config.mk
 </code></pre>
+
 <h3 id="building-libceed-based-applications">Building libCEED-based Applications</h3>
 <p>Below we illustrate how to use the Spack installation to build libCEED-based
 applications, by building the examples in the current libCEED distribution.</p>
 <p>Using <a href="https://spack.readthedocs.io/en/latest/command_index.html#spack-location"><code>spack location</code></a>, the libCEED examples can be built as
 follows:</p>
-<pre><code class="language-sh">git clone https://github.com/CEED/libCEED.git
+<pre><code class="sh">git clone https://github.com/CEED/libCEED.git
 cd libCEED/examples/ceed
 make CEED_DIR=`spack location -i libceed`
 ./ex1-volume -ceed /cpu/self
 </code></pre>
+
 <p>If you have multiple builds of <code>libceed</code> or <code>occa</code> you need to be more specific
 in the above <a href="https://spack.readthedocs.io/en/latest/command_index.html#spack-location"><code>spack location</code></a> command. To list all <code>libceed</code> and
 <code>occa</code> versions use <a href="https://spack.readthedocs.io/en/latest/command_index.html#spack-find"><code>spack find</code></a>:</p>
-<pre><code class="language-sh">spack find -lv libceed occa
+<pre><code class="sh">spack find -lv libceed occa
 </code></pre>
+
 <p>Then either use <a href="https://spack.readthedocs.io/en/latest/basic_usage.html#specs-dependencies">variants</a> to choose a unique version, e.g.
 <code>libceed~cuda</code>, or specify the hashes printed in front of the <code>libceed</code>
 <a href="https://spack.readthedocs.io/en/latest/basic_usage.html#specs-dependencies">spec</a>, e.g. <code>libceed/yb3fvek</code> or just <code>/yb3fvek</code> (and similarly
 for <code>occa</code>).</p>
 <p>The serial, OpenMP, OpenCL and GPU OCCA backends can be used with:</p>
-<pre><code class="language-sh">./ex1-volume -ceed /cpu/occa
+<pre><code class="sh">./ex1-volume -ceed /cpu/occa
 ./ex1-volume -ceed /omp/occa
 ./ex1-volume -ceed /ocl/occa
 ./ex1-volume -ceed /gpu/occa
 </code></pre>
+
 <p>In order to use the OCCA GPU backend, one needs to install CEED with the <code>cuda</code>
 <a href="https://spack.readthedocs.io/en/latest/basic_usage.html#specs-dependencies">variant</a> enabled, i.e. using the <a href="https://spack.readthedocs.io/en/latest/basic_usage.html#specs-dependencies">spec</a>
 <code>ceed+cuda ^magma cuda_arch=70 ^mfem cuda_arch=sm_70</code>:</p>
-<pre><code class="language-sh">spack install -v ceed+cuda ^magma cuda_arch=70 ^mfem cuda_arch=sm_70
+<pre><code class="sh">spack install -v ceed+cuda ^magma cuda_arch=70 ^mfem cuda_arch=sm_70
 </code></pre>
+
 <p>For more details, see the section <a href="#gpu-demo">GPU demo</a> below.</p>
 <p>With the MAGMA backend, the <code>/gpu/magma</code> resource descriptor can also be used.</p>
 <p>The MFEM/libCEED and PETSc/libCEED examples can be further built with:</p>
-<pre><code class="language-sh"># Continue from the last dir above: .../libCEED/examples/ceed
+<pre><code class="sh"># Continue from the last dir above: .../libCEED/examples/ceed
 cd ../mfem
 make CEED_DIR=`spack location -i libceed` MFEM_DIR=`spack location -i mfem`
 ./bp1 -no-vis -o 2 -ceed /cpu/self -m `spack location -i mfem`/share/mfem/data/star.mesh
@@ -524,6 +535,7 @@ cd ../petsc
 make CEED_DIR=`spack location -i libceed` PETSC_DIR=`spack location -i petsc`
 ./bps -degree 2 -ceed /cpu/self
 </code></pre>
+
 <p>Note that if <code>PETSC_ARCH</code> is set in your environment, you must either unset it
 or also pass <code>PETSC_ARCH=</code> in the above command.</p>
 <p>Depending on the available backends, additional CEED resource descriptors,
@@ -532,14 +544,16 @@ e.g. <code>petsc/bps -problem bp1 -degree 2 -ceed /ocl/occa</code> or <code>mfem
 See <a href="https://libceed.readthedocs.io/en/latest/examples/index.html">libCEED Examples</a> for
 more on available examples/miniapps and how to run them.</p>
 <p>Finally, the Nek5000/libCEED examples can be built as follows:</p>
-<pre><code class="language-sh">cd ../nek5000
+<pre><code class="sh">cd ../nek5000
 export CEED_DIR=`spack location -i libceed` NEK5K_DIR=`spack location -i nek5000`
 ./make-nek-examples.sh
 </code></pre>
+
 <p>Then you can run the Nek5000 examples as follows:</p>
 <pre><code>export MPIEXEC=`spack location -i openmpi`/bin/mpiexec
 ./run-nek-example.sh -e bp1 -c /cpu/self -n 2 -b 3
 </code></pre>
+
 <p>In the above example, replace <code>openmpi</code> with whatever the MPI implementation
 you have installed with spack. Also, you can do <code>./run-nek-example.sh -h</code>
 to find out the options supported by the run script.</p>
@@ -550,17 +564,19 @@ to find out the options supported by the run script.</p>
    -n|-np       Specify number of MPI ranks for the run (optional, default: 4)
    -b|-box      Specify the box geometry to be found in ./boxes/ directory (Mandatory)
 </code></pre>
+
 <p>More information on running the Nek5000 examples can be found in the libCEED
 <a href="https://github.com/CEED/libCEED/blob/master/examples/nek5000/README.md">documentation</a>.</p>
 <p>Alternatively, one can export the Spack install to a local directory:</p>
-<pre><code class="language-sh"># In the directory that contains the cloned &quot;libCEED&quot; directory
+<pre><code class="sh"># In the directory that contains the cloned &quot;libCEED&quot; directory
 spack view --verbose symlink ceed/libceed libceed
 spack view --verbose symlink ceed/petsc petsc
 spack view --verbose symlink ceed/mfem mfem
 spack view --verbose symlink ceed/nek5000 nek5000
 </code></pre>
+
 <p>and use that to specify the <code>CEED_DIR</code>, <code>MFEM_DIR</code> and <code>PETSC_DIR</code> variables:</p>
-<pre><code class="language-sh">cd libCEED/examples/ceed
+<pre><code class="sh">cd libCEED/examples/ceed
 make CEED_DIR=../../../ceed/libceed
 ./ex1-volume -ceed /cpu/self
 cd ../mfem
@@ -571,14 +587,16 @@ cd ../petsc
 make CEED_DIR=../../../ceed/mfem PETSC_DIR=../../../ceed/petsc
 ./bps -problem bp1 -degree 2 -ceed /cpu/self
 </code></pre>
+
 <h3 id="using-containers">Using Containers</h3>
 <p><a href="https://docker.com">Docker</a> is a popular container system available on Linux, Mac, and Windows.
 After installing Docker, running one command</p>
-<pre><code class="language-sh">docker run -it --rm -v `pwd`:/ceed jedbrown/ceed bash
+<pre><code class="sh">docker run -it --rm -v `pwd`:/ceed jedbrown/ceed bash
 </code></pre>
+
 <p>gives you a development environment with CEED installed via Spack and the host's current working directory mounted at <code>/ceed</code> (the current working directory in the container).
 For example,</p>
-<pre><code class="language-sh">host$ git clone https://github.com/ceed/libceed
+<pre><code class="sh">host$ git clone https://github.com/ceed/libceed
 host$ cd libceed/examples/petsc
 host$ docker run -it --rm -v `pwd`:/ceed jedbrown/ceed bash
 container$ make PETSC_DIR=`spack location -i petsc` CEED_DIR=`spack location -i libceed`
@@ -590,36 +608,44 @@ Owned dofs: 1210 = 10 11 11
 KSP cg CONVERGED_RTOL iterations 34 rnorm 3.992091e-09
 Pointwise error (max) 1.267540e-02
 </code></pre>
+
 <p>See the <a href="https://github.com/jedbrown/jedbrown-dockerfiles/blob/master/ceed/Dockerfile">Dockerfile</a> to understand how this image was prepared and/or create your own images.</p>
 <h4 id="nerscs-shifter">NERSC's Shifter</h4>
 <p>Containers also work at NERSC using <a href="https://docs.nersc.gov/programming/shifter/how-to-use/">Shifter</a>, a container system designed for HPC.
 To pull the latest CEED image, use</p>
-<pre><code class="language-sh">shifterimg pull docker:jedbrown/ceed:3.0
+<pre><code class="sh">shifterimg pull docker:jedbrown/ceed:3.0
 </code></pre>
+
 <p>then build code using <code>shifter</code> commands in place of the <code>docker</code> commands above, e.g.,</p>
-<pre><code class="language-sh">host$ shifter --image=docker:jedbrown/ceed:3.0 bash
+<pre><code class="sh">host$ shifter --image=docker:jedbrown/ceed:3.0 bash
 container$ make PETSC_DIR=`spack location -i petsc` CEED_DIR=`spack location -i libceed`
 </code></pre>
+
 <p>where we see that <code>shifter</code> defaults behave similarly to the options we had to give manually for <code>docker</code>.
 Batch jobs can be submitted via</p>
-<pre><code class="language-sh">sbatch --image docker:jedbrown/ceed:latest ...
+<pre><code class="sh">sbatch --image docker:jedbrown/ceed:latest ...
 </code></pre>
+
 <p>with the following in your submission script:</p>
-<pre><code class="language-sh">srun -n 64 shifter ./your-petsc-app
+<pre><code class="sh">srun -n 64 shifter ./your-petsc-app
 </code></pre>
+
 <h4 id="singularity">Singularity</h4>
 <p><a href="https://www.sylabs.io/singularity/">Singularity</a> is another HPC container system with usage similar to Shifter above.</p>
-<pre><code class="language-sh">host$ git clone https://github.com/ceed/libceed
+<pre><code class="sh">host$ git clone https://github.com/ceed/libceed
 host$ cd libceed
 host$ singularity shell docker://jedbrown/ceed:latest
 Singularity&gt; make PETSC_DIR=`spack location -i petsc` CEED_DIR=`spack location -i libceed` build/petsc-bps
 </code></pre>
+
 <p>One can run local jobs in the container:</p>
-<pre><code class="language-sh">Singularity&gt; mpiexec -n 4 build/petsc-bps -problem bp3 -benchmark
+<pre><code class="sh">Singularity&gt; mpiexec -n 4 build/petsc-bps -problem bp3 -benchmark
 </code></pre>
+
 <p>or submit batch jobs from the host with the likes of:</p>
-<pre><code class="language-sh">srun -n 64 singularity exec docker://jedbrown/ceed:latest build/petsc-bps -problem bp3 -benchmark
+<pre><code class="sh">srun -n 64 singularity exec docker://jedbrown/ceed:latest build/petsc-bps -problem bp3 -benchmark
 </code></pre>
+
 <p>(see instructions for your batch system).</p>
 <h3 id="gpu-demo">GPU demo</h3>
 <p>Below is the full set of commands to install the CEED distribution on a
@@ -630,7 +656,7 @@ kernels.</p>
 <p>The <code>setenv</code> commands below assume <code>csh</code>/<code>tcsh</code>. We strongly recommend to add a
 <code>packages.yaml</code> file in order to avoid long compile times, see <a href="#tips-and-troubleshooting">Tips and
 Troubleshooting</a>.</p>
-<pre><code class="language-sh"># Install CEED 3.0 distribution via Spack
+<pre><code class="sh"># Install CEED 3.0 distribution via Spack
 git clone https://github.com/spack/spack.git
 cd spack
 spack install ceed+cuda ^magma cuda_arch=70 ^mfem cuda_arch=sm_70
@@ -677,6 +703,7 @@ cd ceed-examples/nek5000
 ./run-nek-example.sh -ceed /gpu/cuda/gen -b 3
 cd ../..
 </code></pre>
+
 <h2 id="spack-for-beginners">Spack for Beginners</h2>
 <p>Spack is a package manager for scientific software that supports multiple
 versions, configurations, platforms, and compilers.</p>
@@ -750,7 +777,7 @@ find useful:</p>
 <p>The file <a href="../spack/ceed3-darwin-highsierra-x86_64-packages.yaml">ceed3-darwin-highsierra-x86_64-packages.yaml</a>
 provides a sample <code>packages.yaml</code> file based on <a href="https://brew.sh/">Homebrew</a>, that should work on
 most Macs. (You can use MacPorts instead of Homebrew if you prefer.)</p>
-<pre><code class="language-yaml">packages:
+<pre><code class="yaml">packages:
     all:
         compiler: [clang]
         providers:
@@ -795,12 +822,14 @@ most Macs. (You can use MacPorts instead of Homebrew if you prefer.)</p>
             zlib@1.2.11: /usr
         buildable: False
 </code></pre>
+
 <p>The packages in <code>~/brew</code> were installed with <code>brew install package</code>.  If you
 don't have Homebrew, you can install it and the needed tools with:</p>
-<pre><code class="language-sh">git clone https://github.com/Homebrew/brew.git
+<pre><code class="sh">git clone https://github.com/Homebrew/brew.git
 cd brew
 bin/brew install openmpi cmake python zlib
 </code></pre>
+
 <p>The packages in <code>/usr</code> are provided by Apple and come pre-built with Mac OS
 X. The <code>cuda</code> package is provided by NVIDIA and should be installed separately
 by downloading it from <a href="https://developer.nvidia.com">NVIDIA</a>. We are using the Clang compiler,
@@ -809,7 +838,7 @@ OpenMPI, and Apple's BLAS/LAPACK accelerator library.</p>
 <p>The file <a href="../spack/ceed3-linux-rhel7-x86_64-packages.yaml">ceed3-linux-rhel7-x86_64-packages.yaml</a>
 provides a sample <code>packages.yaml</code> file that can be adapted to work on a RHEL7 Linux
 desktop</p>
-<pre><code class="language-yaml">packages:
+<pre><code class="yaml">packages:
     all:
         compiler: [gcc]
         providers:
@@ -857,11 +886,12 @@ desktop</p>
             zlib@1.2.11: /usr/lib64
         buildable: False
 </code></pre>
+
 <p>The above file uses user-installed OpenMPI, CMake and CUDA packages, with the
 rest of the CEED prerequisites installed via the <a href="https://en.wikipedia.org/wiki/Yellow_Dog_Updater,_Modified">yum package manager</a>.</p>
 <p>A very similar file, <a href="../spack/ceed3-ubuntu19.10-packages.yaml">ceed3-ubuntu19.10-packages.yaml</a>
 provides Spack configuration for the Ubuntu distribution:</p>
-<pre><code class="language-yaml">packages:
+<pre><code class="yaml">packages:
     all:
         compiler: [gcc]
         providers:
@@ -923,18 +953,20 @@ provides Spack configuration for the Ubuntu distribution:</p>
             zlib@1.2.11: /usr/lib
         buildable: False
 </code></pre>
+
 <p>In this case we use GCC and other development packages via <code>apt install</code> and
 with MPICH installed separately (as needed to use containerized HPC environments
 like Shifter and Singularity). You can use</p>
-<pre><code class="language-sh">docker pull jedbrown/ceed-base
+<pre><code class="sh">docker pull jedbrown/ceed-base
 </code></pre>
+
 <p>to get a build environment with this <code>packages.yaml</code> and prerequisites for <code>spack install ceed</code>.</p>
 <h3 id="building-at-llnls-computing-center">Building at LLNL's Computing Center</h3>
 <h4 id="lassen">Lassen</h4>
 <p>The file <a href="../spack/ceed3-lassen-packages.yaml">ceed3-lassen-packages.yaml</a> is an
 example of a <code>packages.yaml</code> file for the Lassen system at LLNL's <a href="https://hpc.llnl.gov/hardware/platforms">Livermore
 Computing</a> center, which is similar to the <a href="https://hpc.llnl.gov/hardware/platforms/sierra">Sierra</a> supercomputer.</p>
-<pre><code class="language-yaml">packages:
+<pre><code class="yaml">packages:
     all:
         compiler: [xl_r, xl, gcc]
         providers:
@@ -998,10 +1030,12 @@ Computing</a> center, which is similar to the <a href="https://hpc.llnl.gov/hard
         version: [2.7.14]
         buildable: False
 </code></pre>
+
 <p>The above file can be used to build CEED with different compilers (xl being
 the default), for example:</p>
-<pre><code class="language-sh">spack install ceed%gcc~petsc
+<pre><code class="sh">spack install ceed%gcc~petsc
 </code></pre>
+
 <p>A corresponding <code>compilers.yaml</code> file for Lassen can be found here:
 <a href="../spack/ceed3-lassen-compilers.yaml">ceed3-lassen-compilers.yaml</a>.</p>
 <h3 id="building-at-olcf">Building at OLCF</h3>
@@ -1009,7 +1043,7 @@ the default), for example:</p>
 <p>The file <a href="../spack/ceed3-summit-packages.yaml">ceed3-summit-packages.yaml</a> is an example of a
 <code>packages.yaml</code> file for the Summit system at <a href="https://www.olcf.ornl.gov">OLCF</a>.</p>
 <p>The packages.yaml file gives updated locations for spectrum-mpi and other packeges. Then one has to make sure other modules like xalt are not loaded because xalt provides a conflicting version of "ld" which breaks the build. One may have to load a gcc compiler, e.g., version 6.4.0, and configure it in spack as a compiler.  Then one can compile ceed and dependencies using netlib-lapack as the blas and lapack provider. Here are the commands to do the full compile:</p>
-<pre><code class="language-sh">git clone https://github.com/spack/spack
+<pre><code class="sh">git clone https://github.com/spack/spack
 source spack/share/spack/setup-env.sh
 cp packages.yaml spack/etc/spack/
 module purge
@@ -1017,6 +1051,7 @@ module load gcc/6.4.0 spectrum-mpi/10.3.1.2-20200121 cmake netlib-lapack netlib-
 spack compiler find
 ./bin/spack install ceed%gcc@6.4.0
 </code></pre>
+
 <h3 id="installing-cuda">Installing CUDA</h3>
 <ul>
 <li>
@@ -1027,8 +1062,9 @@ spack compiler find
   desired CUDA architecture for MAGMA and MFEM:</p>
 </li>
 </ul>
-<pre><code class="language-sh">spack install ceed+cuda ^magma cuda_arch=70 ^mfem cuda_arch=sm_70
+<pre><code class="sh">spack install ceed+cuda ^magma cuda_arch=70 ^mfem cuda_arch=sm_70
 </code></pre>
+
 <ul>
 <li>You will need to have the NVIDIA CUDA SDK and driver installed on your system,
   see <a href="https://developer.nvidia.com">developer.nvidia.com</a>, and specify it in the <code>packages.yaml</code>
