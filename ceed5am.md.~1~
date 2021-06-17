@@ -1,0 +1,110 @@
+# CEED Annual Meeting
+#### August 11-12, 2020
+#### Virtual Meeting on Zoom + Slack
+
+![CEED Logo](img/logo-150.png)
+
+### Overview
+
+CEED will hold its fourth annual meeting August 11-12, 2020 virtually using ECP
+Zoom for videoconferencing and Slack for side discussions. The goal of
+the meeting is to report on the progress in the center, deepen existing and
+establish new connections with ECP hardware vendors, ECP software technologies
+projects and other collaborators, plan project activities and brainstorm/work as
+a group to make technical progress. In addition to gathering together many of
+the CEED researchers, the meeting will include representatives of the ECP
+management, hardware vendors, software technology and other interested projects.
+
+### Registration
+
+If you plan to attend, [please register no later than **August 7th**](https://forms.gle/SzMBwssAkPAqdnbp6). There is no registration fee.
+
+### Meeting format
+
+The meeting will include the following elements:
+
+- Project review and updates from the CEED team
+- Contributed talks from AD, ST, vendors and external partners
+- Technical discussions in small breakout groups
+
+Live presentations and wrap-up will be on [ECP Zoom](https://exascaleproject.zoomgov.com/) (links to be posted the week of the meeting).
+Side discussions and breakout sessions will be on the meeting [Slack](https://ceed4am.slack.com/) space.
+
+<!--
+### Meeting format
+
+Based on your feedback during registration we can incorporate the following elements in the meeting:
+
+- Project review and updates from the CEED team
+- Contributed talks from AD, ST, vendors and external partners
+- Short pre-recorded talks/poster presentations
+- Technical discussions in small breakout groups
+- Software tutorials
+- Hackathon
+-->
+
+### Meeting Agenda
+
+The meeting activities will take place 10:30am-6:00pm eastern time (7:30am-3:00pm pacific).
+
+Moderators will be unmuted to provide some auditory feedback. They will also monitor chat, relay questions and lead in the applause!
+
+
+#### Monday, August 10
+| Time (PDT) |  Time (EDT) | Activity | Moderator |
+|---|---|---|---|
+| 9:30-12:30 | 12:30-3:30 | **Test / Setup Zoom + Slack** | *Tzanio Kolev* |
+
+
+#### Tuesday, August 11
+
+| Time (PDT) |  Time (EDT) | Activity | Moderator |
+|---|---|---|---|
+| 7:30-8:00 | 10:30-11:00 | **Welcome & CEED Overview** <br> Tzanio Kolev (LLNL) | *Paul Fischer* |
+| 8:00-8:30 | 11:00-11:30 | **Finite Element Thrust & MFEM Update** <br> Veselin Dobrev (LLNL) | *Tzanio Kolev* |
+| 8:30-9:00 | 11:30-12:00 | **NekRS Update** <br> Paul Fischer (UIUC) | *Tzanio Kolev* |
+| 9:00-9:30 | 12:00-12:30 | **libParanumal Update** <br> Tim Warburton (VT) | *Tzanio Kolev* |
+| 9:30-10:00 | 12:30-1:00 | **Break** <br> • side discussions on Slack <br> • propose breakout topics | |
+| 10:00-10:20 | 1:00-1:20 | **Applications Thrust** <br> Misun Min (ANL) | *Paul Fischer* |
+| 10:20-10:40 | 1:20-1:40 | **Toward full core CFD: update from ExaSMR** <br> Elia Merzari (PSU) | *Misun Min* |
+| 10:40-11:00 | 1:40-2:00 | **MARBL: GPU Acceleration of Blast, a High-Order Hydrodynamics Code** <br> Arturo Vargas (LLNL) | *Misun Min* |
+| 11:00-11:20 | 2:00-2:20 | **E3SM: Performance of spectral element dycore on Summit at scale** <br> Mark Taylor (SNL) | *Misun Min* |
+| 11:20-11:40 | 2:20-2:40 | **ExaAM: ExaConstit Update** <br> Robert Carson (LLNL) | *Misun Min* |
+| 11:40-12:00 | 2:40-3:00 | **RF-SciDAC: Progress in RF wave simulation for fusion plasmas using MFEM** <br>  Syun'ichi Shiraiwa (PPPL) | *Misun Min* |
+| 12:00-12:30 | 3:00-3:30 | **Group Photo & Break** <br> • side discussions on Slack | |
+| 12:30-1:00 | 3:30-4:00 | **Breakout Sessions Topics** <br> • discuss/finalize topics for parallel technical discussions <br> • e.g. new BPs, solvers, meshing, visualization, ... | *Tzanio Kolev* |
+| 1:00-2:30 | 4:00-5:30 | **Technical Discussions** <br> • parallel sessions on Slack | |
+| 2:30-3:00 | 5:30-6:00 | **Day 1 Wrap-up** | *Tzanio Kolev* |
+
+<!--
+| 12:30-2:30 | 3:30-5:30 | **Recorded Talks + Posters** <br>1. *Progress in RF wave simulation for fusion plasmas using MFEM* - Syun'ichi Shiraiwa (PPPL) <br>2. *Coupling MFEM with the Ginkgo backend for efficient numerics on GPUs* - Natalie Beams (UTK) <br>3. *Recent Developments in the Omega_h Unstructured Mesh Adaptation Library* - Cameron Smith (RPI) <br>3. *Inline Vector Compression for Computational Physics* - Freddie Witherden (TAMU) <br>4. *Spectral mesh-free quadrature for regions with rational parametric boundaries* - David Gunderman (LLNL) | *Tim Warburton* |
+-->
+
+#### Wednesday, August 12
+
+| Time (PDT) |  Time (EDT) | Activity | Moderator |
+|---|---|---|---|
+| 7:30-8:00 | 10:30-11:00 | **Software Thrust & libCEED Update** <br> Jed Brown (CU Boulder) | *Paul Fischer* |
+| 8:00-8:30 | 11:00-11:30 | **Curved conforming mesh adaptation** <br> Mark Shephard and Cameron Smith (RPI) | *Paul Fischer* |
+| 8:30-9:00 | 11:30-12:00 | **Increasing GPU enhancements in hypre’s BoomerAMG** <br> Ruipeng Li (LLNL) | *Paul Fischer* |
+| 9:00-9:30 | 12:00-12:30 | **One reduce GMRES with two Stage Gauss Seidel AMG smoother: Scaling to new heights on Summit** <br> Kasia Swirydowicz and Stephen Thomas (NREL)  | *Paul Fischer* |
+| 9:30-10:00 | 12:30-1:00 | **Break** <br> • side discussions on Slack <br> • propose breakout topics |  |
+| 10:00-10:20 | 1:00-1:20 | **Hardware Thrust & MAGMA Update** <br> Stanimire Tomov (UTK) | *Tzanio Kolev* |
+| 10:20-10:40 | 1:20-1:40 | **Achieving Performance Portability in MARBL with LLNL Tools: Profiling, Kernel Abstractions, Memory Pools, and More** <br> Tom Stitt (LLNL) | *Tzanio Kolev* |
+| 10:40-11:00 | 1:40-2:00 | **Inline Vector Compression for Computational Physics** <br> Freddie Witherden (TAMU) | *Tzanio Kolev* |
+| 11:00-11:20 | 2:00-2:20 | **Devil Ray: Native High-Order Ray Tracing** <br> Matt Larsen (LLNL) | *Tzanio Kolev*|
+| 11:20-11:40 | 2:20-2:40 | **Coupling MFEM with the Ginkgo backend for efficient numerics on GPUs** <br> Natalie Beams (UTK) | *Tzanio Kolev* |
+| 11:40-12:00 | 2:40-3:00 | **SUNDIALS: New features and capabilities** <br> David Gardner (LLNL) | *Tzanio Kolev* |
+| 12:00-12:30 | 3:00-3:30 | **Break** <br> • side discussions on Slack |  |
+| 12:30-1:00 | 3:30-4:00 | **libCEED tutorial** <br> Valeria Barra (CU Boulder) | *Tzanio Kolev* |
+| 1:00-2:30 | 4:00-5:30 | **Technical Discussions** <br> • parallel sessions on Slack | |
+| 2:30-3:00 | 5:30-6:00 | **Meeting Wrap-up** | *Tzanio Kolev* |
+
+
+### Participants
+- See the meeting [Slack](https://ceed4am.slack.com/) space
+
+### Questions?
+
+For questions, please contact the meeting organizers at
+[ceed-meeting@llnl.gov](mailto:ceed-meeting@llnl.gov).
