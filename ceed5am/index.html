@@ -536,22 +536,22 @@ Moderators will be unmuted to provide some auditory feedback. They will also mon
 <tr>
 <td>9:40-10:00</td>
 <td>12:40-1:00</td>
-<td><strong>Developments in Support of MFEM's Conforming Mesh Adaptation Capabilities</strong> <br> Cameron Smith + Morteza Hakimi (RPI)</td>
+<td><strong>High-performance computing in a dynamic language</strong> <br> Simon Byrne (Caltech) <br> <em>Though popular in other domains, dynamic languages are still rare in HPC applications, outside of front-end driver or code generation steps. The CliMA project is developing a full earth system model (ESM), entirely in the high-level, dynamic Julia language. The model has been developed from scratch to target both CPU and GPU architectures, using a common codebase. This talk will describe the approach and tools we have built, along with some lessons, benefits and challenges we have found along the way.</em></td>
 </tr>
 <tr>
 <td>10:00-10:20</td>
 <td>1:00-1:20</td>
-<td><strong>Accurate "Shaping" of Curved Interfaces into Curvilinear High Order Meshes</strong> <br> Kenny Weiss (LLNL) <br> <em>Multimaterial numerical simulations often need to embed their constituent materials into a computational mesh. For example, the Volume-of-Fluid approach utilizes material volume fractions encoding the percentage of each material within the mesh elements. In this work, we present a novel, accurate method for conservatively shaping materials bounded by curved interfaces into high order meshes. Our algorithm formulates the shaping problem as an L2 projection of the material onto the polynomial bases of each element. We first compute the intersection regions between each high-order mesh element and the material regions. We then use a Green's theorem approach to produce spectrally-convergent quadrature rules for each of the curved polygons. We present preliminary results which demonstrate that the method is more accurate than a sampling based approach. In collaboration with David Gunderman, John Evans and Jin Yao (LLNL)</em></td>
+<td><strong>Developments in Support of MFEM's Conforming Mesh Adaptation Capabilities</strong> <br> Cameron Smith + Morteza Hakimi (RPI)</td>
 </tr>
 <tr>
 <td>10:20-10:40</td>
 <td>1:20-1:40</td>
-<td><strong>Cache Blocking Strategies for High-Order Methods on CPUs</strong> <br> Freddie Witherden (TAMU) <br> <em>When applied to tensor-product elements the performance of the discontinuous spectral element method is typically limited by available memory bandwidth. The generally accepted means of reducing the bandwidth requirements for a numerical method is by fusing together kernels so as to avoid unnecessary trips to/from main memory. Although effective, kernel fusion has a negative impact on the maintainability of a code. In this talk we will show how recent trends towards large private L2 caches on CPUs make cache-blocking a viable alternative to kernel fusion. Our vehicle for this will be the high-order fluid dynamics code PyFR. By combining an appropriate blocking strategy with the novel array-of-structure-of-arrays data layout employed by PyFR, we will demonstrate a factor of three speed-up for the Euler equations on hexahedral elements.</em></td>
+<td><strong>Accurate "Shaping" of Curved Interfaces into Curvilinear High Order Meshes</strong> <br> Kenny Weiss (LLNL) <br> <em>Multimaterial numerical simulations often need to embed their constituent materials into a computational mesh. For example, the Volume-of-Fluid approach utilizes material volume fractions encoding the percentage of each material within the mesh elements. In this work, we present a novel, accurate method for conservatively shaping materials bounded by curved interfaces into high order meshes. Our algorithm formulates the shaping problem as an L2 projection of the material onto the polynomial bases of each element. We first compute the intersection regions between each high-order mesh element and the material regions. We then use a Green's theorem approach to produce spectrally-convergent quadrature rules for each of the curved polygons. We present preliminary results which demonstrate that the method is more accurate than a sampling based approach. In collaboration with David Gunderman, John Evans and Jin Yao (LLNL)</em></td>
 </tr>
 <tr>
 <td>10:40-11:00</td>
 <td>1:40-2:00</td>
-<td><strong>Full Domain Decomposition with Polynomial Reduction Preconditioner for Spectral Element Poisson Solvers</strong> <br> Pedro Bello-Maldonado (UIUC)</td>
+<td><strong>Cache Blocking Strategies for High-Order Methods on CPUs</strong> <br> Freddie Witherden (TAMU) <br> <em>When applied to tensor-product elements the performance of the discontinuous spectral element method is typically limited by available memory bandwidth. The generally accepted means of reducing the bandwidth requirements for a numerical method is by fusing together kernels so as to avoid unnecessary trips to/from main memory. Although effective, kernel fusion has a negative impact on the maintainability of a code. In this talk we will show how recent trends towards large private L2 caches on CPUs make cache-blocking a viable alternative to kernel fusion. Our vehicle for this will be the high-order fluid dynamics code PyFR. By combining an appropriate blocking strategy with the novel array-of-structure-of-arrays data layout employed by PyFR, we will demonstrate a factor of three speed-up for the Euler equations on hexahedral elements.</em></td>
 </tr>
 <tr>
 <td>11:00-11:20</td>
@@ -595,6 +595,10 @@ Moderators will be unmuted to provide some auditory feedback. They will also mon
 </tr>
 </tbody>
 </table>
+<!--
+| 10:40-11:00 | 1:40-2:00 | **Full Domain Decomposition with Polynomial Reduction Preconditioner for Spectral Element Poisson Solvers** <br> Pedro Bello-Maldonado (UIUC) |
+-->
+
 <h3 id="participants">Participants</h3>
 <ul>
 <li>See the meeting <a href="https://ceedam.slack.com/">Slack</a> space</li>
