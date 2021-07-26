@@ -41,7 +41,7 @@
             </button>
 
             <!-- Main title -->
-            <a class="navbar-brand" href="http://ceed.exascaleproject.org">CEED</a>
+            <a class="navbar-brand" href="http://ceed.exascaleproject.org/">CEED</a>
         </div>
 
         <!-- Expanded navigation -->
@@ -379,7 +379,7 @@ Based on your feedback during registration we can incorporate the following elem
 -->
 
 <h3 id="meeting-agenda">Meeting Agenda</h3>
-<p>The meeting activities will take place 10:30am-6:00pm eastern time (7:30am-3:00pm pacific).</p>
+<p>The meeting activities will take place 11am-5pm eastern time (8am-2pm pacific).</p>
 <p>Moderators will be unmuted to provide some auditory feedback. They will also monitor chat, relay questions and lead in the applause!</p>
 <h4 id="monday-august-2">Monday, August 2</h4>
 <table>
@@ -388,15 +388,13 @@ Based on your feedback during registration we can incorporate the following elem
 <th>Time (PDT)</th>
 <th>Time (EDT)</th>
 <th>Activity</th>
-<th>Moderator</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>9:30-12:30</td>
-<td>12:30-3:30</td>
+<td>10:00-12:00</td>
+<td>1:00-3:00</td>
 <td><strong>Test / Setup Zoom + Slack</strong></td>
-<td><em>Tzanio Kolev</em></td>
 </tr>
 </tbody>
 </table>
@@ -407,57 +405,93 @@ Based on your feedback during registration we can incorporate the following elem
 <th>Time (PDT)</th>
 <th>Time (EDT)</th>
 <th>Activity</th>
-<th>Moderator</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>7:30-8:00</td>
-<td>10:30-11:00</td>
+<td>8:00-8:20</td>
+<td>11:00-11:20</td>
 <td><strong>Welcome &amp; CEED Overview</strong> <br> Tzanio Kolev (LLNL)</td>
-<td><em>Paul Fischer</em></td>
 </tr>
 <tr>
-<td>8:00-9:30</td>
-<td>11:00-12:30</td>
-<td><strong>CEED talks</strong> <br> CEED researchers</td>
-<td><em>Tzanio Kolev</em></td>
+<td>8:20-8:40</td>
+<td>11:20-11:40</td>
+<td><strong>Finite Element Thrust &amp; MFEM Update</strong> <br> Veselin Dobrev (LLNL)</td>
 </tr>
 <tr>
-<td>9:30-10:00</td>
-<td>12:30-1:00</td>
+<td>8:40-9:00</td>
+<td>11:40-12:00</td>
+<td><strong> NekRS Update</strong> <br> Paul Fischer (ANL)</td>
+</tr>
+<tr>
+<td>9:00-9:20</td>
+<td>12:00-12:20</td>
+<td><strong>libParanumal Update</strong> <br> Tim Warburton (VTech)</td>
+</tr>
+<tr>
+<td>9:20-9:40</td>
+<td>12:20-12:40</td>
 <td><strong>Break</strong> <br> • side discussions on Slack <br> • propose breakout topics</td>
-<td></td>
 </tr>
 <tr>
-<td>10:00-12:00</td>
-<td>1:00-3:00</td>
-<td><strong>Applications Thrust</strong> <br> AD collaborators, Application researchers</td>
-<td><em>Misun Min</em></td>
+<td>9:40-10:00</td>
+<td>12:40-1:00</td>
+<td><strong>hypre GPU Support</strong> <br> Ruipeng Li (LLNL)</td>
 </tr>
 <tr>
-<td>12:00-12:30</td>
-<td>3:00-3:30</td>
+<td>10:00-10:20</td>
+<td>1:00-1:20</td>
+<td><strong>PETSc GPU Support</strong> <br> Junchao Zhang (ANL) + Mark Adams (LBNL)</td>
+</tr>
+<tr>
+<td>10:20-10:40</td>
+<td>1:20-1:40</td>
+<td><strong>Matrix-Free High-Order DG Methods in deal.ii</strong> <br> Martin Kronbichler (Uppsala)</td>
+</tr>
+<tr>
+<td>10:40-11:00</td>
+<td>1:40-2:00</td>
+<td><strong>Neumann Series MGS-GMRES and Inner-Outer Smoothers</strong> <br> Stephen Thomas (NREL) <br> <em>Low-synchronization MGS-GMRES Krylov solver employing a truncated Neumann series will be presented with C-AMG preconditioners based on inner-outer Gauss-Seidel smoothers that are expressed as truncated Neumann series.</em></td>
+</tr>
+<tr>
+<td>11:00-11:20</td>
+<td>2:00-2:20</td>
 <td><strong>Group Photo &amp; Break</strong> <br> • side discussions on Slack</td>
-<td></td>
 </tr>
 <tr>
-<td>12:30-1:00</td>
-<td>3:30-4:00</td>
-<td><strong>Breakout Sessions Topics</strong> <br> • discuss/finalize topics for parallel technical discussions <br> • e.g. new BPs, solvers, meshing, visualization, ...</td>
-<td><em>Tzanio Kolev</em></td>
+<td>11:20-11:40</td>
+<td>2:20-2:40</td>
+<td><strong>Software Thrust &amp; libCEED Update</strong> <br> Jed Brown (Boulder)</td>
 </tr>
 <tr>
-<td>1:00-2:30</td>
-<td>4:00-5:30</td>
+<td>11:40-12:00</td>
+<td>2:40-3:00</td>
+<td><strong>OCCA Roadmap</strong> <br> David Medina (Occalytics)</td>
+</tr>
+<tr>
+<td>12:00-12:20</td>
+<td>3:00-3:20</td>
+<td><strong>hipBone: A C++ port of Nekbone</strong> <br> Noel Chalmer + Damon McDougall (AMD) <br> <em>As part of CORAL2 benchmarking and optimization efforts, AMD has developed a partial C++ port of the "NekBone" benchmark, named "hipBone", targeting current- and next-generation heterogeneous accelerated computing platforms. We will give a overview of the hipBone benchmark, and present some performance and scaling data collected on ORNL's Spock cluster.</em></td>
+</tr>
+<tr>
+<td>12:20-12:40</td>
+<td>3:20-3:40</td>
+<td><strong>Kernel Fussion on GPUs</strong> <br> Will Trojak (TAMU)</td>
+</tr>
+<tr>
+<td>12:40-1:00</td>
+<td>3:40-4:00</td>
+<td><strong>Break</strong> <br> • discuss/finalize topics for parallel technical discussions <br> • e.g. new BPs, solvers, meshing, visualization, ...</td>
+</tr>
+<tr>
+<td>1:00-2:00</td>
+<td>4:00-5:00</td>
 <td><strong>Technical Discussions</strong> <br> • parallel sessions on Slack</td>
-<td></td>
 </tr>
 <tr>
-<td>2:30-3:00</td>
-<td>5:30-6:00</td>
+<td>2:00</td>
+<td>5:00</td>
 <td><strong>Day 1 Wrap-up</strong></td>
-<td><em>Tzanio Kolev</em></td>
 </tr>
 </tbody>
 </table>
@@ -468,45 +502,93 @@ Based on your feedback during registration we can incorporate the following elem
 <th>Time (PDT)</th>
 <th>Time (EDT)</th>
 <th>Activity</th>
-<th>Moderator</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>7:30-9:30</td>
-<td>10:30-12:30</td>
-<td><strong>Software Thrust</strong> <br> ST collaborators, Software researchers</td>
-<td><em>Jed Brown</em></td>
+<td>8:00-8:20</td>
+<td>11:00-11:20</td>
+<td><strong>Applications Thrust</strong> <br> Misun Min (ANL)</td>
 </tr>
 <tr>
-<td>9:30-10:00</td>
-<td>12:30-1:00</td>
-<td><strong>Break</strong> <br> • side discussions on Slack <br> • propose breakout topics</td>
-<td></td>
+<td>8:20-8:40</td>
+<td>11:20-11:40</td>
+<td><strong>Full Core Reactor CFD Simulations: Update from ExaSMR</strong> <br> Elia Merzari (PSU)</td>
 </tr>
 <tr>
-<td>10:00-12:30</td>
-<td>1:00-3:30</td>
-<td><strong>Hardware Thrust</strong> <br> Vendors, Hardware researchers</td>
-<td><em>Stanimire Tomov</em></td>
+<td>8:40-9:00</td>
+<td>11:40-12:00</td>
+<td><strong>The Multiphysics on Advanced Platforms Project: Performance, Portability and Scaling</strong> <br> Rob Rieben (LLNL)</td>
 </tr>
 <tr>
-<td>12:00-12:30</td>
-<td>3:00-3:30</td>
+<td>9:00-9:20</td>
+<td>12:00-12:20</td>
+<td><strong>AMR-Wind Solver Enhancements</strong> <br> Michael Brazell (NREL) <br> <em>The ExaWind project is tasked with simulating a high-fidelity wind-farm using blade resolved wind-turbines. An overset approach is used to tackle this problem by combining Nalu-Wind as a near-body solver (region near the blades) and AMR-Wind as an off-body solver. The off-body solver is responsible for attaching/adapting the grid near the wind turbine, resolving the wake behind the turbine, and modeling the surrounding atmospheric boundary layer (ABL). In this talk I will discuss AMR-Wind and a recent collaboration with the NekRS team for simulating a stable ABL problem called GABLS. This collaboration is focused on code-to-code comparisons of the flow field as well as strong/weak scaling studies on Eagle and Summit. Due to this collaboration NekRS has shared some solver strategies that has already benefited AMR-Wind by lowering the time per timestep.</em></td>
+</tr>
+<tr>
+<td>9:20-9:40</td>
+<td>12:20-12:40</td>
 <td><strong>Break</strong> <br> • side discussions on Slack</td>
-<td></td>
 </tr>
 <tr>
-<td>12:30-2:30</td>
-<td>3:30-5:30</td>
+<td>9:40-10:00</td>
+<td>12:40-1:00</td>
+<td><strong>Developments in Support of MFEM's Conforming Mesh Adaptation Capabilities</strong> <br> Cameron Smith + Morteza Siboni (RPI)</td>
+</tr>
+<tr>
+<td>10:00-10:20</td>
+<td>1:00-1:20</td>
+<td><strong>Accurate "Shaping" of Curved Interfaces into Curvilinear High Order Meshes</strong> <br> Kenny Weiss (LLNL) <br> <em>Multimaterial numerical simulations often need to embed their constituent materials into a computational mesh. For example, the Volume-of-Fluid approach utilizes material volume fractions encoding the percentage of each material within the mesh elements. In this work, we present a novel, accurate method for conservatively shaping materials bounded by curved interfaces into high order meshes. Our algorithm formulates the shaping problem as an L2 projection of the material onto the polynomial bases of each element. We first compute the intersection regions between each high-order mesh element and the material regions. We then use a Green’s theorem approach to produce spectrally-convergent quadrature rules for each of the curved polygons. We present preliminary results which demonstrate that the method is more accurate than a sampling based approach. In collaboration with David Gunderman, John Evans and Jin Yao (LLNL)</em></td>
+</tr>
+<tr>
+<td>10:20-10:40</td>
+<td>1:20-1:40</td>
+<td><strong>Cache Blocking Strategies for High-Order Methods on CPUs</strong> <br> Freddie Witherden (TAMU) <br> <em>When applied to tensor-product elements the performance of the discontinuous spectral element method is typically limited by available memory bandwidth. The generally accepted means of reducing the bandwidth requirements for a numerical method is by fusing together kernels so as to avoid unnecessary trips to/from main memory. Although effective, kernel fusion has a negative impact on the maintainability of a code. In this talk we will show how recent trends towards large private L2 caches on CPUs make cache-blocking a viable alternative to kernel fusion. Our vehicle for this will be the high-order fluid dynamics code PyFR. By combining an appropriate blocking strategy with the novel array-of-structure-of-arrays data layout employed by PyFR, we will demonstrate a factor of three speed-up for the Euler equations on hexahedral elements.</em></td>
+</tr>
+<tr>
+<td>10:40-11:00</td>
+<td>1:40-2:00</td>
+<td><strong>Full Domain Decomposition with Polynomial Reduction Preconditioner for Spectral Element Poisson Solvers</strong> <br> Pedro Bello-Maldonado (UIUC)</td>
+</tr>
+<tr>
+<td>11:00-11:20</td>
+<td>2:00-2:20</td>
+<td><strong>Break</strong> <br> • side discussions on Slack</td>
+</tr>
+<tr>
+<td>11:20-11:40</td>
+<td>2:20-2:40</td>
+<td><strong>Hardware Thrust &amp; MAGMA Update</strong> <br> Stan Tomov (UTK)</td>
+</tr>
+<tr>
+<td>11:40-12:00</td>
+<td>2:40-3:00</td>
+<td><strong>Frontier COE Update</strong> <br> Scott Moe (AMD)</td>
+</tr>
+<tr>
+<td>12:00-12:20</td>
+<td>3:00-3:20</td>
+<td><strong>Aurora Update &amp; OCCA DPC++ Backend</strong> <br> Kris Rowe (ANL)</td>
+</tr>
+<tr>
+<td>12:20-12:40</td>
+<td>3:20-3:40</td>
+<td><strong>El Capitan Update</strong> <br> Ian Karlin (LLNL)</td>
+</tr>
+<tr>
+<td>12:40-1:00</td>
+<td>3:40-4:00</td>
+<td><strong>Break</strong>  <br> • side discussions on Slack</td>
+</tr>
+<tr>
+<td>1:00-2:00</td>
+<td>4:00-5:00</td>
 <td><strong>Technical Discussions</strong> <br> • parallel sessions on Slack</td>
-<td></td>
 </tr>
 <tr>
-<td>2:30-3:00</td>
-<td>5:30-6:00</td>
+<td>2:00</td>
+<td>5:00</td>
 <td><strong>Meeting Wrap-up</strong></td>
-<td><em>Tzanio Kolev</em></td>
 </tr>
 </tbody>
 </table>
