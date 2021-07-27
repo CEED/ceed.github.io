@@ -459,36 +459,41 @@ Moderators will be unmuted to provide some auditory feedback. They will also mon
 <tr>
 <td>11:00-11:20</td>
 <td>2:00-2:20</td>
-<td><strong>Group Photo &amp; Break</strong> <br> • side discussions on Slack</td>
+<td><strong>Full Domain Decomposition with Polynomial Reduction Preconditioner for Spectral Element Poisson Solvers</strong> <br> Pedro Bello-Maldonado (UIUC) <br> <em>Minimizing communication is central to realizing high performance for scalable execution of parallel algorithms. On GPU-based systems, iterative solvers can be prohibitively expensive without an algorithm that concentrates most of the work on the GPU devices and lightens the load on the network. This work focuses on increased local work per iteration to reduce iteration counts and thus internode communication. We present a full domain decomposition with polynomial reduction (FDD+PR) preconditioner that targets the solution of spectral-element-based Poisson problems discretized by high-order spectral elements on GPU-based exascale architectures. The algorithm constructs local composite grids by first reducing the polynomial order of the elements adjacent to the GPU-local partition, followed by progressive geometric coarsening all the way to the domain boundary. During the preconditioning step of the iterative solver, the residual is restricted to the different levels of the coarsening tree and communicated so that each processor can solve its local problem independently. Once completed, the local solutions are stitched together and the global iterative solver continues. This class of algorithms are known to achieve fast convergence at the cost of more expensive preconditioner evaluations. Our results demonstrate a faster reduction of the relative residual compared to other well known preconditioners like low-order preconditioning and hybrid-Schwarz-multigrid preconditioning.</em></td>
 </tr>
 <tr>
 <td>11:20-11:40</td>
 <td>2:20-2:40</td>
-<td><strong>Software Thrust &amp; libCEED Update</strong> <br> Jed Brown (Boulder)</td>
+<td><strong>Group Photo &amp; Break</strong> <br> • side discussions on Slack</td>
 </tr>
 <tr>
 <td>11:40-12:00</td>
 <td>2:40-3:00</td>
-<td><strong>OCCA Roadmap</strong> <br> David Medina (Occalytics)</td>
+<td><strong>Software Thrust &amp; libCEED Update</strong> <br> Jed Brown (Boulder)</td>
 </tr>
 <tr>
 <td>12:00-12:20</td>
 <td>3:00-3:20</td>
-<td><strong>hipBone: A C++ port of Nekbone</strong> <br> Noel Chalmers + Damon McDougall (AMD) <br> <em>As part of CORAL2 benchmarking and optimization efforts, AMD has developed a partial C++ port of the "NekBone" benchmark, named "hipBone", targeting current- and next-generation heterogeneous accelerated computing platforms. We will give a overview of the hipBone benchmark, and present some performance and scaling data collected on ORNL's Spock cluster.</em></td>
+<td><strong>OCCA Roadmap</strong> <br> David Medina (Occalytics)</td>
 </tr>
 <tr>
 <td>12:20-12:40</td>
 <td>3:20-3:40</td>
-<td><strong>Hyperbolic Diffusion in Flux Reconstruction: Optimisation through Kernel Fusion within Tensor-Product Elements</strong> <br> Will Trojak (TAMU) <br> <em>We will present some of our recent work generating novel methods for the fusion of GPU kernels in the artificial compressibility method (ACM), using tensor-product elements and flux reconstruction. This is made possible through the hyperbolisation of the diffusion terms, which eliminates the algorithmic steps needed to form the viscous stresses. We will show two fusion approaches which offer differing levels of parallelism. This is found to be necessary for the change in workload as the order of accuracy of the elements is increased. Several further optimisations of these approaches will be demonstrated, including a generation-time memory manager for adaptive resource usage. The fused kernels are able to achieve 3-4 times speedup, which compares favourably with a theoretical maximum speedup of 4. In three-dimensional test cases, the generated fused kernels are found to reduce total runtime by 25%, and, when compared to the standard ACM formulation, simulations demonstrate that a speedup of 2.3 times can be achieved.</em></td>
+<td><strong>hipBone: A C++ port of Nekbone</strong> <br> Noel Chalmers + Damon McDougall (AMD) <br> <em>As part of CORAL2 benchmarking and optimization efforts, AMD has developed a partial C++ port of the "NekBone" benchmark, named "hipBone", targeting current- and next-generation heterogeneous accelerated computing platforms. We will give a overview of the hipBone benchmark, and present some performance and scaling data collected on ORNL's Spock cluster.</em></td>
 </tr>
 <tr>
 <td>12:40-1:00</td>
 <td>3:40-4:00</td>
+<td><strong>Hyperbolic Diffusion in Flux Reconstruction: Optimisation through Kernel Fusion within Tensor-Product Elements</strong> <br> Will Trojak (TAMU) <br> <em>We will present some of our recent work generating novel methods for the fusion of GPU kernels in the artificial compressibility method (ACM), using tensor-product elements and flux reconstruction. This is made possible through the hyperbolisation of the diffusion terms, which eliminates the algorithmic steps needed to form the viscous stresses. We will show two fusion approaches which offer differing levels of parallelism. This is found to be necessary for the change in workload as the order of accuracy of the elements is increased. Several further optimisations of these approaches will be demonstrated, including a generation-time memory manager for adaptive resource usage. The fused kernels are able to achieve 3-4 times speedup, which compares favourably with a theoretical maximum speedup of 4. In three-dimensional test cases, the generated fused kernels are found to reduce total runtime by 25%, and, when compared to the standard ACM formulation, simulations demonstrate that a speedup of 2.3 times can be achieved.</em></td>
+</tr>
+<tr>
+<td>1:00-1:20</td>
+<td>4:00-4:20</td>
 <td><strong>Break</strong> <br> • discuss/finalize topics for parallel technical discussions <br> • e.g. new BPs, solvers, meshing, visualization, ...</td>
 </tr>
 <tr>
-<td>1:00-2:00</td>
-<td>4:00-5:00</td>
+<td>1:20-2:00</td>
+<td>4:20-5:00</td>
 <td><strong>Technical Discussions</strong> <br> • parallel sessions on Slack</td>
 </tr>
 <tr>
@@ -561,7 +566,7 @@ Moderators will be unmuted to provide some auditory feedback. They will also mon
 <tr>
 <td>11:20-11:40</td>
 <td>2:20-2:40</td>
-<td><strong>Hardware Thrust &amp; MAGMA Update</strong> <br> Stan Tomov (UTK) <br> <em>This talk provides an update on the activities of the CEED hardware thrust and the MAGMA backaend</em></td>
+<td><strong>Hardware Thrust &amp; MAGMA Update</strong> <br> Stan Tomov (UTK) <br> <em>This talk provides an update on the activities of the CEED hardware thrust and the MAGMA backend</em></td>
 </tr>
 <tr>
 <td>11:40-12:00</td>
@@ -595,10 +600,6 @@ Moderators will be unmuted to provide some auditory feedback. They will also mon
 </tr>
 </tbody>
 </table>
-<!--
-| 10:40-11:00 | 1:40-2:00 | **Full Domain Decomposition with Polynomial Reduction Preconditioner for Spectral Element Poisson Solvers** <br> Pedro Bello-Maldonado (UIUC) |
--->
-
 <h3 id="participants">Participants</h3>
 <ul>
 <li>See the meeting <a href="https://ceedam.slack.com/">Slack</a> space</li>
