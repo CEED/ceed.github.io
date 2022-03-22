@@ -41,7 +41,7 @@
             </button>
 
             <!-- Main title -->
-            <a class="navbar-brand" href="http://ceed.exascaleproject.org/">CEED</a>
+            <a class="navbar-brand" href="http://ceed.exascaleproject.org">CEED</a>
         </div>
 
         <!-- Expanded navigation -->
@@ -298,6 +298,8 @@
     
         <li class="main active"><a href="#news">News</a></li>
         
+            <li><a href="#software-release-mfem-v44">Software release: MFEM v4.4</a></li>
+        
             <li><a href="#software-release-fms-v02">Software release: FMS v0.2</a></li>
         
             <li><a href="#ceed-annual-meeting-2021">CEED annual meeting 2021</a></li>
@@ -437,6 +439,24 @@
             <div class="col-md-9" role="main">
 
 <h1 id="news">News</h1>
+<h3 id="software-release-mfem-v44">Software release: MFEM v4.4</h3>
+<p>Version 4.4 of <a href="../mfem/">MFEM</a> was released on March 21, 2022. Some of the new
+additions in this release are:</p>
+<ul>
+<li>Support for AMG solvers on AMD GPUs.</li>
+<li>New hr-adaptivity and interface fitting of high-order meshes.</li>
+<li>High order Nedelec elements on tetrahedral meshes without reordering.</li>
+<li>GPU-enabled partial and element assembly for DG on AMR meshes.</li>
+<li>Initial support for meshes with pyramidal elements.</li>
+<li>Arbitrary order Nedelec and Raviart-Thomas elements on prisms.</li>
+<li>New and improved integrations with libCEED, CoDiPack, ParELAG.</li>
+<li>Documentation for all releases at https://docs.mfem.org.</li>
+<li>9 new examples and miniapps, including AD and Jupyter examples.</li>
+</ul>
+<p>For more details, see the <a href="http://mfem.org/examples">interactive documentation</a>
+at <a href="http://mfem.org/">http://mfem.org</a> and the full
+<a href="https://github.com/mfem/mfem/blob/v4.4/CHANGELOG">CHANGELOG</a>.</p>
+<hr />
 <h3 id="software-release-fms-v02">Software release: FMS v0.2</h3>
 <p>Version 0.2 of <a href="../fms/">FMS</a> was released on September 10th, 2021. Some of the new
 additions in this release are:</p>
@@ -878,7 +898,7 @@ full <a href="https://raw.githubusercontent.com/mfem/mfem/master/CHANGELOG">CHAN
 <p>Version 0.2 of <a href="../libceed/">libCEED</a>, the CEED API library, was released in March 2018 with major improvements in the <a href="../occa/">OCCA</a> backend.</p>
 <p>libCEED is a lightweight portable library that allows, for the first time, a wide variety of applications (written in C, C++, Fortran) to share  a wide variety of discretization kernels (CPU, GPU, OpenMP, OpenCL), including high-performance GPU kernels.</p>
 <p>libCEED comes with several examples of its usage, ranging from standalone C codes in the <code>/examples/ceed</code> directory to examples based on external packages, such as <a href="../mfem/">MFEM</a>, <a href="../petsc/">PETSc</a> and <a href="../nek/">Nek5000</a>. Below is an illustration how libCEED enables these very different codes (C++, C, F77) to take advantage of a common set of GPU kernels (see also the <a href="http://ceed.exascaleproject.org/ceed-1.0/#gpu-demo">CEED 1.0 GPU demo</a>):</p>
-<pre><code class="language-sh"># libCEED examples on CPU and GPU
+<pre><code class="sh"># libCEED examples on CPU and GPU
 cd examples/ceed
 make
 ./ex1 -ceed /cpu/self
@@ -906,6 +926,7 @@ cd examples/nek5000
 ./run-nek-example.sh -ceed /gpu/occa -b 3
 cd ../..
 </code></pre>
+
 <p>For more information visit <a href="https://github.com/CEED/libCEED">https://github.com/CEED/libCEED</a>.</p>
 <hr />
 <h3 id="panayot-vassilevski-named-siam-fellow">Panayot Vassilevski named SIAM fellow</h3>
@@ -1254,6 +1275,8 @@ for more information.</p></div>
     <ul class="nav bs-sidenav">
     
         <li class="main active"><a href="#news">News</a></li>
+        
+            <li><a href="#software-release-mfem-v44">Software release: MFEM v4.4</a></li>
         
             <li><a href="#software-release-fms-v02">Software release: FMS v0.2</a></li>
         
