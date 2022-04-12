@@ -175,8 +175,8 @@
                         
                     
                         
-                            <li class="active">
-                                 <a href="./">MAGMA</a>
+                            <li >
+                                 <a href="../magma/">MAGMA</a>
                             </li>
                         
                     
@@ -199,8 +199,8 @@
                         
                     
                         
-                            <li >
-                                 <a href="../omegah/">Omega_h</a>
+                            <li class="active">
+                                 <a href="./">Omega_h</a>
                             </li>
                         
                     
@@ -303,28 +303,8 @@
             <div class="col-md-3 visible-xs visible-sm"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
     
-        <li class="main active"><a href="#magma">MAGMA</a></li>
+        <li class="main active"><a href="#omega95h">Omega_h</a></li>
         
-	    
-                <li><a href="#hybrid-algorithms">Hybrid Algorithms</a></li>
-	    
-	
-	    
-                <li><a href="#performance-and-energy-efficiency">Performance and Energy Efficiency</a></li>
-	    
-	
-	    
-                <li><a href="#magma-batched">MAGMA Batched</a></li>
-	    
-	
-	    
-                <li><a href="#magma-sparse">MAGMA Sparse</a></li>
-	    
-	
-	    
-                <li><a href="#magma-development">MAGMA Development</a></li>
-	    
-	
     
     <hr style="background-color:white; height:20px; margin-left:-1px;  margin-right:-1px; margin-top:15px; margin-bottom:10px " />
     <li class="main" style="padding:0"><a href="https://github.com/CEED/forum">Contact CEED</a> </li>
@@ -337,77 +317,23 @@
 <!-- ... fa-comment, fa-comment-o, fa-comments, fa-comments-o, fa-bullhorn --></div> <!-- toc on top on mobile -->
             <div class="col-md-9" role="main">
 
-<h2 id="magma"><a href="http://icl.cs.utk.edu/magma/">MAGMA</a></h2>
-<!-- <img src="../img/magma.png" align="right" alt="MAGMA logo"> -->
-
-<p>MAGMA (Matrix Algebra on GPU and Multicore Architectures) is a collection of
-next generation linear algebra libraries for heterogeneous architectures. MAGMA
-is designed and implemented by the team that developed LAPACK and ScaLAPACK,
-incorporating the latest developments in hybrid synchronization- and
-communication-avoiding algorithms, as well as dynamic runtime
-systems. Interfaces for the current LAPACK and BLAS standards are supported to
-allow computational scientists to seamlessly port any linear algebra reliant
-software components to heterogeneous architectures.</p>
-<p><img src="../img/magma_features.png" width="300" alt="MAGMA Features and Support"></p>
-<p>MAGMA allows applications to fully exploit the power of current heterogeneous
-systems of multi/many-core CPUs and multi-GPUs to deliver the fastest possible
-time to accurate solution within given energy constraints.</p>
-<h3 id="hybrid-algorithms">Hybrid Algorithms</h3>
-<p>MAGMA uses a hybridization methodology where algorithms of interest are split
-into tasks of varying granularity and their execution scheduled over the
-available hardware components.  Scheduling can be static or dynamic.</p>
-<p><img src="../img/magma_dag.jpg" width="300" alt="MAGMA Hybrid Algorithms as DAGs"></p>
-<p>In either case, small non-parallelizable tasks, often on the critical path, are
-scheduled on the CPU, and larger more parallelizable ones, often Level 3 BLAS
-are scheduled on accelerators.</p>
-<h3 id="performance-and-energy-efficiency">Performance and Energy Efficiency</h3>
-<p>MAGMA solvers run close to the machine's peak performance. The LU factorization for
-example, illustrated below, runs as fast as the GPU can run matrix-matrix multiplications (GEMM),
-as the small tasks on the critical path are offloaded to the CPU and overlapped with the GEMMs
-on the GPU.</p>
-<p><img src="../img/magma_p100.jpg" width="500" alt="MAGMA Performance"></p>
-<h3 id="magma-batched">MAGMA Batched</h3>
-<p>MAGMA Batched targets small linear algebra operations. Small computational tasks are difficult
-to parallelize, but applications usually require the computation of many small problems, which
-can be grouped together (batched) and executed very efficiently. MAGMA Batched is being extended
-now under the CEED project to support tensor data structures and tensor contractions for high-order
-methods.</p>
-<p><img src="../img/magma_batched.png" width="500" alt="MAGMA Batched"></p>
-<h3 id="magma-sparse">MAGMA Sparse</h3>
-<p>MAGMA Sparse targets the development of high-performance sparse linear algebra operations on
-accelerators - from low-level kernels like SpMVs and SpMM, to higher-level Krylov subspace
-iterative solvers, eigensolvers, and preconditioners.</p>
-<p><img src="../img/magma_spmvp100.png" width="500" alt="MAGMA Sparse"></p>
-<h3 id="magma-development">MAGMA Development</h3>
-<p>MAGMA is being developed at the <a href="http://icl.cs.utk.edu">Innovative Computing Laboratory</a>
-of the <a href="https://www.utk.edu/">University of Tennessee</a>.</p>
-<p>In CEED, MAGMA is primarily involved in the efforts of the <a href="../sw/">Software</a>, <a href="../hw/">Hardware</a> and <a href="../fe/">Finite Element</a> thrusts.</p>
-<p>For more information, see the MAGMA website: <a href="http://icl.cs.utk.edu/magma/">http://icl.cs.utk.edu/magma</a>.</p></div>
+<h2 id="omega95h"><a href="https://github.com/SCOREC/omega_h">Omega_h</a></h2>
+<p><em>Omega_h</em> is a C++14 library that implements tetrahedron and triangle mesh adaptativity, with
+a focus on scalable HPC performance using (optionally) MPI and OpenMP or CUDA.
+It is intended to provided adaptive functionality to existing simulation codes.
+Mesh adaptivity allows one to minimize both discretization error and number of degrees of freedom live during the
+simulation, as well as enabling moving object and evolving geometry simulations.
+Omega_h will do this for you in a way that is fast, memory-efficient, and portable across many different architectures.</p>
+<p>Omega_h is being developed at RPI's <a href="https://www.scorec.rpi.edu/">Scientific Computation Research
+Center</a> and Sandia National Laboratories.</p>
+<p>In CEED, Omega_h is primarily involved in the efforts of the <a href="../fe/">Finite Element</a>
+and <a href="../sw/">Software</a> thrusts.</p>
+<p>For more information, see the <a href="https://github.com/SCOREC/omega_h/files/8468421/omega_h.pdf">Users Manual</a>.</p></div>
             <div class="col-md-3 hidden-xs hidden-sm"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
     
-        <li class="main active"><a href="#magma">MAGMA</a></li>
+        <li class="main active"><a href="#omega95h">Omega_h</a></li>
         
-	    
-                <li><a href="#hybrid-algorithms">Hybrid Algorithms</a></li>
-	    
-	
-	    
-                <li><a href="#performance-and-energy-efficiency">Performance and Energy Efficiency</a></li>
-	    
-	
-	    
-                <li><a href="#magma-batched">MAGMA Batched</a></li>
-	    
-	
-	    
-                <li><a href="#magma-sparse">MAGMA Sparse</a></li>
-	    
-	
-	    
-                <li><a href="#magma-development">MAGMA Development</a></li>
-	    
-	
     
     <hr style="background-color:white; height:20px; margin-left:-1px;  margin-right:-1px; margin-top:15px; margin-bottom:10px " />
     <li class="main" style="padding:0"><a href="https://github.com/CEED/forum">Contact CEED</a> </li>
