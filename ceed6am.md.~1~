@@ -1,0 +1,116 @@
+# CEED Annual Meeting
+#### August 3-4, 2021
+#### Virtual Meeting on Zoom + Slack
+
+![CEED Logo](img/logo-150.png)
+
+### Overview
+
+CEED will hold its fifth annual meeting August 3-4, 2021 virtually using ECP
+Zoom for videoconferencing and Slack for side discussions. The goal of
+the meeting is to report on the progress in the center, deepen existing and
+establish new connections with ECP hardware vendors, ECP software technologies
+projects and other collaborators, plan project activities and brainstorm/work as
+a group to make technical progress. In addition to gathering together many of
+the CEED researchers, the meeting will include representatives of the ECP
+management, hardware vendors, software technology and other interested projects.
+
+### Registration
+
+If you plan to attend, [please register no later than **July 27th**](https://forms.gle/9dnZHG2MNAaT7jg97). There is no registration fee.
+
+### Meeting format
+
+The meeting will include the following elements:
+
+- Project review and updates from the CEED team
+- Contributed talks from AD, ST, vendors and external partners
+- Technical discussions in small breakout groups
+
+Live presentations and wrap-up will be on [ECP Zoom](https://exascaleproject.zoomgov.com/) (links to be posted the week of the meeting).
+
+Side discussions and breakout sessions will be on the meeting [Slack](https://ceedam.slack.com/) space -- *Please join in advance*.
+
+<!--
+### Meeting format
+
+Based on your feedback during registration we can incorporate the following elements in the meeting:
+
+- Project review and updates from the CEED team
+- Contributed talks from AD, ST, vendors and external partners
+- Short pre-recorded talks/poster presentations
+- Technical discussions in small breakout groups
+- Software tutorials
+- Hackathon
+-->
+
+### Meeting Agenda
+
+The meeting activities will take place 11am-5pm eastern time (8am-2pm pacific).
+
+<!--
+Moderators will be unmuted to provide some auditory feedback. They will also monitor chat, relay questions and lead in the applause!
+-->
+
+#### Monday, August 2
+
+| Time (PDT) |  Time (EDT) | Activity
+|---|---|---|
+| 10:00-12:00 | 1:00-3:00 | **Test / Setup Zoom + Slack**
+
+
+#### Tuesday, August 3
+
+| Time (PDT) |  Time (EDT) | Activity |
+|---|---|---|
+| 8:00-8:20 | 11:00-11:20 | **Welcome & CEED Overview** <br> Tzanio Kolev (LLNL) |
+| 8:20-8:40 | 11:20-11:40 | **Finite Element Thrust & MFEM Update** <br> Veselin Dobrev (LLNL) <br> *This talk will provide a summary of the Finite Element thrust activities during the last year of the CEED project with a main focus on new developments in the MFEM software library.* |
+| 8:40-9:00 | 11:40-12:00 | ** NekRS Update** <br> Paul Fischer (ANL) |
+| 9:00-9:20 | 12:00-12:20 | **libParanumal Update** <br> Tim Warburton (VTech) <br> *Update on the latest innovations in the libParanumal solvers and improvements for CEED BPS benchmarks.* |
+| 9:20-9:40 | 12:20-12:40 | **Break** <br> • side discussions on Slack <br> • propose breakout topics |
+| 9:40-10:00 | 12:40-1:00 | **hypre GPU Support** <br> Ruipeng Li (LLNL) |
+| 10:00-10:20 | 1:00-1:20 | **PETSc GPU Support** <br> Junchao Zhang (ANL) + Mark Adams (LBNL) <br> *Introduction to recent progress in PETSc's GPU support and GPU-enabled solvers.* |
+| 10:20-10:40 | 1:20-1:40 | **Recent Optimisation of the Algebraic Multigrid Solver Library AmgX** <br> Matthew Martineau (NVIDIA) <br> *AmgX is an open source distributed linear solver library specialising in multigrid preconditioning. The library exposes a range of traditional solvers and smoothers, and is developed to perform all processing efficiently on NVIDIA GPUs. This talk will give a status update, discuss some recent optimisations, and present plans for future improvement.* |
+| 10:40-11:00 | 1:40-2:00 | **Matrix-Free High-Order DG Methods in deal.ii** <br> Martin Kronbichler (Uppsala) |
+| 11:00-11:20 | 2:00-2:20 | **Neumann Series in Post-Modern PM-GMRES and Inner-Outer Iterations** <br> Stephen Thomas (NREL) <br> *Low-synchronization PM-GMRES Krylov solver employing a truncated Neumann series will be presented with C-AMG preconditioners based on inner-outer Gauss-Seidel smoothers that are expressed as truncated Neumann series. Joint work with Kasia Swirydowicz (PNNL), Ruipeng Li (LLNL) and Paul Mullowney (NREL).* |
+| 11:20-11:40 | 2:20-2:40 | **Group Photo & Break** <br> • side discussions on Slack |
+| 11:40-12:00 | 2:40-3:00 | **Software Thrust & libCEED Update** <br> Jed Brown (Boulder) |
+| 12:00-12:20 | 3:00-3:20 | **OCCA Roadmap** <br> David Medina (Occalytics) |
+| 12:20-12:40 | 3:20-3:40 | **hipBone: A C++ port of Nekbone** <br> Noel Chalmers + Damon McDougall (AMD) <br> *As part of CORAL2 benchmarking and optimization efforts, AMD has developed a partial C++ port of the "NekBone" benchmark, named "hipBone", targeting current- and next-generation heterogeneous accelerated computing platforms. We will give an overview of the hipBone benchmark, and present some performance and scaling data collected on ORNL's Spock cluster.* |
+| 12:40-1:00 | 3:40-4:00 | **Hyperbolic Diffusion in Flux Reconstruction: Optimisation through Kernel Fusion within Tensor-Product Elements** <br> Will Trojak (TAMU) <br> *We will present some of our recent work generating novel methods for the fusion of GPU kernels in the artificial compressibility method (ACM), using tensor-product elements and flux reconstruction. This is made possible through the hyperbolisation of the diffusion terms, which eliminates the algorithmic steps needed to form the viscous stresses. We will show two fusion approaches which offer differing levels of parallelism. This is found to be necessary for the change in workload as the order of accuracy of the elements is increased. Several further optimisations of these approaches will be demonstrated, including a generation-time memory manager for adaptive resource usage. The fused kernels are able to achieve 3-4 times speedup, which compares favourably with a theoretical maximum speedup of 4. In three-dimensional test cases, the generated fused kernels are found to reduce total runtime by 25%, and, when compared to the standard ACM formulation, simulations demonstrate that a speedup of 2.3 times can be achieved.* |
+| 1:00-1:20 | 4:00-4:20 | **Break** <br> • discuss/finalize topics for parallel technical discussions <br> • e.g. new BPs, solvers, meshing, visualization, ... |
+| 1:20-2:00 | 4:20-5:00 | **Technical Discussions** <br> • parallel sessions on Slack |
+| 2:00 | 5:00 | **Day 1 Wrap-up**
+
+
+#### Wednesday, August 4
+
+| Time (PDT) |  Time (EDT) | Activity |
+|---|---|---|
+| 8:00-8:20 | 11:00-11:20 | **Applications Thrust & Nek Update** <br> Misun Min (ANL) |
+| 8:20-8:40 | 11:20-11:40 | **ExaSMR update: Full Core Reactor CFD Simulations** <br> Elia Merzari (PSU) |
+| 8:40-9:00 | 11:40-12:00 | **The Multiphysics on Advanced Platforms Project: Performance, Portability and Scaling** <br> Arturo Vargas (LLNL) |
+| 9:00-9:20 | 12:00-12:20 | **AMR-Wind Solver Enhancements** <br> Michael Brazell (NREL) <br> *The ExaWind project is tasked with simulating a high-fidelity wind-farm using blade resolved wind-turbines. An overset approach is used to tackle this problem by combining Nalu-Wind as a near-body solver (region near the blades) and AMR-Wind as an off-body solver. The off-body solver is responsible for attaching/adapting the grid near the wind turbine, resolving the wake behind the turbine, and modeling the surrounding atmospheric boundary layer (ABL). In this talk I will discuss AMR-Wind and a recent collaboration with the NekRS team for simulating a stable ABL problem called GABLS. This collaboration is focused on code-to-code comparisons of the flow field as well as strong/weak scaling studies on Eagle and Summit. Due to this collaboration NekRS has shared some solver strategies that has already benefited AMR-Wind by lowering the time per timestep.*|
+| 9:20-9:40 | 12:20-12:40 | **Break** <br> • side discussions on Slack |
+| 9:40-10:00 | 12:40-1:00 | **High-performance computing in a dynamic language** <br> Simon Byrne (Caltech) <br> *Though popular in other domains, dynamic languages are still rare in HPC applications, outside of front-end driver or code generation steps. The CliMA project is developing a full earth system model (ESM), entirely in the high-level, dynamic Julia language. The model has been developed from scratch to target both CPU and GPU architectures, using a common codebase. This talk will describe the approach and tools we have built, along with some lessons, benefits and challenges we have found along the way.* |
+| 10:00-10:20 | 1:00-1:20 | **Developments in Support of MFEM's Conforming Mesh Adaptation Capabilities** <br> Cameron Smith + Morteza Hakimi (RPI) |
+| 10:20-10:40 | 1:20-1:40 | **Accurate "Shaping" of Curved Interfaces into Curvilinear High Order Meshes** <br> Kenny Weiss (LLNL) <br> *Multimaterial numerical simulations often need to embed their constituent materials into a computational mesh. For example, the Volume-of-Fluid approach utilizes material volume fractions encoding the percentage of each material within the mesh elements. In this work, we present a novel, accurate method for conservatively shaping materials bounded by curved interfaces into high order meshes. Our algorithm formulates the shaping problem as an L2 projection of the material onto the polynomial bases of each element. We first compute the intersection regions between each high-order mesh element and the material regions. We then use a Green's theorem approach to produce spectrally-convergent quadrature rules for each of the curved polygons. We present preliminary results which demonstrate that the method is more accurate than a sampling based approach. In collaboration with David Gunderman, John Evans and Jin Yao (LLNL)* |
+| 10:40-11:00 | 1:40-2:00 | **Cache Blocking Strategies for High-Order Methods on CPUs** <br> Freddie Witherden (TAMU) <br> *When applied to tensor-product elements the performance of the discontinuous spectral element method is typically limited by available memory bandwidth. The generally accepted means of reducing the bandwidth requirements for a numerical method is by fusing together kernels so as to avoid unnecessary trips to/from main memory. Although effective, kernel fusion has a negative impact on the maintainability of a code. In this talk we will show how recent trends towards large private L2 caches on CPUs make cache-blocking a viable alternative to kernel fusion. Our vehicle for this will be the high-order fluid dynamics code PyFR. By combining an appropriate blocking strategy with the novel array-of-structure-of-arrays data layout employed by PyFR, we will demonstrate a factor of three speed-up for the Euler equations on hexahedral elements.*|
+| 11:00-11:20 | 2:00-2:20 | **Full Domain Decomposition with Polynomial Reduction Preconditioner for Spectral Element Poisson Solvers** <br> Pedro Bello-Maldonado (UIUC) <br> *Minimizing communication is central to realizing high performance for scalable execution of parallel algorithms. On GPU-based systems, iterative solvers can be prohibitively expensive without an algorithm that concentrates most of the work on the GPU devices and lightens the load on the network. This work focuses on increased local work per iteration to reduce iteration counts and thus internode communication. We present a full domain decomposition with polynomial reduction (FDD+PR) preconditioner that targets the solution of spectral-element-based Poisson problems discretized by high-order spectral elements on GPU-based exascale architectures. The algorithm constructs local composite grids by first reducing the polynomial order of the elements adjacent to the GPU-local partition, followed by progressive geometric coarsening all the way to the domain boundary. During the preconditioning step of the iterative solver, the residual is restricted to the different levels of the coarsening tree and communicated so that each processor can solve its local problem independently. Once completed, the local solutions are stitched together and the global iterative solver continues. This class of algorithms are known to achieve fast convergence at the cost of more expensive preconditioner evaluations. Our results demonstrate a faster reduction of the relative residual compared to other well known preconditioners like low-order preconditioning and hybrid-Schwarz-multigrid preconditioning.* |
+| 11:20-11:40 | 2:20-2:40 | **Break** <br> • side discussions on Slack |
+| 11:40-12:00 | 2:40-3:00 | **Hardware Thrust & MAGMA Update** <br> Stan Tomov + Natalie Beams (UTK) <br> *This talk provides an update on the activities of the CEED hardware thrust and the MAGMA backend* |
+| 12:00-12:20 | 3:00-3:20 | **Frontier COE Update** <br> Nicholas Malaya (AMD) <br> *An update on progress on, and plans for the Frontier supercomputer.* |
+| 12:20-12:40 | 3:20-3:40 | **Aurora Update & OCCA DPC++ Backend** <br> Kris Rowe (ANL) |
+| 12:40-1:00 | 3:40-4:00 | **El Capitan Update & Future Work** <br> Ian Karlin (LLNL) |
+| 1:00-1:20 | 4:00-4:20 | **Break**  <br> • side discussions on Slack |
+| 1:20-2:00 | 4:20-5:00 | **Technical Discussions** <br> • parallel sessions on Slack |
+| 2:00 | 5:00 | **Meeting Wrap-up**
+
+
+### Participants
+- See the meeting [Slack](https://ceedam.slack.com/) space
+
+### Questions?
+
+For questions, please contact the meeting organizers at
+[ceed-meeting@llnl.gov](mailto:ceed-meeting@llnl.gov).
