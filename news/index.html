@@ -41,7 +41,7 @@
             </button>
 
             <!-- Main title -->
-            <a class="navbar-brand" href="http://ceed.exascaleproject.org/">CEED</a>
+            <a class="navbar-brand" href="http://ceed.exascaleproject.org">CEED</a>
         </div>
 
         <!-- Expanded navigation -->
@@ -289,7 +289,7 @@
                 
                 
                 <li>
-                    <a href="https://github.com/ceed">
+                    <a href="https://github.com/ceed/">
                         
                             <i class="fa fa-github-square"></i>
                         
@@ -307,6 +307,8 @@
     <ul class="nav bs-sidenav">
     
         <li class="main active"><a href="#news">News</a></li>
+        
+            <li><a href="#software-release-mfem-v45">Software release: MFEM v4.5</a></li>
         
             <li><a href="#ceed-annual-meeting-2022">CEED annual meeting 2022</a></li>
         
@@ -453,6 +455,25 @@
             <div class="col-md-9" role="main">
 
 <h1 id="news">News</h1>
+<hr />
+<h3 id="software-release-mfem-v45">Software release: MFEM v4.5</h3>
+<p>Version 4.5 of <a href="../mfem/">MFEM</a> was released on October 22, 2022. Some of the new
+additions in this release are:</p>
+<ul>
+<li>MFEM Docker container and cloud support.</li>
+<li>New and improved integrations with Enzyme, Algoim, ParMoonolith, hypre, SuperLU, SUNDIALS, PETSc and libCEED.</li>
+<li>Efficient GPU kernels for LOR matrix assembly and DG mass operator inversion.</li>
+<li>Full assembly and device support for LinearForm integrators.</li>
+<li>Partial assembly and matrix-free operators on mixed meshes through libCEED.</li>
+<li>New miniapp, Hooke, showcasing automatic differentiation for nonlinear elasticity.</li>
+<li>Improved mesh optimization and physical space interpolation.</li>
+<li>Support for submesh extraction.</li>
+<li>New fractional PDE example.</li>
+</ul>
+<p>For more details, see the <a href="http://mfem.org/examples">interactive documentation</a>
+at <a href="http://mfem.org/">http://mfem.org</a> and the full
+<a href="https://github.com/mfem/mfem/blob/v4.5/CHANGELOG">CHANGELOG</a>.</p>
+<hr />
 <h3 id="ceed-annual-meeting-2022">CEED annual meeting 2022</h3>
 <p><img src="../img/CEED6AM.png" align="center" alt="CEED6AM picture"></p>
 <p>CEED held its sixth annual meeting August 9-11, 2022 in a hybrid format:
@@ -940,7 +961,7 @@ full <a href="https://raw.githubusercontent.com/mfem/mfem/master/CHANGELOG">CHAN
 <p>Version 0.2 of <a href="../libceed/">libCEED</a>, the CEED API library, was released in March 2018 with major improvements in the <a href="../occa/">OCCA</a> backend.</p>
 <p>libCEED is a lightweight portable library that allows, for the first time, a wide variety of applications (written in C, C++, Fortran) to share  a wide variety of discretization kernels (CPU, GPU, OpenMP, OpenCL), including high-performance GPU kernels.</p>
 <p>libCEED comes with several examples of its usage, ranging from standalone C codes in the <code>/examples/ceed</code> directory to examples based on external packages, such as <a href="../mfem/">MFEM</a>, <a href="../petsc/">PETSc</a> and <a href="../nek/">Nek5000</a>. Below is an illustration how libCEED enables these very different codes (C++, C, F77) to take advantage of a common set of GPU kernels (see also the <a href="http://ceed.exascaleproject.org/ceed-1.0/#gpu-demo">CEED 1.0 GPU demo</a>):</p>
-<pre><code class="language-sh"># libCEED examples on CPU and GPU
+<pre><code class="sh"># libCEED examples on CPU and GPU
 cd examples/ceed
 make
 ./ex1 -ceed /cpu/self
@@ -968,6 +989,7 @@ cd examples/nek5000
 ./run-nek-example.sh -ceed /gpu/occa -b 3
 cd ../..
 </code></pre>
+
 <p>For more information visit <a href="https://github.com/CEED/libCEED">https://github.com/CEED/libCEED</a>.</p>
 <hr />
 <h3 id="panayot-vassilevski-named-siam-fellow">Panayot Vassilevski named SIAM fellow</h3>
@@ -1316,6 +1338,8 @@ for more information.</p></div>
     <ul class="nav bs-sidenav">
     
         <li class="main active"><a href="#news">News</a></li>
+        
+            <li><a href="#software-release-mfem-v45">Software release: MFEM v4.5</a></li>
         
             <li><a href="#ceed-annual-meeting-2022">CEED annual meeting 2022</a></li>
         
