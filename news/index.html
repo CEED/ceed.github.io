@@ -41,7 +41,7 @@
             </button>
 
             <!-- Main title -->
-            <a class="navbar-brand" href="http://ceed.exascaleproject.org/">CEED</a>
+            <a class="navbar-brand" href="http://ceed.exascaleproject.org">CEED</a>
         </div>
 
         <!-- Expanded navigation -->
@@ -289,7 +289,7 @@
                 
                 
                 <li>
-                    <a href="https://github.com/ceed">
+                    <a href="https://github.com/ceed/">
                         
                             <i class="fa fa-github-square"></i>
                         
@@ -307,6 +307,8 @@
     <ul class="nav bs-sidenav">
     
         <li class="main active"><a href="#news">News</a></li>
+        
+            <li><a href="#ceed-annual-meeting-2023">CEED annual meeting 2023</a></li>
         
             <li><a href="#software-release-mfem-v452">Software release: MFEM v4.5.2</a></li>
         
@@ -458,6 +460,13 @@
 
 <h1 id="news">News</h1>
 <hr />
+<h3 id="ceed-annual-meeting-2023">CEED annual meeting 2023</h3>
+<p>Our seventh and final annual meeting will take place on August 1-3, 2023 in a hybrid format:
+in-person at Lawrence Livermore National Lab and virtually using ECP Zoom for videoconferencing and Slack
+for side discussions.</p>
+<p>See the <a href="../ceed7am/">meeting page</a> for additional information inlcuding 
+registration link. We hope to see you there!</p>
+<hr />
 <h3 id="software-release-mfem-v452">Software release: MFEM v4.5.2</h3>
 <p>Version 4.5.2 of <a href="../mfem/">MFEM</a> was released on March 23, 2023. Some of the new
 additions in this release are:</p>
@@ -503,7 +512,7 @@ brainstorm/work as a group to make technical progress.</p>
 <p>In addition to gathering together many of the CEED researchers, the meeting
 included representatives of the ECP management, hardware vendors, software
 technology and other interested projects.</p>
-<p>See the <a href="http://ceed.exascaleproject.org/ceed6am/">meeting page</a> for additional information.</p>
+<p>See the <a href="../ceed6am/">meeting page</a> for additional information.</p>
 <hr />
 <h3 id="software-release-libceed-v0100">Software release: libCEED v0.10.0</h3>
 <p>Version 0.10 of <a href="https://github.com/ceed/libceed">libCEED</a> was released on March 21, 2022. Some of the new
@@ -977,7 +986,7 @@ full <a href="https://raw.githubusercontent.com/mfem/mfem/master/CHANGELOG">CHAN
 <p>Version 0.2 of <a href="../libceed/">libCEED</a>, the CEED API library, was released in March 2018 with major improvements in the <a href="../occa/">OCCA</a> backend.</p>
 <p>libCEED is a lightweight portable library that allows, for the first time, a wide variety of applications (written in C, C++, Fortran) to share  a wide variety of discretization kernels (CPU, GPU, OpenMP, OpenCL), including high-performance GPU kernels.</p>
 <p>libCEED comes with several examples of its usage, ranging from standalone C codes in the <code>/examples/ceed</code> directory to examples based on external packages, such as <a href="../mfem/">MFEM</a>, <a href="../petsc/">PETSc</a> and <a href="../nek/">Nek5000</a>. Below is an illustration how libCEED enables these very different codes (C++, C, F77) to take advantage of a common set of GPU kernels (see also the <a href="http://ceed.exascaleproject.org/ceed-1.0/#gpu-demo">CEED 1.0 GPU demo</a>):</p>
-<pre><code class="language-sh"># libCEED examples on CPU and GPU
+<pre><code class="sh"># libCEED examples on CPU and GPU
 cd examples/ceed
 make
 ./ex1 -ceed /cpu/self
@@ -1005,6 +1014,7 @@ cd examples/nek5000
 ./run-nek-example.sh -ceed /gpu/occa -b 3
 cd ../..
 </code></pre>
+
 <p>For more information visit <a href="https://github.com/CEED/libCEED">https://github.com/CEED/libCEED</a>.</p>
 <hr />
 <h3 id="panayot-vassilevski-named-siam-fellow">Panayot Vassilevski named SIAM fellow</h3>
@@ -1353,6 +1363,8 @@ for more information.</p></div>
     <ul class="nav bs-sidenav">
     
         <li class="main active"><a href="#news">News</a></li>
+        
+            <li><a href="#ceed-annual-meeting-2023">CEED annual meeting 2023</a></li>
         
             <li><a href="#software-release-mfem-v452">Software release: MFEM v4.5.2</a></li>
         
