@@ -546,7 +546,7 @@ technology, and other interested projects.</p>
 </tr>
 <tr>
 <td>4:30-5:00</td>
-<td><strong>MPICH for low latency communication on exascale systems</strong> <br> Thomas Gillis <br> <em>TBD</em></td>
+<td><strong>MPICH for low latency communication on exascale systems</strong> <br> Thomas Gillis <br> <em>PDE solvers rely on repeated communication patterns, unchanged over a few iterations. Further, the messages size at play is usually small. In this context, the communication is then latency-bound and the latter plays a key role in the performance at scale.In this presentation, we detail two mechanisms to reduce the latency of communication: MPIX_Stream (mpich only) and MPI-RMA.  First, MPIX_Stream has been introduced in mpich recently and allows the user to specify a MPI context ID, which is crucial to achieve performance when using multiple threads.Second, MPI-RMA provides a low-latency interface when used for certain communication patterns. Specifically, we will outline the MPI RMA semantics, compare it to the commonly used point-to-point one, and provide examples as well as expected performance gain in the context of distributed PDE solvers.</em></td>
 </tr>
 <tr>
 <td>5:00</td>
