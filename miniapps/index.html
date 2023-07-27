@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>Center for Efficient Exascale Discretizations</title>
+
+        <link href="../css/bootstrap-ceed.min.css" rel="stylesheet">
+        <link href="../css/font-awesome-4.0.3.css" rel="stylesheet">
+        <link rel="stylesheet" href="../css/highlight.css">
+        <link href="../css/base.css" rel="stylesheet">
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+        
+    </head>
+
+    
+    <body>
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <!-- Main title -->
+            <a class="navbar-brand" href="http://ceed.exascaleproject.org">CEED</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+            <!-- Main navigation -->
+            <ul class="nav navbar-nav">
+            
+            
+            
+            
+            
+                <li >
+                    <a href="../news/">News</a>
+                </li>
+            
+            
+            
+            
+            
+                <li class="dropdown active">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Co-Design <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        
+                            <li >
+                                 <a href="../codesign/">Approach</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../ap/">Applications</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../hw/">Hardware</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../sw/">Software</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../bps/">Benchmarks</a>
+                            </li>
+                        
+                    
+                        
+                            <li class="active">
+                                 <a href="./">Miniapps</a>
+                            </li>
+                        
+                    
+                    </ul>
+                </li>
+            
+            
+            
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Software <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        
+                            <li >
+                                 <a href="../software/">Catalog</a>
+                            </li>
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                            <li >
+                                 <a href="../ceed-5.0/">CEED 5.0</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../ceed-code/">CEED APIs</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../libceed/">libCEED</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../fms/">FMS</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../mfem/">MFEM</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../nek/">Nek</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../libparanumal/">libParanumal</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../gslib/">GSLIB</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../magma/">MAGMA</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../occa/">OCCA</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../petsc/">PETSc</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../pumi/">PUMI</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../omegah/">Omega_h</a>
+                            </li>
+                        
+                    
+                    </ul>
+                </li>
+            
+            
+            
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Research <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        
+                            <li >
+                                 <a href="../thrusts/">R&D Thrusts</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../pubs/">Publications</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../fe/">Finite Elements</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../meshing/">Meshing</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../linalg/">Linear Algebra</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../discr/">Discretization</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../vis/">Visualization</a>
+                            </li>
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                    </ul>
+                </li>
+            
+            
+            
+            
+            
+                <li >
+                    <a href="../about/">About</a>
+                </li>
+            
+            
+            
+            </ul>
+
+            <!-- Search, Navigation and Repo links -->
+            <ul class="nav navbar-nav navbar-right">
+                
+                
+                <li>
+                    <a href="https://github.com/ceed/">
+                        
+                            <i class="fa fa-github-square"></i>
+                        
+                        GitHub
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+    </div>
+</div>
+        <div class="container">
+            <div class="col-md-3 visible-xs visible-sm"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+        <li class="main active"><a href="#ceed-miniapps">CEED Miniapps</a></li>
+        
+	    
+                <li><a href="#nekbone">Nekbone</a></li>
+	    
+	
+	    
+                <li><a href="#laghos">Laghos</a></li>
+	    
+	
+	    
+	        <li><a href="#remhos-new">Remhos  <span class="label label-primary">New</span></a></li>
+	    
+	
+	    
+                <li><a href="#nekcem-ceedling">NekCEM CEEDling</a></li>
+	    
+	
+	    
+                <li><a href="#hpgmg-fe">HPGMG-FE</a></li>
+	    
+	
+	    
+                <li><a href="#mfem-example-codes">MFEM Example Codes</a></li>
+	    
+	
+    
+    <hr style="background-color:white; height:20px; margin-left:-1px;  margin-right:-1px; margin-top:15px; margin-bottom:10px " />
+    <li class="main" style="padding:0"><a href="https://github.com/CEED/forum">Contact CEED</a> </li>
+       <li><a href="https://github.com/CEED/forum"><i class="fa fa-comment-o"></i> User forum</a> </li>
+       <li><a href="mailto:ceed-users@llnl.gov"><i class="fa fa-envelope-o"></i> ceed-users@llnl.gov</a> </li>
+   </ul>
+</div>
+
+<!-- Possible contact icons: fa-bolt, fa-cogs, fa-user, fa-star-o -->
+<!-- ... fa-comment, fa-comment-o, fa-comments, fa-comments-o, fa-bullhorn --></div> <!-- toc on top on mobile -->
+            <div class="col-md-9" role="main">
+
+<h2 id="ceed-miniapps">CEED Miniapps</h2>
+<p>CEED is developing a variety of miniapps encapsulating key physics and numerical
+kernels of high-order applications.  The miniapps are designed to be used in a
+variety of <a href="../codesign/">co-design</a> activities with ECP vendors, software
+technologies projects as well as external partners.</p>
+<p>CEED's current miniapps are documented below and can be found on
+<a href="https://github.com/ceed">GitHub</a>. Please contact the CEED team if you have any
+questions.</p>
+<hr />
+<p><center></p>
+<h3 id="nekbone">Nekbone</h3>
+<p></center></p>
+<p>Nekbone solves a standard Poisson equation using a conjugate gradient iteration
+with a simple or spectral element multigrid preconditioner on a block or linear
+geometry.</p>
+<p>It exposes the principal computational kernel to reveal the essential elements
+of the algorithmic-architectural coupling that is pertinent to <a href="../nek/">Nek5000</a>,
+relevant to large eddy simulation (LES) and direct numerical simulation (DNS) of
+turbulence in complex domains.</p>
+<p>Nekbone-3.1 was released in Oct 2013 as part of the <a href="http://cesar.mcs.anl.gov/content/software/thermal_hydraulics">CESAR co-design
+center</a>.</p>
+<p><center>
+<a href="https://github.com/CEED/Nekbone/blob/master/USERGUIDE.pdf"><button type="button" class="btn btn-default">
+<strong>Documentation</strong>
+</button></a>
+&nbsp;
+<a href="https://github.com/ceed/Nekbone"><button type="button" class="btn btn-success">
+<strong>Download Nekbone</strong>
+</button></a>
+</center></p>
+<hr />
+<!-- <span class="badge">New</span> -->
+
+<p><center></p>
+<h3 id="laghos">Laghos</h3>
+<p></center></p>
+<p>Laghos solves the time-dependent Euler equation of compressible gas dynamics in
+a moving Lagrangian frame using high-order finite element spatial discretization
+and explicit high-order time-stepping.</p>
+<p>It captures the basic structure of many other compressible shock
+hydrocodes, including the <a href="http://llnl.gov/casc/blast">BLAST code</a> at
+<a href="http://llnl.gov">Lawrence Livermore National Laboratory</a>. The miniapp
+is build on top of a general discretization library, <a href="http://mfem.org">MFEM</a>,
+thus separating the pointwise physics from finite element and meshing concerns.</p>
+<p><img alt="Laghos results" src="../img/laghos.png" width="500"/></p>
+<p>Computational motives in Laghos include the following:</p>
+<ul>
+<li>Support for moving (high-order) unstructured 2D and 3D meshes.</li>
+<li>Continuous and discontinuous high-order finite element discretization spaces
+  of runtime-specified order.</li>
+<li>Explicit time-stepping loop with a variety of time integrator options. Laghos
+  supports Runge-Kutta ODE solvers of orders 1, 2, 3, 4 and 6.</li>
+<li>Full and <a href="http://ceed.exascaleproject.org/ceed-code">partial assembly</a> options
+  for deriving and solving the resulting ODE systems.</li>
+<li>Point-wise definition of mesh size, time-step estimate and artificial
+  viscosity coefficient.</li>
+<li>Domain-decomposed MPI parallelism.</li>
+<li>Optional in-situ visualization with <a href="http:/glvis.org">GLVis</a> and data output
+  for visualization / data analysis with <a href="http://visit.llnl.gov">VisIt</a>.</li>
+</ul>
+<p><center>
+<a href="https://github.com/CEED/Laghos/blob/master/README.md"><button type="button" class="btn btn-default">
+<strong>Documentation</strong>
+</button></a>
+&nbsp;
+<a href="https://github.com/ceed/Laghos"><button type="button" class="btn btn-success">
+<strong>Download Laghos</strong>
+</button></a>
+</center></p>
+<hr />
+<p><center></p>
+<h3 id="remhos-new">Remhos <span class="badge">New</span></h3>
+<p></center></p>
+<p>Remhos solves the pure advection equations that are used to perform conservative
+and monotonic DG advection-based discontinuous field interpolation (remap).</p>
+<p>It captures the basic structure of the Eulerian phase in many
+Arbitrary-Lagrangian Eulerian (ALE) simulations, including the <a href="http://llnl.gov/casc/blast">BLAST
+code</a> at <a href="http://llnl.gov">Lawrence Livermore National
+Laboratory</a>. The miniapp is build on top of a general
+discretization library, <a href="http://mfem.org">MFEM</a>, thus separating the pointwise
+physics from finite element and meshing concerns.</p>
+<p><img alt="Remhos results" src="../img/remhos.png" width="450"/></p>
+<p>Computational motives in Remhos include the following:</p>
+<ul>
+<li>Support for unstructured high-order meshes, in 2D and 3D, with quadrilateral
+  and hexahedral elements.</li>
+<li>Discontinuous high-order finite element discretization spaces of
+  runtime-specified order.</li>
+<li>State-of-the-art algorithms for high-order monotonicity (including positivity
+  preservation and oscillation control).</li>
+<li>Explicit time-stepping loop with a variety of time integrator options. Remhos
+  supports Runge-Kutta ODE solvers of orders 1, 2, 3, 4 and 6.</li>
+<li>Full and <a href="http://ceed.exascaleproject.org/ceed-code">partial assembly</a> options
+  for deriving and solving the resulting ODE systems.</li>
+<li>Supports for both <em>transport</em> and <em>remap</em> execution modes, which result in
+  slightly different algebraic operators.</li>
+<li>Domain-decomposed MPI parallelism.</li>
+<li>Optional in-situ visualization with <a href="http:/glvis.org">GLVis</a> and data output
+  for visualization / data analysis with <a href="http://visit.llnl.gov">VisIt</a>.</li>
+</ul>
+<p><center>
+<a href="https://github.com/CEED/Remhos/blob/master/README.md"><button type="button" class="btn btn-default">
+<strong>Documentation</strong>
+</button></a>
+&nbsp;
+<a href="https://github.com/ceed/Remhos"><button type="button" class="btn btn-success">
+<strong>Download Remhos</strong>
+</button></a>
+</center></p>
+<hr />
+<!-- <span class="badge">New</span> -->
+
+<p><center></p>
+<h3 id="nekcem-ceedling">NekCEM CEEDling</h3>
+<p></center></p>
+<p>NekCEM CEEDling is a <a href="../nek/">NekCEM</a> miniapp, solving the time-domain Maxwell
+equations for electromagnetic systems.  It allows software and hardware
+developers to understand the basic structure and computational costs of NekCEM
+over a broad spectrum of architectures ranging from software-based simulators
+running at one ten-thousandth the speed of current processors to exascale
+platforms running millions of times faster than single-core platforms.</p>
+<p>NekCEM provides flexibility to adapt new programming approaches for scalability
+and performance studies on a variety of platforms without having to understand
+all the features of NekCEM, currently supporting CPU/GPU runs.</p>
+<p><center>
+<a href="https://github.com/NekCEM/NekCEM_CEEDling"><button type="button" class="btn btn-success">
+<strong>Download NekCEM CEEDling</strong>
+</button></a>
+</center></p>
+<hr />
+<!-- <center> -->
+
+<!-- ### Holmes <span class="badge">New</span> -->
+
+<!-- </center> -->
+
+<!-- Holmes is an experimental testbed for multi-level parallel implementations of -->
+
+<!-- high-order finite element computations. -->
+
+<!-- Its features include: -->
+
+<!-- * Elements -->
+
+<!--     * Spectral element quadrilateral and hexahedral elements -->
+
+<!--     * Warp & blend high-order nodal triangular and tetrahedral elements -->
+
+<!-- * Discretizations -->
+
+<!--     * Elliptic: continuous and discontinuous Galerkin discretization -->
+
+<!--     * Hyperbolic: discontinuous Galerkin time-domain -->
+
+<!-- * Solvers -->
+
+<!--     * Two level overlapping additive Schwartz elliptic problem preconditioning -->
+
+<!--         * Fast approximate block preconditioning -->
+
+<!--         * Algebraic multigrid coarse solver with heterogeneous acceleration -->
+
+<!--         * Parallel direct solver XXT for the coarsest level solve -->
+
+<!--     * Full algebraic multigrid preconditioning -->
+
+<!-- * Implementation -->
+
+<!--     * Portable on-node parallelism via the Open Concurrent Compute Abstraction, [OCCA](occa.md) -->
+
+<!--     * MPI communications for distributed computations -->
+
+<!-- * Dependencies -->
+
+<!--     * The XXT parallel direct solver for the coarsest AMG solve -->
+
+<!--     * [GSLIB](gslib.md) for optimized gather-scatter operations -->
+
+<!-- * Example CEEDling apps -->
+
+<!--     * Incompressible flow solvers -->
+
+<!--     * Elliptic solvers -->
+
+<!--     * Boltzmann flow solver -->
+
+<!--     * Acoustics time-domain solver -->
+
+<!-- Holmes is being developed in [Tim Warburton's group](http://tcew.github.io/#/Projects) -->
+
+<!-- at [Virginia Tech](https://www.vt.edu/). -->
+
+<!-- *The project GitHub repository will be made public in 2017. Stay tuned for more details...* -->
+
+<!-- --- -->
+
+<p><center></p>
+<h3 id="hpgmg-fe">HPGMG-FE</h3>
+<p></center></p>
+<p>The High-Performance Geometric Multigrid Finite Element benchmark is a
+Full Multigrid solver for a third order accurate finite element
+discretization of an elliptic operator on mapped grids.  The benchmark
+is designed to give a picture of the "performance spectrum" across a
+range of problem sizes and thus solution time, thereby giving a clear
+picture of both weak and strong scaling concerns.</p>
+<p>For details, see the <a href="https://hpgmg.org">HPGMG website</a>.</p>
+<hr />
+<p><center></p>
+<h3 id="mfem-example-codes">MFEM Example Codes</h3>
+<p></center></p>
+<p>The <a href="../mfem/">MFEM</a> distribution includes a large number of simple example codes
+that can be viewed as simple miniapps for model high-order physics:</p>
+<ul>
+<li><a href="http://mfem.github.io/doxygen/html/examples_2ex1_8cpp_source.html">Example 1</a>: nodal H1 FEM for the Laplace problem,</li>
+<li><a href="http://mfem.github.io/doxygen/html/ex2_8cpp_source.html">Example 2</a>: vector FEM for linear elasticity,</li>
+<li><a href="http://mfem.github.io/doxygen/html/ex3_8cpp_source.html">Example 3</a>: Nedelec H(curl) FEM for the definite Maxwell problem,</li>
+<li><a href="http://mfem.github.io/doxygen/html/ex4_8cpp_source.html">Example 4</a>: Raviart-Thomas H(div) FEM for the grad-div problem,</li>
+<li><a href="http://mfem.github.io/doxygen/html/ex5_8cpp_source.html">Example 5</a>: mixed pressure-velocity FEM for the Darcy problem,</li>
+<li><a href="http://mfem.github.io/doxygen/html/ex6_8cpp_source.html">Example 6</a>: non-conforming adaptive mesh refinement (AMR) for the Laplace problem,</li>
+<li><a href="http://mfem.github.io/doxygen/html/ex7_8cpp_source.html">Example 7</a>: Laplace problem on a surface (the unit sphere),</li>
+<li><a href="http://mfem.github.io/doxygen/html/ex8_8cpp_source.html">Example 8</a>: Discontinuous Petrov-Galerkin (DPG) for the Laplace problem,</li>
+<li><a href="http://mfem.github.io/doxygen/html/ex9_8cpp_source.html">Example 9</a>: Discontinuous Galerkin (DG) time-dependent advection,</li>
+<li><a href="http://mfem.github.io/doxygen/html/ex10_8cpp_source.html">Example 10</a>: time-dependent implicit nonlinear elasticity,</li>
+<li><a href="http://mfem.github.io/doxygen/html/examples_2ex11p_8cpp_source.html">Example 11</a>: parallel Laplace eigensolver,</li>
+<li><a href="http://mfem.github.io/doxygen/html/ex12p_8cpp_source.html">Example 12</a>: parallel linear elasticity eigensolver,</li>
+<li><a href="http://mfem.github.io/doxygen/html/ex13p_8cpp_source.html">Example 13</a>: parallel Maxwell eigensolver,</li>
+<li><a href="http://mfem.github.io/doxygen/html/ex14_8cpp_source.html">Example 14</a>: Discontinuous Galerkin (DG) for the Laplace problem,</li>
+<li><a href="http://mfem.github.io/doxygen/html/ex15_8cpp_source.html">Example 15</a>: dynamic AMR for Laplace with prescribed time-dependent source,</li>
+<li><a href="http://mfem.github.io/doxygen/html/ex16_8cpp_source.html">Example 16</a>: time-dependent nonlinear heat equation,</li>
+<li><a href="http://mfem.github.io/doxygen/html/ex17_8cpp_source.html">Example 17</a>: Discontinuous Galerkin (DG) for linear elasticity,</li>
+<li><a href="http://mfem.github.io/doxygen/html/ex18_8cpp_source.html">Example 18</a>: Discontinuous Galerkin (DG) for the Euler equations,</li>
+<li><a href="http://mfem.github.io/doxygen/html/ex19_8cpp_source.html">Example 19</a>: incompressible nonlinear elasticity.</li>
+</ul>
+<p>Most of the examples have a serial and a parallel version, illustrating the ease
+of transition and the minimal code changes between the two.</p>
+<p>Of particular relevance to CEED is the HPC versions of the example codes that
+use a <a href="http://mfem.org/performance/">set of templated classes</a> to efficiently
+implement high-order operator evaluation.</p>
+<p><center>
+<a href="http://mfem.org/examples"><button type="button" class="btn btn-default">
+<strong>Documentation</strong>
+</button></a>
+&nbsp;
+<a href="http://mfem.org/download"><button type="button" class="btn btn-success">
+<strong>Download MFEM</strong>
+</button></a>
+</center></p></div>
+            <div class="col-md-3 hidden-xs hidden-sm"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+        <li class="main active"><a href="#ceed-miniapps">CEED Miniapps</a></li>
+        
+	    
+                <li><a href="#nekbone">Nekbone</a></li>
+	    
+	
+	    
+                <li><a href="#laghos">Laghos</a></li>
+	    
+	
+	    
+	        <li><a href="#remhos-new">Remhos  <span class="label label-primary">New</span></a></li>
+	    
+	
+	    
+                <li><a href="#nekcem-ceedling">NekCEM CEEDling</a></li>
+	    
+	
+	    
+                <li><a href="#hpgmg-fe">HPGMG-FE</a></li>
+	    
+	
+	    
+                <li><a href="#mfem-example-codes">MFEM Example Codes</a></li>
+	    
+	
+    
+    <hr style="background-color:white; height:20px; margin-left:-1px;  margin-right:-1px; margin-top:15px; margin-bottom:10px " />
+    <li class="main" style="padding:0"><a href="https://github.com/CEED/forum">Contact CEED</a> </li>
+       <li><a href="https://github.com/CEED/forum"><i class="fa fa-comment-o"></i> User forum</a> </li>
+       <li><a href="mailto:ceed-users@llnl.gov"><i class="fa fa-envelope-o"></i> ceed-users@llnl.gov</a> </li>
+   </ul>
+</div>
+
+<!-- Possible contact icons: fa-bolt, fa-cogs, fa-user, fa-star-o -->
+<!-- ... fa-comment, fa-comment-o, fa-comments, fa-comments-o, fa-bullhorn --></div>
+        </div>
+    
+
+        <footer class="footer hidden-xs">
+           <div class="container">
+              <p class="text-muted alignleft">
+	      <!-- <a href="https://www.llnl.gov/disclaimer.html">Privacy & Legal Notice</a>. -->
+              Developed by the <a href="../about/">CEED team</a>
+              as part of the <a href="http://exascaleproject.org">Exascale Computing Project</a>
+              </p>
+              <div style="text-align:right">
+                  <a href="http://exascaleproject.org">
+                  <img src="../img/ecp-black.png"
+                  style="display:inline;height:50px;padding:12px;margin:0;opacity:0.5"
+                  alt="ECP logo"></a>
+                  <a href="https://science.energy.gov/">
+                  <img src="../img/doe-sc.png"
+                  style="display:inline;height:50px;padding:12px;margin:0;opacity:0.5"
+                  alt="DOE-SC logo"></a>
+                  <a href="https://nnsa.energy.gov/">
+                  <img src="../img/nnsa.png"
+                  style="display:inline;height:50px;padding:12px;margin:0;opacity:0.5"
+                  alt="NNSA logo"></a>
+               </div>
+               <!-- footer height is 50px -->
+           </div>
+        </footer>
+
+        <footer class="footer hidden-md hidden-sm hidden-lg">
+           <div class="container">
+              <p class="text-muted alignleft">
+		<!-- <a href="https://www.llnl.gov/disclaimer.html">Privacy & Legal Notice</a>. -->
+		Developed by the <a href="../about/">CEED team</a>
+              </p>
+              <div style="text-align:right">
+                  <a href="http://exascaleproject.org">
+                  <img src="../img/ecp-black.png"
+                  style="display:inline;height:50px;padding:12px;margin:0;opacity:0.5"
+                  alt="ECP logo"></a>
+              </div>
+           </div>
+        </footer>
+
+        <script src="../js/jquery-3.6.0.min.js"></script>
+        <script src="../js/bootstrap-3.4.1.min.js"></script>
+        <script src="../js/highlight.pack.js"></script>
+        <script src="../js/base.js"></script>
+        <script src="../js/retina.min.js"></script>
+        <script src="../search/main.js"></script>
+    </body>
+</html>

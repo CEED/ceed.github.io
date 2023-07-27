@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>Center for Efficient Exascale Discretizations</title>
+
+        <link href="../css/bootstrap-ceed.min.css" rel="stylesheet">
+        <link href="../css/font-awesome-4.0.3.css" rel="stylesheet">
+        <link rel="stylesheet" href="../css/highlight.css">
+        <link href="../css/base.css" rel="stylesheet">
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+        
+    </head>
+
+    
+    <body style="padding-top:35px">
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <!-- Main title -->
+            <a class="navbar-brand" href="http://ceed.exascaleproject.org">CEED</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+            <!-- Main navigation -->
+            <ul class="nav navbar-nav">
+            
+            
+            
+            
+            
+                <li >
+                    <a href="../news/">News</a>
+                </li>
+            
+            
+            
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Co-Design <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        
+                            <li >
+                                 <a href="../codesign/">Approach</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../ap/">Applications</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../hw/">Hardware</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../sw/">Software</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../bps/">Benchmarks</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../miniapps/">Miniapps</a>
+                            </li>
+                        
+                    
+                    </ul>
+                </li>
+            
+            
+            
+            
+            
+                <li class="dropdown active">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Software <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        
+                            <li class="active">
+                                 <a href="./">Catalog</a>
+                            </li>
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                            <li >
+                                 <a href="../ceed-5.0/">CEED 5.0</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../ceed-code/">CEED APIs</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../libceed/">libCEED</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../fms/">FMS</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../mfem/">MFEM</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../nek/">Nek</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../libparanumal/">libParanumal</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../gslib/">GSLIB</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../magma/">MAGMA</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../occa/">OCCA</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../petsc/">PETSc</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../pumi/">PUMI</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../omegah/">Omega_h</a>
+                            </li>
+                        
+                    
+                    </ul>
+                </li>
+            
+            
+            
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Research <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        
+                            <li >
+                                 <a href="../thrusts/">R&D Thrusts</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../pubs/">Publications</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../fe/">Finite Elements</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../meshing/">Meshing</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../linalg/">Linear Algebra</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../discr/">Discretization</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../vis/">Visualization</a>
+                            </li>
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                    </ul>
+                </li>
+            
+            
+            
+            
+            
+                <li >
+                    <a href="../about/">About</a>
+                </li>
+            
+            
+            
+            </ul>
+
+            <!-- Search, Navigation and Repo links -->
+            <ul class="nav navbar-nav navbar-right">
+                
+                
+                <li>
+                    <a href="https://github.com/ceed/">
+                        
+                            <i class="fa fa-github-square"></i>
+                        
+                        GitHub
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+    </div>
+</div>
+        <img src="../img/ceed-leaderboard-Catalog.png">
+        <div class="container">
+            <div class="col-md-12" role="main">
+
+<h2 id="latest-releases">Latest Releases</h2>
+<p>The CEED software is open-source and publicly available on
+<a href="https://github.com/ceed">GitHub</a>. The latest releases of our main software
+components are available from:</p>
+<p><center>
+<a href="../ceed-5.0/"><button type="button" class="btn btn-primary">
+<strong>&nbsp;&nbsp;CEED-5.0&nbsp;&nbsp;</strong>
+</button></a>
+&nbsp;&nbsp;&nbsp;
+<a href="https://github.com/mfem/mfem/releases/tag/v4.5"><button type="button" class="btn btn-primary">
+<strong>mfem-4.5</strong>
+</button></a>
+&nbsp;&nbsp;&nbsp;
+<a href="https://github.com/Nek5000/nekRS/releases/tag/v22.0"><button type="button" class="btn btn-primary">
+<strong>nekRS-22.0</strong>
+</button></a>
+&nbsp;&nbsp;&nbsp;
+<a href="https://github.com/CEED/libCEED/releases/tag/v0.10.0"><button type="button" class="btn btn-primary">
+<strong>libCEED-0.10</strong>
+</button></a>
+<!--
+&nbsp;&nbsp;&nbsp;
+<a href="https://github.com/ceed/nek5000/releases/tag/v19.0">klzzwxh:0021
+klzzwxh:0023
+klzzwxh:0022</a>
+-->
+&nbsp;&nbsp;&nbsp;
+<a href="https://github.com/paranumal/libparanumal/releases/tag/v0.5.0"><button type="button" class="btn btn-primary">
+<strong>libParanumal-0.5.0</strong>
+</button></a>
+</center></p>
+<p><center>
+<a href="https://github.com/CEED/Laghos/releases/tag/v3.1"><button type="button" class="btn btn-primary">
+<strong>Laghos-3.1</strong>
+</button></a>
+&nbsp;&nbsp;&nbsp;
+<a href="https://github.com/CEED/Remhos/releases/tag/v1.0"><button type="button" class="btn btn-primary">
+<strong>Remhos-1.0</strong>
+</button></a>
+<!--
+&nbsp;&nbsp;&nbsp;
+<a href="https://github.com/ceed/Nekbone/releases/tag/v17.0">klzzwxh:0052
+klzzwxh:0054
+klzzwxh:0053</a>
+-->
+&nbsp;&nbsp;&nbsp;
+<a href="https://github.com/libocca/occa/releases/tag/v1.4.0"><button type="button" class="btn btn-primary">
+<strong>OCCA-1.4</strong>
+</button></a>
+&nbsp;&nbsp;&nbsp;
+<a href="https://bitbucket.org/icl/magma/commits/tag/v2.6.2"><button type="button" class="btn btn-primary">
+<strong>MAGMA-2.6.2</strong>
+</button></a>
+&nbsp;&nbsp;&nbsp;
+<a href="https://github.com/CEED/FMS/releases/tag/v0.2"><button type="button" class="btn btn-primary">
+<strong>FMS-0.2</strong>
+</button></a>
+&nbsp;&nbsp;&nbsp;
+<a href="https://github.com/SCOREC/core/releases/tag/v2.2.7"><button type="button" class="btn btn-primary">
+<strong>PUMI-2.2.7</strong>
+</button></a>
+&nbsp;&nbsp;&nbsp;
+<a href="https://github.com/SCOREC/omega_h/releases/tag/scorec-v10.5.0"><button type="button" class="btn btn-primary">
+<strong>Omega_h-10.5.0</strong>
+</button></a></p>
+<p></center></p>
+<p>Please use the <a href="https://github.com/CEED/forum">CEED user forum</a> to report
+<a href="https://github.com/CEED/forum/issues/new?labels=bug">bugs</a> or post
+<a href="https://github.com/CEED/forum/issues/new?labels=question">questions</a> or
+<a href="https://github.com/CEED/forum/issues/new?labels=comment">comments</a>.</p>
+<h2 id="software-catalog">Software Catalog</h2>
+<p>The CEED team includes members of the <a href="../nek/">Nek5000</a>, <a href="../mfem/">MFEM</a>,
+<a href="../magma/">MAGMA</a>, <a href="../occa/">OCCA</a> and <a href="../petsc/">PETSc</a> projects.  Building on
+these efforts, the co-design center is producing a range of software products,
+including:</p>
+<ul>
+<li>
+<p>Next-generation <a href="../ceed-code/">finite element</a> <a href="../nek/">discretization</a>
+  <a href="../mfem/">libraries</a> that enable unstructured PDE-based applications to take
+  full advantage of exascale resources. These libraries cover the full spectrum
+  of discretizations, from assembled low-order to matrix-free high-order
+  methods.</p>
+</li>
+<li>
+<p><a href="../miniapps/">Miniapps</a> combining applications-relevant physics with key
+  high-order kernels that use matrix-free forms for efficient performance. CEED
+  also develops element-level kernels and <a href="../bps/">benchmark problems</a>.</p>
+</li>
+<li>
+<p>Broadly applicable technologies, including extensions of dense linear algebra
+  libraries to support <a href="../magma/">fast tensor contractions</a>, scalable
+  matrix-free <a href="../petsc/">linear solvers</a> and programming models for <a href="../occa/">performance
+  portability</a>.</p>
+</li>
+</ul></div>
+        </div>
+    
+
+        <footer class="footer hidden-xs">
+           <div class="container">
+              <p class="text-muted alignleft">
+	      <!-- <a href="https://www.llnl.gov/disclaimer.html">Privacy & Legal Notice</a>. -->
+              Developed by the <a href="../about/">CEED team</a>
+              as part of the <a href="http://exascaleproject.org">Exascale Computing Project</a>
+              </p>
+              <div style="text-align:right">
+                  <a href="http://exascaleproject.org">
+                  <img src="../img/ecp-black.png"
+                  style="display:inline;height:50px;padding:12px;margin:0;opacity:0.5"
+                  alt="ECP logo"></a>
+                  <a href="https://science.energy.gov/">
+                  <img src="../img/doe-sc.png"
+                  style="display:inline;height:50px;padding:12px;margin:0;opacity:0.5"
+                  alt="DOE-SC logo"></a>
+                  <a href="https://nnsa.energy.gov/">
+                  <img src="../img/nnsa.png"
+                  style="display:inline;height:50px;padding:12px;margin:0;opacity:0.5"
+                  alt="NNSA logo"></a>
+               </div>
+               <!-- footer height is 50px -->
+           </div>
+        </footer>
+
+        <footer class="footer hidden-md hidden-sm hidden-lg">
+           <div class="container">
+              <p class="text-muted alignleft">
+		<!-- <a href="https://www.llnl.gov/disclaimer.html">Privacy & Legal Notice</a>. -->
+		Developed by the <a href="../about/">CEED team</a>
+              </p>
+              <div style="text-align:right">
+                  <a href="http://exascaleproject.org">
+                  <img src="../img/ecp-black.png"
+                  style="display:inline;height:50px;padding:12px;margin:0;opacity:0.5"
+                  alt="ECP logo"></a>
+              </div>
+           </div>
+        </footer>
+
+        <script src="../js/jquery-3.6.0.min.js"></script>
+        <script src="../js/bootstrap-3.4.1.min.js"></script>
+        <script src="../js/highlight.pack.js"></script>
+        <script src="../js/base.js"></script>
+        <script src="../js/retina.min.js"></script>
+        <script src="../search/main.js"></script>
+    </body>
+</html>

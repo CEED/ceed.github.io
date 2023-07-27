@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>Center for Efficient Exascale Discretizations</title>
+
+        <link href="../css/bootstrap-ceed.min.css" rel="stylesheet">
+        <link href="../css/font-awesome-4.0.3.css" rel="stylesheet">
+        <link rel="stylesheet" href="../css/highlight.css">
+        <link href="../css/base.css" rel="stylesheet">
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+        
+    </head>
+
+    
+    <body>
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <!-- Main title -->
+            <a class="navbar-brand" href="http://ceed.exascaleproject.org">CEED</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+            <!-- Main navigation -->
+            <ul class="nav navbar-nav">
+            
+            
+            
+            
+            
+                <li >
+                    <a href="../news/">News</a>
+                </li>
+            
+            
+            
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Co-Design <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        
+                            <li >
+                                 <a href="../codesign/">Approach</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../ap/">Applications</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../hw/">Hardware</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../sw/">Software</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../bps/">Benchmarks</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../miniapps/">Miniapps</a>
+                            </li>
+                        
+                    
+                    </ul>
+                </li>
+            
+            
+            
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Software <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        
+                            <li >
+                                 <a href="../software/">Catalog</a>
+                            </li>
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                            <li >
+                                 <a href="../ceed-5.0/">CEED 5.0</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../ceed-code/">CEED APIs</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../libceed/">libCEED</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../fms/">FMS</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../mfem/">MFEM</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../nek/">Nek</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../libparanumal/">libParanumal</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../gslib/">GSLIB</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../magma/">MAGMA</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../occa/">OCCA</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../petsc/">PETSc</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../pumi/">PUMI</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../omegah/">Omega_h</a>
+                            </li>
+                        
+                    
+                    </ul>
+                </li>
+            
+            
+            
+            
+            
+                <li class="dropdown active">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Research <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        
+                            <li >
+                                 <a href="../thrusts/">R&D Thrusts</a>
+                            </li>
+                        
+                    
+                        
+                            <li class="active">
+                                 <a href="./">Publications</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../fe/">Finite Elements</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../meshing/">Meshing</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../linalg/">Linear Algebra</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../discr/">Discretization</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../vis/">Visualization</a>
+                            </li>
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                    </ul>
+                </li>
+            
+            
+            
+            
+            
+                <li >
+                    <a href="../about/">About</a>
+                </li>
+            
+            
+            
+            </ul>
+
+            <!-- Search, Navigation and Repo links -->
+            <ul class="nav navbar-nav navbar-right">
+                
+                
+                <li>
+                    <a href="https://github.com/ceed/">
+                        
+                            <i class="fa fa-github-square"></i>
+                        
+                        GitHub
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+    </div>
+</div>
+        <div class="container">
+            <div class="col-md-3 visible-xs visible-sm"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+        <li class="main active"><a href="#publications-and-outreach">Publications and Outreach</a></li>
+        
+	    
+                <li><a href="#ceed-documents">CEED Documents</a></li>
+	    
+	
+	    
+                <li><a href="#publications">Publications</a></li>
+	    
+	
+	    
+                <li><a href="#presentations">Presentations</a></li>
+	    
+	
+	    
+                <li><a href="#highlights">Highlights</a></li>
+	    
+	
+	    
+                <li><a href="#other-resources">Other Resources</a></li>
+	    
+	
+    
+    <hr style="background-color:white; height:20px; margin-left:-1px;  margin-right:-1px; margin-top:15px; margin-bottom:10px " />
+    <li class="main" style="padding:0"><a href="https://github.com/CEED/forum">Contact CEED</a> </li>
+       <li><a href="https://github.com/CEED/forum"><i class="fa fa-comment-o"></i> User forum</a> </li>
+       <li><a href="mailto:ceed-users@llnl.gov"><i class="fa fa-envelope-o"></i> ceed-users@llnl.gov</a> </li>
+   </ul>
+</div>
+
+<!-- Possible contact icons: fa-bolt, fa-cogs, fa-user, fa-star-o -->
+<!-- ... fa-comment, fa-comment-o, fa-comments, fa-comments-o, fa-bullhorn --></div> <!-- toc on top on mobile -->
+            <div class="col-md-9" role="main">
+
+<h2 id="publications-and-outreach">Publications and Outreach</h2>
+<hr />
+<h3 id="ceed-documents">CEED Documents</h3>
+<ul>
+<li>
+<p>CEED's high-order <a href="../bps/">Benchmarks</a> and <a href="../miniapps/">Miniapps</a>.</p>
+</li>
+<li>
+<p>Activities in the <a href="../ap/">Applications</a>, <a href="../hw/">Hardware</a>, <a href="../sw/">Software</a> and <a href="../fe/">Finite Element</a> thrusts.</p>
+</li>
+<li>
+<p>CEED-proposed high-order <a href="../discr/#efficient-high-order-operator-format-wzxhzdk1">Operator</a> and <a href="../vis/">Visualization</a> formats.</p>
+</li>
+</ul>
+<p><a href="https://doi.org/10.5281/zenodo.2542292"><img src="https://img.shields.io/badge/DOI-10.5281%2Fzenodo.2542292-blue" class="doi"></a></p>
+<ul>
+<li>CEED-MS1 report: <a href="../docs/ceed-ms1-report.pdf">Engage first wave ECP/CEED apps</a>.</li>
+</ul>
+<p><a href="https://doi.org/10.5281/zenodo.2542333"><img src="https://img.shields.io/badge/DOI-10.5281%2Fzenodo.2542333-blue" class="doi"></a></p>
+<ul>
+<li>CEED-MS6 report: <a href="../docs/ceed-ms6-report.pdf">Identify initial kernels, benchmarks and miniapps</a>.</li>
+</ul>
+<p><a href="https://doi.org/10.5281/zenodo.2542338"><img src="https://img.shields.io/badge/DOI-10.5281%2Fzenodo.2542338-blue" class="doi"></a></p>
+<ul>
+<li>CEED-MS8 report: <a href="../docs/ceed-ms8-report.pdf">Initial integration of CEED software in ECP apps</a>.</li>
+</ul>
+<p><a href="https://doi.org/10.5281/zenodo.2542340"><img src="https://img.shields.io/badge/DOI-10.5281%2Fzenodo.2542340-blue" class="doi"></a></p>
+<ul>
+<li>CEED-MS10 report: <a href="../docs/ceed-ms10-report.pdf">Initial CEED API</a>.</li>
+</ul>
+<p><a href="https://doi.org/10.5281/zenodo.2542343"><img src="https://img.shields.io/badge/DOI-10.5281%2Fzenodo.2542343-blue" class="doi"></a></p>
+<ul>
+<li>CEED-MS13 report: <a href="../docs/ceed-ms13-report.pdf">Public release of CEED 1.0</a>.</li>
+</ul>
+<p><a href="https://doi.org/10.5281/zenodo.2542346"><img src="https://img.shields.io/badge/DOI-10.5281%2Fzenodo.2542346-blue" class="doi"></a></p>
+<ul>
+<li>CEED-MS18 report: <a href="../docs/ceed-ms18-report.pdf">Propose high-order mesh/data format</a>.</li>
+</ul>
+<p><a href="https://doi.org/10.5281/zenodo.2542350"><img src="https://img.shields.io/badge/DOI-10.5281%2Fzenodo.2542350-blue" class="doi"></a></p>
+<ul>
+<li>CEED-MS20 report: <a href="../docs/ceed-ms20-report.pdf">Performance tuning of CEED software and first wave apps</a>.</li>
+</ul>
+<p><a href="https://doi.org/10.5281/zenodo.2542359"><img src="https://img.shields.io/badge/DOI-10.5281%2Fzenodo.2542359-blue" class="doi"></a></p>
+<ul>
+<li>CEED-MS23 report: <a href="../docs/ceed-ms23-report.pdf">Engage second wave ECP/CEED applications</a>.</li>
+</ul>
+<p><a href="https://doi.org/10.5281/zenodo.2641316"><img src="https://img.shields.io/badge/DOI-10.5281%2Fzenodo.2641316-blue" class="doi"></a></p>
+<ul>
+<li>CEED-MS25 report: <a href="../docs/ceed-ms25-report.pdf">Public release of CEED 2.0</a>.</li>
+</ul>
+<p><a href="https://doi.org/10.5281/zenodo.3336420"><img src="https://img.shields.io/badge/DOI-10.5281%2Fzenodo.3336420-blue" class="doi"></a></p>
+<ul>
+<li>CEED-MS29 report: <a href="../docs/ceed-ms29-report.pdf">Improved Support for Parallel Adaptive Simulation in CEED</a>.</li>
+</ul>
+<p><a href="https://doi.org/10.5281/zenodo.3477618"><img src="https://img.shields.io/badge/DOI-10.5281%2Fzenodo.3477618-blue" class="doi"></a></p>
+<ul>
+<li>CEED-MS32 report: <a href="../docs/ceed-ms32-report.pdf">Performance tuning of CEED software and 1st and 2nd wave apps</a>.</li>
+</ul>
+<p><a href="https://doi.org/10.5281/zenodo.3860804"><img src="https://img.shields.io/badge/DOI-10.5281%2Fzenodo.3860804-blue" class="doi"></a></p>
+<ul>
+<li>CEED-MS34 report: <a href="../docs/ceed-ms34-report.pdf">Improve performance and capabilities of CEED-enabled ECP applications on Summit/Sierra</a>.</li>
+</ul>
+<p><a href="https://doi.org/10.5281/zenodo.4146401"><img src="https://img.shields.io/badge/DOI-10.5281%2Fzenodo.4146401-blue" class="doi"></a></p>
+<ul>
+<li>CEED-MS35 report: <a href="../docs/ceed-ms35-report.pdf">Support CEED-enabled ECP applications in their preparation for Aurora/Frontier</a>.</li>
+</ul>
+<p><a href="https://doi.org/10.5281/zenodo.4672664"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.4672664.svg" class="doi"></a></p>
+<ul>
+<li>CEED-MS36 report: <a href="../docs/ceed-ms36-report.pdf">High-order algorithmic developments and optimizations for large-scale GPU-accelerated simulations</a>.</li>
+</ul>
+<p><a href="https://doi.org/10.5281/zenodo.5542244"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.5542244.svg" class="doi"></a></p>
+<ul>
+<li>CEED-MS37 report: <a href="../docs/ceed-ms37-report.pdf">Port and optimize the CEED software stack to Aurora / Frontier EA Systems</a>.</li>
+</ul>
+<p><a href="https://doi.org/10.5281/zenodo.6514857"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.6514857.svg" class="doi"></a></p>
+<ul>
+<li>CEED-MS38 report: <a href="../docs/ceed-ms38-report.pdf">High-order algorithmic developments and optimizations for more robust exascale applications</a>.</li>
+</ul>
+<p><a href="https://doi.org/10.5281/zenodo.7202571"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.7202571.svg" class="doi"></a></p>
+<ul>
+<li>CEED-MS39 report: <a href="../docs/ceed-ms39-report.pdf">Improve performance and capabilities of CEED-enabled ECP applications on Frontier/Aurora EA</a>.</li>
+</ul>
+<p><a href="https://doi.org/10.5281/zenodo.7820316"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.7820316.svg" class="doi"></a></p>
+<ul>
+<li>CEED-MS40 report: <a href="../docs/ceed-ms40-report.pdf">Support ECP applications in their exascale challenge problem runs</a>.</li>
+</ul>
+<h3 id="publications">Publications</h3>
+<h4 id="2022">2022</h4>
+<ol>
+<li>W. Pazner, Tz. Kolev, and C. Dohrmann, <a href="https://arxiv.org/abs/2203.02465">Low-order preconditioning for the high-order finite element de Rham complex</a>, <em>in review</em>, <strong>2022</strong>. Also available as <a href="https://arxiv.org/abs/2203.02465">arXiv:2203.02465</a>.</li>
+<li>A. Vargas, T. Stitt, K. Weiss, V. Tomov, J. Camier, Tz. Kolev, and R. Rieben, <a href="https://arxiv.org/abs/2112.07075">Matrix-free approaches for GPU acceleration of a high-order finite element hydrodynamics application using MFEM, Umpire, and RAJA</a>, <em>in review</em>, <strong>2022</strong>. Also available as <a href="https://arxiv.org/abs/2112.07075">arXiv:2112.07075</a>.</li>
+<li>N. Chalmers, A. Mishra, D. McDougall, and T. Warburton, <a href="https://arxiv.org/abs/2202.12477">HipBone: A performance-portable GPU-accelerated C++ version of the NekBone benchmark</a>, <em>in review</em>, <strong>2022</strong>.</li>
+<li>J. Chan, H. Ranocha, A. Rueda-Ramirez, G. Gassner, and T. Warburton, <a href="https://arxiv.org/abs/2203.10238">On the entropy projection and the robustness of high order entropy stable discontinuous Galerkin schemes for under-resolved flows</a>, <em>in review</em>, <strong>2022</strong>.</li>
+<li>Tz. Kolev and W. Pazner, <a href="https://doi.org/10.1137/21M1403916">Conservative and accurate solution transfer between high-order and low-order refined finite element spaces</a>, <em>SIAM Journal on Scientific Computing</em>, 44(1), A1-A27, <strong>2022</strong>. Also available as <a href="https://arxiv.org/abs/2103.05283">arXiv:2103.05283</a>.</li>
+</ol>
+<h4 id="2021">2021</h4>
+<ol>
+<li>Morteza H. Siboni and Mark S. Shephard, <a href="https://www.scorec.rpi.edu/reports/view_report.php?id=761">Adaptive Workflow for Simulation of RF Heaters</a>, <em>Computer Physics Communications</em>, <em>in review</em>, <strong>2021</strong></li>
+<li>A. Abdelfattah, V. Barra, N. Beams, R. Bleile, J. Brown, J. Camier, R. Carson, N. Chalmers, V. Dobrev, Y. Dudouit, P. Fischer, A. Karakus, S. Kerkemeier, Tz. Kolev, Y. Lan, E. Merzari, M. Min, M. Phillips, T. Rathnayake, R. Rieben, T. Stitt, A. Tomboulides, S. Tomov, V. Tomov, A. Vargas, T. Warburton, K. Weiss, <a href="https://doi.org/10.1016/j.parco.2021.102841">GPU Algorithms for Efficient Exascale Discretizations</a>, Special issue of <em>Parallel Computing</em>, 108, 102841, <strong>2021</strong>. Also available as <a href="https://arxiv.org/abs/2109.05072">arXiv:2109.05072</a>.</li>
+<li>Tz. Kolev, P. Fischer, J. Brown, V. Dobrev, J. Dongarra, M. Min, M. Shephard, S. Tomov, T. Warburton, A. Abdelfattah, V. Barra, N. Beams, J.-S. Camier, N. Chalmers, Y. Dudouit, W. Pazner, C. Smith, K. Swirydowicz, J. Thompson and V. Tomov, <a href="https://doi.org/10.1177/10943420211020803">Efficient Exascale Discretizations: High Order Finite Element Methods</a>, Special issue of <em>The International Journal of High Performance Computing Application</em>, 35(6),  527-552, <strong>2021</strong>. Also available as <a href="https://arxiv.org/abs/2109.04996">arXiv:2109.04996</a>.</li>
+<li>J. Brown, A. Abdelfattah, V. Barra, N. Beams, J. Camier, V. Dobrev, Y. Dudouit, L. Ghaffari, Tz. Kolev, D. Medina, W. Pazner, T. Ratnayaka, J. Thompson and S. Tomov, <a href="https://doi.org/10.21105/joss.02945">libCEED: Fast algebra for high-order element-based discretizations</a>, <em>The Journal of Open Source Software</em>, <strong>2021</strong>.</li>
+</ol>
+<h4 id="2020">2020</h4>
+<ol>
+<li>A. Abdelfattah, S. Tomov, J. Dongarra, <a href="https://doi.org/10.1016/j.jpdc.2020.07.001">Matrix multiplication on batches of small matrices in half and half-complex precisions</a>, <em>Journal of Parallel and Distributed Computing</em>, vol. 145, pp. 188-201, <strong>2020</strong>.</li>
+<li>K. Mittal, S. Dutta, and P. Fischer, <a href="https://arxiv.org/pdf/2003.00347.pdf">Multirate Timestepping for the Incompressible Navier-Stokes Equations in Overlapping Grids</a>, <em>in review</em>, <strong>2020</strong>.</li>
+<li>R. Anderson, J. Andrej, A. Barker, J. Bramwell, J.-S. Camier, J. Cerveny V. Dobrev, Y. Dudouit, A. Fisher, Tz. Kolev, W. Pazner, M. Stowell, V. Tomov, I. Akkerman, J. Dahm, D. Medina, and S. Zampini, <a href="http://doi.org/10.1016/j.camwa.2020.06.009">MFEM: A Modular Finite Element Library</a>, <em>Computers &amp; Mathematics with Applications</em>, <em>in press</em>, <strong>2020</strong>. Also available as <a href="http://arxiv.org/abs/1911.09220">arXiv:1911.09220</a>.</li>
+<li>C. Brown, A. Abdelfattah, S. Tomov, J. Dongarra, <a href="https://www.icl.utk.edu/files/publications/2020/icl-utk-1405-2020.pdf">Design, Optimization, and Benchmarking of Dense Linear Algebra Algorithms on AMD GPUs</a>, Innovative Computing Laboratory Technical Report, no. ICL-UT-20-12 (<em>to appear in HPEC'20</em>), August, <strong>2020</strong>.</li>
+<li>C. Brown, A. Abdelfattah, S. Tomov, J. Dongarra, <a href="http://doi.org/10.5281/zenodo.3928667">hipMAGMA v2.0.0</a>, July 2, <strong>2020</strong>.</li>
+<li>E. Merzari, P. Fischer, M. Min, S. Kerkemeier, A. Obabko, D. Shaver, H. Yuan, Y. Yu, J. Martinez, L. Brockmeyer, <a href="https://doi.org/10.1080/00295450.2020.1748557">Toward exascale: overview of large eddy simulations and direct numerical simulations of nuclear reactor flows with the spectral element method in Nek5000</a>, <em>The 18th International Topical Meeting on Nuclear Reactor Thermal Hydraulics (NURETH-18)</em>, <strong>2020</strong>.</li>
+<li>V. Barra, J. Brown, J. Thompson, Y. Dudouit, <a href="https://doi.org/10.25080/Majora-342d178e-00c">High-performance operator evaluations with ease of use: libCEED's Python interface</a>, <em>Proc. 19th Python in Science Conf.</em>, 85-90, <strong>2020</strong>.</li>
+<li>P. Fischer, M. Min, T. Rathanayake, S. Dutta, Tz. Kolev, V. Dobrev, J.S. Camier, M. Kronbichler, T. Warburton, K. Swirydowicz, and J. Brown, <a href="https://doi.org/10.1177/1094342020915762">Scalability of High-Performance PDE Solvers</a>, <em>Int. J. High Perf. Comput. Appl.</em>, 34(5), pp. 562-586, <strong>2020</strong>.</li>
+<li>P. Bello-Maldonado, Tz. Kolev, R. Rieben, and V. Tomov, <a href="https://doi.org/10.1016/j.compfluid.2020.104577">A Matrix-Free Hyperviscosity Formulation for High-Order ALE Hydrodynamics</a>, <em>Computers &amp; Fluids</em>, (205) 104577, <strong>2020</strong>.</li>
+<li>H. Hajduk, D. Kuzmin, Tz. Kolev, and R. Abgrall, <a href="https://www.sciencedirect.com/science/article/pii/S0045782519305432">Matrix-free subcell residual distribution for Bernstein finite elements: Low-order schemes and FCT</a>, <em>Comp. Meth. Appl. Mech. Eng.</em>, (200) 104451, <strong>2020</strong>.</li>
+<li>F. Alexander, A. Almgren, J. Bell, A. Bhattacharjee, J. Chen, P. Colella, D. Daniel, J. DeSlippe, E. Draeger, A. Dubey, T. Dunning, T. Evans, I. Foster, M. Francois, T. Germann, M. Gordon, S. Habib, M. Halappanavar, S. Hamilton, W. Hart, Z. Huang, A. Hungerford, D. Kasen, P. R.C. Kent, T. Kolev, D. B. Kothe, A. Kronfeld, Y. Luo, P. Mackenzie, D. McCallen, B. Messer, S. Mniszewski, C. Oehmen, A. Perazzo, D. Perez, D. Richards, W. J. Rider, R. Rieben, K. Roche, A. Siegel, M. Sprague, C. Steefel, R. Stevens, M. Syamlal, M. Taylor, J. Turner, J. Vay, A. F. Voter, T. Windus, K. Yelick, <a href="https://doi.org/10.1098/rsta.2019.0056">Exascale Applications: Skin in the Game</a>, <em>Philosophical Transactions of the Royal Society A: Mathematical, Physical, and Engineering Sciences</em>, (378) 20190056, <strong>2020</strong>.</li>
+</ol>
+<hr />
+<h4 id="2019">2019</h4>
+<ol>
+<li>A. Abdelfattah, S. Tomov, and J. Dongarra, <a href="https://doi.org/10.1109/IPDPS.2019.00022">Fast Batched Matrix Multiplication for Small Sizes using Half-Precision Arithmetic on GPUs</a>, <strong>IPDPS'19</strong>, Rio de Janeiro, Brazil, <strong>2019</strong>.</li>
+<li>V. A. Dobrev, T. V. Kolev, C. S. Lee, V. Z. Tomov, and P. S. Vassilevski, <a href="https://epubs.siam.org/doi/10.1137/17M1132562">Algebraic Hybridization and Static Condensation with Application to Scalable H(div) Preconditioning</a>, <em>SIAM Journal on Scientific Computing</em>, 41(3):B425-B447, <strong>2019</strong>.</li>
+<li>J. Cerveny, V. Dobrev, and Tz. Kolev, <a href="https://epubs.siam.org/doi/10.1137/18M1193992">Non-Conforming Mesh Refinement For High-Order Finite Elements</a>, <em>SIAM Journal on Scientific Computing</em>, 41(4):C367-C392, <strong>2019</strong>.</li>
+<li>V. Dobrev, P. Knupp, Tz. Kolev, and V. Tomov, <a href="https://link.springer.com/chapter/10.1007/978-3-030-13992-6_16">Towards Simulation-Driven Optimization of High-Order Meshes by the Target-Matrix Optimization Paradigm</a>, Roca X., Loseille A. (eds) <em>27th International Meshing Roundtable. IMR 2018. Lecture Notes in Computational Science and Engineering, vol 127</em>, pp. 285-302, Springer, <strong>2019</strong>.</li>
+<li>I. Masliah, A. Abdelfattah, A. Haidar, S. Tomov, M. Baboulin, J. Falcou, and J Dongarra, <a href="https://www.sciencedirect.com/science/article/pii/S0167819118301091">Algorithms and optimization techniques for high-performance matrix-matrix multiplications of very small matrices</a>, Parallel Computing, vol. 81, pp. 1-21, <strong>2019</strong>.</li>
+<li>A. Karakus, N. Chalmers, K. Swirydowicz, T. Warburton, <a href="https://doi.org/10.1016/j.jcp.2019.04.010">A GPU accelerated discontinuous Galerkin incompressible flow solver</a>, <em>Journal of Computational Physics</em>, 390(1):380-404, <strong>2019</strong>.</li>
+<li>V. Dobrev, P. Knupp, Tz. Kolev, K. Mittal, V. Tomov, <a href="https://epubs.siam.org/doi/abs/10.1137/18M1167206">The Target-Matrix Optimization Paradigm for High-Order Meshes</a>, <em>SIAM J. Sci. Comp.</em>, 41(1), pp. B50-B68, <strong>2019</strong>.</li>
+<li>A. Karakus, N. Chalmers, J.S. Hesthaven and T. Warburton, <a href="https://doi.org/10.1016/j.jcp.2019.03.050">Discontinuous Galerkin Discretizations of the Boltzmann Equations in 2D: semi-analytic time stepping and absorbing boundary layers</a>, Journal of Computational Physics, 390:175-202, <strong>2019</strong>.</li>
+<li>J. Martinez, Y. Lan, E. Merzari, M. Min, <a href="https://www.sciencedirect.com/science/article/abs/pii/S0017931019316904">On the use of LES-based turbulent thermal-stress models for rod bundle simulations</a>, <em>Int. J. Heat and Mass Transfer</em>, 142:118399, <strong>2019</strong>.</li>
+<li>S. Patel, P. Fisher, M. Min, and A. Tomboulides, <a href="https://doi.org/10.1007/s10915-018-0876-6">A Characteristic-based, spectral element method for moving-domain problems</a>, <em>J. Sci. Comp.</em>, 79:564-592, <strong>2019</strong>.</li>
+<li>J. Gong, M. Min, P. Fischer, P. Schlatter, and E. Laure, <a href="https://www.sciencedirect.com/science/article/abs/pii/S0743731518305549">OpenACC acceleration for the Pn-Pn-2 algorithm in Nek5000</a>, <em>J. Parallel and Distributed Computing</em>, vol. 132, pp. 69-78, <strong>2019</strong>.</li>
+<li>L. Lu, M. Nazarov, P. Fischer, <a href="&quot;https://www.sciencedirect.com/science/article/pii/S1631073X1930158X">Nonlinear artificial viscosity for spectral element methods </a>, <em>Comptes Rendus Mathematique</em>, vol 357, pp. 646-654, <strong>2019</strong>.</li>
+<li>K. Mittal, S. Dutta, and P. Fischer, K. Mittal, S. Dutta, and P. Fischer, <a href="https://www.sciencedirect.com/science/article/abs/pii/S0045793018308326">Nonconforming Schwarz-spectral element methods for incompressible flow</a>, <em>Computers and Fluids</em>, 191(15):104237, <strong>2019</strong>.</li>
+<li>S. Patel, P. Fischer, M. Min and A. Tomboulides, <a href="https://link.springer.com/article/10.1007/s10915-018-0876-6">A Characteristic-Based Spectral Element Method for Moving-Domain Problems</a>, <em>J. Sci. Comput.</em>, vol 79, pp. 564-592, <strong>2019</strong>.</li>
+<li>K. Mittal and P. Fischer, <a href="https://link.springer.com/article/10.1007/s10915-018-0812-9">Mesh smoothing for the spectral element method</a>, <em>J. Sci. Comput.</em>, 78(2), pp. 1152-1173, <strong>2019</strong>.</li>
+<li>G.K. Giannakopoulos, C.E. Frouzakis, P. Fischer, A. Tomboulides and K. Boulouchos, <a href="https://link.springer.com/article/10.1007/s10494-019-00067-3">LES of the gas-exchange process inside an internal combustion using a high-order method</a>, <em>Flow, Turbulence and Combustion</em>, pp. 1-20, <strong>2019</strong>.</li>
+<li>K. Swirydowicz, N. Chalmers, A. Karakus, T. Warburton, <a href="https://doi.org/10.1177/1094342018816368">Acceleration of tensor-product operations for high-order finite element methods</a>, <em>Int. J. High Perf. Comput. Appl.</em>, 33(4) 735-757, <strong>2019</strong>.</li>
+</ol>
+<hr />
+<h4 id="2018">2018</h4>
+<ol>
+<li>N. Chalmers and T. Warburton, <a href="https://doi.org/10.1137/17M1149444">Low-Order Preconditioning of High-Order Triangular Finite Elements</a>, <em>SIAM J. Sci. Comput.</em>, 40(6), A4040-A4059, <strong>2018</strong>.</li>
+<li>P. Bello-Maldonado and P. Fischer, <a href="https://doi.org/10.1137/18M1194997">Scalable Low-Order Finite Element Preconditioners for High-Order Spectral Element Poisson Solvers</a>, <em>SIAM J. Sci. Comp.</em>, 41(5):S2-S18, <strong>2018</strong>.</li>
+<li>A. Haidar, S. Tomov, and J. Dongarra, <a href="https://doi.org/10.1109/HPEC.2018.8547576">Optimizing GPU Kernels for Irregular Batch Workloads: A Case Study for Cholesky Factorization</a>, HPEC'18, <strong>2018</strong>.</li>
+<li>A. Barker, V. Dobrev, J. Gopalakrishnan and T. Kolev, <a href="https://doi.org/10.1137/16M1104780">A scalable preconditioner for a primal discontinuous Petrov-Galerkin method</a>, <em>SIAM J. Sci. Comp.</em>, 40(1), pp. B32-B58, <strong>2018</strong>.</li>
+<li>R. Anderson, V. Dobrev, Tz. Kolev, R. Rieben and V. Tomov, <a href="https://doi.org/10.1137/17M1116453">High-Order Multi-Material ALE Hydrodynamics</a>, <em>SIAM J. Sci. Comp.</em>, 40(1):B32-B58, <strong>2018</strong>.</li>
+<li>V. Dobrev, Tz. Kolev, D. Kuzmin, R. Rieben and V. Tomov, <a href="https://doi.org/10.1016/j.jcp.2017.12.012">Sequential limiting in continuous and discontinuous Galerkin methods for the Euler equations</a>, Journal of Computational Physics, 356:372-390, <strong>2018</strong>.</li>
+</ol>
+<hr />
+<h4 id="2017">2017</h4>
+<ol>
+<li>J. Solberg, E. Merzari, H. Yuan, A. Obabko and P. Fischer, S. Lee, J. Lai, M. Delgado, S. J. Lee, and Y. Hassan, <a href="https://doi.org/10.1080/00295450.2018.1490124">High-Fidelity Simulation of Flow Induced Vibrations in Helical Steam Generators for Small Modular Reactors</a>, <strong>Best Paper Award</strong> at <em>The 17th International Topical Meeting on Nuclear Reactor Thermal Hydraulics (NURETH-17)</em>, September, <strong>2017</strong>.</li>
+<li>I. Masliah, A. Abdelfattah, A. Haidar, S. Tomov, M. Baboulin, J. Falcou, and J. Dongarra, <a href="https://doi.org/10.1016/j.parco.2018.10.003">Algorithms and optimization techniques for high-performance matrix-matrix multiplications of very small matrices</a>, <em>Parallel Computing (PARCO)</em>, <strong>2017</strong>.</li>
+<li>K. Raffenetti et. al, P. Fischer, M. Min, and P. Balaji, <a href="https://dl.acm.org/doi/10.1145/3126908.3126963">Why is MPI so slow? Analyzing the fundamental limits in implementing MPI-3.1</a>, <em>SC17</em>, <strong>2017</strong>.</li>
+<li>P. Fischer, M. Schmitt, and A. Tomboulides, <a href="https://link.springer.com/chapter/10.1007/978-1-4939-6969-2_7">Recent developments in spectral element simulations of moving-domain problems</a>, vol. 79, <em>Fields Institute Communications</em>, 213-244, <strong>2017</strong>.</li>
+<li>S. Lomperski, A. Obabko, P. Fischer, E. Merzari, and W.D. Pointer, <a href="http://www.sciencedirect.com/science/article/pii/S0017931017306816">Jet stability and wall impingement flow field in a thermal striping experiment</a>, <em>Int. J. Heat Mass Transfer</em>, 115A:1125- 1136, <strong>2017</strong>.</li>
+<li>V. Makarashvilia, E. Merzari, A. Obabko, A. Siegel, and P. Fischer, <a href="http://www.sciencedirect.com/science/article/pii/S0010465517301650">A performance analysis of ensemble averaging for high fidelity turbulence simulations at the strong scaling limit</a>, <em>Comp. Phys. Comm.</em>, 219:236-245, <strong>2017</strong>.</li>
+<li>A. Abdelfattah, A. Haidar, S. Tomov, J. Dongarra, <a href="https://doi.org/10.1016/j.procs.2017.05.250">Factorization and Inversion of a Million Matrices using GPUs: Challenges and Countermeasures</a>, <em>Proceedings of the 2017 International Conference on Computational Science, ICCS'17</em>, Zürich, Switzerland, June 12-14, <em>Procedia Computer Science</em>, <strong>2017</strong>.</li>
+<li>A. Abdelfattah, M. Baboulin, V. Dobrev, J. Dongarra, A. Haidar, I. Karlin, Tz. Kolev, I. Masliah, and S. Tomov, <a href="https://library.eecs.utk.edu/storage/609phpB4IcsSut-eecs-17-749.pdf">Small Tensor Operations on Advanced Architectures for High-order Applications</a>, Technical report UT-EECS-17-749, EECS Department, University of Tennessee, <strong>2017</strong>.</li>
+<li>R. Anderson, V. Dobrev, Tz. Kolev, D. Kuzmin, M. Quezada de Luna, R. Rieben and V. Tomov,
+<a href="https://doi.org/10.1016/j.jcp.2016.12.031">High-order local maximum principle preserving (MPP) discontinuous Galerkin finite element method for the transport equation</a>, Journal of Computational Physics, 334:102-124, <strong>2017</strong>.</li>
+<li>Bazilevs, Y., Kamran, K., Moutsanidis, G., Benson, D. J., &amp; Oñate, E, <a href="https://doi.org/10.1007/s00466-017-1394-3">A new formulation for air-blast fluid-structure interaction using an immersed approach. Part I: basic methodology and FEM-based simulations</a>, Computational Mechanics, 1-18, <strong>2017</strong>.</li>
+<li>Abdelfattah, A., Haidar, A., Tomov, S., and Dongarra, J. <a href="https://doi.org/10.1145/3079079.3079103">Novel HPC Techniques to Batch Execution of Many Variable Size BLAS Computations on GPUs</a>, International Conference on Supercomputing (ICS'17), ACM, Chicago, Illinois, pp. 1-10, June 14-16, <strong>2017</strong>.</li>
+<li>Ibanez, D., Shephard, M.S.,  <a href="https://doi.org/10.1137/16M1063496">Modifiable Array Data Structures for Mesh Topology</a>, SIAM Journal on Scientific Computing, 39(2):C144-C161, <strong>2017</strong>.</li>
+<li>Granzow, B.N., Shephard M.S., Oberai, A.A., <a href="https://doi.org/10.1016/j.cma.2017.05.008">Output-based error estimation and mesh adaptation for variational multiscale methods</a>,
+Computer Methods in Applied Mechanics and Engineering, Vol. 322, pp. 441-459, <strong>2017</strong>.</li>
+</ol>
+<hr />
+<h4 id="2016">2016</h4>
+<ol>
+<li>E. Merzari, A. Obabko, P. Fischer, N. Halford, J. Walker, A. Siegel, and Y. Q. Yu, <a href="http://www.sciencedirect.com/science/article/pii/S0029549316303570">Large-scale large eddy simulation of nuclear reactor flows: Issues and perspectives</a>, <em>Nuclear Engineering and Design</em>, page 13, Oct., <strong>2016</strong>.</li>
+<li>E. Merzari, P. Fischer, H. Yuan, K. Van Tichelen, S. Keijers, J. De Ridder, J. Degroote, J. Vierendeels, H. Doolaard, V. R. Gopala, and F. Roelofs, <a href="http://www.sciencedirect.com/science/article/pii/S002954931500494X">Benchmark exercise for fluid flow simulations in a liquid metal fast reactor fuel assembly</a>, <em>Nuclear Engineering and Design</em>, 298(3):218-228, <strong>2016</strong>.</li>
+<li>V. Dobrev, Tz. Kolev, R. Rieben and V. Tomov, <a href="http://dx.doi.org/10.1002/fld.4236">Multi-material closure model for high-order finite element Lagrangian hydrodynamics</a>, <em>Int. J. Numer. Meth. Fluids</em>, 82(10), pp. 689-706, <strong>2016</strong>.</li>
+<li>A. Abdelfattah, M. Baboulin, V. Dobrev, J. Dongarra, C. Earl, J. Falcou, A. Haidar, I. Karlin, Tz. Kolev, I. Masliah, S. Tomov, <a href="http://www.icl.utk.edu/sites/icl/files/publications/2016/icl-utk-866-2016.pdf">High-performance Tensor Contractions for GPUs</a>, <em>Procedia Computer Science</em>, Volume 80, Pages 108-118, ISSN 1877-0509, <strong>2016</strong>.</li>
+<li>M. B.E., Y. Peet, P. Fischer, and J. Lottes, <a href="http://www.sciencedirect.com/science/article/pii/S0021999115008050">A spectrally accurate method for overlapping grid solution of incompressible Navier-Stokes equations</a>, <em>J. Comp. Phys.</em>, 307:60-93, <strong>2016</strong>.</li>
+<li>M. Otten, J. Gong, A. Mametjanov, A. Vose, J. Levesque, P. Fischer, and M. Min, <a href="http://www.mcs.anl.gov/publication/mpiopenacc-implementation-high-order-electromagnetics-solver-gpudirect-communication">An MPI/OpenACC implementation of a high order electromagnetics solver with GPUDirect communication</a>, <em>The International Journal of High Performance Computing Application</em>, 30(3):320-334, <strong>2016</strong>.</li>
+<li>J. Gong, S. Markidis, E. Laure, M. Otten, P. Fischer, M. Min, <a href="http://link.springer.com/article/10.1007/s11227-016-1744-5">Nekbone Performance on GPUs with OpenACC and CUDA Fortran Implementations</a>, <em>Special issue on Sustainability on Ultrascale Computing Systems and Applications: Journal of Supercomputing</em>, <strong>2016</strong>.</li>
+<li>Ibanez, Daniel A., et al. <a href="https://doi.org/10.1145/2814935">PUMI: Parallel unstructured mesh infrastructure.</a> ACM Transactions on Mathematical Software (TOMS) 42.3 <strong>2016</strong>.</li>
+<li>Smith, Cameron W., et al. <a href="https://doi.org/10.1145/2949550.2949650">In-memory Integration of Existing Software Components for Parallel Adaptive Unstructured Mesh Workflows.</a> Proceedings of the XSEDE16 Conference on Diversity, Big Data, and Science at Scale. ACM, <strong>2016</strong>.</li>
+<li>Ibanez, D., Dunn, I., Shephard M.S., <a href="https://doi.org/10.1016/j.parco.2016.01.003">Hybrid MPI-thread parallelization of adaptive mesh operations</a>, Parallel Computing, 52:133-143, <strong>2016</strong>.</li>
+</ol>
+<hr />
+<h4 id="2015-and-earlier">2015 and earlier</h4>
+<ol>
+<li>P. Fischer, K. Heisey, and M. Min, <a href="https://arc.aiaa.org/doi/abs/10.2514/6.2015-3049">Scaling limits for PDE-based simulation</a>, <em>In 22nd AIAA Computational Fluid Dynamics Conference, AIAA Aviation</em>, AIAA 2015-3049, <strong>2015</strong>.</li>
+<li>A. Kraus, S. Aithal, A. Obabko, E. Merzari, A. Tomboulides, and P. Fischer, <a href="https://experts.illinois.edu/en/publications/erosion-of-a-large-scale-gaseous-stratified-layer-by-a-turbulent-">Erosion of a large-scale gaseous stratified layer by a turbulent jet - Simulations with URANS and LES approaches</a>, volume 2, pp. 1448-1461. <em>American Nuclear Society</em>, <strong>2015</strong>.</li>
+<li>E. Merzari, P. Fischer, and J. Walker, <a href="http://proceedings.asmedigitalcollection.asme.org/proceeding.aspx?articleid=2473283">Large-scale simulation of rod bundles: Coherent structure recognition and stability analysis</a>, volume 1. <em>American Society of Mechanical Engineers</em>, <strong>2015</strong>.</li>
+<li>M. Otten, R. A. Shah, N. F. Scherer, M. Min, M. Pelton, and S. K. Gray, <a href="https://journals.aps.org/prb/abstract/10.1103/PhysRevB.92.125432">Entanglement of two, three and four plasmonically coupled quantum dots</a>, <em>Physical Review B</em>, 92:125432, <strong>2015</strong>.</li>
+<li>D. A. May, J. Brown, and L. Le Pourhiet. <a href="https://www.mcs.anl.gov/publication/ptatin3d-high-performance-methods-long-term-lithospheric-dynamics-0">pTatin3D: High-performance methods for long-term lithospheric dynamics</a>, In Proceedings of <em>SC14: International Conference for High Performance Computing, Networking, Storage and Analysis</em>. ACM, <strong>2014</strong>.</li>
+<li>R. Anderson, V. Dobrev, Tz. Kolev and R. Rieben, <a href="http://computation.llnl.gov/blast/ALE_IJNMF.pdf">Monotonicity in high-order curvilinear finite element ALE remap</a>, <em>Int. J. Numer. Meth. Fluids</em>, 77(5), pp. 249-273, <strong>2014</strong>.</li>
+<li>Kamran, Kazem, et al. <a href="https://doi.org/10.1142/S021820251340006X">A compressible Lagrangian framework for modeling the fluid-structure interaction in the underwater implosion of an aluminum cylinder.</a> Mathematical Models and Methods in Applied Sciences 23.02 <strong>2013</strong>.</li>
+<li>Tz. Kolev and P. Vassilevski, <a href="https://doi.org/10.1137/110859361">Parallel auxiliary space AMG solver for H(div) problems</a>,  <em>SIAM J. Sci. Comp.</em>, 34, pp. A3079-A3098, <strong>2012</strong>.</li>
+<li>V. Dobrev, Tz. Kolev and R. Rieben, <a href="http://dx.doi.org/10.1137/120864672">High-order curvilinear finite element methods for Lagrangian hydrodynamics</a>, <em>SIAM J. Sci. Comp.</em>, 34, pp. B606-B641, <strong>2012</strong>.</li>
+<li>J. Brown, <a href="http://link.springer.com/article/10.1007/s10915-010-9396-8">Efficient nonlinear solvers for nodal high-order finite elements in 3D</a>, <em>Journal of Scientific Computing</em>, 45:48-63, <strong>2010</strong>. doi:10.1007/s10915-010-9396-8</li>
+<li>Tz. Kolev and P. Vassilevski, <a href="https://computation.llnl.gov/projects/hypre-scalable-linear-solvers-multigrid-methods/Kolev-2009-par-aux-space.pdf">Parallel auxiliary space AMG for H(curl) problems</a>, <em>J. Comput. Math.</em>, 27, pp. 604-623, <strong>2009</strong>.</li>
+</ol>
+<hr />
+<h3 id="presentations">Presentations</h3>
+<h4 id="2017_1">2017</h4>
+<ol>
+<li>Tz. Kolev and M. Shephard, <a href="https://youtu.be/RLIZWXggXqU">Conforming &amp; Nonconforming Adaptivity for Unstructured Meshes</a>, Argonne Training Program on Extreme-Scale Computing, Aug 7, <strong>2017</strong>.</li>
+<li>Tz. Kolev and M. Shephard, <a href="https://youtu.be/eJ6hRN7TeEU">Unstructured Mesh Technologies</a>, Argonne Training Program on Extreme-Scale Computing, Aug 7, <strong>2017</strong>.</li>
+<li>B. Smith, <a href="https://youtu.be/rVhzV1XcktE">Nonlinear and Krylov Solvers</a>, Argonne Training Program on Extreme-Scale Computing, Aug 7, <strong>2017</strong>.</li>
+<li>J. Dongarra, <a href="https://youtu.be/6eBNanfURWY">Adaptive Linear Solvers and Eigensolvers</a>, Argonne Training Program on Extreme-Scale Computing, Aug 7, <strong>2017</strong>.</li>
+<li>T. Warburton, <a href="https://youtu.be/lGmPy8xpT4E">An Intro to GPU Architecture and Programming Models</a>, Argonne Training Program on Extreme-Scale Computing, Aug 3, <strong>2017</strong>.</li>
+<li>S. Parker, <a href="https://youtu.be/9ipyEz30ODM">Architectures of the Argonne Cray XC40 KNL System "Theta"</a>, Argonne Training Program on Extreme-Scale Computing, Jul 31, <strong>2017</strong>.</li>
+<li>S. Tomov and A. Haidar, <a href="http://icl.cs.utk.edu/projectsfiles/magma/pubs/53-GTC17.pdf">MAGMA Tensors and Batched Computing for Accelerating Applications on GPUs</a>, GPU Technology Conference (GTC'17), Session S7728, May 8-11, <strong>2017</strong>.</li>
+<li>A. Abdelfattah, M. Baboulin, V. Dobrev, J. Dongarra, C. Earl, J. Falcou, A. Haidar, I. Karlin, Tz. Kolev, I. Masliah, S. Tomov, <a href="http://icl.cs.utk.edu/projectsfiles/magma/pubs/52-Tomov-SIAM-CSE2017.pdf">Accelerating Tensor Contractions in High-Order FEM with MAGMA Batched</a>, <em>SIAM Conference on Computer Science and Engineering (SIAM CSE'17)</em>, Atlanta, GA, Feb 26-Mar 3, <strong>2017</strong>.</li>
+<li>P. Fischer, Efficiency of High-Order Methods on the 2nd Generation Intel Xeon Phi Processor, <em>SIAM Conference on Computer Science and Engineering (SIAM CSE'17)</em>, Atlanta, GA, Feb 26-Mar 3, <strong>2017</strong>.</li>
+<li>M. Min, Spectral Element Simulation for Nanowire Solar Cells on HPC Platforms, <em>SIAM Conference on Computer Science and Engineering (SIAM CSE'17)</em>, Atlanta, GA, Feb 26-Mar 3, <strong>2017</strong>.</li>
+<li>C. Smith, G. Diamond and M.S. Shephard, Fast Dynamic Load Balancing Tools for Extreme Scale System, <em>SIAM Conference on Computer Science and Engineering (SIAM CSE'17)</em>, Atlanta, GA, Feb 26-Mar 3, <strong>2017</strong>.</li>
+<li>S. Tendulkar, O. Klaas, M.W. Beall, and M.S. Shephard, Parallel Geometry and Meshing Adaptation with Application to Problems with Evolving Domains, <em>SIAM Conf. on Computational Science and Engineering</em>, Atlanta, GA, Mar 3, <strong>2017</strong>.</li>
+<li>P. Fischer, <a href="https://youtu.be/46AwtHqKFb8">CFD, PDEs, and HPC: A 30-Year Perspective</a>, Argonne Training Program on Extreme-Scale Computing, Aug 2, <strong>2016</strong>.</li>
+</ol>
+<hr />
+<h3 id="highlights">Highlights</h3>
+<ul>
+<li>Video, <a href="https://www.youtube.com/watch?v=Rpccj3NopSE">MFEM: Advanced Simulation Algorithms for HPC Applications</a>, on LLNL's YouTube channel, Jun 2020.</li>
+<li>ECP podcast: <a href="https://www.exascaleproject.org/major-update-of-the-mfem-finite-element-library-broadens-gpu-support/">Major update of the MFEM finite element library broadens GPU support</a>, Jun 2020.</li>
+<li>ECP podcast: <a href="https://www.exascaleproject.org/helping-applications-leverage-future-computing-architectures-with-first-rate-discretization-libraries/">Helping applications use future architectures with first-rate discretization libraries</a>, Feb 2020.</li>
+<li>ECP article: <a href="https://www.exascaleproject.org/ceeds-impact-on-exascale-computing-project-ecp-efforts-is-wide-ranging/">CEED'S Impact On Exascale Computing Project (ECP) Efforts Is Wide-Ranging</a>, Jul 2019.</li>
+<li>PC magazine article highlighting <a href="https://www.pcmag.com/news/369121/why-do-we-need-supercomputers-and-who-is-using-them">supercomputing at LLNL</a>, Jul 2019.</li>
+<li>DEIXIS article about CEED: <a href="https://deixismagazine.org/2018/07/scaling-the-unknown/">Scaling the Unknown</a>, Jul 2018.</li>
+<li>ECP article: <a href="https://www.exascaleproject.org/co-design-is-key-to-ecps-holistic-approach-to-capable-exascale-computing/">Co-Design is Key to ECP's Holistic Approach to Capable Exascale Computing</a>, Apr 2018.</li>
+<li>MFEM highlighted in LLNL's <a href="https://str.llnl.gov/2018-01/lee">Science &amp; Technology Review</a> magazine, including on the <a href="https://str.llnl.gov/content/pages/2018-01/pdf/01.18.pdf">cover</a>, Jan/Feb 2018.</li>
+<li>GCN article: <a href="https://gcn.com/articles/2018/01/10/doe-exascale.aspx">Exascale a "main priority" for DOE</a>, Jan 2018.</li>
+<li>ECP article: <a href="https://www.exascaleproject.org/co-design-center-develops-next-generation-simulation-libraries-and-mini-apps/">Co-Design Center Develops Next-Generation Simulation Tools</a>, also in <a href="https://www.hpcwire.com/2017/11/08/co-design-center-develops-next-generation-simulation-tools/">HPCwire</a>, Nov 2017.</li>
+<li>Work with LLNL's <a href="https://www.llnl.gov/news/llnl-gears-next-generation-computer-aided-design-and-engineering">Center for Design and Optimization</a> mentioned in LLNL Newsline, Oct 2017.</li>
+<li>Highlight in <a href="https://computation.llnl.gov/casc/newsletter/vol-3">CASC Newsletter #3</a>, Oct 2017.</li>
+<li>Highlight in LLNL's <a href="https://www.llnl.gov/news/look-back-%E2%80%9865-years-excellence%E2%80%99">65th Anniversary Book</a> (2017 page), Oct 2017.</li>
+<li>GPU work highlight in LLNL's <a href="https://computation.llnl.gov/newsroom/accelerating-simulation-software-graphics-processing-units">COMP News page</a> and Livermore_Comp's <a href="https://twitter.com/Livermore_Comp/status/862368126628798464">Twitter feed</a>, May 2017.</li>
+<li>Work with Cardioid mentioned in LLNL's <a href="https://str.llnl.gov/march-2017/neely">Science &amp; Technology Review</a> magazine, Mar 2017.</li>
+<li>News coverage of CEED announcement in <a href="https://www.llnl.gov/news/lawrence-livermore-tapped-lead-%E2%80%98co-design%E2%80%99-center-exascale-computing-ecosystem">LLNL Newsline</a>
+and the <a href="https://www.anl.gov/articles/co-design-centers-help-make-next-generation-exascale-computing-reality">ANL press release</a>, Nov 2016.</li>
+<li>Work with BLAST mentioned in LLNL's <a href="https://str.llnl.gov/september-2016/diachin">Science &amp; Technology Review</a> magazine, Sep 2016.</li>
+</ul>
+<hr />
+<h3 id="other-resources">Other Resources</h3>
+<ul>
+<li>CEED-tagged topics on <a href="https://exascaleproject.org/topics/ceed">ECP's website</a>.</li>
+<li>ANL's <a href="https://www.anl.gov/science/exascale-computing">exascale computing website</a>.</li>
+<li>LLNL's <a href="http://exascale.llnl.gov">exascale computing website</a>.</li>
+<li>Blog of Virginia Tech's <a href="https://www.paranumal.com/blog">Parallel Numerical Algorithms research group</a>.</li>
+<li>U.S. Department of Energy <a href="http://energy.gov/downloads/doe-exascale-initiative">Exascale Initiative</a>.</li>
+</ul></div>
+            <div class="col-md-3 hidden-xs hidden-sm"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+        <li class="main active"><a href="#publications-and-outreach">Publications and Outreach</a></li>
+        
+	    
+                <li><a href="#ceed-documents">CEED Documents</a></li>
+	    
+	
+	    
+                <li><a href="#publications">Publications</a></li>
+	    
+	
+	    
+                <li><a href="#presentations">Presentations</a></li>
+	    
+	
+	    
+                <li><a href="#highlights">Highlights</a></li>
+	    
+	
+	    
+                <li><a href="#other-resources">Other Resources</a></li>
+	    
+	
+    
+    <hr style="background-color:white; height:20px; margin-left:-1px;  margin-right:-1px; margin-top:15px; margin-bottom:10px " />
+    <li class="main" style="padding:0"><a href="https://github.com/CEED/forum">Contact CEED</a> </li>
+       <li><a href="https://github.com/CEED/forum"><i class="fa fa-comment-o"></i> User forum</a> </li>
+       <li><a href="mailto:ceed-users@llnl.gov"><i class="fa fa-envelope-o"></i> ceed-users@llnl.gov</a> </li>
+   </ul>
+</div>
+
+<!-- Possible contact icons: fa-bolt, fa-cogs, fa-user, fa-star-o -->
+<!-- ... fa-comment, fa-comment-o, fa-comments, fa-comments-o, fa-bullhorn --></div>
+        </div>
+    
+
+        <footer class="footer hidden-xs">
+           <div class="container">
+              <p class="text-muted alignleft">
+	      <!-- <a href="https://www.llnl.gov/disclaimer.html">Privacy & Legal Notice</a>. -->
+              Developed by the <a href="../about/">CEED team</a>
+              as part of the <a href="http://exascaleproject.org">Exascale Computing Project</a>
+              </p>
+              <div style="text-align:right">
+                  <a href="http://exascaleproject.org">
+                  <img src="../img/ecp-black.png"
+                  style="display:inline;height:50px;padding:12px;margin:0;opacity:0.5"
+                  alt="ECP logo"></a>
+                  <a href="https://science.energy.gov/">
+                  <img src="../img/doe-sc.png"
+                  style="display:inline;height:50px;padding:12px;margin:0;opacity:0.5"
+                  alt="DOE-SC logo"></a>
+                  <a href="https://nnsa.energy.gov/">
+                  <img src="../img/nnsa.png"
+                  style="display:inline;height:50px;padding:12px;margin:0;opacity:0.5"
+                  alt="NNSA logo"></a>
+               </div>
+               <!-- footer height is 50px -->
+           </div>
+        </footer>
+
+        <footer class="footer hidden-md hidden-sm hidden-lg">
+           <div class="container">
+              <p class="text-muted alignleft">
+		<!-- <a href="https://www.llnl.gov/disclaimer.html">Privacy & Legal Notice</a>. -->
+		Developed by the <a href="../about/">CEED team</a>
+              </p>
+              <div style="text-align:right">
+                  <a href="http://exascaleproject.org">
+                  <img src="../img/ecp-black.png"
+                  style="display:inline;height:50px;padding:12px;margin:0;opacity:0.5"
+                  alt="ECP logo"></a>
+              </div>
+           </div>
+        </footer>
+
+        <script src="../js/jquery-3.6.0.min.js"></script>
+        <script src="../js/bootstrap-3.4.1.min.js"></script>
+        <script src="../js/highlight.pack.js"></script>
+        <script src="../js/base.js"></script>
+        <script src="../js/retina.min.js"></script>
+        <script src="../search/main.js"></script>
+    </body>
+</html>
